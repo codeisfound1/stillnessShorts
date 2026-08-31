@@ -1,0 +1,113 @@
+name: Generate & Upload YouTube Shorts
+
+on:
+  workflow_dispatch:
+    inputs:
+      count:
+        description: "Số lượng short muốn tạo (để trống = dùng giá trị trong config/config.yaml)"
+        required: false
+        default: ""
+      skip_upload:
+        description: "true = chỉ tạo video, không upload lên YouTube"
+        required: false
+        default: "false"
+  schedule:
+    # Ví dụ: chạy mỗi ngày lúc 03:00 UTC (~10:00 sáng giờ Việt Nam).
+    # Sửa lại lịch hoặc xóa mục này nếu không muốn chạy tự động theo lịch.
+    - cron: "0 3 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: generate-shorts
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+
+    env:
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      LLM_PROVIDER: ${{ vars.LLM_PROVIDER }}
+      YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+      YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+      YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+      YOUTUBE_PLAYLIST_ID: ${{ secrets.YOUTUBE_PLAYLIST_ID }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      PYTHONPATH: ${{ github.workspace }}/src
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install ffmpeg
+        run: |
+          sudo apt-get update -y
+          sudo apt-get install -y ffmpeg
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Cache work dir (WAV cache + transcript)
+        uses: actions/cache@v4
+        with:
+          path: data/work
+          key: shorts-work-${{ hashFiles('data/input/*') }}
+          restore-keys: |
+            shorts-work-
+
+      # Nếu file input không được commit thẳng vào repo (khuyến nghị với file lớn),
+      # bạn có thể set các secret *_URL bên dưới để workflow tự tải input trước khi chạy.
+      - name: Tải input từ URL (nếu có cấu hình secrets *_URL)
+        env:
+          VIDEO_URL: ${{ secrets.VIDEO_URL }}
+          NARRATION_URL: ${{ secrets.NARRATION_URL }}
+          MUSIC_URL: ${{ secrets.MUSIC_URL }}
+        run: |
+          mkdir -p data/input
+          if [ -n "$VIDEO_URL" ]; then curl -sSL -o data/input/source_video.mp4 "$VIDEO_URL"; fi
+          if [ -n "$NARRATION_URL" ]; then curl -sSL -o data/input/narration.mp3 "$NARRATION_URL"; fi
+          if [ -n "$MUSIC_URL" ]; then curl -sSL -o data/input/music.mp3 "$MUSIC_URL"; fi
+
+      - name: Chạy tạo & upload Shorts
+        run: |
+          ARGS=""
+          if [ -n "${{ github.event.inputs.count }}" ]; then
+            ARGS="$ARGS --count ${{ github.event.inputs.count }}"
+          fi
+          if [ "${{ github.event.inputs.skip_upload }}" = "true" ]; then
+            ARGS="$ARGS --skip-upload"
+          fi
+          python -m shorts_automation.main $ARGS
+
+      - name: Commit lại state.json (tránh tạo trùng đoạn ở lần chạy sau)
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/state/state.json
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: cập nhật state.json sau khi tạo shorts [skip ci]"
+            git push
+          else
+            echo "Không có thay đổi state.json để commit."
+          fi
+
+      - name: Upload video output làm artifact (debug)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-shorts-${{ github.run_id }}
+          path: data/output/*.mp4
+          retention-days: 7
+          if-no-files-found: ignore

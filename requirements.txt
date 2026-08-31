@@ -1,0 +1,19 @@
+# --- Cấu hình / tiện ích chung ---
+PyYAML==6.0.2
+python-dotenv==1.0.1
+requests==2.32.3
+
+# --- Speech-to-text (transcript + timestamp, hỗ trợ tiếng Việt) ---
+faster-whisper==1.0.3
+
+# --- LLM (sinh tiêu đề) ---
+# Groq dùng chung endpoint OpenAI-compatible qua `requests`, không cần SDK riêng.
+anthropic==0.40.0
+
+# --- YouTube Data API v3 ---
+google-api-python-client==2.149.0
+google-auth==2.35.0
+google-auth-oauthlib==1.2.1
+
+# --- Telegram Bot API ---
+# Dùng trực tiếp qua `requests` (đã khai báo ở trên), không cần thêm SDK riêng.

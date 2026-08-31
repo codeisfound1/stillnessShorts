@@ -1,0 +1,80 @@
+# Cấu hình chung cho stillnessShorts (KHÔNG chứa secrets - secrets nằm trong .env)
+
+input:
+  # Đường dẫn video gốc (.mp4) và audio thuyết minh (.mp3)
+  video_path: "data/input/source_video.mp4"
+  narration_path: "data/input/narration.mp3"
+  # File nhạc nền tùy chọn - để trống hoặc xóa dòng này nếu không dùng
+  music_path: "data/input/music.mp3"
+
+output:
+  dir: "data/output"
+  work_dir: "data/work"          # thư mục tạm cho file trung gian (audio cắt, ass, v.v.)
+  state_file: "data/state/state.json"
+
+generation:
+  count: 5                # số lượng short muốn tạo trong lần chạy này (--count có thể override)
+  min_duration_sec: 30
+  max_duration_sec: 60
+  # true => nếu hết nội dung (video hoặc audio) thì dừng sớm thay vì lỗi
+  stop_if_exhausted: true
+
+video:
+  width: 1080
+  height: 1920             # 9:16
+  fps: 30
+  video_bitrate: "6M"
+  audio_bitrate: "192k"
+  crf: 20                  # dùng khi không set bitrate cố định (libx264 -crf)
+  codec: "libx264"
+  preset: "medium"
+
+audio_mix:
+  # Âm lượng nhạc nền tương đối so với thuyết minh (0.0 - 1.0)
+  music_volume: 0.15
+  narration_volume: 1.0
+  # Fade in/out cho nhạc nền (giây)
+  music_fade_sec: 1.5
+
+whisper:
+  # faster-whisper model size: tiny/base/small/medium/large-v2/large-v3
+  # medium/large-v3 cho kết quả tiếng Việt tốt hơn nhưng chậm và nặng hơn
+  model_size: "medium"
+  device: "auto"           # auto | cpu | cuda
+  compute_type: "auto"     # auto | int8 | float16 | float32
+  language: "vi"
+  word_timestamps: true
+
+subtitle:
+  font_path: "assets/fonts/BeVietnamPro-ExtraBold.ttf"
+  font_name: "Be Vietnam Pro ExtraBold"
+  font_size: 72
+  primary_color: "&H00FFFFFF"   # trắng (ASS format: &HAABBGGRR)
+  outline_color: "&H00000000"   # viền đen
+  back_color: "&H99000000"      # nền mờ phía sau chữ (ASS alpha+BGR)
+  outline: 4
+  shadow: 2
+  alignment: 5              # ASS alignment 5 = middle-center
+  margin_v: 0
+  max_chars_per_line: 30
+  max_words_per_caption: 6   # số từ tối đa mỗi cụm phụ đề hiển thị cùng lúc
+
+llm:
+  # groq | claude | rule_based
+  provider: "groq"
+  groq_model: "openai/gpt-oss-120b"
+  claude_model: "claude-sonnet-5"
+  max_title_length: 90
+  temperature: 0.6
+
+youtube:
+  playlist_id: ""            # điền YOUTUBE_PLAYLIST_ID hoặc set qua .env
+  privacy_status: "public"   # public | unlisted | private
+  category_id: "22"          # People & Blogs (đổi tùy nội dung)
+  default_tags:
+    - "shorts"
+    - "vietsub"
+  made_for_kids: false
+
+telegram:
+  enabled: true
