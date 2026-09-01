@@ -2,15 +2,11 @@
 
 input:
   # "video"  -> cắt short từ 1 video gốc dài (video_path)
-  # "photos" -> dựng short từ nhiều ảnh trong photos_dir (hiệu ứng Ken Burns + slideshow)
-  mode: "video"
+  # "photos" -> dựng short từ ảnh (AI tự sinh, hoặc lấy từ photos_dir) + hiệu ứng Ken Burns
+  mode: "photos"
 
   # Dùng khi mode = "video"
   video_path: "data/input/source_video.mp4"
-
-  # Dùng khi mode = "photos": thư mục chứa ảnh (.jpg/.jpeg/.png/.webp/.bmp),
-  # được dùng tuần tự theo tên file, không lặp lại giữa các short.
-  photos_dir: "data/input/photos"
 
   narration_path: "data/input/narration.mp3"
   # File nhạc nền tùy chọn - để trống hoặc xóa dòng này nếu không dùng
@@ -39,12 +35,31 @@ video:
   preset: "medium"
 
 photos:
-  # Chỉ dùng khi input.mode = "photos". Mỗi short ghép nhiều ảnh liên tiếp (slideshow),
-  # mỗi ảnh hiển thị seconds_per_photo_min-max giây với hiệu ứng Ken Burns (zoom chậm).
+  # Chỉ dùng khi input.mode = "photos".
+  # "ai_generated" -> mỗi short tự sinh 1 ảnh bằng AI, dựa trên tiêu đề/ý chính của đoạn
+  #                   thuyết minh dùng cho short đó (không cần chuẩn bị ảnh trước).
+  # "folder"       -> lấy ảnh tuần tự từ photos_dir (mỗi short ghép nhiều ảnh liên tiếp
+  #                   dạng slideshow, xem seconds_per_photo_min/max bên dưới).
+  source: "ai_generated"
+
+  # Dùng khi source = "folder": thư mục chứa ảnh (.jpg/.jpeg/.png/.webp/.bmp), dùng tuần tự
+  # theo tên file, không lặp lại giữa các short.
+  photos_dir: "data/input/photos"
   seconds_per_photo_min: 3.0
   seconds_per_photo_max: 6.0
-  zoom_max: 1.15            # mức zoom tối đa (1.0 = không zoom)
-  alternate_direction: true # xen kẽ zoom-in / zoom-out giữa các ảnh cho đỡ đơn điệu
+
+  zoom_max: 1.15            # mức zoom tối đa (1.0 = không zoom), áp dụng cho cả 2 source
+  alternate_direction: true # xen kẽ zoom-in / zoom-out giữa các ảnh/short cho đỡ đơn điệu
+
+image_generation:
+  # Chỉ dùng khi photos.source = "ai_generated".
+  # "pollinations" -> miễn phí, không cần API key.
+  # "openai"       -> chất lượng cao hơn, cần OPENAI_API_KEY, tính phí theo ảnh.
+  provider: "pollinations"
+  openai_model: "gpt-image-1"
+  # Câu mô tả style thêm vào cuối mọi prompt để ảnh đồng nhất phong cách.
+  style_suffix: "cinematic photography, high detail, natural lighting, no text, no watermark, no logo"
+  timeout_sec: 60
 
 audio_mix:
   # Âm lượng nhạc nền tương đối so với thuyết minh (0.0 - 1.0)

@@ -23,7 +23,6 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 class InputConfig:
     mode: str  # "video" | "photos"
     video_path: Optional[Path]
-    photos_dir: Optional[Path]
     narration_path: Path
     music_path: Optional[Path]
 
@@ -57,10 +56,21 @@ class VideoConfig:
 
 @dataclass
 class PhotosConfig:
+    source: str  # "ai_generated" | "folder"
+    photos_dir: Optional[Path]
     seconds_per_photo_min: float
     seconds_per_photo_max: float
     zoom_max: float
     alternate_direction: bool
+
+
+@dataclass
+class ImageGenConfig:
+    provider: str  # "pollinations" | "openai"
+    openai_model: str
+    style_suffix: str
+    timeout_sec: float
+    openai_api_key: Optional[str] = None
 
 
 @dataclass
@@ -132,6 +142,7 @@ class AppConfig:
     generation: GenerationConfig
     video: VideoConfig
     photos: PhotosConfig
+    image_generation: ImageGenConfig
     audio_mix: AudioMixConfig
     whisper: WhisperConfig
     subtitle: SubtitleConfig
@@ -175,7 +186,6 @@ def load_config(config_path: str | Path = "config/config.yaml", env_path: str | 
     input_cfg = InputConfig(
         mode=mode,
         video_path=_resolve(input_raw.get("video_path")),
-        photos_dir=_resolve(input_raw.get("photos_dir")),
         narration_path=_resolve(input_raw["narration_path"]),
         music_path=music_path,
     )
@@ -207,11 +217,25 @@ def load_config(config_path: str | Path = "config/config.yaml", env_path: str | 
     )
 
     photos_raw = raw.get("photos", {})
+    photos_source = str(photos_raw.get("source", "ai_generated")).lower()
+    if photos_source not in ("ai_generated", "folder"):
+        raise ValueError(f"photos.source phải là 'ai_generated' hoặc 'folder', nhận được: {photos_source!r}")
     photos_cfg = PhotosConfig(
+        source=photos_source,
+        photos_dir=_resolve(photos_raw.get("photos_dir")),
         seconds_per_photo_min=float(photos_raw.get("seconds_per_photo_min", 3.0)),
         seconds_per_photo_max=float(photos_raw.get("seconds_per_photo_max", 6.0)),
         zoom_max=float(photos_raw.get("zoom_max", 1.15)),
         alternate_direction=bool(photos_raw.get("alternate_direction", True)),
+    )
+
+    imgen_raw = raw.get("image_generation", {})
+    image_gen_cfg = ImageGenConfig(
+        provider=str(imgen_raw.get("provider", "pollinations")).lower(),
+        openai_model=str(imgen_raw.get("openai_model", "gpt-image-1")),
+        style_suffix=str(imgen_raw.get("style_suffix", "")),
+        timeout_sec=float(imgen_raw.get("timeout_sec", 60)),
+        openai_api_key=os.environ.get("OPENAI_API_KEY"),
     )
 
     mix_raw = raw.get("audio_mix", {})
@@ -282,6 +306,7 @@ def load_config(config_path: str | Path = "config/config.yaml", env_path: str | 
         generation=generation_cfg,
         video=video_cfg,
         photos=photos_cfg,
+        image_generation=image_gen_cfg,
         audio_mix=audio_mix_cfg,
         whisper=whisper_cfg,
         subtitle=subtitle_cfg,

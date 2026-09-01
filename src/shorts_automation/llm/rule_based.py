@@ -27,6 +27,9 @@ _WORD_RE = re.compile(r"[\wÀ-ỹ]+", re.UNICODE)
 class RuleBasedTitleProvider(TitleProvider):
     name = "rule_based"
 
+    def complete(self, system_prompt: str, user_prompt: str, *, max_tokens: int) -> str:
+        raise TitleProviderError("Provider 'rule_based' không hỗ trợ generate_image_prompt (cần LLM thật).")
+
     def generate_title(self, transcript_text: str, *, max_length: int) -> str:
         text = transcript_text.strip()
         if not text:

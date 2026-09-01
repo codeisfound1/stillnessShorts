@@ -11,7 +11,16 @@ import random
 import sys
 import traceback
 
-from . import audio_cutter, photo_cutter, title_generator, transcriber, video_composer, video_cutter
+from . import (
+    audio_cutter,
+    image_generator,
+    image_prompt_generator,
+    photo_cutter,
+    title_generator,
+    transcriber,
+    video_composer,
+    video_cutter,
+)
 from .config import AppConfig, load_config
 from .state import StateStore
 from .utils.ffmpeg_utils import FFmpegError, check_binaries_available
@@ -35,10 +44,12 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
 
 def validate_inputs(config: AppConfig) -> None:
     if config.input.mode == "photos":
-        if not config.input.photos_dir:
-            raise FileNotFoundError("input.mode = 'photos' nhưng chưa cấu hình input.photos_dir.")
-        if not photo_cutter.list_photos(config.input.photos_dir):
-            raise FileNotFoundError(f"Không tìm thấy ảnh nào trong thư mục: {config.input.photos_dir}")
+        if config.photos.source == "folder":
+            if not config.photos.photos_dir:
+                raise FileNotFoundError("photos.source = 'folder' nhưng chưa cấu hình photos.photos_dir.")
+            if not photo_cutter.list_photos(config.photos.photos_dir):
+                raise FileNotFoundError(f"Không tìm thấy ảnh nào trong thư mục: {config.photos.photos_dir}")
+        # source == "ai_generated": không cần ảnh có sẵn, ảnh được sinh tự động mỗi short.
     else:
         if not config.input.video_path or not config.input.video_path.exists():
             raise FileNotFoundError(f"Không tìm thấy video input: {config.input.video_path}")
@@ -84,12 +95,22 @@ def run(args: argparse.Namespace) -> int:
     from . import telegram_notifier
 
     photos_mode = config.input.mode == "photos"
+    ai_generated = photos_mode and config.photos.source == "ai_generated"
     photos_list: list = []
     video_duration = 0.0
-    if photos_mode:
-        photos_list = photo_cutter.list_photos(config.input.photos_dir)
-        logger.info("Mode photos: %d ảnh trong %s", len(photos_list), config.input.photos_dir)
-        source_identifier = config.input.photos_dir
+
+    if ai_generated:
+        logger.info(
+            "Mode photos (ai_generated): mỗi short tự sinh 1 ảnh bằng AI (provider=%s).",
+            config.image_generation.provider,
+        )
+        # Không có thư mục ảnh cố định để làm định danh nguồn -> dùng 1 sentinel path riêng
+        # (khác narration_path) để state.json vẫn phân biệt được theo cặp (nguồn, narration).
+        source_identifier = config.output.work_dir / "__ai_generated_photos__"
+    elif photos_mode:
+        photos_list = photo_cutter.list_photos(config.photos.photos_dir)
+        logger.info("Mode photos (folder): %d ảnh trong %s", len(photos_list), config.photos.photos_dir)
+        source_identifier = config.photos.photos_dir
     else:
         video_duration = video_cutter.get_video_duration(config.input.video_path)
         logger.info("Video gốc: %.1fs", video_duration)
@@ -119,8 +140,29 @@ def run(args: argparse.Namespace) -> int:
 
         photo_start_index: int | None = None
         photo_end_index: int | None = None
+        visual = None
 
-        if photos_mode:
+        if ai_generated:
+            audio_seg = audio_cutter.plan_next_segment(
+                audio_duration=audio_duration,
+                pointer_sec=source_state.audio_pointer_sec,
+                duration_sec=duration_sec,
+            )
+            if audio_seg is None:
+                logger.warning("Đã hết audio thuyết minh, dừng sớm.")
+                if not config.generation.stop_if_exhausted:
+                    logger.error("stop_if_exhausted=false nhưng không còn nội dung, dừng script.")
+                break
+
+            sync_duration = audio_seg.duration
+            if sync_duration < 5:
+                logger.warning("Đoạn còn lại quá ngắn (%.1fs), dừng.", sync_duration)
+                break
+
+            # visual (ảnh AI) chỉ được sinh trong try block bên dưới vì cần title/transcript trước.
+            visual_log = "photos[ai_generated]"
+            source_state.audio_pointer_sec = audio_seg.end
+        elif photos_mode:
             photo_slots, new_photo_pointer = photo_cutter.plan_next_photos(
                 photos=photos_list,
                 pointer_index=source_state.photo_pointer_index,
@@ -197,11 +239,25 @@ def run(args: argparse.Namespace) -> int:
             sync_duration,
         )
 
+        image_prompt: str | None = None
+
         try:
             transcript_slice = transcript.slice(audio_seg.start, audio_seg.end)
             transcript_text = transcript_slice.full_text or f"Đoạn video số {short_index}"
 
             title = title_generator.generate_title(transcript_text, config.llm)
+
+            if ai_generated:
+                image_prompt = image_prompt_generator.generate_image_prompt(transcript_text, title, config.llm)
+                photo_path = image_generator.generate_photo(
+                    prompt=image_prompt,
+                    output_path=config.output.work_dir / f"short_{short_index:03d}_ai_photo.jpg",
+                    image_cfg=config.image_generation,
+                    width=config.video.width,
+                    height=config.video.height,
+                )
+                visual = [photo_cutter.PhotoSlot(path=photo_path, duration=sync_duration, zoom_in=short_index % 2 == 1)]
+                logger.info("Short #%d: ảnh AI (prompt: %s)", short_index, image_prompt)
 
             output_path = video_composer.compose_short(
                 index=short_index,
@@ -238,6 +294,7 @@ def run(args: argparse.Namespace) -> int:
                 video_end=visual.end if isinstance(visual, VideoSegment) else None,
                 photo_start_index=photo_start_index,
                 photo_end_index=photo_end_index,
+                image_prompt=image_prompt,
                 youtube_video_id=youtube_video_id,
                 youtube_url=youtube_url,
                 uploaded=youtube_video_id is not None,

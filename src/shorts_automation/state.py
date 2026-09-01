@@ -109,12 +109,14 @@ class StateStore:
         video_end: Optional[float] = None,
         photo_start_index: Optional[int] = None,
         photo_end_index: Optional[int] = None,
+        image_prompt: Optional[str] = None,
         youtube_video_id: Optional[str] = None,
         youtube_url: Optional[str] = None,
         uploaded: bool = False,
     ) -> dict[str, Any]:
-        """Ghi lại 1 short đã tạo. Truyền video_start/video_end (mode video) HOẶC
-        photo_start_index/photo_end_index (mode photos) tùy theo input.mode đang dùng."""
+        """Ghi lại 1 short đã tạo. Truyền video_start/video_end (mode video), HOẶC
+        photo_start_index/photo_end_index (mode photos + folder), HOẶC image_prompt
+        (mode photos + ai_generated) tùy theo input.mode/photos.source đang dùng."""
         entry: dict[str, Any] = {
             "index": self.next_short_index(state),
             "audio_start": round(audio_start, 3),
@@ -126,6 +128,8 @@ class StateStore:
             "youtube_url": youtube_url,
             "uploaded": uploaded,
         }
+        if image_prompt is not None:
+            entry["image_prompt"] = image_prompt
         if video_start is not None and video_end is not None:
             entry["video_start"] = round(video_start, 3)
             entry["video_end"] = round(video_end, 3)
