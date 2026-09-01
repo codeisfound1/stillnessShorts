@@ -1,8 +1,17 @@
 # Cấu hình chung cho stillnessShorts (KHÔNG chứa secrets - secrets nằm trong .env)
 
 input:
-  # Đường dẫn video gốc (.mp4) và audio thuyết minh (.mp3)
+  # "video"  -> cắt short từ 1 video gốc dài (video_path)
+  # "photos" -> dựng short từ nhiều ảnh trong photos_dir (hiệu ứng Ken Burns + slideshow)
+  mode: "video"
+
+  # Dùng khi mode = "video"
   video_path: "data/input/source_video.mp4"
+
+  # Dùng khi mode = "photos": thư mục chứa ảnh (.jpg/.jpeg/.png/.webp/.bmp),
+  # được dùng tuần tự theo tên file, không lặp lại giữa các short.
+  photos_dir: "data/input/photos"
+
   narration_path: "data/input/narration.mp3"
   # File nhạc nền tùy chọn - để trống hoặc xóa dòng này nếu không dùng
   music_path: "data/input/music.mp3"
@@ -28,6 +37,14 @@ video:
   crf: 20                  # dùng khi không set bitrate cố định (libx264 -crf)
   codec: "libx264"
   preset: "medium"
+
+photos:
+  # Chỉ dùng khi input.mode = "photos". Mỗi short ghép nhiều ảnh liên tiếp (slideshow),
+  # mỗi ảnh hiển thị seconds_per_photo_min-max giây với hiệu ứng Ken Burns (zoom chậm).
+  seconds_per_photo_min: 3.0
+  seconds_per_photo_max: 6.0
+  zoom_max: 1.15            # mức zoom tối đa (1.0 = không zoom)
+  alternate_direction: true # xen kẽ zoom-in / zoom-out giữa các ảnh cho đỡ đơn điệu
 
 audio_mix:
   # Âm lượng nhạc nền tương đối so với thuyết minh (0.0 - 1.0)

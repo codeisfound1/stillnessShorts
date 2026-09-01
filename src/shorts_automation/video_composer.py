@@ -8,27 +8,35 @@ from __future__ import annotations
 
 import logging
 from pathlib import Path
+from typing import Union
 
-from . import audio_cutter, subtitles, video_cutter
+from . import audio_cutter, photo_cutter, subtitles, video_cutter
 from .audio_cutter import AudioSegment
 from .config import AppConfig
+from .photo_cutter import PhotoSlot
 from .transcriber import TranscriptResult
 from .utils.ffmpeg_utils import run
 from .video_cutter import VideoSegment
 
 logger = logging.getLogger(__name__)
 
+VisualInput = Union[VideoSegment, list[PhotoSlot]]
+
 
 def compose_short(
     *,
     index: int,
-    video_segment: VideoSegment,
+    visual: VisualInput,
     audio_segment: AudioSegment,
     transcript_slice: TranscriptResult,
     narration_wav_cache: Path,
     config: AppConfig,
 ) -> Path:
-    """Tạo 1 file short hoàn chỉnh (mp4, 9:16, có sub, có audio) và trả về đường dẫn output."""
+    """Tạo 1 file short hoàn chỉnh (mp4, 9:16, có sub, có audio) và trả về đường dẫn output.
+
+    `visual` là VideoSegment (mode "video", cắt từ nguồn dài) hoặc list[PhotoSlot]
+    (mode "photos", dựng slideshow Ken Burns từ nhiều ảnh).
+    """
     work_dir = config.output.work_dir
     output_dir = config.output.dir
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -40,7 +48,7 @@ def compose_short(
     mixed_audio_path = work_dir / f"{short_tag}_audio.m4a"
     final_output_path = output_dir / f"{short_tag}.mp4"
 
-    duration = video_segment.duration
+    duration = visual.duration if isinstance(visual, VideoSegment) else sum(slot.duration for slot in visual)
 
     captions = subtitles.build_captions(
         transcript_slice.words,
@@ -56,14 +64,25 @@ def compose_short(
     )
     logger.info("Short #%d: %d cụm phụ đề.", index, len(captions))
 
-    video_cutter.extract_processed_clip(
-        video_path=config.input.video_path,
-        segment=video_segment,
-        ass_subtitle_path=ass_path,
-        output_path=silent_video_path,
-        video_cfg=config.video,
-        fonts_dir=config.subtitle.font_path.parent,
-    )
+    if isinstance(visual, VideoSegment):
+        video_cutter.extract_processed_clip(
+            video_path=config.input.video_path,
+            segment=visual,
+            ass_subtitle_path=ass_path,
+            output_path=silent_video_path,
+            video_cfg=config.video,
+            fonts_dir=config.subtitle.font_path.parent,
+        )
+    else:
+        photo_cutter.build_processed_clip(
+            photo_slots=visual,
+            ass_subtitle_path=ass_path,
+            output_path=silent_video_path,
+            video_cfg=config.video,
+            photos_cfg=config.photos,
+            work_dir=work_dir,
+            fonts_dir=config.subtitle.font_path.parent,
+        )
 
     audio_cutter.extract_narration_clip(narration_wav_cache, audio_segment, narration_clip_path)
     audio_cutter.build_mixed_audio(

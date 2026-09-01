@@ -11,11 +11,12 @@ import random
 import sys
 import traceback
 
-from . import audio_cutter, title_generator, transcriber, video_composer, video_cutter
+from . import audio_cutter, photo_cutter, title_generator, transcriber, video_composer, video_cutter
 from .config import AppConfig, load_config
 from .state import StateStore
 from .utils.ffmpeg_utils import FFmpegError, check_binaries_available
 from .utils.logging_config import setup_logging
+from .video_cutter import VideoSegment
 
 logger = logging.getLogger(__name__)
 
@@ -33,8 +34,15 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
 
 
 def validate_inputs(config: AppConfig) -> None:
-    if not config.input.video_path.exists():
-        raise FileNotFoundError(f"Không tìm thấy video input: {config.input.video_path}")
+    if config.input.mode == "photos":
+        if not config.input.photos_dir:
+            raise FileNotFoundError("input.mode = 'photos' nhưng chưa cấu hình input.photos_dir.")
+        if not photo_cutter.list_photos(config.input.photos_dir):
+            raise FileNotFoundError(f"Không tìm thấy ảnh nào trong thư mục: {config.input.photos_dir}")
+    else:
+        if not config.input.video_path or not config.input.video_path.exists():
+            raise FileNotFoundError(f"Không tìm thấy video input: {config.input.video_path}")
+
     if not config.input.narration_path.exists():
         raise FileNotFoundError(f"Không tìm thấy audio narration input: {config.input.narration_path}")
     if config.input.music_path is not None and not config.input.music_path.exists():
@@ -75,9 +83,20 @@ def run(args: argparse.Namespace) -> int:
 
     from . import telegram_notifier
 
-    video_duration = video_cutter.get_video_duration(config.input.video_path)
+    photos_mode = config.input.mode == "photos"
+    photos_list: list = []
+    video_duration = 0.0
+    if photos_mode:
+        photos_list = photo_cutter.list_photos(config.input.photos_dir)
+        logger.info("Mode photos: %d ảnh trong %s", len(photos_list), config.input.photos_dir)
+        source_identifier = config.input.photos_dir
+    else:
+        video_duration = video_cutter.get_video_duration(config.input.video_path)
+        logger.info("Video gốc: %.1fs", video_duration)
+        source_identifier = config.input.video_path
+
     audio_duration = audio_cutter.get_audio_duration(config.input.narration_path)
-    logger.info("Video gốc: %.1fs | Audio thuyết minh: %.1fs", video_duration, audio_duration)
+    logger.info("Audio thuyết minh: %.1fs", audio_duration)
 
     narration_wav_cache = audio_cutter.ensure_wav_cache(config.input.narration_path, config.output.work_dir)
     transcript = transcriber.transcribe_narration(
@@ -88,7 +107,7 @@ def run(args: argparse.Namespace) -> int:
     )
 
     state_store = StateStore(config.output.state_file)
-    source_key, source_state = state_store.get_source_state(config.input.video_path, config.input.narration_path)
+    source_key, source_state = state_store.get_source_state(source_identifier, config.input.narration_path)
 
     succeeded = 0
     failed = 0
@@ -98,44 +117,81 @@ def run(args: argparse.Namespace) -> int:
         attempted += 1
         duration_sec = random.uniform(config.generation.min_duration_sec, config.generation.max_duration_sec)
 
-        video_seg = video_cutter.plan_next_segment(
-            video_duration=video_duration,
-            pointer_sec=source_state.video_pointer_sec,
-            duration_sec=duration_sec,
-        )
-        audio_seg = audio_cutter.plan_next_segment(
-            audio_duration=audio_duration,
-            pointer_sec=source_state.audio_pointer_sec,
-            duration_sec=duration_sec,
-        )
+        photo_start_index: int | None = None
+        photo_end_index: int | None = None
 
-        if video_seg is None or audio_seg is None:
-            logger.warning("Đã hết video hoặc audio để cắt thêm short không trùng lặp, dừng sớm.")
-            if not config.generation.stop_if_exhausted:
-                logger.error("stop_if_exhausted=false nhưng không còn nội dung, dừng script.")
-            break
+        if photos_mode:
+            photo_slots, new_photo_pointer = photo_cutter.plan_next_photos(
+                photos=photos_list,
+                pointer_index=source_state.photo_pointer_index,
+                target_duration=duration_sec,
+                photos_cfg=config.photos,
+            )
+            audio_seg = audio_cutter.plan_next_segment(
+                audio_duration=audio_duration,
+                pointer_sec=source_state.audio_pointer_sec,
+                duration_sec=duration_sec,
+            )
+            if not photo_slots or audio_seg is None:
+                logger.warning("Đã hết ảnh hoặc audio để tạo thêm short không trùng lặp, dừng sớm.")
+                if not config.generation.stop_if_exhausted:
+                    logger.error("stop_if_exhausted=false nhưng không còn nội dung, dừng script.")
+                break
 
-        sync_duration = min(video_seg.duration, audio_seg.duration)
-        if sync_duration < 5:
-            logger.warning("Đoạn còn lại quá ngắn (%.1fs), dừng.", sync_duration)
-            break
+            total_photo_duration = sum(slot.duration for slot in photo_slots)
+            sync_duration = min(total_photo_duration, audio_seg.duration)
+            if sync_duration < 5:
+                logger.warning("Đoạn còn lại quá ngắn (%.1fs), dừng.", sync_duration)
+                break
 
-        video_seg.end = video_seg.start + sync_duration
-        audio_seg.end = audio_seg.start + sync_duration
+            visual = photo_cutter.trim_slots_to_duration(photo_slots, sync_duration)
+            audio_seg.end = audio_seg.start + sync_duration
+            photo_start_index = source_state.photo_pointer_index
+            photo_end_index = new_photo_pointer
+            visual_log = f"photos[{photo_start_index}-{photo_end_index}]"
+
+            source_state.photo_pointer_index = new_photo_pointer
+            source_state.audio_pointer_sec = audio_seg.end
+        else:
+            video_seg = video_cutter.plan_next_segment(
+                video_duration=video_duration,
+                pointer_sec=source_state.video_pointer_sec,
+                duration_sec=duration_sec,
+            )
+            audio_seg = audio_cutter.plan_next_segment(
+                audio_duration=audio_duration,
+                pointer_sec=source_state.audio_pointer_sec,
+                duration_sec=duration_sec,
+            )
+            if video_seg is None or audio_seg is None:
+                logger.warning("Đã hết video hoặc audio để cắt thêm short không trùng lặp, dừng sớm.")
+                if not config.generation.stop_if_exhausted:
+                    logger.error("stop_if_exhausted=false nhưng không còn nội dung, dừng script.")
+                break
+
+            sync_duration = min(video_seg.duration, audio_seg.duration)
+            if sync_duration < 5:
+                logger.warning("Đoạn còn lại quá ngắn (%.1fs), dừng.", sync_duration)
+                break
+
+            video_seg.end = video_seg.start + sync_duration
+            audio_seg.end = audio_seg.start + sync_duration
+            visual = video_seg
+            visual_log = f"video[{video_seg.start:.1f}-{video_seg.end:.1f}]"
+
+            source_state.video_pointer_sec = video_seg.end
+            source_state.audio_pointer_sec = audio_seg.end
 
         # Đánh dấu đoạn này đã "dùng" ngay để lần chạy sau (kể cả nếu bước dưới lỗi)
-        # không lấy lại đúng đoạn này nữa.
-        source_state.video_pointer_sec = video_seg.end
-        source_state.audio_pointer_sec = audio_seg.end
+        # không lấy lại đúng đoạn/ảnh này nữa.
         state_store.update_source_state(source_key, source_state)
         state_store.save()
 
         short_index = state_store.next_short_index(source_state)
         logger.info(
-            "=== Short #%d: video[%.1f-%.1f] audio[%.1f-%.1f] (%.1fs) ===",
+            "=== Short #%d: %s audio[%.1f-%.1f] (%.1fs) ===",
             short_index,
-            video_seg.start,
-            video_seg.end,
+            visual_log,
             audio_seg.start,
             audio_seg.end,
             sync_duration,
@@ -149,7 +205,7 @@ def run(args: argparse.Namespace) -> int:
 
             output_path = video_composer.compose_short(
                 index=short_index,
-                video_segment=video_seg,
+                visual=visual,
                 audio_segment=audio_seg,
                 transcript_slice=transcript_slice,
                 narration_wav_cache=narration_wav_cache,
@@ -174,12 +230,14 @@ def run(args: argparse.Namespace) -> int:
             state_store.record_short(
                 source_key,
                 source_state,
-                video_start=video_seg.start,
-                video_end=video_seg.end,
                 audio_start=audio_seg.start,
                 audio_end=audio_seg.end,
                 title=title,
                 output_file=str(output_path),
+                video_start=visual.start if isinstance(visual, VideoSegment) else None,
+                video_end=visual.end if isinstance(visual, VideoSegment) else None,
+                photo_start_index=photo_start_index,
+                photo_end_index=photo_end_index,
                 youtube_video_id=youtube_video_id,
                 youtube_url=youtube_url,
                 uploaded=youtube_video_id is not None,

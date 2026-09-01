@@ -21,7 +21,9 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 @dataclass
 class InputConfig:
-    video_path: Path
+    mode: str  # "video" | "photos"
+    video_path: Optional[Path]
+    photos_dir: Optional[Path]
     narration_path: Path
     music_path: Optional[Path]
 
@@ -51,6 +53,14 @@ class VideoConfig:
     crf: int
     codec: str
     preset: str
+
+
+@dataclass
+class PhotosConfig:
+    seconds_per_photo_min: float
+    seconds_per_photo_max: float
+    zoom_max: float
+    alternate_direction: bool
 
 
 @dataclass
@@ -121,6 +131,7 @@ class AppConfig:
     output: OutputConfig
     generation: GenerationConfig
     video: VideoConfig
+    photos: PhotosConfig
     audio_mix: AudioMixConfig
     whisper: WhisperConfig
     subtitle: SubtitleConfig
@@ -154,12 +165,18 @@ def load_config(config_path: str | Path = "config/config.yaml", env_path: str | 
     with open(cfg_file, "r", encoding="utf-8") as f:
         raw = yaml.safe_load(f) or {}
 
-    music_path_raw = raw.get("input", {}).get("music_path")
+    input_raw = raw.get("input", {})
+    music_path_raw = input_raw.get("music_path")
     music_path = _resolve(music_path_raw) if music_path_raw else None
+    mode = str(input_raw.get("mode", "video")).lower()
+    if mode not in ("video", "photos"):
+        raise ValueError(f"input.mode phải là 'video' hoặc 'photos', nhận được: {mode!r}")
 
     input_cfg = InputConfig(
-        video_path=_resolve(raw["input"]["video_path"]),
-        narration_path=_resolve(raw["input"]["narration_path"]),
+        mode=mode,
+        video_path=_resolve(input_raw.get("video_path")),
+        photos_dir=_resolve(input_raw.get("photos_dir")),
+        narration_path=_resolve(input_raw["narration_path"]),
         music_path=music_path,
     )
 
@@ -187,6 +204,14 @@ def load_config(config_path: str | Path = "config/config.yaml", env_path: str | 
         crf=int(video_raw.get("crf", 20)),
         codec=str(video_raw.get("codec", "libx264")),
         preset=str(video_raw.get("preset", "medium")),
+    )
+
+    photos_raw = raw.get("photos", {})
+    photos_cfg = PhotosConfig(
+        seconds_per_photo_min=float(photos_raw.get("seconds_per_photo_min", 3.0)),
+        seconds_per_photo_max=float(photos_raw.get("seconds_per_photo_max", 6.0)),
+        zoom_max=float(photos_raw.get("zoom_max", 1.15)),
+        alternate_direction=bool(photos_raw.get("alternate_direction", True)),
     )
 
     mix_raw = raw.get("audio_mix", {})
@@ -256,6 +281,7 @@ def load_config(config_path: str | Path = "config/config.yaml", env_path: str | 
         output=output_cfg,
         generation=generation_cfg,
         video=video_cfg,
+        photos=photos_cfg,
         audio_mix=audio_mix_cfg,
         whisper=whisper_cfg,
         subtitle=subtitle_cfg,

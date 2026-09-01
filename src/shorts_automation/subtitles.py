@@ -78,6 +78,20 @@ def _format_ass_time(seconds: float) -> str:
     return f"{hours:d}:{minutes:02d}:{secs:02d}.{centis:02d}"
 
 
+def build_ass_filter_string(ass_subtitle_path: Path, fonts_dir: Path | None = None) -> str:
+    """Trả về đoạn filter ffmpeg `ass='...'[:fontsdir='...']` dùng chung cho video_cutter/photo_cutter.
+
+    fonts_dir trỏ tới thư mục font TTF bundle trong repo để libass không phụ thuộc font
+    đã cài sẵn trên máy/CI chạy script.
+    """
+    escaped = str(ass_subtitle_path).replace("\\", "/").replace(":", "\\:")
+    ass_filter = f"ass='{escaped}'"
+    if fonts_dir is not None:
+        escaped_fonts_dir = str(fonts_dir).replace("\\", "/").replace(":", "\\:")
+        ass_filter += f":fontsdir='{escaped_fonts_dir}'"
+    return ass_filter
+
+
 def write_ass_file(
     *,
     captions: list[Caption],

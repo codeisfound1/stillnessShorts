@@ -1,17 +1,29 @@
 # stillnessShorts
 
-Ứng dụng Python tự động tạo YouTube Shorts (9:16, có phụ đề tiếng Việt burn-sub) từ **1 video gốc**
-+ **1 audio thuyết minh**, tùy chọn trộn thêm **nhạc nền**, tự sinh tiêu đề bằng LLM, tự động
-**upload lên YouTube + thêm vào playlist**, và **báo qua Telegram**.
+Ứng dụng Python tự động tạo YouTube Shorts (9:16, có phụ đề tiếng Việt burn-sub) từ **1 video gốc
+dài** hoặc **1 bộ ảnh** + **1 audio thuyết minh**, tùy chọn trộn thêm **nhạc nền**, tự sinh tiêu đề
+bằng LLM, tự động **upload lên YouTube + thêm vào playlist**, và **báo qua Telegram**.
 
 ## 1. Cách hoạt động
 
-1. Đọc `data/input/source_video.mp4` (video gốc) và `data/input/narration.mp3` (thuyết minh).
-2. Cắt tuần tự, không trùng lặp: mỗi short lấy 1 đoạn video (30–60s) + 1 đoạn audio thuyết minh
-   cùng độ dài, tính từ đầu file trở đi (đoạn dùng rồi sẽ không dùng lại ở các lần chạy sau nhờ
-   `data/state/state.json`).
-3. Mute audio gốc của video, thay bằng đoạn audio thuyết minh tương ứng; nếu có
-   `data/input/music.mp3`, trộn thêm làm nhạc nền ở volume thấp.
+Có 2 chế độ input, chọn qua `input.mode` trong `config/config.yaml`:
+
+- **`mode: "video"`** (mặc định) - cắt short từ 1 video gốc dài.
+- **`mode: "photos"`** - dựng short dạng slideshow từ nhiều ảnh tĩnh, mỗi ảnh có hiệu ứng
+  Ken Burns (zoom/pan chậm, xen kẽ zoom-in/zoom-out), phù hợp khi không có sẵn video gốc.
+
+Quy trình chung:
+
+1. Đọc input:
+   - Mode `video`: `data/input/source_video.mp4` (video gốc).
+   - Mode `photos`: các ảnh trong `data/input/photos/` (.jpg/.jpeg/.png/.webp/.bmp), dùng tuần
+     tự theo tên file.
+   - Cả 2 mode: `data/input/narration.mp3` (thuyết minh), tùy chọn `data/input/music.mp3` (nhạc nền).
+2. Cắt/dựng tuần tự, không trùng lặp: mỗi short lấy phần hình ảnh (đoạn video 30–60s, hoặc N ảnh
+   kế tiếp đủ lấp đầy 30–60s) + 1 đoạn audio thuyết minh cùng độ dài, tính từ đầu file/thư mục trở
+   đi (phần đã dùng rồi sẽ không dùng lại ở các lần chạy sau nhờ `data/state/state.json`).
+3. Mode video: mute audio gốc của video, thay bằng đoạn audio thuyết minh tương ứng. Nếu có
+   `data/input/music.mp3`, trộn thêm làm nhạc nền ở volume thấp (áp dụng cho cả 2 mode).
 4. Dùng `faster-whisper` transcribe toàn bộ file thuyết minh (word-level timestamp, tiếng Việt),
    cắt transcript theo đúng đoạn dùng cho từng short.
 5. Sinh tiêu đề bằng Groq API (`openai/gpt-oss-120b`, mặc định) hoặc Claude API (tùy chọn), có
@@ -30,22 +42,24 @@ stillnessShorts/
 ├── config/config.yaml                       # Cấu hình không nhạy cảm
 ├── .env.example                             # Mẫu file secrets (copy thành .env)
 ├── data/
-│   ├── input/     # Đặt video_source.mp4, narration.mp3, (music.mp3) ở đây
+│   ├── input/     # Đặt source_video.mp4 (mode video) HOẶC photos/ (mode photos),
+│   │               # narration.mp3, (music.mp3) ở đây
 │   ├── output/    # Video short đã tạo
 │   ├── work/      # File trung gian (wav cache, transcript cache, ass, clip tạm)
-│   └── state/     # state.json - theo dõi đoạn đã dùng
+│   └── state/     # state.json - theo dõi đoạn/ảnh đã dùng
 ├── scripts/get_youtube_refresh_token.py     # Lấy OAuth refresh token 1 lần
 ├── src/shorts_automation/                   # Source code chính
 │   ├── main.py            # Orchestration / CLI
 │   ├── config.py          # Load config.yaml + .env
-│   ├── state.py           # Theo dõi đoạn video/audio đã dùng
-│   ├── video_cutter.py    # Cắt + crop/scale video, burn subtitle
+│   ├── state.py           # Theo dõi đoạn video/audio/ảnh đã dùng
+│   ├── video_cutter.py    # (mode video) Cắt + crop/scale video, burn subtitle
+│   ├── photo_cutter.py    # (mode photos) Ken Burns từng ảnh + ghép slideshow, burn subtitle
 │   ├── audio_cutter.py    # Cắt audio thuyết minh, trộn nhạc nền
 │   ├── transcriber.py     # faster-whisper transcript + cache
 │   ├── subtitles.py       # Sinh file .ass
 │   ├── title_generator.py # Điều phối LLM provider + fallback
 │   ├── llm/                # groq_provider.py, claude_provider.py, rule_based.py
-│   ├── video_composer.py  # Ghép video + audio thành short hoàn chỉnh
+│   ├── video_composer.py  # Ghép hình (video hoặc slideshow ảnh) + audio thành short hoàn chỉnh
 │   ├── youtube_uploader.py
 │   └── telegram_notifier.py
 └── requirements.txt
@@ -61,7 +75,14 @@ sudo apt-get update && sudo apt-get install -y ffmpeg
 pip install -r requirements.txt
 
 # 3. Copy input của bạn vào data/input/
+
+# Mode "video" (mặc định trong config.yaml):
 cp /path/to/your_video.mp4 data/input/source_video.mp4
+
+# HOẶC mode "photos" (đặt input.mode: "photos" trong config/config.yaml):
+mkdir -p data/input/photos
+cp /path/to/your_photos/*.jpg data/input/photos/
+
 cp /path/to/your_narration.mp3 data/input/narration.mp3
 # (tùy chọn) cp /path/to/music.mp3 data/input/music.mp3
 
@@ -136,6 +157,7 @@ Vào repo → **Settings → Secrets and variables → Actions → New repositor
 | `TELEGRAM_BOT_TOKEN` | Có | Từ bước 5 |
 | `TELEGRAM_CHAT_ID` | Có | Từ bước 5 |
 | `VIDEO_URL`, `NARRATION_URL`, `MUSIC_URL` | Tùy chọn | Nếu muốn workflow tự tải input thay vì commit file lớn vào repo |
+| `PHOTOS_ZIP_URL` | Tùy chọn | Link tải 1 file `.zip` chứa ảnh (mode `photos`), workflow tự giải nén vào `data/input/photos/` |
 
 Vào tab **Variables** (cùng chỗ Secrets), có thể thêm biến `LLM_PROVIDER` = `groq` hoặc `claude`
 để override mặc định trong `config/config.yaml`.
@@ -161,8 +183,13 @@ từ đầu mỗi lần.
 
 Các mục quan trọng:
 
+- `input.mode`: `"video"` (mặc định, cắt từ 1 video dài) hoặc `"photos"` (slideshow ảnh + Ken Burns).
 - `generation.count`, `min_duration_sec`, `max_duration_sec`: số lượng & độ dài short.
 - `video.width/height`: mặc định 1080x1920 (9:16).
+- `photos.*` (chỉ dùng khi `input.mode: "photos"`):
+  - `seconds_per_photo_min/max`: mỗi ảnh hiển thị bao lâu trong slideshow.
+  - `zoom_max`: mức phóng to tối đa của hiệu ứng Ken Burns (1.0 = tắt zoom).
+  - `alternate_direction`: xen kẽ zoom-in/zoom-out giữa các ảnh liên tiếp cho đỡ đơn điệu.
 - `subtitle.*`: font, cỡ chữ, màu, vị trí (mặc định căn giữa màn hình `alignment: 5`), nền mờ
   phía sau chữ (`back_color`), viền/bóng (`outline`, `shadow`).
 - `llm.provider`: `groq` (mặc định) | `claude` | `rule_based`.
@@ -172,10 +199,11 @@ Các mục quan trọng:
 
 ## 9. Cơ chế chống trùng lặp
 
-`data/state/state.json` lưu, theo từng cặp (video_path, narration_path):
+`data/state/state.json` lưu, theo từng cặp (video_path hoặc photos_dir, narration_path):
 
-- `video_pointer_sec` / `audio_pointer_sec`: mốc thời gian đã dùng tới.
-- `shorts`: danh sách short đã tạo (khoảng thời gian dùng, tiêu đề, video ID YouTube...).
+- `video_pointer_sec` / `audio_pointer_sec`: mốc thời gian đã dùng tới (mode `video`).
+- `photo_pointer_index`: số ảnh đã dùng tính từ đầu thư mục `photos_dir` (mode `photos`).
+- `shorts`: danh sách short đã tạo (khoảng thời gian/ảnh đã dùng, tiêu đề, video ID YouTube...).
 
 Mỗi lần chạy, script luôn lấy đoạn tiếp theo bắt đầu từ pointer hiện tại, đảm bảo không bao giờ
 lấy lại đoạn cũ dù chạy script nhiều lần trên cùng 1 cặp input. Muốn tạo lại từ đầu, xóa file

@@ -53,3 +53,26 @@ def probe_duration(path: Path) -> float:
         return float(data["format"]["duration"])
     except (KeyError, TypeError, ValueError) as e:
         raise FFmpegError(f"Không đọc được duration từ ffprobe cho {path}: {e}") from e
+
+
+def probe_resolution(path: Path) -> tuple[int, int]:
+    """Trả về (width, height) của video hoặc ảnh bằng ffprobe."""
+    cmd = [
+        "ffprobe",
+        "-v",
+        "error",
+        "-select_streams",
+        "v:0",
+        "-show_entries",
+        "stream=width,height",
+        "-of",
+        "json",
+        str(path),
+    ]
+    result = run(cmd, description=f"probe độ phân giải của {path}")
+    data = json.loads(result.stdout)
+    try:
+        stream = data["streams"][0]
+        return int(stream["width"]), int(stream["height"])
+    except (KeyError, IndexError, ValueError) as e:
+        raise FFmpegError(f"Không đọc được độ phân giải từ ffprobe cho {path}: {e}") from e

@@ -12,7 +12,8 @@ from pathlib import Path
 from typing import Optional
 
 from .config import VideoConfig
-from .utils.ffmpeg_utils import probe_duration, run
+from .subtitles import build_ass_filter_string
+from .utils.ffmpeg_utils import probe_duration, probe_resolution, run
 
 logger = logging.getLogger(__name__)
 
@@ -75,32 +76,6 @@ def build_crop_scale_filter(src_width: int, src_height: int, target_width: int, 
     return f"{crop},scale={target_width}:{target_height}:flags=lanczos,setsar=1"
 
 
-def get_video_resolution(video_path: Path) -> tuple[int, int]:
-    from .utils.ffmpeg_utils import FFmpegError
-
-    import json
-    import subprocess
-
-    cmd = [
-        "ffprobe",
-        "-v",
-        "error",
-        "-select_streams",
-        "v:0",
-        "-show_entries",
-        "stream=width,height",
-        "-of",
-        "json",
-        str(video_path),
-    ]
-    result = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
-    if result.returncode != 0:
-        raise FFmpegError(f"Không lấy được độ phân giải video {video_path}: {result.stderr}")
-    data = json.loads(result.stdout)
-    stream = data["streams"][0]
-    return int(stream["width"]), int(stream["height"])
-
-
 def extract_processed_clip(
     *,
     video_path: Path,
@@ -119,18 +94,11 @@ def extract_processed_clip(
     để không phụ thuộc font đã cài sẵn trên máy/CI chạy script.
     """
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    src_w, src_h = get_video_resolution(video_path)
+    src_w, src_h = probe_resolution(video_path)
     vf_parts = [build_crop_scale_filter(src_w, src_h, video_cfg.width, video_cfg.height)]
 
     if ass_subtitle_path is not None:
-        # ffmpeg filter ass= cần escape dấu ':' và '\' trong path trên 1 số hệ điều hành;
-        # trên Linux dùng path tương đối đơn giản để tránh escape phức tạp.
-        escaped = str(ass_subtitle_path).replace("\\", "/").replace(":", "\\:")
-        ass_filter = f"ass='{escaped}'"
-        if fonts_dir is not None:
-            escaped_fonts_dir = str(fonts_dir).replace("\\", "/").replace(":", "\\:")
-            ass_filter += f":fontsdir='{escaped_fonts_dir}'"
-        vf_parts.append(ass_filter)
+        vf_parts.append(build_ass_filter_string(ass_subtitle_path, fonts_dir))
 
     vf = ",".join(vf_parts)
 
