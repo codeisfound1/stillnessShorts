@@ -2,9 +2,22 @@
   "sources": {
     "bec559c24ff2367c": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 55.38390260267792,
+      "audio_pointer_sec": 114.93685665399205,
       "photo_pointer_index": 0,
-      "shorts": []
+      "shorts": [
+        {
+          "index": 1,
+          "audio_start": 55.384,
+          "audio_end": 114.937,
+          "duration": 59.553,
+          "title": "Của kẻ lợi dưỡng, của kẻ tham dục, của kẻ bắt cá hai tai, của kẻ mất ý chí trua hành, muố…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_001.mp4",
+          "youtube_video_id": "jwDuFEIdNnk",
+          "youtube_url": "https://youtu.be/jwDuFEIdNnk",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Của kẻ lợi dưỡng, của kẻ tham dục, của kẻ bắt cá hai tai, của kẻ mất ý chí trua hành, muố…"
+        }
+      ]
     }
   }
 }
