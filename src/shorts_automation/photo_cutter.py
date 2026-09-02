@@ -15,7 +15,7 @@ from pathlib import Path
 from typing import Optional
 
 from .config import PhotosConfig, VideoConfig
-from .subtitles import build_ass_filter_string
+from .subtitles import build_video_filter_graph
 from .utils.ffmpeg_utils import probe_resolution, run
 from .video_cutter import build_crop_scale_filter
 
@@ -162,6 +162,9 @@ def build_processed_clip(
     photos_cfg: PhotosConfig,
     work_dir: Path,
     fonts_dir: Optional[Path] = None,
+    logo_path: Optional[Path] = None,
+    logo_height: int = 0,
+    logo_top_y: int = 0,
 ) -> Path:
     """Render từng ảnh thành clip Ken Burns riêng, nối lại (concat), rồi burn phụ đề.
 
@@ -188,9 +191,14 @@ def build_processed_clip(
             escaped = str(p.resolve()).replace("'", "'\\''")
             f.write(f"file '{escaped}'\n")
 
-    vf_parts = []
-    if ass_subtitle_path is not None:
-        vf_parts.append(build_ass_filter_string(ass_subtitle_path, fonts_dir))
+    extra_inputs, filter_str, use_filter_complex = build_video_filter_graph(
+        base_filter=None,
+        ass_subtitle_path=ass_subtitle_path,
+        fonts_dir=fonts_dir,
+        logo_path=logo_path,
+        logo_height=logo_height,
+        logo_top_y=logo_top_y,
+    )
 
     cmd = [
         "ffmpeg",
@@ -201,9 +209,13 @@ def build_processed_clip(
         "0",
         "-i",
         str(concat_list_path),
+        *extra_inputs,
     ]
-    if vf_parts:
-        cmd += ["-vf", ",".join(vf_parts)]
+    if filter_str:
+        if use_filter_complex:
+            cmd += ["-filter_complex", filter_str, "-map", "[out]"]
+        else:
+            cmd += ["-vf", filter_str]
     cmd += [
         "-an",
         "-r",

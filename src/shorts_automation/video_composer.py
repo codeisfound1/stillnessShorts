@@ -61,8 +61,12 @@ def compose_short(
         subtitle_cfg=config.subtitle,
         play_res_x=config.video.width,
         play_res_y=config.video.height,
+        branding_cfg=config.branding,
+        clip_duration=duration,
     )
     logger.info("Short #%d: %d cụm phụ đề.", index, len(captions))
+
+    logo_path = config.branding.logo_path if config.branding.enabled else None
 
     if isinstance(visual, VideoSegment):
         video_cutter.extract_processed_clip(
@@ -72,6 +76,9 @@ def compose_short(
             output_path=silent_video_path,
             video_cfg=config.video,
             fonts_dir=config.subtitle.font_path.parent,
+            logo_path=logo_path,
+            logo_height=config.branding.logo_height,
+            logo_top_y=config.branding.logo_top_y,
         )
     else:
         photo_cutter.build_processed_clip(
@@ -82,6 +89,9 @@ def compose_short(
             photos_cfg=config.photos,
             work_dir=work_dir,
             fonts_dir=config.subtitle.font_path.parent,
+            logo_path=logo_path,
+            logo_height=config.branding.logo_height,
+            logo_top_y=config.branding.logo_top_y,
         )
 
     audio_cutter.extract_narration_clip(narration_wav_cache, audio_segment, narration_clip_path)

@@ -52,7 +52,7 @@ stillnessShorts/
 ├── config/config.yaml                       # Cấu hình không nhạy cảm
 ├── .env.example                             # Mẫu file secrets (copy thành .env)
 ├── data/
-│   ├── input/     # narration.mp3 (luôn cần), (music.mp3) tùy chọn,
+│   ├── input/     # narration.mp3 (luôn cần), (music.mp3) tùy chọn, image.png (logo kênh) tùy chọn,
 │   │               # photos/ (nếu photos.source=folder) hoặc source_video.mp4 (nếu mode=video)
 │   ├── output/    # Video short đã tạo
 │   ├── work/      # File trung gian (wav cache, transcript cache, ảnh AI, ass, clip tạm)
@@ -226,6 +226,15 @@ Các mục quan trọng:
   - `style_suffix`: câu mô tả style thêm vào cuối mọi prompt để ảnh đồng nhất phong cách.
 - `subtitle.*`: font, cỡ chữ, màu, vị trí (mặc định căn giữa màn hình `alignment: 5`), nền mờ
   phía sau chữ (`back_color`), viền/bóng (`outline`, `shadow`).
+- `branding.*`: logo + tên kênh hiển thị cố định suốt video, căn giữa, phía trên phụ đề.
+  - `enabled`: bật/tắt overlay (mặc định `true`).
+  - `logo_path`: đường dẫn ảnh logo (PNG nền trong suốt là tốt nhất), mặc định
+    `data/input/image.png`. Nếu không tìm thấy file, tự động bỏ qua overlay logo nhưng vẫn
+    hiển thị 2 dòng tên kênh.
+  - `logo_height`/`logo_top_y`: kích thước và vị trí Y của logo (px, theo khung 1080x1920).
+  - `gap_after_logo`/`line_spacing`: khoảng cách logo→dòng đầu và giữa 2 dòng chữ.
+  - `channel_handle`/`channel_name`: 2 dòng chữ hiển thị ngay dưới logo (ví dụ `@StillnessNow`
+    và `Tĩnh Lặng`). Để trống (`""`) dòng nào thì dòng đó không hiển thị.
 - `llm.provider`: `groq` (mặc định) | `claude` | `rule_based`. Provider này cũng được dùng để sinh
   prompt ảnh khi `photos.source: "ai_generated"`.
 - `whisper.model_size`: `tiny`/`base`/`small`/`medium`/`large-v3` — model lớn hơn cho tiếng Việt

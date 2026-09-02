@@ -106,6 +106,26 @@ class SubtitleConfig:
 
 
 @dataclass
+class BrandingConfig:
+    enabled: bool
+    logo_path: Optional[Path]
+    logo_height: int
+    logo_top_y: int
+    gap_after_logo: int
+    line_spacing: int
+    channel_handle: str
+    channel_name: str
+    handle_font_size: int
+    name_font_size: int
+    font_path: Path
+    font_name: str
+    text_color: str
+    outline_color: str
+    outline: int
+    shadow: int
+
+
+@dataclass
 class LLMConfig:
     provider: str
     groq_model: str
@@ -147,6 +167,7 @@ class AppConfig:
     audio_mix: AudioMixConfig
     whisper: WhisperConfig
     subtitle: SubtitleConfig
+    branding: BrandingConfig
     llm: LLMConfig
     youtube: YouTubeConfig
     telegram: TelegramConfig
@@ -271,6 +292,26 @@ def load_config(config_path: str | Path = "config/config.yaml", env_path: str | 
         max_words_per_caption=int(sub_raw.get("max_words_per_caption", 6)),
     )
 
+    brand_raw = raw.get("branding", {})
+    branding_cfg = BrandingConfig(
+        enabled=bool(brand_raw.get("enabled", False)),
+        logo_path=_resolve(brand_raw.get("logo_path")),
+        logo_height=int(brand_raw.get("logo_height", 180)),
+        logo_top_y=int(brand_raw.get("logo_top_y", 380)),
+        gap_after_logo=int(brand_raw.get("gap_after_logo", 30)),
+        line_spacing=int(brand_raw.get("line_spacing", 64)),
+        channel_handle=str(brand_raw.get("channel_handle", "")),
+        channel_name=str(brand_raw.get("channel_name", "")),
+        handle_font_size=int(brand_raw.get("handle_font_size", 40)),
+        name_font_size=int(brand_raw.get("name_font_size", 56)),
+        font_path=_resolve(brand_raw.get("font_path", "assets/fonts/BeVietnamPro-ExtraBold.ttf")),
+        font_name=str(brand_raw.get("font_name", "Be Vietnam Pro ExtraBold")),
+        text_color=str(brand_raw.get("text_color", "&H00FFFFFF")),
+        outline_color=str(brand_raw.get("outline_color", "&H00000000")),
+        outline=int(brand_raw.get("outline", 3)),
+        shadow=int(brand_raw.get("shadow", 2)),
+    )
+
     llm_raw = raw.get("llm", {})
     llm_cfg = LLMConfig(
         provider=os.environ.get("LLM_PROVIDER", llm_raw.get("provider", "groq")).lower(),
@@ -312,6 +353,7 @@ def load_config(config_path: str | Path = "config/config.yaml", env_path: str | 
         audio_mix=audio_mix_cfg,
         whisper=whisper_cfg,
         subtitle=subtitle_cfg,
+        branding=branding_cfg,
         llm=llm_cfg,
         youtube=youtube_cfg,
         telegram=telegram_cfg,

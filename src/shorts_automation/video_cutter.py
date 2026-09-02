@@ -12,7 +12,7 @@ from pathlib import Path
 from typing import Optional
 
 from .config import VideoConfig
-from .subtitles import build_ass_filter_string
+from .subtitles import build_video_filter_graph
 from .utils.ffmpeg_utils import probe_duration, probe_resolution, run
 
 logger = logging.getLogger(__name__)
@@ -84,35 +84,48 @@ def extract_processed_clip(
     output_path: Path,
     video_cfg: VideoConfig,
     fonts_dir: Optional[Path] = None,
+    logo_path: Optional[Path] = None,
+    logo_height: int = 0,
+    logo_top_y: int = 0,
 ) -> Path:
-    """Cắt đoạn [segment.start, segment.end], crop/scale về 9:16, burn phụ đề (nếu có), mute audio gốc.
+    """Cắt đoạn [segment.start, segment.end], crop/scale về 9:16, overlay logo (nếu có),
+    burn phụ đề (nếu có), mute audio gốc.
 
-    Dùng -ss trước -i: với transcode (không phải -c copy), ffmpeg vẫn seek chính xác
-    tới từng frame nên vừa nhanh vừa đúng thời điểm.
+    Dùng -ss/-t trước -i (input option): với transcode (không phải -c copy), ffmpeg vẫn seek
+    chính xác tới từng frame nên vừa nhanh vừa đúng thời điểm, kể cả khi thêm input logo thứ 2.
 
     fonts_dir: thư mục chứa font TTF bundle trong repo, truyền vào libass qua fontsdir=
     để không phụ thuộc font đã cài sẵn trên máy/CI chạy script.
     """
     output_path.parent.mkdir(parents=True, exist_ok=True)
     src_w, src_h = probe_resolution(video_path)
-    vf_parts = [build_crop_scale_filter(src_w, src_h, video_cfg.width, video_cfg.height)]
+    crop_scale = build_crop_scale_filter(src_w, src_h, video_cfg.width, video_cfg.height)
 
-    if ass_subtitle_path is not None:
-        vf_parts.append(build_ass_filter_string(ass_subtitle_path, fonts_dir))
-
-    vf = ",".join(vf_parts)
+    extra_inputs, filter_str, use_filter_complex = build_video_filter_graph(
+        base_filter=crop_scale,
+        ass_subtitle_path=ass_subtitle_path,
+        fonts_dir=fonts_dir,
+        logo_path=logo_path,
+        logo_height=logo_height,
+        logo_top_y=logo_top_y,
+    )
 
     cmd = [
         "ffmpeg",
         "-y",
         "-ss",
         f"{segment.start:.3f}",
-        "-i",
-        str(video_path),
         "-t",
         f"{segment.duration:.3f}",
-        "-vf",
-        vf,
+        "-i",
+        str(video_path),
+        *extra_inputs,
+    ]
+    if use_filter_complex:
+        cmd += ["-filter_complex", filter_str, "-map", "[out]"]
+    else:
+        cmd += ["-vf", filter_str]
+    cmd += [
         "-an",
         "-r",
         str(video_cfg.fps),

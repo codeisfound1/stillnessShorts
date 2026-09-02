@@ -60,6 +60,15 @@ def validate_inputs(config: AppConfig) -> None:
         logger.warning("music_path được cấu hình nhưng không tồn tại: %s -> bỏ qua nhạc nền.", config.input.music_path)
         config.input.music_path = None
 
+    if config.branding.enabled and (
+        not config.branding.logo_path or not config.branding.logo_path.exists()
+    ):
+        logger.warning(
+            "branding.enabled=true nhưng không tìm thấy logo tại %s -> bỏ qua overlay logo (vẫn hiển thị tên kênh).",
+            config.branding.logo_path,
+        )
+        config.branding.logo_path = None
+
 
 YOUTUBE_DESCRIPTION_MAX_LENGTH = 5000
 

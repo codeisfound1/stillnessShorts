@@ -91,6 +91,26 @@ subtitle:
   max_chars_per_line: 30
   max_words_per_caption: 6   # số từ tối đa mỗi cụm phụ đề hiển thị cùng lúc
 
+branding:
+  # Logo + tên kênh, hiển thị CỐ ĐỊNH suốt video (không theo timestamp), căn giữa màn hình,
+  # nằm phía trên phụ đề. Đặt logo tại đường dẫn logo_path (PNG nền trong suốt là tốt nhất).
+  enabled: true
+  logo_path: "data/input/image.png"
+  logo_height: 180      # px - chiều cao logo sau khi scale (giữ nguyên tỉ lệ khung hình)
+  logo_top_y: 380        # px - toạ độ Y mép trên của logo (0 = trên cùng khung hình)
+  gap_after_logo: 30     # px - khoảng cách từ đáy logo tới dòng chữ đầu tiên (@handle)
+  line_spacing: 64       # px - khoảng cách giữa dòng @handle và dòng tên kênh
+  channel_handle: "@StillnessNow"
+  channel_name: "Tĩnh Lặng"
+  handle_font_size: 40
+  name_font_size: 56
+  font_path: "assets/fonts/BeVietnamPro-ExtraBold.ttf"
+  font_name: "Be Vietnam Pro ExtraBold"
+  text_color: "&H00FFFFFF"      # trắng
+  outline_color: "&H00000000"   # viền đen
+  outline: 3
+  shadow: 2
+
 llm:
   # groq | claude | rule_based
   provider: "groq"
