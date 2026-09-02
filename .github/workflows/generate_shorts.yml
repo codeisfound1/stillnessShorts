@@ -63,19 +63,20 @@ jobs:
         uses: actions/cache@v4
         with:
           path: data/work
-          key: shorts-work-${{ hashFiles('data/input/*', 'data/input/photos/*') }}
+          key: shorts-work-${{ hashFiles('data/input/*', 'data/input/photos/*', 'data/input/narration/*') }}
           restore-keys: |
             shorts-work-
 
       # Nếu file input không được commit thẳng vào repo (khuyến nghị với file lớn),
       # bạn có thể set các secret *_URL bên dưới để workflow tự tải input trước khi chạy.
-      # PHOTOS_ZIP_URL dùng cho mode "photos": link tải 1 file .zip chứa các ảnh, sẽ được
-      # giải nén vào data/input/photos/.
+      # PHOTOS_ZIP_URL / NARRATION_ZIP_URL: link tải 1 file .zip chứa nhiều ảnh/mp3, sẽ được
+      # giải nén vào data/input/photos/ hoặc data/input/narration/ (xử lý tuần tự theo tên file).
       - name: Tải input từ URL (nếu có cấu hình secrets *_URL)
         env:
           VIDEO_URL: ${{ secrets.VIDEO_URL }}
           PHOTOS_ZIP_URL: ${{ secrets.PHOTOS_ZIP_URL }}
           NARRATION_URL: ${{ secrets.NARRATION_URL }}
+          NARRATION_ZIP_URL: ${{ secrets.NARRATION_ZIP_URL }}
           MUSIC_URL: ${{ secrets.MUSIC_URL }}
         run: |
           mkdir -p data/input
@@ -86,6 +87,11 @@ jobs:
             unzip -o -j /tmp/photos.zip -d data/input/photos
           fi
           if [ -n "$NARRATION_URL" ]; then curl -sSL -o data/input/narration.mp3 "$NARRATION_URL"; fi
+          if [ -n "$NARRATION_ZIP_URL" ]; then
+            mkdir -p data/input/narration
+            curl -sSL -o /tmp/narration.zip "$NARRATION_ZIP_URL"
+            unzip -o -j /tmp/narration.zip -d data/input/narration
+          fi
           if [ -n "$MUSIC_URL" ]; then curl -sSL -o data/input/music.mp3 "$MUSIC_URL"; fi
 
       - name: Chạy tạo & upload Shorts

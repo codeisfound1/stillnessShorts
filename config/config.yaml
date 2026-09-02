@@ -8,6 +8,9 @@ input:
   # Dùng khi mode = "video"
   video_path: "data/input/source_video.mp4"
 
+  # Có thể là 1 file .mp3 duy nhất, HOẶC 1 thư mục chứa nhiều file .mp3 - khi đó các file
+  # được ghép nối tuần tự theo TÊN FILE (sắp xếp alphabet, vd 01.mp3, 02.mp3, ...) thành
+  # 1 timeline audio liên tục duy nhất.
   narration_path: "data/input/narration.mp3"
   # File nhạc nền tùy chọn - để trống hoặc xóa dòng này nếu không dùng
   music_path: "data/input/music.mp3"

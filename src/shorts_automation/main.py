@@ -56,6 +56,10 @@ def validate_inputs(config: AppConfig) -> None:
 
     if not config.input.narration_path.exists():
         raise FileNotFoundError(f"Không tìm thấy audio narration input: {config.input.narration_path}")
+    if not audio_cutter.list_narration_files(config.input.narration_path):
+        raise FileNotFoundError(
+            f"narration_path là thư mục nhưng không chứa file .mp3 nào: {config.input.narration_path}"
+        )
     if config.input.music_path is not None and not config.input.music_path.exists():
         logger.warning("music_path được cấu hình nhưng không tồn tại: %s -> bỏ qua nhạc nền.", config.input.music_path)
         config.input.music_path = None
@@ -134,13 +138,15 @@ def run(args: argparse.Namespace) -> int:
         logger.info("Video gốc: %.1fs", video_duration)
         source_identifier = config.input.video_path
 
-    audio_duration = audio_cutter.get_audio_duration(config.input.narration_path)
+    # ensure_wav_cache tự ghép nhiều file .mp3 (nếu narration_path là thư mục) theo thứ tự tên
+    # file thành 1 timeline liên tục - audio_duration lấy trên chính WAV cache này để đúng cho
+    # cả trường hợp 1 file lẫn nhiều file.
+    narration_wav_cache = audio_cutter.ensure_wav_cache(config.input.narration_path, config.output.work_dir)
+    audio_duration = audio_cutter.get_audio_duration(narration_wav_cache)
     logger.info("Audio thuyết minh: %.1fs", audio_duration)
 
     state_store = StateStore(config.output.state_file)
     source_key, source_state = state_store.get_source_state(source_identifier, config.input.narration_path)
-
-    narration_wav_cache = audio_cutter.ensure_wav_cache(config.input.narration_path, config.output.work_dir)
 
     # Chỉ transcribe đúng đoạn audio đợt này sẽ dùng tới (tổng thời lượng tối đa của target_count
     # short, tính từ vị trí pointer hiện tại) thay vì toàn bộ file narration - nhanh hơn nhiều

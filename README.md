@@ -20,7 +20,11 @@ Chọn nguồn hình ảnh qua `input.mode` (và `photos.source` nếu `mode: "p
 Quy trình chung:
 
 1. Đọc input:
-   - `photos` + `ai_generated`: chỉ cần `data/input/narration.mp3`.
+   - Narration (mọi mode): `data/input/narration.mp3` - có thể là **1 file** hoặc **1 thư mục
+     chứa nhiều file `.mp3`** (`data/input/narration/01.mp3`, `02.mp3`, ...). Nếu là thư mục,
+     các file được ghép nối tuần tự theo TÊN FILE (sắp xếp alphabet) thành 1 timeline audio
+     liên tục duy nhất trước khi xử lý - tiện khi thuyết minh gồm nhiều file ghi âm rời rạc.
+   - `photos` + `ai_generated`: không cần thêm gì ngoài narration.
    - `photos` + `folder`: thêm các ảnh trong `data/input/photos/` (.jpg/.jpeg/.png/.webp/.bmp),
      dùng tuần tự theo tên file.
    - `video`: `data/input/source_video.mp4` (video gốc) thay cho ảnh.
@@ -86,8 +90,15 @@ sudo apt-get update && sudo apt-get install -y ffmpeg
 # 2. Cài Python deps
 pip install -r requirements.txt
 
-# 3. Copy narration vào data/input/ (luôn cần, mọi mode)
+# 3. Copy narration vào data/input/ (luôn cần, mọi mode) - 1 file:
 cp /path/to/your_narration.mp3 data/input/narration.mp3
+
+# HOẶC nhiều file (đặt input.narration_path: "data/input/narration" trong config/config.yaml) -
+# xử lý tuần tự theo tên file, đặt tên sao cho đúng thứ tự mong muốn:
+mkdir -p data/input/narration
+cp /path/to/part1.mp3 data/input/narration/01.mp3
+cp /path/to/part2.mp3 data/input/narration/02.mp3
+
 # (tùy chọn) cp /path/to/music.mp3 data/input/music.mp3
 
 # Mặc định (mode: "photos", photos.source: "ai_generated") - KHÔNG cần thêm gì,
@@ -183,8 +194,8 @@ Vào repo → **Settings → Secrets and variables → Actions → New repositor
 | `YOUTUBE_PLAYLIST_ID` | Có | ID playlist muốn thêm video vào |
 | `TELEGRAM_BOT_TOKEN` | Có | Từ bước 5 |
 | `TELEGRAM_CHAT_ID` | Có | Từ bước 5 |
-| `VIDEO_URL`, `NARRATION_URL`, `MUSIC_URL` | Tùy chọn | Nếu muốn workflow tự tải input thay vì commit file lớn vào repo |
-| `PHOTOS_ZIP_URL` | Tùy chọn | Link tải 1 file `.zip` chứa ảnh (mode `photos`), workflow tự giải nén vào `data/input/photos/` |
+| `VIDEO_URL`, `NARRATION_URL`, `MUSIC_URL` | Tùy chọn | Nếu muốn workflow tự tải input (1 file) thay vì commit file lớn vào repo |
+| `PHOTOS_ZIP_URL`, `NARRATION_ZIP_URL` | Tùy chọn | Link tải 1 file `.zip` chứa nhiều ảnh/mp3, workflow tự giải nén vào `data/input/photos/` hoặc `data/input/narration/` |
 
 Vào tab **Variables** (cùng chỗ Secrets), có thể thêm biến `LLM_PROVIDER` = `groq` hoặc `claude`
 để override mặc định trong `config/config.yaml`.

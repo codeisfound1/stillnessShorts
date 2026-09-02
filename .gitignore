@@ -14,6 +14,9 @@ data/input/*
 !data/input/photos/
 data/input/photos/*
 !data/input/photos/.gitkeep
+!data/input/narration/
+data/input/narration/*
+!data/input/narration/.gitkeep
 data/output/*
 !data/output/.gitkeep
 data/work/*

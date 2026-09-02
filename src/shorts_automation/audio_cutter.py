@@ -3,6 +3,11 @@
 Để đảm bảo timestamp phụ đề (lấy từ Whisper chạy trên toàn bộ file thuyết minh) khớp
 chính xác với đoạn audio thực tế dùng cho short, ta convert file mp3 gốc sang 1 file
 WAV PCM cache duy nhất (không mất mát, seek chính xác tuyệt đối), rồi cắt từ file WAV đó.
+
+input.narration_path có thể là 1 file .mp3 duy nhất, HOẶC 1 thư mục chứa nhiều file .mp3 -
+khi đó các file được ghép nối tuần tự theo tên file (sắp xếp alphabet) thành 1 timeline
+audio liên tục duy nhất trước khi cache ra WAV, để toàn bộ logic pointer/transcribe/cắt
+đoạn phía sau không cần biết gì về việc có nhiều file nguồn.
 """
 
 from __future__ import annotations
@@ -49,27 +54,78 @@ def plan_next_segment(
     return AudioSegment(start=pointer_sec, end=end)
 
 
+def list_narration_files(narration_path: Path) -> list[Path]:
+    """Trả về danh sách file .mp3 nguồn, sắp xếp theo tên file (thứ tự dùng ổn định).
+
+    narration_path là 1 file -> trả về [narration_path]. Là 1 thư mục -> liệt kê mọi file
+    .mp3 trực tiếp trong đó, sắp xếp theo tên.
+    """
+    if narration_path.is_dir():
+        return sorted(
+            (p for p in narration_path.iterdir() if p.is_file() and p.suffix.lower() == ".mp3"),
+            key=lambda p: p.name,
+        )
+    if narration_path.is_file():
+        return [narration_path]
+    return []
+
+
 def ensure_wav_cache(narration_path: Path, work_dir: Path) -> Path:
-    """Convert narration mp3 -> WAV PCM cache 1 lần, tái sử dụng cho mọi lần cắt & Whisper."""
+    """Convert narration (1 file hoặc nhiều file .mp3 trong 1 thư mục) -> 1 WAV PCM cache
+    duy nhất, tái sử dụng cho mọi lần cắt & Whisper.
+
+    Nếu là nhiều file, ghép nối chúng theo đúng thứ tự tên file thành 1 timeline liên tục
+    (dùng ffmpeg filter `concat`, decode đầy đủ nên không yêu cầu các file có cùng
+    codec/sample rate).
+    """
     work_dir.mkdir(parents=True, exist_ok=True)
-    cache_path = work_dir / f"{narration_path.stem}_cache.wav"
+    files = list_narration_files(narration_path)
+    if not files:
+        raise FileNotFoundError(f"Không tìm thấy file .mp3 nào trong: {narration_path}")
+
+    base_name = narration_path.stem if narration_path.is_file() else narration_path.name
+    cache_path = work_dir / f"{base_name}_cache.wav"
     if cache_path.exists():
         return cache_path
 
-    logger.info("Chuyển đổi %s sang WAV cache (chạy 1 lần)...", narration_path.name)
-    cmd = [
-        "ffmpeg",
-        "-y",
-        "-i",
-        str(narration_path),
-        "-ac",
-        "1",
-        "-ar",
-        str(WAV_SAMPLE_RATE),
-        "-c:a",
-        "pcm_s16le",
-        str(cache_path),
-    ]
+    if len(files) == 1:
+        logger.info("Chuyển đổi %s sang WAV cache (chạy 1 lần)...", files[0].name)
+        cmd = [
+            "ffmpeg",
+            "-y",
+            "-i",
+            str(files[0]),
+            "-ac",
+            "1",
+            "-ar",
+            str(WAV_SAMPLE_RATE),
+            "-c:a",
+            "pcm_s16le",
+            str(cache_path),
+        ]
+    else:
+        logger.info("Ghép %d file mp3 theo thứ tự tên file thành 1 narration liên tục (chạy 1 lần):", len(files))
+        for f in files:
+            logger.info("  - %s", f.name)
+        cmd = ["ffmpeg", "-y"]
+        for f in files:
+            cmd += ["-i", str(f)]
+        concat_inputs = "".join(f"[{i}:a]" for i in range(len(files)))
+        filter_complex = f"{concat_inputs}concat=n={len(files)}:v=0:a=1[out]"
+        cmd += [
+            "-filter_complex",
+            filter_complex,
+            "-map",
+            "[out]",
+            "-ac",
+            "1",
+            "-ar",
+            str(WAV_SAMPLE_RATE),
+            "-c:a",
+            "pcm_s16le",
+            str(cache_path),
+        ]
+
     run(cmd, description="tạo WAV cache cho narration")
     return cache_path
 
