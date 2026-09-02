@@ -21,7 +21,7 @@ output:
   state_file: "data/state/state.json"
 
 generation:
-  count: 5                # số lượng short muốn tạo trong lần chạy này (--count có thể override)
+  count: 1                # số lượng short muốn tạo trong lần chạy này (--count có thể override)
   min_duration_sec: 30
   max_duration_sec: 60
   # true => nếu hết nội dung (video hoặc audio) thì dừng sớm thay vì lỗi
