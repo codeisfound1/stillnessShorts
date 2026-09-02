@@ -14,8 +14,6 @@ from .config import YouTubeConfig
 
 logger = logging.getLogger(__name__)
 
-SCOPES = ["https://www.googleapis.com/auth/youtube.upload", "https://www.googleapis.com/auth/youtube"]
-
 
 class YouTubeUploadError(RuntimeError):
     """Raised khi upload hoặc thêm playlist thất bại."""
@@ -30,22 +28,34 @@ def _build_credentials(youtube_cfg: YouTubeConfig):
             "Xem README để lấy OAuth credentials."
         )
 
+    # Không truyền `scopes` ở đây: đây là refresh 1 access token từ refresh_token có sẵn
+    # (không phải xin cấp quyền mới), nên token endpoint của Google tự trả về đúng scope
+    # đã cấp ban đầu. Nếu chủ động truyền `scopes` khác (dù chỉ khác thứ tự/tập con) với
+    # scope thực sự đã cấp cho refresh_token, Google sẽ từ chối với lỗi "invalid_scope".
     return Credentials(
         token=None,
         refresh_token=youtube_cfg.refresh_token,
         token_uri="https://oauth2.googleapis.com/token",
         client_id=youtube_cfg.client_id,
         client_secret=youtube_cfg.client_secret,
-        scopes=SCOPES,
     )
 
 
 def _build_service(youtube_cfg: YouTubeConfig):
+    from google.auth.exceptions import RefreshError
     from google.auth.transport.requests import Request
     from googleapiclient.discovery import build
 
     creds = _build_credentials(youtube_cfg)
-    creds.refresh(Request())
+    try:
+        creds.refresh(Request())
+    except RefreshError as e:
+        raise YouTubeUploadError(
+            f"Lỗi refresh YouTube OAuth token: {e}. "
+            "Kiểm tra lại YOUTUBE_CLIENT_ID/CLIENT_SECRET/REFRESH_TOKEN có khớp nhau không, "
+            "hoặc refresh token đã bị thu hồi/hết hạn - chạy lại "
+            "scripts/get_youtube_refresh_token.py để lấy refresh token mới."
+        ) from e
     return build("youtube", "v3", credentials=creds, cache_discovery=False)
 
 

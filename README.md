@@ -146,6 +146,18 @@ Lấy **playlist ID**: mở playlist trên YouTube, copy phần sau `list=` tron
 > dùng ~7 ngày cho scope nhạy cảm trừ khi tài khoản của bạn nằm trong danh sách Test users — vì vậy
 > **nhớ thêm tài khoản của bạn vào Test users** ở bước 3 để refresh token dùng được lâu dài.
 
+### Lỗi `invalid_scope` khi upload
+
+Nếu log báo `('invalid_scope: Bad Request', ...)`, nguyên nhân thường là **OAuth consent
+screen chưa được thêm đủ 2 scope** `youtube.upload` và `youtube` (bước 3), nên refresh token
+sinh ra chỉ có 1 trong 2 scope. Cách khắc phục:
+
+1. Vào **APIs & Services → OAuth consent screen → Data Access**, kiểm tra/thêm cả 2 scope ở
+   bước 3.
+2. Chạy lại `scripts/get_youtube_refresh_token.py` để lấy **refresh token mới** (refresh token
+   cũ vẫn giữ scope cũ, không tự cập nhật).
+3. Cập nhật lại `YOUTUBE_REFRESH_TOKEN` trong GitHub Secrets / `.env`.
+
 ## 5. Tạo Telegram Bot + lấy Chat ID
 
 1. Mở Telegram, chat với [@BotFather](https://t.me/BotFather), gõ `/newbot`, đặt tên, lấy
