@@ -151,9 +151,12 @@ def build_video_filter_graph(
     logo_path: Optional[Path] = None,
     logo_height: int = 0,
     logo_top_y: int = 0,
+    speed_factor: float = 1.0,
 ) -> tuple[list[str], str, bool]:
     """Xây filter graph dùng chung cho video_cutter/photo_cutter: (base_filter) -> overlay logo
-    (nếu có logo_path) -> burn phụ đề .ass (nếu có ass_subtitle_path).
+    (nếu có logo_path) -> burn phụ đề .ass (nếu có ass_subtitle_path) -> tăng/giảm tốc độ phát
+    (nếu speed_factor != 1.0, luôn là bước CUỐI CÙNG để phụ đề/logo tua nhanh cùng lúc với
+    hình nền, không bị lệch thời gian).
 
     Trả về (extra_input_args, filter_string, use_filter_complex):
     - Không có logo: filter_string là chuỗi nối bằng dấu phẩy, dùng trực tiếp với `-vf`
@@ -163,28 +166,38 @@ def build_video_filter_graph(
       và dùng `-map "[out]"` thay vì `-vf` (use_filter_complex=True).
     """
     ass_filter = build_ass_filter_string(ass_subtitle_path, fonts_dir) if ass_subtitle_path is not None else None
+    speed_filter = f"setpts=PTS/{speed_factor}" if abs(speed_factor - 1.0) > 1e-6 else None
 
     if logo_path is None:
-        parts = [p for p in (base_filter, ass_filter) if p]
+        parts = [p for p in (base_filter, ass_filter, speed_filter) if p]
         return [], ",".join(parts), False
 
-    stages: list[str] = []
-    current = "[0:v]"
+    # Danh sách (thân filter không có label input/output, tên label output tạm) - label cuối
+    # cùng luôn được đổi thành "out" bên dưới, dù bước cuối là overlay, ass hay speed.
+    steps: list[tuple[str, str]] = []
+    current = "0:v"
     if base_filter:
-        stages.append(f"{current}{base_filter}[base]")
-        current = "[base]"
+        steps.append((f"[{current}]{base_filter}", "base"))
+        current = "base"
 
-    stages.append(f"[1:v]scale=-1:{logo_height}[logo]")
-
-    overlay_out = "out" if not ass_filter else "branded"
+    steps.append(("[1:v]scale=-1:{}".format(logo_height), "logo"))
     # shortest=1: logo là input -loop 1 (vô hạn) - nếu không ép overlay dừng theo stream chính
     # (hữu hạn), ffmpeg sẽ chạy vô thời hạn vì input logo không bao giờ tự kết thúc.
-    stages.append(f"{current}[logo]overlay=(main_w-overlay_w)/2:{logo_top_y}:shortest=1[{overlay_out}]")
+    steps.append((f"[{current}][logo]overlay=(main_w-overlay_w)/2:{logo_top_y}:shortest=1", "branded"))
+    current = "branded"
 
     if ass_filter:
-        stages.append(f"[{overlay_out}]{ass_filter}[out]")
+        steps.append((f"[{current}]{ass_filter}", "subbed"))
+        current = "subbed"
 
-    filter_complex = ";".join(stages)
+    if speed_filter:
+        steps.append((f"[{current}]{speed_filter}", "sped"))
+        current = "sped"
+
+    last_body, _ = steps[-1]
+    steps[-1] = (last_body, "out")
+
+    filter_complex = ";".join(f"{body}[{label}]" for body, label in steps)
     extra_inputs = ["-loop", "1", "-i", str(logo_path)]
     return extra_inputs, filter_complex, True
 

@@ -211,8 +211,15 @@ từ đầu mỗi lần.
 Các mục quan trọng:
 
 - `input.mode`: `"photos"` (mặc định) hoặc `"video"` (cắt từ 1 video dài có sẵn).
-- `generation.count`, `min_duration_sec`, `max_duration_sec`: số lượng & độ dài short.
+- `generation.count`, `min_duration_sec`, `max_duration_sec`: số lượng & độ dài đoạn nội dung
+  (narration + video/ảnh) dùng cho mỗi short - xem thêm `video.speed_factor` bên dưới về độ dài
+  video xuất ra thực tế.
 - `video.width/height`: mặc định 1080x1920 (9:16).
+- `video.speed_factor`: mặc định `1.25` - tăng tốc phát video + audio (giữ nguyên cao độ giọng
+  nói nhờ `atempo`), giúp nhịp độ nhanh, gọn hơn cho Shorts. Lượng nội dung dùng cho mỗi short
+  vẫn theo `generation.min/max_duration_sec` như bình thường, chỉ thời lượng phát ra ngắn lại
+  theo hệ số này (ví dụ đoạn nội dung 40s với `speed_factor: 1.25` → video xuất ra dài 32s).
+  Đặt `1.0` để tắt (giữ tốc độ gốc).
 - `photos.source` (chỉ dùng khi `input.mode: "photos"`): `"ai_generated"` (mặc định, tự sinh 1
   ảnh/short bằng AI) hoặc `"folder"` (lấy ảnh có sẵn từ `photos.photos_dir`, dạng slideshow).
 - `photos.*` khác:

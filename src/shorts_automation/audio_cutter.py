@@ -94,6 +94,21 @@ def extract_narration_clip(wav_cache_path: Path, segment: AudioSegment, output_p
     return output_path
 
 
+def _atempo_filter(speed_factor: float) -> str:
+    """Trả về đoạn filter `atempo=...` (có thể nối chuỗi nhiều atempo nếu ngoài khoảng
+    0.5-2.0 mà 1 atempo hỗ trợ), giữ nguyên cao độ giọng nói khi tăng/giảm tốc độ."""
+    factor = speed_factor
+    parts = []
+    while factor > 2.0:
+        parts.append("atempo=2.0")
+        factor /= 2.0
+    while factor < 0.5:
+        parts.append("atempo=0.5")
+        factor /= 0.5
+    parts.append(f"atempo={factor:.6f}")
+    return ",".join(parts)
+
+
 def build_mixed_audio(
     *,
     narration_clip_path: Path,
@@ -102,22 +117,32 @@ def build_mixed_audio(
     output_path: Path,
     mix_cfg: AudioMixConfig,
     audio_bitrate: str,
+    speed_factor: float = 1.0,
 ) -> Path:
     """Encode audio cuối cùng cho 1 short: chỉ narration, hoặc narration + nhạc nền đã hạ volume.
 
     Nhạc nền được loop nếu ngắn hơn đoạn short, cắt đúng độ dài, fade in/out nhẹ,
-    rồi trộn (amix) với narration ở volume thấp hơn để không lấn tiếng nói.
+    rồi trộn (amix) với narration ở volume thấp hơn để không lấn tiếng nói. Nếu
+    speed_factor != 1.0, tăng/giảm tốc độ phát ở bước cuối (giữ nguyên cao độ giọng nói)
+    để khớp với video đã tăng/giảm tốc cùng hệ số.
     """
     output_path.parent.mkdir(parents=True, exist_ok=True)
+    apply_speed = abs(speed_factor - 1.0) > 1e-6
+    final_duration = duration / speed_factor if apply_speed else duration
 
     if music_path is None or not music_path.exists():
+        narration_filter = f"volume={mix_cfg.narration_volume}"
+        if apply_speed:
+            narration_filter += f",{_atempo_filter(speed_factor)}"
         cmd = [
             "ffmpeg",
             "-y",
             "-i",
             str(narration_clip_path),
             "-filter:a",
-            f"volume={mix_cfg.narration_volume}",
+            narration_filter,
+            "-t",
+            f"{final_duration:.3f}",
             "-c:a",
             "aac",
             "-b:a",
@@ -135,11 +160,14 @@ def build_mixed_audio(
     )
     narration_filter = f"volume={mix_cfg.narration_volume}"
 
+    mix_out_label = "mixed" if apply_speed else "out"
     filter_complex = (
         f"[0:a]{narration_filter}[narr];"
         f"[1:a]aloop=loop=-1:size=2147483647,atrim=0:{duration:.3f},{music_filter}[music];"
-        f"[narr][music]amix=inputs=2:duration=first:dropout_transition=0:normalize=0[out]"
+        f"[narr][music]amix=inputs=2:duration=first:dropout_transition=0:normalize=0[{mix_out_label}]"
     )
+    if apply_speed:
+        filter_complex += f";[mixed]{_atempo_filter(speed_factor)}[out]"
 
     cmd = [
         "ffmpeg",
@@ -153,7 +181,7 @@ def build_mixed_audio(
         "-map",
         "[out]",
         "-t",
-        f"{duration:.3f}",
+        f"{final_duration:.3f}",
         "-c:a",
         "aac",
         "-b:a",

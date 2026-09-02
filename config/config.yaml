@@ -33,6 +33,11 @@ video:
   crf: 20                  # dùng khi không set bitrate cố định (libx264 -crf)
   codec: "libx264"
   preset: "medium"
+  # Tăng tốc phát video + audio (giữ nguyên cao độ giọng nói) để nhịp độ nhanh, gọn hơn.
+  # 1.0 = tốc độ gốc. Độ dài video/audio thuyết minh dùng cho short KHÔNG đổi (vẫn theo
+  # generation.min/max_duration_sec), chỉ thời lượng phát ra ngắn lại theo hệ số này
+  # (ví dụ đoạn 40s với speed_factor 1.25 -> video xuất ra dài 32s).
+  speed_factor: 1.25
 
 photos:
   # Chỉ dùng khi input.mode = "photos".

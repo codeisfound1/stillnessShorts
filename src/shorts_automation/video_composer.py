@@ -102,6 +102,7 @@ def compose_short(
         output_path=mixed_audio_path,
         mix_cfg=config.audio_mix,
         audio_bitrate=config.video.audio_bitrate,
+        speed_factor=config.video.speed_factor,
     )
 
     logger.info("Short #%d: mux video + audio -> %s", index, final_output_path.name)

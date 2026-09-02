@@ -52,6 +52,7 @@ class VideoConfig:
     crf: int
     codec: str
     preset: str
+    speed_factor: float
 
 
 @dataclass
@@ -236,6 +237,7 @@ def load_config(config_path: str | Path = "config/config.yaml", env_path: str | 
         crf=int(video_raw.get("crf", 20)),
         codec=str(video_raw.get("codec", "libx264")),
         preset=str(video_raw.get("preset", "medium")),
+        speed_factor=float(video_raw.get("speed_factor", 1.25)),
     )
 
     photos_raw = raw.get("photos", {})

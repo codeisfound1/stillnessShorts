@@ -198,6 +198,7 @@ def build_processed_clip(
         logo_path=logo_path,
         logo_height=logo_height,
         logo_top_y=logo_top_y,
+        speed_factor=video_cfg.speed_factor,
     )
 
     cmd = [
