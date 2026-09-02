@@ -2,7 +2,7 @@
   "sources": {
     "bec559c24ff2367c": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 373.12368622072245,
+      "audio_pointer_sec": 424.99935570186136,
       "photo_pointer_index": 0,
       "shorts": [
         {
@@ -88,6 +88,18 @@
           "youtube_url": "https://youtu.be/poM9F8Jj9jw",
           "uploaded": true,
           "image_prompt": "A serene, symbolic photograph representing the idea: Từ đó, thân dục, tâm dục của"
+        },
+        {
+          "index": 8,
+          "audio_start": 373.124,
+          "audio_end": 424.999,
+          "duration": 51.876,
+          "title": "Khi nói ra lời này, họ sợ rằng không ai tin theo nên gắn cho Phật nói.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_008.mp4",
+          "youtube_video_id": "_TnAs_8mVC4",
+          "youtube_url": "https://youtu.be/_TnAs_8mVC4",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Khi nói ra lời này, họ sợ rằng không ai tin theo nên gắn cho Phật nói."
         }
       ]
     }
