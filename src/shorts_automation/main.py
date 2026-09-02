@@ -128,16 +128,24 @@ def run(args: argparse.Namespace) -> int:
     audio_duration = audio_cutter.get_audio_duration(config.input.narration_path)
     logger.info("Audio thuyết minh: %.1fs", audio_duration)
 
+    state_store = StateStore(config.output.state_file)
+    source_key, source_state = state_store.get_source_state(source_identifier, config.input.narration_path)
+
     narration_wav_cache = audio_cutter.ensure_wav_cache(config.input.narration_path, config.output.work_dir)
-    transcript = transcriber.transcribe_narration(
+
+    # Chỉ transcribe đúng đoạn audio đợt này sẽ dùng tới (tổng thời lượng tối đa của target_count
+    # short, tính từ vị trí pointer hiện tại) thay vì toàn bộ file narration - nhanh hơn nhiều
+    # với narration dài khi mỗi đợt chỉ tạo vài short.
+    window_start = source_state.audio_pointer_sec
+    window_end = min(window_start + target_count * config.generation.max_duration_sec, audio_duration)
+    transcript = transcriber.transcribe_narration_window(
         wav_path=narration_wav_cache,
         work_dir=config.output.work_dir,
         whisper_cfg=config.whisper,
+        window_start=window_start,
+        window_end=window_end,
         force=args.force_retranscribe,
     )
-
-    state_store = StateStore(config.output.state_file)
-    source_key, source_state = state_store.get_source_state(source_identifier, config.input.narration_path)
 
     succeeded = 0
     failed = 0

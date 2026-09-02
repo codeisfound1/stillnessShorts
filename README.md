@@ -32,8 +32,10 @@ Quy trình chung:
    - `folder`: lấy N ảnh kế tiếp chưa dùng đủ lấp đầy thời lượng (slideshow).
    - `video`: cắt đoạn video kế tiếp chưa dùng cùng độ dài, mute audio gốc.
 3. Nếu có `data/input/music.mp3`, trộn thêm làm nhạc nền ở volume thấp (mọi mode).
-4. Dùng `faster-whisper` transcribe toàn bộ file thuyết minh (word-level timestamp, tiếng Việt),
-   cắt transcript theo đúng đoạn dùng cho từng short.
+4. Dùng `faster-whisper` transcribe (word-level timestamp, tiếng Việt) **chỉ đúng đoạn audio
+   đợt này cần dùng** - tính từ vị trí đã dùng tới, dài bằng tổng thời lượng tối đa của số short
+   muốn tạo (ví dụ tạo 1 short thì chỉ transcribe ~60s, không phải transcribe cả file narration
+   dù file dài hàng giờ) - rồi cắt transcript theo đúng đoạn dùng cho từng short.
 5. Sinh tiêu đề (và prompt ảnh nếu dùng `ai_generated`) bằng Groq API (`openai/gpt-oss-120b`,
    mặc định) hoặc Claude API (tùy chọn), có fallback rule-based/template nếu không có API key nào.
 6. Sinh phụ đề `.ass` khớp timestamp, burn cứng vào video (căn giữa, font tiếng Việt bundle sẵn).
