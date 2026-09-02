@@ -229,6 +229,11 @@ Các mục quan trọng:
 - `whisper.model_size`: `tiny`/`base`/`small`/`medium`/`large-v3` — model lớn hơn cho tiếng Việt
   chính xác hơn nhưng chạy chậm hơn (CPU trên GitHub Actions runner mặc định khá chậm với
   `large-v3`, cân nhắc dùng `medium` hoặc `small` nếu video dài).
+- `youtube.publish_delay_minutes`: mặc định `60` — video được upload ở chế độ private kèm
+  `publishAt`, YouTube tự động chuyển sang public đúng giờ đó (video không hiển thị công khai
+  trước thời điểm này). Set `0` để đăng công khai ngay theo `youtube.privacy_status`.
+- Mô tả video (description) tự động lấy tiêu đề + **toàn bộ nội dung transcript** của đúng đoạn
+  mp3 dùng cho short đó (không chỉ trích đoạn ngắn) + `#shorts`.
 
 ## 9. Cơ chế chống trùng lặp
 

@@ -7,6 +7,7 @@ Dùng OAuth refresh token lấy sẵn (xem scripts/get_youtube_refresh_token.py 
 from __future__ import annotations
 
 import logging
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Optional
 
@@ -72,6 +73,17 @@ def upload_video(
 
     service = _build_service(youtube_cfg)
 
+    status: dict = {"selfDeclaredMadeForKids": youtube_cfg.made_for_kids}
+    if youtube_cfg.publish_delay_minutes > 0:
+        # YouTube chỉ tự động chuyển video sang public đúng publishAt khi upload ở trạng thái
+        # private - video sẽ không hiển thị công khai trước thời điểm này.
+        publish_at = datetime.now(timezone.utc) + timedelta(minutes=youtube_cfg.publish_delay_minutes)
+        status["privacyStatus"] = "private"
+        status["publishAt"] = publish_at.strftime("%Y-%m-%dT%H:%M:%SZ")
+        logger.info("Lên lịch phát hành lúc %s (trì hoãn %d phút).", status["publishAt"], youtube_cfg.publish_delay_minutes)
+    else:
+        status["privacyStatus"] = youtube_cfg.privacy_status
+
     body = {
         "snippet": {
             "title": title[:100],
@@ -79,10 +91,7 @@ def upload_video(
             "tags": youtube_cfg.default_tags,
             "categoryId": youtube_cfg.category_id,
         },
-        "status": {
-            "privacyStatus": youtube_cfg.privacy_status,
-            "selfDeclaredMadeForKids": youtube_cfg.made_for_kids,
-        },
+        "status": status,
     }
 
     media = MediaFileUpload(str(video_path), chunksize=-1, resumable=True, mimetype="video/mp4")

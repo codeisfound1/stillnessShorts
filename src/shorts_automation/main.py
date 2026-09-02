@@ -61,15 +61,24 @@ def validate_inputs(config: AppConfig) -> None:
         config.input.music_path = None
 
 
+YOUTUBE_DESCRIPTION_MAX_LENGTH = 5000
+
+
 def build_description(title: str, transcript_text: str) -> str:
-    snippet = transcript_text.strip()
-    if len(snippet) > 400:
-        snippet = snippet[:400].rstrip() + "…"
+    """Mô tả video = tiêu đề + toàn bộ nội dung transcript của đoạn mp3 dùng cho short này.
+
+    Chỉ cắt bớt nếu vượt quá giới hạn 5000 ký tự của YouTube (rất hiếm với 1 đoạn 30-60s).
+    """
+    full_text = transcript_text.strip()
     parts = [title]
-    if snippet:
-        parts.append(snippet)
+    if full_text:
+        parts.append(full_text)
     parts.append("#shorts")
-    return "\n\n".join(parts)
+    description = "\n\n".join(parts)
+
+    if len(description) > YOUTUBE_DESCRIPTION_MAX_LENGTH:
+        description = description[: YOUTUBE_DESCRIPTION_MAX_LENGTH - 1].rstrip() + "…"
+    return description
 
 
 def run(args: argparse.Namespace) -> int:

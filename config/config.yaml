@@ -101,12 +101,16 @@ llm:
 
 youtube:
   playlist_id: ""            # điền YOUTUBE_PLAYLIST_ID hoặc set qua .env
-  privacy_status: "public"   # public | unlisted | private
+  privacy_status: "public"   # public | unlisted | private (dùng khi publish_delay_minutes = 0)
   category_id: "22"          # People & Blogs (đổi tùy nội dung)
   default_tags:
     - "shorts"
     - "vietsub"
   made_for_kids: false
+  # Số phút trì hoãn trước khi video công khai (lên lịch phát hành thay vì đăng ngay).
+  # 0 = đăng ngay với privacy_status ở trên. > 0 = upload ở chế độ private kèm publishAt,
+  # YouTube sẽ tự chuyển sang public đúng giờ (video không public trước thời điểm đó).
+  publish_delay_minutes: 60
 
 telegram:
   enabled: true

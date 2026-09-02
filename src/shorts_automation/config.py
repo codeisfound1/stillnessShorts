@@ -123,6 +123,7 @@ class YouTubeConfig:
     category_id: str
     default_tags: list[str]
     made_for_kids: bool
+    publish_delay_minutes: int
     client_id: Optional[str] = None
     client_secret: Optional[str] = None
     refresh_token: Optional[str] = None
@@ -288,6 +289,7 @@ def load_config(config_path: str | Path = "config/config.yaml", env_path: str | 
         category_id=str(yt_raw.get("category_id", "22")),
         default_tags=list(yt_raw.get("default_tags", [])),
         made_for_kids=bool(yt_raw.get("made_for_kids", False)),
+        publish_delay_minutes=int(yt_raw.get("publish_delay_minutes", 60)),
         client_id=os.environ.get("YOUTUBE_CLIENT_ID"),
         client_secret=os.environ.get("YOUTUBE_CLIENT_SECRET"),
         refresh_token=os.environ.get("YOUTUBE_REFRESH_TOKEN"),
