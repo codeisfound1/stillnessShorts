@@ -45,13 +45,3 @@ def notify_short_uploaded(*, title: str, youtube_url: str, index: int, telegram_
 def notify_short_failed(*, index: int, error: str, telegram_cfg: TelegramConfig) -> None:
     message = f"❌ <b>Short #{index}</b> gặp lỗi:\n{error}"
     _send(message, telegram_cfg)
-
-
-def notify_run_summary(*, total: int, succeeded: int, failed: int, telegram_cfg: TelegramConfig) -> None:
-    message = (
-        f"📦 <b>Tổng kết đợt chạy</b>\n"
-        f"Tổng số short dự kiến: {total}\n"
-        f"Thành công: {succeeded}\n"
-        f"Thất bại: {failed}"
-    )
-    _send(message, telegram_cfg)
