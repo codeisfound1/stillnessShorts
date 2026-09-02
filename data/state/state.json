@@ -2,7 +2,7 @@
   "sources": {
     "bec559c24ff2367c": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 114.93685665399205,
+      "audio_pointer_sec": 318.04061169488443,
       "photo_pointer_index": 0,
       "shorts": [
         {
@@ -16,6 +16,66 @@
           "youtube_url": "https://youtu.be/jwDuFEIdNnk",
           "uploaded": true,
           "image_prompt": "A serene, symbolic photograph representing the idea: Của kẻ lợi dưỡng, của kẻ tham dục, của kẻ bắt cá hai tai, của kẻ mất ý chí trua hành, muố…"
+        },
+        {
+          "index": 2,
+          "audio_start": 114.937,
+          "audio_end": 150.556,
+          "duration": 35.62,
+          "title": "Nhiều khi chúng ta cảm thấy mình không còn đủ sức để chiến đấu giữa chúng, chúng khở lên…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_002.mp4",
+          "youtube_video_id": "3AsZZY2DLk8",
+          "youtube_url": "https://youtu.be/3AsZZY2DLk8",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Nhiều khi chúng ta cảm thấy mình không còn đủ sức để chiến đấu giữa chúng, chúng khở lên…"
+        },
+        {
+          "index": 3,
+          "audio_start": 150.556,
+          "audio_end": 203.603,
+          "duration": 53.047,
+          "title": "Chỉ còn biết tu thiền, làm các pháp thiền, rồi cũng từ đó",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_003.mp4",
+          "youtube_video_id": "jnRQazgMaZ8",
+          "youtube_url": "https://youtu.be/jnRQazgMaZ8",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Chỉ còn biết tu thiền, làm các pháp thiền, rồi cũng từ đó"
+        },
+        {
+          "index": 4,
+          "audio_start": 203.603,
+          "audio_end": 250.247,
+          "duration": 46.644,
+          "title": "Lúc nào cũng ăn uống phi thời, tui là thường làm việc từ thiện xã hội bố thí cúng dường,…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_004.mp4",
+          "youtube_video_id": "MyQxjoZG9mQ",
+          "youtube_url": "https://youtu.be/MyQxjoZG9mQ",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Lúc nào cũng ăn uống phi thời, tui là thường làm việc từ thiện xã hội bố thí cúng dường,…"
+        },
+        {
+          "index": 5,
+          "audio_start": 250.247,
+          "audio_end": 284.561,
+          "duration": 34.314,
+          "title": "Họ cho đó là những hành động bồ tác hành, là như lai xứ giả.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_005.mp4",
+          "youtube_video_id": "4DzXS8yjS34",
+          "youtube_url": "https://youtu.be/4DzXS8yjS34",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Họ cho đó là những hành động bồ tác hành, là như lai xứ giả."
+        },
+        {
+          "index": 6,
+          "audio_start": 284.561,
+          "audio_end": 318.041,
+          "duration": 33.48,
+          "title": "Này quý thầy, và quý quý sĩ, khi quý thầy không vượt qua tâm ái dục, tâm ham thích dục lạ…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_006.mp4",
+          "youtube_video_id": "CTm_kBf3kh4",
+          "youtube_url": "https://youtu.be/CTm_kBf3kh4",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Này quý thầy, và quý quý sĩ, khi quý thầy không vượt qua tâm ái dục, tâm ham thích dục lạ…"
         }
       ]
     }
