@@ -2,7 +2,7 @@
   "sources": {
     "bec559c24ff2367c": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 318.04061169488443,
+      "audio_pointer_sec": 373.12368622072245,
       "photo_pointer_index": 0,
       "shorts": [
         {
@@ -76,6 +76,18 @@
           "youtube_url": "https://youtu.be/CTm_kBf3kh4",
           "uploaded": true,
           "image_prompt": "A serene, symbolic photograph representing the idea: Này quý thầy, và quý quý sĩ, khi quý thầy không vượt qua tâm ái dục, tâm ham thích dục lạ…"
+        },
+        {
+          "index": 7,
+          "audio_start": 318.041,
+          "audio_end": 373.124,
+          "duration": 55.083,
+          "title": "Từ đó, thân dục, tâm dục của",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_007.mp4",
+          "youtube_video_id": "poM9F8Jj9jw",
+          "youtube_url": "https://youtu.be/poM9F8Jj9jw",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Từ đó, thân dục, tâm dục của"
         }
       ]
     }
