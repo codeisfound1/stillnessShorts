@@ -347,9 +347,9 @@ def run(args: argparse.Namespace) -> int:
             continue
 
     logger.info("Hoàn tất: %d/%d short thành công, %d thất bại.", succeeded, attempted, failed)
-    telegram_notifier.notify_run_summary(
-        total=attempted, succeeded=succeeded, failed=failed, telegram_cfg=config.telegram
-    )
+    #telegram_notifier.notify_run_summary(
+    #    total=attempted, succeeded=succeeded, failed=failed, telegram_cfg=config.telegram
+    #)
 
     return 0 if failed == 0 else 2
 
