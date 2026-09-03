@@ -2,7 +2,7 @@
   "sources": {
     "bec559c24ff2367c": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 481.7437508979843,
+      "audio_pointer_sec": 526.9368745392597,
       "photo_pointer_index": 0,
       "shorts": [
         {
@@ -112,6 +112,18 @@
           "youtube_url": "https://youtu.be/YeZnlgb4TRc",
           "uploaded": true,
           "image_prompt": "A serene, symbolic photograph representing the idea: Có bao giờ đi biển chưa?"
+        },
+        {
+          "index": 10,
+          "audio_start": 481.744,
+          "audio_end": 526.937,
+          "duration": 45.193,
+          "title": "Này, quý thầy!",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_010.mp4",
+          "youtube_video_id": "CTtoO-uk3GY",
+          "youtube_url": "https://youtu.be/CTtoO-uk3GY",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Này, quý thầy!"
         }
       ]
     }
