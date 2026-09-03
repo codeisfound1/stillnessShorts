@@ -2,7 +2,7 @@
   "sources": {
     "bec559c24ff2367c": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 424.99935570186136,
+      "audio_pointer_sec": 481.7437508979843,
       "photo_pointer_index": 0,
       "shorts": [
         {
@@ -100,6 +100,18 @@
           "youtube_url": "https://youtu.be/_TnAs_8mVC4",
           "uploaded": true,
           "image_prompt": "A serene, symbolic photograph representing the idea: Khi nói ra lời này, họ sợ rằng không ai tin theo nên gắn cho Phật nói."
+        },
+        {
+          "index": 9,
+          "audio_start": 424.999,
+          "audio_end": 481.744,
+          "duration": 56.744,
+          "title": "Có bao giờ đi biển chưa?",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_009.mp4",
+          "youtube_video_id": "YeZnlgb4TRc",
+          "youtube_url": "https://youtu.be/YeZnlgb4TRc",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Có bao giờ đi biển chưa?"
         }
       ]
     }
