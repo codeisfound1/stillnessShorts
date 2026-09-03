@@ -77,8 +77,9 @@ def validate_inputs(config: AppConfig) -> None:
 YOUTUBE_DESCRIPTION_MAX_LENGTH = 5000
 
 
-def build_description(title: str, transcript_text: str) -> str:
-    """Mô tả video = tiêu đề + toàn bộ nội dung transcript của đoạn mp3 dùng cho short này.
+def build_description(title: str, transcript_text: str, hashtags: list[str]) -> str:
+    """Mô tả video = tiêu đề + toàn bộ nội dung transcript của đoạn mp3 dùng cho short này
+    + hashtag (tăng độ nhận diện & SEO).
 
     Chỉ cắt bớt nếu vượt quá giới hạn 5000 ký tự của YouTube (rất hiếm với 1 đoạn 30-60s).
     """
@@ -86,7 +87,8 @@ def build_description(title: str, transcript_text: str) -> str:
     parts = [title]
     if full_text:
         parts.append(full_text)
-    parts.append("#shorts")
+    if hashtags:
+        parts.append(" ".join(hashtags))
     description = "\n\n".join(parts)
 
     if len(description) > YOUTUBE_DESCRIPTION_MAX_LENGTH:
@@ -306,7 +308,7 @@ def run(args: argparse.Namespace) -> int:
             if not args.skip_upload:
                 from . import youtube_uploader
 
-                description = build_description(title, transcript_text)
+                description = build_description(title, transcript_text, config.youtube.description_hashtags)
                 youtube_video_id = youtube_uploader.upload_and_add_to_playlist(
                     video_path=output_path,
                     title=title,
@@ -347,9 +349,6 @@ def run(args: argparse.Namespace) -> int:
             continue
 
     logger.info("Hoàn tất: %d/%d short thành công, %d thất bại.", succeeded, attempted, failed)
-    #telegram_notifier.notify_run_summary(
-    #    total=attempted, succeeded=succeeded, failed=failed, telegram_cfg=config.telegram
-    #)
 
     return 0 if failed == 0 else 2
 

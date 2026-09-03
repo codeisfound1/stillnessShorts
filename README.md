@@ -262,7 +262,9 @@ Các mục quan trọng:
   `publishAt`, YouTube tự động chuyển sang public đúng giờ đó (video không hiển thị công khai
   trước thời điểm này). Set `0` để đăng công khai ngay theo `youtube.privacy_status`.
 - Mô tả video (description) tự động lấy tiêu đề + **toàn bộ nội dung transcript** của đúng đoạn
-  mp3 dùng cho short đó (không chỉ trích đoạn ngắn) + `#shorts`.
+  mp3 dùng cho short đó (không chỉ trích đoạn ngắn) + hashtag từ `youtube.description_hashtags`
+  (mặc định `#shorts #short #tinhlang #stillnessnow #TruongLao #ThichThongLac`) để tăng nhận
+  diện & SEO.
 
 ## 9. Cơ chế chống trùng lặp
 

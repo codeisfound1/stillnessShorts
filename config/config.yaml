@@ -134,6 +134,14 @@ youtube:
   default_tags:
     - "shorts"
     - "vietsub"
+  # Hashtag chèn vào cuối phần mô tả (description) video - tăng độ nhận diện & SEO.
+  description_hashtags:
+    - "#shorts"
+    - "#short"
+    - "#tinhlang"
+    - "#stillnessnow"
+    - "#TruongLao"
+    - "#ThichThongLac"
   made_for_kids: false
   # Số phút trì hoãn trước khi video công khai (lên lịch phát hành thay vì đăng ngay).
   # 0 = đăng ngay với privacy_status ở trên. > 0 = upload ở chế độ private kèm publishAt,
