@@ -2,7 +2,7 @@
   "sources": {
     "bec559c24ff2367c": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 526.9368745392597,
+      "audio_pointer_sec": 560.2968108535658,
       "photo_pointer_index": 0,
       "shorts": [
         {
@@ -124,6 +124,18 @@
           "youtube_url": "https://youtu.be/CTtoO-uk3GY",
           "uploaded": true,
           "image_prompt": "A serene, symbolic photograph representing the idea: Này, quý thầy!"
+        },
+        {
+          "index": 11,
+          "audio_start": 526.937,
+          "audio_end": 560.297,
+          "duration": 33.36,
+          "title": "Chúng ta quyết chắc.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_011.mp4",
+          "youtube_video_id": "pxZEPET16Aw",
+          "youtube_url": "https://youtu.be/pxZEPET16Aw",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Chúng ta quyết chắc."
         }
       ]
     }
