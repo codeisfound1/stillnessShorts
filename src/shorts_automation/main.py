@@ -44,11 +44,19 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
 
 def validate_inputs(config: AppConfig) -> None:
     if config.input.mode == "photos":
-        if config.photos.source == "folder":
+        if config.photos.source in ("folder", "mix"):
             if not config.photos.photos_dir:
-                raise FileNotFoundError("photos.source = 'folder' nhưng chưa cấu hình photos.photos_dir.")
-            if not photo_cutter.list_photos(config.photos.photos_dir):
+                raise FileNotFoundError(
+                    f"photos.source = '{config.photos.source}' nhưng chưa cấu hình photos.photos_dir."
+                )
+            photos_found = photo_cutter.list_photos(config.photos.photos_dir)
+            if config.photos.source == "folder" and not photos_found:
                 raise FileNotFoundError(f"Không tìm thấy ảnh nào trong thư mục: {config.photos.photos_dir}")
+            if config.photos.source == "mix" and not photos_found:
+                logger.warning(
+                    "photos.source = 'mix' nhưng không tìm thấy ảnh nào trong %s -> mọi short sẽ dùng AI.",
+                    config.photos.photos_dir,
+                )
         # source == "ai_generated": không cần ảnh có sẵn, ảnh được sinh tự động mỗi short.
     else:
         if not config.input.video_path or not config.input.video_path.exists():
@@ -119,11 +127,21 @@ def run(args: argparse.Namespace) -> int:
     from . import telegram_notifier
 
     photos_mode = config.input.mode == "photos"
-    ai_generated = photos_mode and config.photos.source == "ai_generated"
+    photos_source = config.photos.source if photos_mode else None
+    uses_folder = photos_source in ("folder", "mix")
     photos_list: list = []
     video_duration = 0.0
 
-    if ai_generated:
+    if photos_mode and uses_folder:
+        photos_list = photo_cutter.list_photos(config.photos.photos_dir)
+        logger.info("Mode photos (%s): %d ảnh trong %s", photos_source, len(photos_list), config.photos.photos_dir)
+        if photos_source == "mix":
+            logger.info(
+                "Mix: %.0f%% khả năng dùng ảnh có sẵn cho mỗi short, tự động chuyển sang AI khi hết ảnh.",
+                config.photos.mix_folder_ratio * 100,
+            )
+        source_identifier = config.photos.photos_dir
+    elif photos_mode:
         logger.info(
             "Mode photos (ai_generated): mỗi short tự sinh 1 ảnh bằng AI (provider=%s).",
             config.image_generation.provider,
@@ -131,10 +149,6 @@ def run(args: argparse.Namespace) -> int:
         # Không có thư mục ảnh cố định để làm định danh nguồn -> dùng 1 sentinel path riêng
         # (khác narration_path) để state.json vẫn phân biệt được theo cặp (nguồn, narration).
         source_identifier = config.output.work_dir / "__ai_generated_photos__"
-    elif photos_mode:
-        photos_list = photo_cutter.list_photos(config.photos.photos_dir)
-        logger.info("Mode photos (folder): %d ảnh trong %s", len(photos_list), config.photos.photos_dir)
-        source_identifier = config.photos.photos_dir
     else:
         video_duration = video_cutter.get_video_duration(config.input.video_path)
         logger.info("Video gốc: %.1fs", video_duration)
@@ -175,8 +189,19 @@ def run(args: argparse.Namespace) -> int:
         photo_start_index: int | None = None
         photo_end_index: int | None = None
         visual = None
+        use_ai_this_short = False
 
-        if ai_generated:
+        if photos_mode:
+            if photos_source == "ai_generated":
+                use_ai_this_short = True
+            elif photos_source == "mix":
+                folder_has_photos_left = source_state.photo_pointer_index < len(photos_list)
+                use_ai_this_short = (not folder_has_photos_left) or (
+                    random.random() >= config.photos.mix_folder_ratio
+                )
+            # photos_source == "folder": use_ai_this_short giữ nguyên False.
+
+        if photos_mode and use_ai_this_short:
             audio_seg = audio_cutter.plan_next_segment(
                 audio_duration=audio_duration,
                 pointer_sec=source_state.audio_pointer_sec,
@@ -281,7 +306,7 @@ def run(args: argparse.Namespace) -> int:
 
             title = title_generator.generate_title(transcript_text, config.llm)
 
-            if ai_generated:
+            if photos_mode and use_ai_this_short:
                 image_prompt = image_prompt_generator.generate_image_prompt(transcript_text, title, config.llm)
                 photo_path = image_generator.generate_photo(
                     prompt=image_prompt,

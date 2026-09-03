@@ -57,12 +57,13 @@ class VideoConfig:
 
 @dataclass
 class PhotosConfig:
-    source: str  # "ai_generated" | "folder"
+    source: str  # "ai_generated" | "folder" | "mix"
     photos_dir: Optional[Path]
     seconds_per_photo_min: float
     seconds_per_photo_max: float
     zoom_max: float
     alternate_direction: bool
+    mix_folder_ratio: float  # chỉ dùng khi source = "mix": xác suất chọn ảnh từ photos_dir cho 1 short
 
 
 @dataclass
@@ -243,8 +244,8 @@ def load_config(config_path: str | Path = "config/config.yaml", env_path: str | 
 
     photos_raw = raw.get("photos", {})
     photos_source = str(photos_raw.get("source", "ai_generated")).lower()
-    if photos_source not in ("ai_generated", "folder"):
-        raise ValueError(f"photos.source phải là 'ai_generated' hoặc 'folder', nhận được: {photos_source!r}")
+    if photos_source not in ("ai_generated", "folder", "mix"):
+        raise ValueError(f"photos.source phải là 'ai_generated', 'folder' hoặc 'mix', nhận được: {photos_source!r}")
     photos_cfg = PhotosConfig(
         source=photos_source,
         photos_dir=_resolve(photos_raw.get("photos_dir")),
@@ -252,6 +253,7 @@ def load_config(config_path: str | Path = "config/config.yaml", env_path: str | 
         seconds_per_photo_max=float(photos_raw.get("seconds_per_photo_max", 6.0)),
         zoom_max=float(photos_raw.get("zoom_max", 1.15)),
         alternate_direction=bool(photos_raw.get("alternate_direction", True)),
+        mix_folder_ratio=float(photos_raw.get("mix_folder_ratio", 0.5)),
     )
 
     imgen_raw = raw.get("image_generation", {})

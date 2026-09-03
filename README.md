@@ -10,11 +10,14 @@ bằng LLM, tự động **upload lên YouTube + thêm vào playlist**, và **b�
 Chọn nguồn hình ảnh qua `input.mode` (và `photos.source` nếu `mode: "photos"`) trong
 `config/config.yaml`:
 
-- **`mode: "photos"`, `photos.source: "ai_generated"`** (mặc định) - mỗi short tự sinh **1 ảnh
-  bằng AI** dựa trên tiêu đề/ý chính của chính đoạn thuyết minh dùng cho short đó, rồi áp hiệu ứng
-  Ken Burns (zoom chậm). Không cần chuẩn bị ảnh hay video gì trước - chỉ cần narration.mp3.
+- **`mode: "photos"`, `photos.source: "ai_generated"`** - mỗi short tự sinh **1 ảnh bằng AI**
+  dựa trên tiêu đề/ý chính của chính đoạn thuyết minh dùng cho short đó, rồi áp hiệu ứng Ken
+  Burns (zoom chậm). Không cần chuẩn bị ảnh hay video gì trước - chỉ cần narration.mp3.
 - **`mode: "photos"`, `photos.source: "folder"`** - dựng short dạng slideshow từ nhiều ảnh tĩnh có
   sẵn trong `photos.photos_dir`, mỗi ảnh có hiệu ứng Ken Burns (xen kẽ zoom-in/zoom-out).
+- **`mode: "photos"`, `photos.source: "mix"`** (mặc định) - trộn cả 2 nguồn: mỗi short ngẫu
+  nhiên dùng ảnh từ `photos.photos_dir` HOẶC tự sinh 1 ảnh AI (theo tỉ lệ `mix_folder_ratio`),
+  tự động chuyển hẳn sang AI khi ảnh trong thư mục đã dùng hết.
 - **`mode: "video"`** - cắt short từ 1 video gốc dài có sẵn.
 
 Quy trình chung:
@@ -25,8 +28,9 @@ Quy trình chung:
      các file được ghép nối tuần tự theo TÊN FILE (sắp xếp alphabet) thành 1 timeline audio
      liên tục duy nhất trước khi xử lý - tiện khi thuyết minh gồm nhiều file ghi âm rời rạc.
    - `photos` + `ai_generated`: không cần thêm gì ngoài narration.
-   - `photos` + `folder`: thêm các ảnh trong `data/input/photos/` (.jpg/.jpeg/.png/.webp/.bmp),
-     dùng tuần tự theo tên file.
+   - `photos` + `folder`/`mix`: thêm các ảnh trong `data/input/photos/` (.jpg/.jpeg/.png/.webp/.bmp),
+     dùng tuần tự theo tên file. Với `mix`, không bắt buộc phải có ảnh (tự chuyển sang AI nếu
+     thư mục trống hoặc hết ảnh chưa dùng).
    - `video`: `data/input/source_video.mp4` (video gốc) thay cho ảnh.
    - Mọi mode: tùy chọn thêm `data/input/music.mp3` (nhạc nền).
 2. Với mỗi short: lấy 1 đoạn audio thuyết minh (30–60s, tuần tự từ đầu file, không trùng lặp nhờ
@@ -34,6 +38,8 @@ Quy trình chung:
    - `ai_generated`: sinh tiêu đề + prompt ảnh từ transcript đoạn này, gọi AI sinh 1 ảnh, áp
      Ken Burns cho toàn bộ thời lượng short.
    - `folder`: lấy N ảnh kế tiếp chưa dùng đủ lấp đầy thời lượng (slideshow).
+   - `mix`: mỗi short tung xúc xắc theo `mix_folder_ratio` để chọn `folder` hay `ai_generated`
+     cho short đó (luôn `ai_generated` nếu ảnh trong `photos_dir` đã dùng hết).
    - `video`: cắt đoạn video kế tiếp chưa dùng cùng độ dài, mute audio gốc.
 3. Nếu có `data/input/music.mp3`, trộn thêm làm nhạc nền ở volume thấp (mọi mode).
 4. Dùng `faster-whisper` transcribe (word-level timestamp, tiếng Việt) **chỉ đúng đoạn audio
@@ -57,7 +63,7 @@ stillnessShorts/
 ├── .env.example                             # Mẫu file secrets (copy thành .env)
 ├── data/
 │   ├── input/     # narration.mp3 (luôn cần), (music.mp3) tùy chọn, image.png (logo kênh) tùy chọn,
-│   │               # photos/ (nếu photos.source=folder) hoặc source_video.mp4 (nếu mode=video)
+│   │               # photos/ (nếu photos.source=folder/mix) hoặc source_video.mp4 (nếu mode=video)
 │   ├── output/    # Video short đã tạo
 │   ├── work/      # File trung gian (wav cache, transcript cache, ảnh AI, ass, clip tạm)
 │   └── state/     # state.json - theo dõi đoạn/ảnh đã dùng
@@ -101,12 +107,14 @@ cp /path/to/part2.mp3 data/input/narration/02.mp3
 
 # (tùy chọn) cp /path/to/music.mp3 data/input/music.mp3
 
-# Mặc định (mode: "photos", photos.source: "ai_generated") - KHÔNG cần thêm gì,
-# ảnh sẽ được AI tự sinh cho mỗi short.
-
-# HOẶC dùng ảnh có sẵn (đặt photos.source: "folder" trong config/config.yaml):
+# Mặc định (mode: "photos", photos.source: "mix") - đặt ảnh có sẵn vào data/input/photos/
+# (tùy chọn, có thể để trống), short nào không rơi vào ảnh có sẵn sẽ tự sinh ảnh AI:
 mkdir -p data/input/photos
 cp /path/to/your_photos/*.jpg data/input/photos/
+
+# HOẶC chỉ dùng AI, không cần ảnh (đặt photos.source: "ai_generated" trong config/config.yaml)
+
+# HOẶC chỉ dùng ảnh có sẵn, không dùng AI (đặt photos.source: "folder")
 
 # HOẶC cắt từ 1 video gốc dài (đặt input.mode: "video" trong config/config.yaml):
 cp /path/to/your_video.mp4 data/input/source_video.mp4
@@ -231,14 +239,18 @@ Các mục quan trọng:
   vẫn theo `generation.min/max_duration_sec` như bình thường, chỉ thời lượng phát ra ngắn lại
   theo hệ số này (ví dụ đoạn nội dung 40s với `speed_factor: 1.25` → video xuất ra dài 32s).
   Đặt `1.0` để tắt (giữ tốc độ gốc).
-- `photos.source` (chỉ dùng khi `input.mode: "photos"`): `"ai_generated"` (mặc định, tự sinh 1
-  ảnh/short bằng AI) hoặc `"folder"` (lấy ảnh có sẵn từ `photos.photos_dir`, dạng slideshow).
+- `photos.source` (chỉ dùng khi `input.mode: "photos"`): `"ai_generated"` (tự sinh 1 ảnh/short
+  bằng AI), `"folder"` (lấy ảnh có sẵn từ `photos.photos_dir`, dạng slideshow), hoặc `"mix"`
+  (mặc định, trộn cả 2 - xem mục 1).
 - `photos.*` khác:
-  - `photos_dir`: chỉ dùng khi `source: "folder"`.
-  - `seconds_per_photo_min/max`: chỉ dùng khi `source: "folder"` - mỗi ảnh hiển thị bao lâu.
-  - `zoom_max`: mức phóng to tối đa của hiệu ứng Ken Burns (1.0 = tắt zoom), áp dụng cả 2 source.
+  - `photos_dir`: dùng khi `source: "folder"` hoặc `"mix"`.
+  - `seconds_per_photo_min/max`: dùng khi `source: "folder"` hoặc `"mix"` - mỗi ảnh hiển thị
+    bao lâu trong slideshow.
+  - `mix_folder_ratio`: chỉ dùng khi `source: "mix"` - xác suất (0.0-1.0) 1 short dùng ảnh có
+    sẵn thay vì AI (mặc định `0.5`).
+  - `zoom_max`: mức phóng to tối đa của hiệu ứng Ken Burns (1.0 = tắt zoom), áp dụng mọi source.
   - `alternate_direction`: xen kẽ zoom-in/zoom-out giữa các ảnh/short cho đỡ đơn điệu.
-- `image_generation.*` (chỉ dùng khi `photos.source: "ai_generated"`):
+- `image_generation.*` (dùng khi `photos.source` là `"ai_generated"` hoặc `"mix"`):
   - `provider`: `"pollinations"` (mặc định, miễn phí, không cần key) hoặc `"openai"` (cần
     `OPENAI_API_KEY`, chất lượng cao hơn, tính phí).
   - `style_suffix`: câu mô tả style thêm vào cuối mọi prompt để ảnh đồng nhất phong cách.
@@ -272,7 +284,8 @@ Các mục quan trọng:
 
 - `audio_pointer_sec`: mốc thời gian đã dùng tới trong narration.mp3 (mọi mode).
 - `video_pointer_sec`: mốc thời gian đã dùng tới trong video gốc (chỉ mode `video`).
-- `photo_pointer_index`: số ảnh đã dùng tính từ đầu thư mục `photos_dir` (chỉ `photos.source: "folder"`).
+- `photo_pointer_index`: số ảnh đã dùng tính từ đầu thư mục `photos_dir` (`photos.source: "folder"`
+  hoặc `"mix"` - chỉ tăng khi short đó thực sự dùng ảnh có sẵn thay vì AI).
   Với `photos.source: "ai_generated"` không có khái niệm hết ảnh - AI luôn sinh ảnh mới, chỉ audio
   mới có thể cạn.
 - `shorts`: danh sách short đã tạo (khoảng thời gian/ảnh đã dùng, tiêu đề, video ID YouTube...).
