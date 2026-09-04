@@ -141,7 +141,7 @@
     },
     "b8a1e3f8c7285487": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 167.71988120626386,
+      "audio_pointer_sec": 278.77661573882307,
       "photo_pointer_index": 2,
       "mix_credit": 0.0,
       "shorts": [
@@ -193,6 +193,30 @@
           "uploaded": true,
           "photo_start_index": 0,
           "photo_end_index": 2
+        },
+        {
+          "index": 5,
+          "audio_start": 167.72,
+          "audio_end": 221.558,
+          "duration": 53.838,
+          "title": "Nói này, cho là chư Phật đã dạy, nên giữa vào đó cho mình là hạ căn Từ đó, lại sanh ra lư…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_005.mp4",
+          "youtube_video_id": "qoAyZnsqH2c",
+          "youtube_url": "https://youtu.be/qoAyZnsqH2c",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Nói này, cho là chư Phật đã dạy, nên giữa vào đó cho mình là hạ căn Từ đó, lại sanh ra lư…"
+        },
+        {
+          "index": 6,
+          "audio_start": 221.558,
+          "audio_end": 278.777,
+          "duration": 57.219,
+          "title": "Luôn luôn tiếp viên với ngoại cảnh, ăn nói sô bồ Đụng đâu nói đó, cự cờ không đúng cách,…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_006.mp4",
+          "youtube_video_id": "V514q_ewKUg",
+          "youtube_url": "https://youtu.be/V514q_ewKUg",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Luôn luôn tiếp viên với ngoại cảnh, ăn nói sô bồ Đụng đâu nói đó, cự cờ không đúng cách,…"
         }
       ]
     }
