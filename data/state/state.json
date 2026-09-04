@@ -141,8 +141,8 @@
     },
     "b8a1e3f8c7285487": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 278.77661573882307,
-      "photo_pointer_index": 2,
+      "audio_pointer_sec": 369.7447523453935,
+      "photo_pointer_index": 13,
       "mix_credit": 0.0,
       "shorts": [
         {
@@ -217,6 +217,31 @@
           "youtube_url": "https://youtu.be/V514q_ewKUg",
           "uploaded": true,
           "image_prompt": "A serene, symbolic photograph representing the idea: Luôn luôn tiếp viên với ngoại cảnh, ăn nói sô bồ Đụng đâu nói đó, cự cờ không đúng cách,…"
+        },
+        {
+          "index": 7,
+          "audio_start": 278.777,
+          "audio_end": 320.315,
+          "duration": 41.538,
+          "title": "Này quý thầy, và quý quý sĩ, khi quý thầy không vượt qua tâm ái dục, tâm ham thích dục lạ…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_007.mp4",
+          "youtube_video_id": "d7mouNe254U",
+          "youtube_url": "https://youtu.be/d7mouNe254U",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Này quý thầy, và quý quý sĩ, khi quý thầy không vượt qua tâm ái dục, tâm ham thích dục lạ…"
+        },
+        {
+          "index": 8,
+          "audio_start": 320.315,
+          "audio_end": 369.745,
+          "duration": 49.43,
+          "title": "Này quý thầy, việc tu hành không phải là một việc dễ làm.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_008.mp4",
+          "youtube_video_id": "3PrJX7iYxgM",
+          "youtube_url": "https://youtu.be/3PrJX7iYxgM",
+          "uploaded": true,
+          "photo_start_index": 2,
+          "photo_end_index": 13
         }
       ]
     }
