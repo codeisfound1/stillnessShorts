@@ -138,6 +138,37 @@
           "image_prompt": "A serene, symbolic photograph representing the idea: Chúng ta quyết chắc."
         }
       ]
+    },
+    "b8a1e3f8c7285487": {
+      "video_pointer_sec": 0.0,
+      "audio_pointer_sec": 110.66586330348531,
+      "photo_pointer_index": 0,
+      "shorts": [
+        {
+          "index": 1,
+          "audio_start": 0.0,
+          "audio_end": 51.898,
+          "duration": 51.898,
+          "title": "Nhưng trong chúng ta, cũng có kẻ hạ căn, người trung căn và cũng có kẻ thượng căn.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_001.mp4",
+          "youtube_video_id": "CiTtcgt3E8c",
+          "youtube_url": "https://youtu.be/CiTtcgt3E8c",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Nhưng trong chúng ta, cũng có kẻ hạ căn, người trung căn và cũng có kẻ thượng căn."
+        },
+        {
+          "index": 2,
+          "audio_start": 51.898,
+          "audio_end": 110.666,
+          "duration": 58.768,
+          "title": "Những kẻ lý luận này là ma vương trong đạo Phật.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_002.mp4",
+          "youtube_video_id": "k8WedFQq60Q",
+          "youtube_url": "https://youtu.be/k8WedFQq60Q",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Những kẻ lý luận này là ma vương trong đạo Phật."
+        }
+      ]
     }
   }
 }
