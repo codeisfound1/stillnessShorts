@@ -153,7 +153,7 @@ youtube:
   # Số phút trì hoãn trước khi video công khai (lên lịch phát hành thay vì đăng ngay).
   # 0 = đăng ngay với privacy_status ở trên. > 0 = upload ở chế độ private kèm publishAt,
   # YouTube sẽ tự chuyển sang public đúng giờ (video không public trước thời điểm đó).
-  publish_delay_minutes: 60
+  publish_delay_minutes: 0
 
 telegram:
   enabled: true
