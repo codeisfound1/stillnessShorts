@@ -4,6 +4,8 @@ Mỗi cặp (video_path hoặc photos_dir, narration_path) có một "source key
 - video_pointer_sec / audio_pointer_sec: mốc thời gian đã dùng tới (mode "video"), đoạn
   tiếp theo luôn bắt đầu từ đây trở đi (đảm bảo không lấy lại đoạn cũ, không lồng nhau).
 - photo_pointer_index: số ảnh đã dùng tính từ đầu thư mục (mode "photos").
+- mix_credit: bộ đếm dồn để chọn folder/AI theo đúng tỉ lệ mix_folder_ratio (photos.source
+  = "mix"), tránh việc random độc lập từng short có thể "trật" nhiều lần liên tiếp.
 - shorts: danh sách các short đã tạo (kèm metadata) để tra cứu / báo cáo.
 """
 
@@ -31,6 +33,7 @@ class SourceState:
     video_pointer_sec: float = 0.0
     audio_pointer_sec: float = 0.0
     photo_pointer_index: int = 0
+    mix_credit: float = 0.0
     shorts: list[dict[str, Any]] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
@@ -38,6 +41,7 @@ class SourceState:
             "video_pointer_sec": self.video_pointer_sec,
             "audio_pointer_sec": self.audio_pointer_sec,
             "photo_pointer_index": self.photo_pointer_index,
+            "mix_credit": self.mix_credit,
             "shorts": self.shorts,
         }
 
@@ -47,6 +51,7 @@ class SourceState:
             video_pointer_sec=float(d.get("video_pointer_sec", 0.0)),
             audio_pointer_sec=float(d.get("audio_pointer_sec", 0.0)),
             photo_pointer_index=int(d.get("photo_pointer_index", 0)),
+            mix_credit=float(d.get("mix_credit", 0.0)),
             shorts=list(d.get("shorts", [])),
         )
 

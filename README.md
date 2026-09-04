@@ -15,9 +15,10 @@ Chọn nguồn hình ảnh qua `input.mode` (và `photos.source` nếu `mode: "p
   Burns (zoom chậm). Không cần chuẩn bị ảnh hay video gì trước - chỉ cần narration.mp3.
 - **`mode: "photos"`, `photos.source: "folder"`** - dựng short dạng slideshow từ nhiều ảnh tĩnh có
   sẵn trong `photos.photos_dir`, mỗi ảnh có hiệu ứng Ken Burns (xen kẽ zoom-in/zoom-out).
-- **`mode: "photos"`, `photos.source: "mix"`** (mặc định) - trộn cả 2 nguồn: mỗi short ngẫu
-  nhiên dùng ảnh từ `photos.photos_dir` HOẶC tự sinh 1 ảnh AI (theo tỉ lệ `mix_folder_ratio`),
-  tự động chuyển hẳn sang AI khi ảnh trong thư mục đã dùng hết.
+- **`mode: "photos"`, `photos.source: "mix"`** (mặc định) - trộn cả 2 nguồn: mỗi short dùng ảnh
+  từ `photos.photos_dir` HOẶC tự sinh 1 ảnh AI, chọn theo đúng tỉ lệ `mix_folder_ratio` bằng một
+  **bộ đếm dồn** (không phải random độc lập từng short - xem mục 1 phần Quy trình chung), tự động
+  chuyển hẳn sang AI khi ảnh trong thư mục đã dùng hết.
 - **`mode: "video"`** - cắt short từ 1 video gốc dài có sẵn.
 
 Quy trình chung:
@@ -38,8 +39,12 @@ Quy trình chung:
    - `ai_generated`: sinh tiêu đề + prompt ảnh từ transcript đoạn này, gọi AI sinh 1 ảnh, áp
      Ken Burns cho toàn bộ thời lượng short.
    - `folder`: lấy N ảnh kế tiếp chưa dùng đủ lấp đầy thời lượng (slideshow).
-   - `mix`: mỗi short tung xúc xắc theo `mix_folder_ratio` để chọn `folder` hay `ai_generated`
-     cho short đó (luôn `ai_generated` nếu ảnh trong `photos_dir` đã dùng hết).
+   - `mix`: mỗi short cộng dồn `mix_folder_ratio` vào một bộ đếm (`mix_credit`, lưu trong
+     `state.json`); khi bộ đếm đạt 1.0 thì short đó dùng `folder` (trừ bộ đếm đi 1.0), ngược lại
+     dùng `ai_generated`. Cách này đảm bảo tỉ lệ folder/AI hội tụ đúng `mix_folder_ratio` theo
+     thời gian ngay cả khi mỗi đợt chạy chỉ 1-2 short (khác với random độc lập từng short, có thể
+     "trật" về 1 phía nhiều lần liên tiếp) - luôn `ai_generated` nếu ảnh trong `photos_dir` đã
+     dùng hết.
    - `video`: cắt đoạn video kế tiếp chưa dùng cùng độ dài, mute audio gốc.
 3. Nếu có `data/input/music.mp3`, trộn thêm làm nhạc nền ở volume thấp (mọi mode).
 4. Dùng `faster-whisper` transcribe (word-level timestamp, tiếng Việt) **chỉ đúng đoạn audio
@@ -246,8 +251,9 @@ Các mục quan trọng:
   - `photos_dir`: dùng khi `source: "folder"` hoặc `"mix"`.
   - `seconds_per_photo_min/max`: dùng khi `source: "folder"` hoặc `"mix"` - mỗi ảnh hiển thị
     bao lâu trong slideshow.
-  - `mix_folder_ratio`: chỉ dùng khi `source: "mix"` - xác suất (0.0-1.0) 1 short dùng ảnh có
-    sẵn thay vì AI (mặc định `0.5`).
+  - `mix_folder_ratio`: chỉ dùng khi `source: "mix"` - tỉ lệ (0.0-1.0) short dùng ảnh có sẵn thay
+    vì AI (mặc định `0.5`), đảm bảo hội tụ đúng tỉ lệ qua bộ đếm dồn `mix_credit` (xem mục 1),
+    không phải random độc lập từng short.
   - `zoom_max`: mức phóng to tối đa của hiệu ứng Ken Burns (1.0 = tắt zoom), áp dụng mọi source.
   - `alternate_direction`: xen kẽ zoom-in/zoom-out giữa các ảnh/short cho đỡ đơn điệu.
 - `image_generation.*` (dùng khi `photos.source` là `"ai_generated"` hoặc `"mix"`):
@@ -288,7 +294,24 @@ Các mục quan trọng:
   hoặc `"mix"` - chỉ tăng khi short đó thực sự dùng ảnh có sẵn thay vì AI).
   Với `photos.source: "ai_generated"` không có khái niệm hết ảnh - AI luôn sinh ảnh mới, chỉ audio
   mới có thể cạn.
+- `mix_credit`: bộ đếm dồn dùng để chọn `folder`/`ai_generated` đúng tỉ lệ `mix_folder_ratio`
+  (chỉ dùng khi `photos.source: "mix"` - xem mục 1).
 - `shorts`: danh sách short đã tạo (khoảng thời gian/ảnh đã dùng, tiêu đề, video ID YouTube...).
+
+## 10. Tiêu đề video YouTube
+
+Tiêu đề video khi upload lên YouTube = **tiêu đề do AI/rule-based sinh ra** + số thứ tự short +
+tên kênh (`branding.channel_name`), theo định dạng:
+
+```
+<tiêu đề> | #<số thứ tự short> <tên kênh>
+```
+
+Ví dụ: `Buông bỏ để tự do | #7 Tĩnh Lặng`. Số thứ tự và tên kênh luôn được giữ nguyên vẹn ở cuối
+tiêu đề; nếu tổng độ dài vượt quá giới hạn 100 ký tự của YouTube thì phần tiêu đề gốc sẽ bị cắt
+bớt (thêm `…`) chứ không bao giờ cắt số thứ tự/tên kênh. Nếu `branding.channel_name` để trống thì
+tiêu đề chỉ thêm số thứ tự (`<tiêu đề> | #7`). Tiêu đề "gốc" (không có hậu tố này) vẫn được dùng
+để lưu vào `state.json` và ghép vào phần mô tả (description) video.
 
 Mỗi lần chạy, script luôn lấy đoạn tiếp theo bắt đầu từ pointer hiện tại, đảm bảo không bao giờ
 lấy lại đoạn cũ dù chạy script nhiều lần trên cùng 1 cặp input. Muốn tạo lại từ đầu, xóa file

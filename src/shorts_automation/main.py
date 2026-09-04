@@ -104,6 +104,27 @@ def build_description(title: str, transcript_text: str, hashtags: list[str]) -> 
     return description
 
 
+YOUTUBE_TITLE_MAX_LENGTH = 100
+
+
+def build_video_title(title: str, short_index: int, channel_name: str) -> str:
+    """Tiêu đề YouTube = tiêu đề AI sinh + số thứ tự short + tên kênh, đặt ở CUỐI tiêu đề.
+
+    Số thứ tự + tên kênh luôn được giữ nguyên vẹn; nếu tổng vượt quá giới hạn 100 ký tự của
+    YouTube thì cắt bớt phần tiêu đề gốc (không bao giờ cắt phần số thứ tự/tên kênh).
+    """
+    suffix_parts = [f"#{short_index}"]
+    if channel_name:
+        suffix_parts.append(channel_name)
+    suffix = " | " + " ".join(suffix_parts)
+
+    base = title.strip()
+    available = YOUTUBE_TITLE_MAX_LENGTH - len(suffix)
+    if len(base) > available:
+        base = base[: max(available - 1, 0)].rstrip() + "…"
+    return f"{base}{suffix}"
+
+
 def run(args: argparse.Namespace) -> int:
     setup_logging(args.log_level)
     logger.info("Bắt đầu stillnessShorts.")
@@ -196,9 +217,18 @@ def run(args: argparse.Namespace) -> int:
                 use_ai_this_short = True
             elif photos_source == "mix":
                 folder_has_photos_left = source_state.photo_pointer_index < len(photos_list)
-                use_ai_this_short = (not folder_has_photos_left) or (
-                    random.random() >= config.photos.mix_folder_ratio
-                )
+                if folder_has_photos_left:
+                    # Bộ đếm dồn (kiểu Bresenham) thay vì random độc lập mỗi short: đảm bảo tỉ
+                    # lệ folder/AI hội tụ đúng mix_folder_ratio ngay cả khi mỗi đợt chỉ chạy 1-2
+                    # short, thay vì có thể "trật" AI nhiều lần liên tiếp do random không may.
+                    source_state.mix_credit += config.photos.mix_folder_ratio
+                    if source_state.mix_credit >= 1.0:
+                        source_state.mix_credit -= 1.0
+                        use_ai_this_short = False
+                    else:
+                        use_ai_this_short = True
+                else:
+                    use_ai_this_short = True
             # photos_source == "folder": use_ai_this_short giữ nguyên False.
 
         if photos_mode and use_ai_this_short:
@@ -328,6 +358,8 @@ def run(args: argparse.Namespace) -> int:
             )
             logger.info("Short #%d đã tạo xong: %s", short_index, output_path)
 
+            youtube_title = build_video_title(title, short_index, config.branding.channel_name)
+
             youtube_video_id = None
             youtube_url = None
             if not args.skip_upload:
@@ -336,7 +368,7 @@ def run(args: argparse.Namespace) -> int:
                 description = build_description(title, transcript_text, config.youtube.description_hashtags)
                 youtube_video_id = youtube_uploader.upload_and_add_to_playlist(
                     video_path=output_path,
-                    title=title,
+                    title=youtube_title,
                     description=description,
                     youtube_cfg=config.youtube,
                 )
@@ -361,7 +393,7 @@ def run(args: argparse.Namespace) -> int:
 
             if youtube_url:
                 telegram_notifier.notify_short_uploaded(
-                    title=title, youtube_url=youtube_url, index=short_index, telegram_cfg=config.telegram
+                    title=youtube_title, youtube_url=youtube_url, index=short_index, telegram_cfg=config.telegram
                 )
 
             succeeded += 1
