@@ -141,8 +141,9 @@
     },
     "b8a1e3f8c7285487": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 110.66586330348531,
-      "photo_pointer_index": 0,
+      "audio_pointer_sec": 167.71988120626386,
+      "photo_pointer_index": 2,
+      "mix_credit": 0.0,
       "shorts": [
         {
           "index": 1,
@@ -167,6 +168,31 @@
           "youtube_url": "https://youtu.be/k8WedFQq60Q",
           "uploaded": true,
           "image_prompt": "A serene, symbolic photograph representing the idea: Những kẻ lý luận này là ma vương trong đạo Phật."
+        },
+        {
+          "index": 3,
+          "audio_start": 110.666,
+          "audio_end": 156.186,
+          "duration": 45.52,
+          "title": "Nhiều khi chúng ta cảm thấy mình không còn đủ sức để chiến đấu với chúng, chúng khởi lên…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_003.mp4",
+          "youtube_video_id": "rmfBsb2gjw0",
+          "youtube_url": "https://youtu.be/rmfBsb2gjw0",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Nhiều khi chúng ta cảm thấy mình không còn đủ sức để chiến đấu với chúng, chúng khởi lên…"
+        },
+        {
+          "index": 4,
+          "audio_start": 156.186,
+          "audio_end": 167.72,
+          "duration": 11.534,
+          "title": "Do đó chúng ta không còn vững chí mất hết lập trường, rồi sinh tâm quang man giao động, b…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_004.mp4",
+          "youtube_video_id": "CC4P1uwLx7w",
+          "youtube_url": "https://youtu.be/CC4P1uwLx7w",
+          "uploaded": true,
+          "photo_start_index": 0,
+          "photo_end_index": 2
         }
       ]
     }
