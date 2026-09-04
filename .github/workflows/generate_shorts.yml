@@ -14,7 +14,7 @@ on:
   schedule:
     # Ví dụ: chạy mỗi ngày lúc 03:00 UTC (~10:00 sáng giờ Việt Nam).
     # Sửa lại lịch hoặc xóa mục này nếu không muốn chạy tự động theo lịch.
-    - cron: "0 11 * * *"
+    - cron: "0 */6 * * *"
 
 permissions:
   contents: write
