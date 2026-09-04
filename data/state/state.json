@@ -141,8 +141,8 @@
     },
     "b8a1e3f8c7285487": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 369.7447523453935,
-      "photo_pointer_index": 13,
+      "audio_pointer_sec": 460.46385282845483,
+      "photo_pointer_index": 24,
       "mix_credit": 0.0,
       "shorts": [
         {
@@ -242,6 +242,31 @@
           "uploaded": true,
           "photo_start_index": 2,
           "photo_end_index": 13
+        },
+        {
+          "index": 9,
+          "audio_start": 369.745,
+          "audio_end": 409.469,
+          "duration": 39.724,
+          "title": "Riêng ở đây thầy khuyên quý dị phải hiểu lời nói này là của những người lười biến,",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_009.mp4",
+          "youtube_video_id": "9RXuC4L5XOw",
+          "youtube_url": "https://youtu.be/9RXuC4L5XOw",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Riêng ở đây thầy khuyên quý dị phải hiểu lời nói này là của những người lười biến,"
+        },
+        {
+          "index": 10,
+          "audio_start": 409.469,
+          "audio_end": 460.464,
+          "duration": 50.995,
+          "title": "Có bao giờ đi biển chưa?",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_010.mp4",
+          "youtube_video_id": "uWSbRWE7KEs",
+          "youtube_url": "https://youtu.be/uWSbRWE7KEs",
+          "uploaded": true,
+          "photo_start_index": 13,
+          "photo_end_index": 24
         }
       ]
     }
