@@ -141,8 +141,8 @@
     },
     "b8a1e3f8c7285487": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 546.457405046901,
-      "photo_pointer_index": 34,
+      "audio_pointer_sec": 599.994535,
+      "photo_pointer_index": 45,
       "mix_credit": 0.0,
       "shorts": [
         {
@@ -292,6 +292,31 @@
           "uploaded": true,
           "photo_start_index": 24,
           "photo_end_index": 34
+        },
+        {
+          "index": 13,
+          "audio_start": 546.457,
+          "audio_end": 579.137,
+          "duration": 32.679,
+          "title": "Không có một sự việc nào xảy ra do tình cờ hay ngẫu nhiên cả mà phải nói rằng có một định…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_013.mp4",
+          "youtube_video_id": "xfRmv185tLw",
+          "youtube_url": "https://youtu.be/xfRmv185tLw",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Không có một sự việc nào xảy ra do tình cờ hay ngẫu nhiên cả mà phải nói rằng có một định…"
+        },
+        {
+          "index": 14,
+          "audio_start": 579.137,
+          "audio_end": 599.995,
+          "duration": 20.858,
+          "title": "Đã được thân người phải xem thân này là một vật vô giá nếu chúng ta biết sử dụng đúng trá…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_014.mp4",
+          "youtube_video_id": "RvjTOsgl1R0",
+          "youtube_url": "https://youtu.be/RvjTOsgl1R0",
+          "uploaded": true,
+          "photo_start_index": 34,
+          "photo_end_index": 45
         }
       ]
     }
