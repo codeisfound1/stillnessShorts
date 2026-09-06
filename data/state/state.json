@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 270.1514868440223,
-      "photo_pointer_index": 28,
+      "audio_pointer_sec": 379.1170377915354,
+      "photo_pointer_index": 42,
       "mix_credit": 0.0,
       "shorts": [
         {
@@ -400,6 +400,31 @@
           "uploaded": true,
           "photo_start_index": 19,
           "photo_end_index": 28
+        },
+        {
+          "index": 7,
+          "audio_start": 270.151,
+          "audio_end": 320.225,
+          "duration": 50.073,
+          "title": "Nó là quý thầy có đủ nhân viên mới được nghe dạy những lời lành này.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_007.mp4",
+          "youtube_video_id": "0dJlArGNTmw",
+          "youtube_url": "https://youtu.be/0dJlArGNTmw",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Nó là quý thầy có đủ nhân viên mới được nghe dạy những lời lành này."
+        },
+        {
+          "index": 8,
+          "audio_start": 320.225,
+          "audio_end": 379.117,
+          "duration": 58.892,
+          "title": "Đó là một việc khó, được thân người.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_008.mp4",
+          "youtube_video_id": "rAEGDLplBf8",
+          "youtube_url": "https://youtu.be/rAEGDLplBf8",
+          "uploaded": true,
+          "photo_start_index": 28,
+          "photo_end_index": 42
         }
       ]
     }
