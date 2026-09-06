@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 180.99537944341887,
-      "photo_pointer_index": 19,
+      "audio_pointer_sec": 270.1514868440223,
+      "photo_pointer_index": 28,
       "mix_credit": 0.0,
       "shorts": [
         {
@@ -375,6 +375,31 @@
           "uploaded": true,
           "photo_start_index": 11,
           "photo_end_index": 19
+        },
+        {
+          "index": 5,
+          "audio_start": 180.995,
+          "audio_end": 239.411,
+          "duration": 58.415,
+          "title": "Nói không bao giờ làm thân người trở lại được Bởi bản năng hung ác của loài vật Càng quân…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_005.mp4",
+          "youtube_video_id": "j-pNEUqTbKA",
+          "youtube_url": "https://youtu.be/j-pNEUqTbKA",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Nói không bao giờ làm thân người trở lại được Bởi bản năng hung ác của loài vật Càng quân…"
+        },
+        {
+          "index": 6,
+          "audio_start": 239.411,
+          "audio_end": 270.151,
+          "duration": 30.741,
+          "title": "Được bằng lá cây Không cắn hại và giết hại lẫn nhau Và nhiều khi vô tình đã xả mình giúp…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_006.mp4",
+          "youtube_video_id": "9Uwl8vGKTe8",
+          "youtube_url": "https://youtu.be/9Uwl8vGKTe8",
+          "uploaded": true,
+          "photo_start_index": 19,
+          "photo_end_index": 28
         }
       ]
     }
