@@ -28,6 +28,11 @@ Quy trình chung:
      chứa nhiều file `.mp3`** (`data/input/narration/01.mp3`, `02.mp3`, ...). Nếu là thư mục,
      các file được ghép nối tuần tự theo TÊN FILE (sắp xếp alphabet) thành 1 timeline audio
      liên tục duy nhất trước khi xử lý - tiện khi thuyết minh gồm nhiều file ghi âm rời rạc.
+     Kết quả ghép được cache ra 1 file WAV trong `data/work/` (đỡ phải ghép lại mỗi lần chạy);
+     cache này tự động tạo lại nếu danh sách file trong thư mục narration thay đổi (thêm/bớt/sửa
+     file) so với lần chạy trước - vì vậy khi thêm file mp3 mới, đặt tên sao cho xếp SAU các file
+     cũ theo alphabet (ví dụ tiếp tục đánh số `03.mp3`, `04.mp3`, ...) để không làm lệch mốc thời
+     gian (audio_pointer_sec) của các đoạn đã dùng trong `state.json`.
    - `photos` + `ai_generated`: không cần thêm gì ngoài narration.
    - `photos` + `folder`/`mix`: thêm các ảnh trong `data/input/photos/` (.jpg/.jpeg/.png/.webp/.bmp),
      dùng tuần tự theo tên file. Với `mix`, không bắt buộc phải có ảnh (tự chuyển sang AI nếu

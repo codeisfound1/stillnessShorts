@@ -12,6 +12,7 @@ audio liên tục duy nhất trước khi cache ra WAV, để toàn bộ logic p
 
 from __future__ import annotations
 
+import json
 import logging
 from dataclasses import dataclass
 from pathlib import Path
@@ -70,13 +71,21 @@ def list_narration_files(narration_path: Path) -> list[Path]:
     return []
 
 
+def _narration_manifest(files: list[Path]) -> list[dict]:
+    """Chữ ký (tên, kích thước, mtime) của các file nguồn - dùng để phát hiện khi thư mục
+    narration có thêm/bớt/đổi file so với lúc WAV cache được tạo, để tự động tạo lại cache
+    thay vì âm thầm dùng bản cache cũ (thiếu các file mới thêm vào)."""
+    return [{"name": f.name, "size": f.stat().st_size, "mtime": f.stat().st_mtime} for f in files]
+
+
 def ensure_wav_cache(narration_path: Path, work_dir: Path) -> Path:
     """Convert narration (1 file hoặc nhiều file .mp3 trong 1 thư mục) -> 1 WAV PCM cache
     duy nhất, tái sử dụng cho mọi lần cắt & Whisper.
 
     Nếu là nhiều file, ghép nối chúng theo đúng thứ tự tên file thành 1 timeline liên tục
     (dùng ffmpeg filter `concat`, decode đầy đủ nên không yêu cầu các file có cùng
-    codec/sample rate).
+    codec/sample rate). Nếu danh sách file trong thư mục narration thay đổi (thêm file mới,
+    xóa, hoặc sửa) so với lần tạo cache trước, tự động tạo lại cache thay vì dùng bản cũ.
     """
     work_dir.mkdir(parents=True, exist_ok=True)
     files = list_narration_files(narration_path)
@@ -85,8 +94,21 @@ def ensure_wav_cache(narration_path: Path, work_dir: Path) -> Path:
 
     base_name = narration_path.stem if narration_path.is_file() else narration_path.name
     cache_path = work_dir / f"{base_name}_cache.wav"
-    if cache_path.exists():
-        return cache_path
+    manifest_path = work_dir / f"{base_name}_cache.manifest.json"
+    current_manifest = _narration_manifest(files)
+
+    if cache_path.exists() and manifest_path.exists():
+        try:
+            with open(manifest_path, "r", encoding="utf-8") as f:
+                cached_manifest = json.load(f)
+        except (json.JSONDecodeError, OSError):
+            cached_manifest = None
+        if cached_manifest == current_manifest:
+            return cache_path
+        logger.info(
+            "Danh sách file narration đã thay đổi so với cache cũ (%s) - tạo lại WAV cache.",
+            cache_path.name,
+        )
 
     if len(files) == 1:
         logger.info("Chuyển đổi %s sang WAV cache (chạy 1 lần)...", files[0].name)
@@ -127,6 +149,8 @@ def ensure_wav_cache(narration_path: Path, work_dir: Path) -> Path:
         ]
 
     run(cmd, description="tạo WAV cache cho narration")
+    with open(manifest_path, "w", encoding="utf-8") as f:
+        json.dump(current_manifest, f, ensure_ascii=False, indent=2)
     return cache_path
 
 
