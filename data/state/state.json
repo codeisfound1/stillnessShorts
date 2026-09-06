@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 98.30900362982054,
-      "photo_pointer_index": 11,
+      "audio_pointer_sec": 180.99537944341887,
+      "photo_pointer_index": 19,
       "mix_credit": 0.0,
       "shorts": [
         {
@@ -350,6 +350,31 @@
           "uploaded": true,
           "photo_start_index": 0,
           "photo_end_index": 11
+        },
+        {
+          "index": 3,
+          "audio_start": 98.309,
+          "audio_end": 147.206,
+          "duration": 48.897,
+          "title": "Con người khéo che đầy,",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_003.mp4",
+          "youtube_video_id": "NAuVuFmxgAA",
+          "youtube_url": "https://youtu.be/NAuVuFmxgAA",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Con người khéo che đầy,"
+        },
+        {
+          "index": 4,
+          "audio_start": 147.206,
+          "audio_end": 180.995,
+          "duration": 33.789,
+          "title": "Này quý thầy, đó là việc khó được thân người, từ kiếp chúng sinh này, triển kiếp chúng si…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_004.mp4",
+          "youtube_video_id": "tW4M_HefoQM",
+          "youtube_url": "https://youtu.be/tW4M_HefoQM",
+          "uploaded": true,
+          "photo_start_index": 11,
+          "photo_end_index": 19
         }
       ]
     }
