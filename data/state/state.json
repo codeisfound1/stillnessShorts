@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 562.3920444945102,
-      "photo_pointer_index": 67,
+      "audio_pointer_sec": 602.1876844400932,
+      "photo_pointer_index": 68,
       "mix_credit": 0.0,
       "shorts": [
         {
@@ -475,6 +475,31 @@
           "uploaded": true,
           "photo_start_index": 54,
           "photo_end_index": 67
+        },
+        {
+          "index": 13,
+          "audio_start": 562.392,
+          "audio_end": 596.701,
+          "duration": 34.309,
+          "title": "Hiểu được lời dạy này rất khó, nghĩa là phải hiểu cho đúng, hiểu không được lệt là...",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_013.mp4",
+          "youtube_video_id": "yHr9I8-W5Oc",
+          "youtube_url": "https://youtu.be/yHr9I8-W5Oc",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Hiểu được lời dạy này rất khó, nghĩa là phải hiểu cho đúng, hiểu không được lệt là..."
+        },
+        {
+          "index": 14,
+          "audio_start": 596.701,
+          "audio_end": 602.188,
+          "duration": 5.487,
+          "title": "Giải những lời của Đức Phật.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_014.mp4",
+          "youtube_video_id": "KLqCH6V0c3w",
+          "youtube_url": "https://youtu.be/KLqCH6V0c3w",
+          "uploaded": true,
+          "photo_start_index": 67,
+          "photo_end_index": 68
         }
       ]
     }
