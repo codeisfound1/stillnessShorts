@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 465.2203670240211,
-      "photo_pointer_index": 54,
+      "audio_pointer_sec": 562.3920444945102,
+      "photo_pointer_index": 67,
       "mix_credit": 0.0,
       "shorts": [
         {
@@ -450,6 +450,31 @@
           "uploaded": true,
           "photo_start_index": 42,
           "photo_end_index": 54
+        },
+        {
+          "index": 11,
+          "audio_start": 465.22,
+          "audio_end": 503.736,
+          "duration": 38.516,
+          "title": "Họ tinh ở trong tu viện này.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_011.mp4",
+          "youtube_video_id": "-r8N3yPZ9B8",
+          "youtube_url": "https://youtu.be/-r8N3yPZ9B8",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Họ tinh ở trong tu viện này."
+        },
+        {
+          "index": 12,
+          "audio_start": 503.736,
+          "audio_end": 562.392,
+          "duration": 58.656,
+          "title": "Đến đây, các thầy, được nghe nói đến, được nghe pháp còn khó hơn.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_012.mp4",
+          "youtube_video_id": "yXfeeN-1ngA",
+          "youtube_url": "https://youtu.be/yXfeeN-1ngA",
+          "uploaded": true,
+          "photo_start_index": 54,
+          "photo_end_index": 67
         }
       ]
     }
