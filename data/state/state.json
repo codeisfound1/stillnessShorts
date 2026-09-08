@@ -322,7 +322,7 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 881.8943820316964,
+      "audio_pointer_sec": 967.9030521872122,
       "photo_pointer_index": 68,
       "mix_credit": 0.0,
       "shorts": [
@@ -572,6 +572,30 @@
           "youtube_url": "https://youtu.be/DhI7GTZcp0Y",
           "uploaded": true,
           "image_prompt": "A serene, symbolic photograph representing the idea: Đó là một số người đâm vô số kể."
+        },
+        {
+          "index": 21,
+          "audio_start": 881.894,
+          "audio_end": 929.413,
+          "duration": 47.519,
+          "title": "Có nhiều người được đọc kinh sách và được nghe thuyết giảng, giáo lý chân chính của Đạo P…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_021.mp4",
+          "youtube_video_id": "ZLZ0yvuWQUk",
+          "youtube_url": "https://youtu.be/ZLZ0yvuWQUk",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Có nhiều người được đọc kinh sách và được nghe thuyết giảng, giáo lý chân chính của Đạo P…"
+        },
+        {
+          "index": 22,
+          "audio_start": 929.413,
+          "audio_end": 967.903,
+          "duration": 38.49,
+          "title": "Được sự hướng dẫn của thiền tri thức, nhưng thực hành theo ý muốn của mình, thì số người…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_022.mp4",
+          "youtube_video_id": "aUVEYeCCFMs",
+          "youtube_url": "https://youtu.be/aUVEYeCCFMs",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Được sự hướng dẫn của thiền tri thức, nhưng thực hành theo ý muốn của mình, thì số người…"
         }
       ]
     }
