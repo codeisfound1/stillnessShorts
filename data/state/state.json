@@ -322,7 +322,7 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 685.5121142817216,
+      "audio_pointer_sec": 781.6225990296998,
       "photo_pointer_index": 68,
       "mix_credit": 0.0,
       "shorts": [
@@ -524,6 +524,30 @@
           "youtube_url": "https://youtu.be/ev-JPiekjIg",
           "uploaded": true,
           "image_prompt": "A serene, symbolic photograph representing the idea: Hành sai thì rơi vào những tà giáo hoài đạo."
+        },
+        {
+          "index": 17,
+          "audio_start": 685.512,
+          "audio_end": 727.658,
+          "duration": 42.146,
+          "title": "Có nhiều người được đọc kinh sách được",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_017.mp4",
+          "youtube_video_id": "z46lYE7G5QM",
+          "youtube_url": "https://youtu.be/z46lYE7G5QM",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Có nhiều người được đọc kinh sách được"
+        },
+        {
+          "index": 18,
+          "audio_start": 727.658,
+          "audio_end": 781.623,
+          "duration": 53.964,
+          "title": "Nghe thiết giảng giao lý của đạo Phật, nhưng lạc vào đạo Phật phát triển theo hình thức t…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_018.mp4",
+          "youtube_video_id": "9WI29dBi4QU",
+          "youtube_url": "https://youtu.be/9WI29dBi4QU",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Nghe thiết giảng giao lý của đạo Phật, nhưng lạc vào đạo Phật phát triển theo hình thức t…"
         }
       ]
     }
