@@ -322,7 +322,7 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 781.6225990296998,
+      "audio_pointer_sec": 881.8943820316964,
       "photo_pointer_index": 68,
       "mix_credit": 0.0,
       "shorts": [
@@ -548,6 +548,30 @@
           "youtube_url": "https://youtu.be/9WI29dBi4QU",
           "uploaded": true,
           "image_prompt": "A serene, symbolic photograph representing the idea: Nghe thiết giảng giao lý của đạo Phật, nhưng lạc vào đạo Phật phát triển theo hình thức t…"
+        },
+        {
+          "index": 19,
+          "audio_start": 781.623,
+          "audio_end": 830.044,
+          "duration": 48.421,
+          "title": "Nhưng lại là thầy Bùa, thầy Pháp, thầy coi nhà tốt xấu, thầy trừ tà yếm quỷ, trừ ma, thầy…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_019.mp4",
+          "youtube_video_id": "GeEMpuI1110",
+          "youtube_url": "https://youtu.be/GeEMpuI1110",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Nhưng lại là thầy Bùa, thầy Pháp, thầy coi nhà tốt xấu, thầy trừ tà yếm quỷ, trừ ma, thầy…"
+        },
+        {
+          "index": 20,
+          "audio_start": 830.044,
+          "audio_end": 881.894,
+          "duration": 51.85,
+          "title": "Đó là một số người đâm vô số kể.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_020.mp4",
+          "youtube_video_id": "DhI7GTZcp0Y",
+          "youtube_url": "https://youtu.be/DhI7GTZcp0Y",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Đó là một số người đâm vô số kể."
         }
       ]
     }
