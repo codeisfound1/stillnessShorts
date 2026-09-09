@@ -322,7 +322,7 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 1264.4622054174,
+      "audio_pointer_sec": 1362.2504731838267,
       "photo_pointer_index": 68,
       "mix_credit": 0.0,
       "shorts": [
@@ -668,6 +668,30 @@
           "youtube_url": "https://youtu.be/flBQtgF_PKs",
           "uploaded": true,
           "image_prompt": "A serene, symbolic photograph representing the idea: Bài bạc Rũ che, hút sách Vì thế, họ còn đâu tâm trí để nghe lời dạy của ta Đó chính là qu…"
+        },
+        {
+          "index": 29,
+          "audio_start": 1264.462,
+          "audio_end": 1304.501,
+          "duration": 40.039,
+          "title": "Quý thầy, quý thầy cứ suy nghĩ và xét lại xem.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_029.mp4",
+          "youtube_video_id": "0odS38Z1BCY",
+          "youtube_url": "https://youtu.be/0odS38Z1BCY",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Quý thầy, quý thầy cứ suy nghĩ và xét lại xem."
+        },
+        {
+          "index": 30,
+          "audio_start": 1304.501,
+          "audio_end": 1362.25,
+          "duration": 57.749,
+          "title": "Chỉ trong một pháp giáo cũng đã có nhiều pháp môn nhưng chưa chắc đã là pháp môn chân chí…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_030.mp4",
+          "youtube_video_id": "KtTwJm13jWA",
+          "youtube_url": "https://youtu.be/KtTwJm13jWA",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Chỉ trong một pháp giáo cũng đã có nhiều pháp môn nhưng chưa chắc đã là pháp môn chân chí…"
         }
       ]
     }
