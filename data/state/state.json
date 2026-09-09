@@ -322,7 +322,7 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 1066.68304278799,
+      "audio_pointer_sec": 1173.8173045633891,
       "photo_pointer_index": 68,
       "mix_credit": 0.0,
       "shorts": [
@@ -620,6 +620,30 @@
           "youtube_url": "https://youtu.be/GFL7tblQrrk",
           "uploaded": true,
           "image_prompt": "A serene, symbolic photograph representing the idea: Thuyết giảng cho họ nghe, khi Đức Phật thuyết Pháp thì 5 người này ngồi nghe Pháp một các…"
+        },
+        {
+          "index": 25,
+          "audio_start": 1066.683,
+          "audio_end": 1115.292,
+          "duration": 48.609,
+          "title": "Bạch Đức Thế Tôn, tại sao vậy?",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_025.mp4",
+          "youtube_video_id": "sE-X-dAwDwQ",
+          "youtube_url": "https://youtu.be/sE-X-dAwDwQ",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Bạch Đức Thế Tôn, tại sao vậy?"
+        },
+        {
+          "index": 26,
+          "audio_start": 1115.292,
+          "audio_end": 1173.817,
+          "duration": 58.525,
+          "title": "Bạch Thế Tôn, tại sao?",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_026.mp4",
+          "youtube_video_id": "FvK8dC2xGC4",
+          "youtube_url": "https://youtu.be/FvK8dC2xGC4",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Bạch Thế Tôn, tại sao?"
         }
       ]
     }
