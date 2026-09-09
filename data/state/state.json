@@ -322,7 +322,7 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 1173.8173045633891,
+      "audio_pointer_sec": 1264.4622054174,
       "photo_pointer_index": 68,
       "mix_credit": 0.0,
       "shorts": [
@@ -644,6 +644,30 @@
           "youtube_url": "https://youtu.be/FvK8dC2xGC4",
           "uploaded": true,
           "image_prompt": "A serene, symbolic photograph representing the idea: Bạch Thế Tôn, tại sao?"
+        },
+        {
+          "index": 27,
+          "audio_start": 1173.817,
+          "audio_end": 1209.48,
+          "duration": 35.663,
+          "title": "Của lòng tham sân si Của lòng tật đố ganh tỷ Ngã mạng cống cao Của lòng tham danh hiếu lợ…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_027.mp4",
+          "youtube_video_id": "FD7gsB2RDO4",
+          "youtube_url": "https://youtu.be/FD7gsB2RDO4",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Của lòng tham sân si Của lòng tật đố ganh tỷ Ngã mạng cống cao Của lòng tham danh hiếu lợ…"
+        },
+        {
+          "index": 28,
+          "audio_start": 1209.48,
+          "audio_end": 1264.462,
+          "duration": 54.982,
+          "title": "Bài bạc Rũ che, hút sách Vì thế, họ còn đâu tâm trí để nghe lời dạy của ta Đó chính là qu…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_028.mp4",
+          "youtube_video_id": "flBQtgF_PKs",
+          "youtube_url": "https://youtu.be/flBQtgF_PKs",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Bài bạc Rũ che, hút sách Vì thế, họ còn đâu tâm trí để nghe lời dạy của ta Đó chính là qu…"
         }
       ]
     }
