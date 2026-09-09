@@ -322,7 +322,7 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 1362.2504731838267,
+      "audio_pointer_sec": 1458.4330226546713,
       "photo_pointer_index": 68,
       "mix_credit": 0.0,
       "shorts": [
@@ -692,6 +692,30 @@
           "youtube_url": "https://youtu.be/KtTwJm13jWA",
           "uploaded": true,
           "image_prompt": "A serene, symbolic photograph representing the idea: Chỉ trong một pháp giáo cũng đã có nhiều pháp môn nhưng chưa chắc đã là pháp môn chân chí…"
+        },
+        {
+          "index": 31,
+          "audio_start": 1362.25,
+          "audio_end": 1409.648,
+          "duration": 47.397,
+          "title": "Họ không thấy giới lực của Phật là bất thay, thanh tỉnh của họ.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_031.mp4",
+          "youtube_video_id": "Bbmo5xEMpyA",
+          "youtube_url": "https://youtu.be/Bbmo5xEMpyA",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Họ không thấy giới lực của Phật là bất thay, thanh tỉnh của họ."
+        },
+        {
+          "index": 32,
+          "audio_start": 1409.648,
+          "audio_end": 1458.433,
+          "duration": 48.785,
+          "title": "Họ cho kinh tạng Hà Hàm là kinh điển tiểu thừa.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_032.mp4",
+          "youtube_video_id": "_GNmpsqGBU4",
+          "youtube_url": "https://youtu.be/_GNmpsqGBU4",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Họ cho kinh tạng Hà Hàm là kinh điển tiểu thừa."
         }
       ]
     }
