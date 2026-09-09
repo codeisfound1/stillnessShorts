@@ -70,7 +70,7 @@ image_generation:
   # Chỉ dùng khi photos.source = "ai_generated".
   # "pollinations" -> miễn phí, không cần API key.
   # "openai"       -> chất lượng cao hơn, cần OPENAI_API_KEY, tính phí theo ảnh.
-  provider: "pollinations"
+  provider: "openai"
   openai_model: "gpt-image-1"
   # Câu mô tả style thêm vào cuối mọi prompt để ảnh đồng nhất phong cách.
   style_suffix: "cinematic photography, high detail, natural lighting, no text, no watermark, no logo"
