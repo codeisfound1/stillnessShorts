@@ -322,7 +322,7 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 1458.4330226546713,
+      "audio_pointer_sec": 1547.664874215769,
       "photo_pointer_index": 68,
       "mix_credit": 0.0,
       "shorts": [
@@ -716,6 +716,30 @@
           "youtube_url": "https://youtu.be/_GNmpsqGBU4",
           "uploaded": true,
           "image_prompt": "A serene, symbolic photograph representing the idea: Họ cho kinh tạng Hà Hàm là kinh điển tiểu thừa."
+        },
+        {
+          "index": 33,
+          "audio_start": 1458.433,
+          "audio_end": 1509.209,
+          "duration": 50.776,
+          "title": "Theo giáo pháp đại thừa tự cho đó là một pháp môn tối thừa nên biết bao nhiêu thế kỷ nay…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_033.mp4",
+          "youtube_video_id": "QzGj3AlfuFM",
+          "youtube_url": "https://youtu.be/QzGj3AlfuFM",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Theo giáo pháp đại thừa tự cho đó là một pháp môn tối thừa nên biết bao nhiêu thế kỷ nay…"
+        },
+        {
+          "index": 34,
+          "audio_start": 1509.209,
+          "audio_end": 1547.665,
+          "duration": 38.456,
+          "title": "Trải qua một thời gian quá dài nên có những bài kinh do người sao thêm vào tuy vậy, vẫn c…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_034.mp4",
+          "youtube_video_id": "PNU26lIVgaQ",
+          "youtube_url": "https://youtu.be/PNU26lIVgaQ",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Trải qua một thời gian quá dài nên có những bài kinh do người sao thêm vào tuy vậy, vẫn c…"
         }
       ]
     }
