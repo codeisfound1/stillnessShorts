@@ -322,7 +322,7 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 1647.3054797499744,
+      "audio_pointer_sec": 1731.2933419102537,
       "photo_pointer_index": 68,
       "mix_credit": 0.0,
       "shorts": [
@@ -764,6 +764,30 @@
           "youtube_url": "https://youtu.be/Ukuj6waz5Ug",
           "uploaded": true,
           "image_prompt": "A serene, symbolic photograph representing the idea: Sau theo đó mà lầm lạc, rồi lại xem thường Phật Pháp chân chứng, và ném bỏ những giáo lý…"
+        },
+        {
+          "index": 37,
+          "audio_start": 1647.305,
+          "audio_end": 1686.105,
+          "duration": 38.8,
+          "title": "Thứ 17 ngồi thiền thấy mình bay lên trên hư không, điều này Thầy cũng đã gặp.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_037.mp4",
+          "youtube_video_id": "cRX4uVnqB38",
+          "youtube_url": "https://youtu.be/cRX4uVnqB38",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Thứ 17 ngồi thiền thấy mình bay lên trên hư không, điều này Thầy cũng đã gặp."
+        },
+        {
+          "index": 38,
+          "audio_start": 1686.105,
+          "audio_end": 1731.293,
+          "duration": 45.188,
+          "title": "Chẳng ngổ chẳng ngổ, sức chẳng thức, gục tối gục lui như người say rụ.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_038.mp4",
+          "youtube_video_id": "KL-5CZeJuZ0",
+          "youtube_url": "https://youtu.be/KL-5CZeJuZ0",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Chẳng ngổ chẳng ngổ, sức chẳng thức, gục tối gục lui như người say rụ."
         }
       ]
     }
