@@ -322,7 +322,7 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 1547.664874215769,
+      "audio_pointer_sec": 1647.3054797499744,
       "photo_pointer_index": 68,
       "mix_credit": 0.0,
       "shorts": [
@@ -740,6 +740,30 @@
           "youtube_url": "https://youtu.be/PNU26lIVgaQ",
           "uploaded": true,
           "image_prompt": "A serene, symbolic photograph representing the idea: Trải qua một thời gian quá dài nên có những bài kinh do người sao thêm vào tuy vậy, vẫn c…"
+        },
+        {
+          "index": 35,
+          "audio_start": 1547.665,
+          "audio_end": 1601.12,
+          "duration": 53.455,
+          "title": "Này quý thầy, cỡ sao chúng ta lại dựa vào những lý luận của kẻ lươi biến để làm mất sự tô…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_035.mp4",
+          "youtube_video_id": "isJqmJC7OFE",
+          "youtube_url": "https://youtu.be/isJqmJC7OFE",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Này quý thầy, cỡ sao chúng ta lại dựa vào những lý luận của kẻ lươi biến để làm mất sự tô…"
+        },
+        {
+          "index": 36,
+          "audio_start": 1601.12,
+          "audio_end": 1647.305,
+          "duration": 46.186,
+          "title": "Sau theo đó mà lầm lạc, rồi lại xem thường Phật Pháp chân chứng, và ném bỏ những giáo lý…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_036.mp4",
+          "youtube_video_id": "Ukuj6waz5Ug",
+          "youtube_url": "https://youtu.be/Ukuj6waz5Ug",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Sau theo đó mà lầm lạc, rồi lại xem thường Phật Pháp chân chứng, và ném bỏ những giáo lý…"
         }
       ]
     }
