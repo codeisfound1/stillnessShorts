@@ -322,7 +322,7 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 1731.2933419102537,
+      "audio_pointer_sec": 1833.3410402519776,
       "photo_pointer_index": 68,
       "mix_credit": 0.0,
       "shorts": [
@@ -788,6 +788,30 @@
           "youtube_url": "https://youtu.be/KL-5CZeJuZ0",
           "uploaded": true,
           "image_prompt": "A serene, symbolic photograph representing the idea: Chẳng ngổ chẳng ngổ, sức chẳng thức, gục tối gục lui như người say rụ."
+        },
+        {
+          "index": 39,
+          "audio_start": 1731.293,
+          "audio_end": 1787.749,
+          "duration": 56.455,
+          "title": "Có người cho là chứng đắt, chứ họ đâu biết rằng đó là tu sai lệch, giàu néo định tạ, bởi…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_039.mp4",
+          "youtube_video_id": "7f0kG4mI2iw",
+          "youtube_url": "https://youtu.be/7f0kG4mI2iw",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Có người cho là chứng đắt, chứ họ đâu biết rằng đó là tu sai lệch, giàu néo định tạ, bởi…"
+        },
+        {
+          "index": 40,
+          "audio_start": 1787.749,
+          "audio_end": 1833.341,
+          "duration": 45.592,
+          "title": "Có người",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_040.mp4",
+          "youtube_video_id": "lqzk8bZduSA",
+          "youtube_url": "https://youtu.be/lqzk8bZduSA",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Có người"
         }
       ]
     }
