@@ -16,8 +16,8 @@ logger = logging.getLogger(__name__)
 
 
 def _fallback_prompt(title: str, transcript_text: str) -> str:
-    basis = title.strip() or transcript_text.strip()[:120]
-    return f"A serene, symbolic photograph representing the idea: {basis}"
+    basis = title.strip() or transcript_text.strip()[:100]
+    return f"A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: {basis}"
 
 
 def generate_image_prompt(transcript_text: str, title: str, llm_cfg: LLMConfig) -> str:
