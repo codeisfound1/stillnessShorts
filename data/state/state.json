@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 2116.8497351945834,
-      "photo_pointer_index": 89,
+      "audio_pointer_sec": 2195.2285730297745,
+      "photo_pointer_index": 100,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -424,7 +424,27 @@
         "80269758-30B6-4F09-A1D8-3EEDB64CB783.jpeg",
         "E647BBD1-D0FF-401B-8825-52D80FB51957.jpeg",
         "4999A553-2424-48E7-9891-6B29A45E5BE3.jpeg",
-        "39D5A447-1BAC-4B0B-83A5-3C53083934B2.jpeg"
+        "39D5A447-1BAC-4B0B-83A5-3C53083934B2.jpeg",
+        "FA31634B-2FF0-45C0-BC21-B196701B2E1D.jpeg",
+        "79F9754C-824B-4271-9E88-8463B3248681.jpeg",
+        "4999A553-2424-48E7-9891-6B29A45E5BE3.jpeg",
+        "E647BBD1-D0FF-401B-8825-52D80FB51957.jpeg",
+        "BACA37C8-194C-4FA7-9FB8-1A634B04C9D3.jpeg",
+        "50715B7A-0815-48AF-8444-7E887ACD185F.jpeg",
+        "5045C536-DF79-4334-A236-BAC528A13DAE.jpeg",
+        "B00AE7BB-50FB-4ACE-BEBD-AD10BF95E8DC.jpeg",
+        "34605157-A870-45BE-A266-E132BE55B985.jpeg",
+        "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
+        "40662D5A-CBEE-4D52-9855-F43F698A1D5E.jpeg",
+        "80269758-30B6-4F09-A1D8-3EEDB64CB783.jpeg",
+        "8825A85E-1F93-422F-8D23-0F2C9ABE7B77.jpeg",
+        "66DE038C-E21C-4274-B5E8-E41F527833A2.jpeg",
+        "D227D929-2B3E-4CC2-9B57-542F06EC1C8E.jpeg",
+        "3EDEF1DB-4555-4F56-B7D1-EA9ADDE93949.jpeg",
+        "5FE9A9DF-30E6-4C27-8A29-B60F3DDB3AC7.jpeg",
+        "65B36ECB-34CD-4107-8017-C14E17BD7888.jpeg",
+        "39D5A447-1BAC-4B0B-83A5-3C53083934B2.jpeg",
+        "72DD2D02-844E-4BED-9803-E8B9285A90CA.jpeg"
       ],
       "mix_credit": 0.0,
       "shorts": [
@@ -988,6 +1008,31 @@
           "uploaded": true,
           "photo_start_index": 77,
           "photo_end_index": 89
+        },
+        {
+          "index": 47,
+          "audio_start": 2116.85,
+          "audio_end": 2151.218,
+          "duration": 34.369,
+          "title": "Đó là một lần nữa, khi tôi giới lược, phải giết sạch ma quại cảnh, thì khi tôi thiền định…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_047.mp4",
+          "youtube_video_id": "jpxeGdPKd4A",
+          "youtube_url": "https://youtu.be/jpxeGdPKd4A",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Đó là một lần nữa, khi tôi giới lược, phải giết sạch ma quại cảnh, thì khi tôi thiền định…"
+        },
+        {
+          "index": 48,
+          "audio_start": 2151.218,
+          "audio_end": 2195.229,
+          "duration": 44.01,
+          "title": "Giai đoạn này là giai đoạn nhắc định.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_048.mp4",
+          "youtube_video_id": "Wp7KWXKp8vo",
+          "youtube_url": "https://youtu.be/Wp7KWXKp8vo",
+          "uploaded": true,
+          "photo_start_index": 89,
+          "photo_end_index": 100
         }
       ]
     }
