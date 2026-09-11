@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 2027.739189533064,
-      "photo_pointer_index": 77,
+      "audio_pointer_sec": 2116.8497351945834,
+      "photo_pointer_index": 89,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -963,6 +963,31 @@
           "uploaded": true,
           "photo_start_index": 68,
           "photo_end_index": 77
+        },
+        {
+          "index": 45,
+          "audio_start": 2027.739,
+          "audio_end": 2063.949,
+          "duration": 36.209,
+          "title": "Từ chỗ dễ, các con tu được.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_045.mp4",
+          "youtube_video_id": "DmC8YOqNbI4",
+          "youtube_url": "https://youtu.be/DmC8YOqNbI4",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Từ chỗ dễ, các con tu được."
+        },
+        {
+          "index": 46,
+          "audio_start": 2063.949,
+          "audio_end": 2116.85,
+          "duration": 52.901,
+          "title": "Các tu, khi tu giới luật, diệt sạch, ma ngoại cảnh, thì khi tu thiền định, mới diệt.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_046.mp4",
+          "youtube_video_id": "-vYxbUafQbQ",
+          "youtube_url": "https://youtu.be/-vYxbUafQbQ",
+          "uploaded": true,
+          "photo_start_index": 77,
+          "photo_end_index": 89
         }
       ]
     }
