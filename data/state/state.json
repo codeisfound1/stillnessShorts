@@ -322,7 +322,7 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 1833.3410402519776,
+      "audio_pointer_sec": 1929.5508235266589,
       "photo_pointer_index": 68,
       "mix_credit": 0.0,
       "shorts": [
@@ -812,6 +812,30 @@
           "youtube_url": "https://youtu.be/lqzk8bZduSA",
           "uploaded": true,
           "image_prompt": "A serene, symbolic photograph representing the idea: Có người"
+        },
+        {
+          "index": 41,
+          "audio_start": 1833.341,
+          "audio_end": 1891.956,
+          "duration": 58.615,
+          "title": "Tu hành nếu không gặp người có kinh nghiệm chứng quả giải thoát à la há hướng dẫn, nên tu…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_041.mp4",
+          "youtube_video_id": "4d9SsVtvE60",
+          "youtube_url": "https://youtu.be/4d9SsVtvE60",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Tu hành nếu không gặp người có kinh nghiệm chứng quả giải thoát à la há hướng dẫn, nên tu…"
+        },
+        {
+          "index": 42,
+          "audio_start": 1891.956,
+          "audio_end": 1929.551,
+          "duration": 37.595,
+          "title": "Con muốn tu theo Phật giáo phải cẩn thận và cẩn thận hơn, để không uống phí một đời tu hà…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_042.mp4",
+          "youtube_video_id": "q7QWEkLHu_M",
+          "youtube_url": "https://youtu.be/q7QWEkLHu_M",
+          "uploaded": true,
+          "image_prompt": "A serene, symbolic photograph representing the idea: Con muốn tu theo Phật giáo phải cẩn thận và cẩn thận hơn, để không uống phí một đời tu hà…"
         }
       ]
     }
