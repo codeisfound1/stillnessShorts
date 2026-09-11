@@ -43,6 +43,45 @@ def list_photos(photos_dir: Path) -> list[Path]:
     return sorted(photos, key=lambda p: p.name)
 
 
+def resolve_photo_order(*, persisted_order: list[str], photos_by_name: dict[str, Path]) -> list[Path]:
+    """Convert thứ tự đã lưu (tên file) trong state.json -> danh sách Path, bỏ qua file đã bị
+    xoá khỏi photos_dir kể từ lần chạy trước."""
+    return [photos_by_name[name] for name in persisted_order if name in photos_by_name]
+
+
+def _shuffled_lap(photos_now: list[Path], previous_last: Optional[Path]) -> list[Path]:
+    """1 hoán vị ngẫu nhiên của toàn bộ ảnh hiện có ("1 lượt" dùng lại). Đảm bảo ảnh đầu lượt
+    mới khác ảnh cuối lượt liền trước (nếu có > 1 ảnh) để không lặp liền 2 lần cùng 1 ảnh ở
+    điểm nối giữa 2 lượt."""
+    lap = list(photos_now)
+    random.shuffle(lap)
+    if previous_last is not None and len(lap) > 1 and lap[0] == previous_last:
+        swap_idx = random.randint(1, len(lap) - 1)
+        lap[0], lap[swap_idx] = lap[swap_idx], lap[0]
+    return lap
+
+
+def ensure_order_capacity(
+    *,
+    order: list[Path],
+    photos_by_name: dict[str, Path],
+    pointer_index: int,
+    lookahead: int,
+) -> list[Path]:
+    """Nối thêm các "lượt" mới (mỗi lượt là 1 hoán vị ngẫu nhiên của toàn bộ ảnh hiện có trong
+    photos_dir) vào cuối order cho tới khi có ít nhất `lookahead` ảnh chưa dùng kể từ
+    pointer_index - dùng để dùng lại ảnh (photos.reuse_when_exhausted=true) thay vì dừng khi hết
+    ảnh. Mỗi lượt là 1 xáo trộn mới nên không lặp lại đúng y nguyên pattern xuất hiện của lượt
+    trước."""
+    photos_now = list(photos_by_name.values())
+    if not photos_now:
+        return order
+    while len(order) - pointer_index < lookahead:
+        previous_last = order[-1] if order else None
+        order = order + _shuffled_lap(photos_now, previous_last)
+    return order
+
+
 def plan_next_photos(
     *,
     photos: list[Path],

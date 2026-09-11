@@ -7,9 +7,11 @@ from __future__ import annotations
 
 import argparse
 import logging
+import math
 import random
 import sys
 import traceback
+from pathlib import Path
 
 from . import (
     audio_cutter,
@@ -153,14 +155,23 @@ def run(args: argparse.Namespace) -> int:
     photos_list: list = []
     video_duration = 0.0
 
+    photos_by_name: dict[str, Path] = {}
     if photos_mode and uses_folder:
-        photos_list = photo_cutter.list_photos(config.photos.photos_dir)
-        logger.info("Mode photos (%s): %d ảnh trong %s", photos_source, len(photos_list), config.photos.photos_dir)
+        photos_on_disk = photo_cutter.list_photos(config.photos.photos_dir)
+        photos_by_name = {p.name: p for p in photos_on_disk}
+        logger.info("Mode photos (%s): %d ảnh trong %s", photos_source, len(photos_on_disk), config.photos.photos_dir)
         if photos_source == "mix":
-            logger.info(
-                "Mix: %.0f%% khả năng dùng ảnh có sẵn cho mỗi short, tự động chuyển sang AI khi hết ảnh.",
-                config.photos.mix_folder_ratio * 100,
-            )
+            if config.photos.reuse_when_exhausted:
+                logger.info(
+                    "Mix: %.0f%% khả năng dùng ảnh có sẵn cho mỗi short, dùng lại (xáo trộn thứ tự) ảnh "
+                    "khi hết thay vì chuyển hẳn sang AI.",
+                    config.photos.mix_folder_ratio * 100,
+                )
+            else:
+                logger.info(
+                    "Mix: %.0f%% khả năng dùng ảnh có sẵn cho mỗi short, tự động chuyển sang AI khi hết ảnh.",
+                    config.photos.mix_folder_ratio * 100,
+                )
         source_identifier = config.photos.photos_dir
     elif photos_mode:
         logger.info(
@@ -184,6 +195,19 @@ def run(args: argparse.Namespace) -> int:
 
     state_store = StateStore(config.output.state_file)
     source_key, source_state = state_store.get_source_state(source_identifier, config.input.narration_path)
+
+    max_photos_per_short = 1
+    if photos_mode and uses_folder:
+        if not source_state.photo_order:
+            # Lượt đầu tiên: thứ tự alphabet giống hệt hành vi cũ (không random) - chỉ từ lượt
+            # thứ 2 trở đi (khi ảnh đã dùng hết 1 lượt) mới xáo trộn ngẫu nhiên để dùng lại.
+            source_state.photo_order = [p.name for p in sorted(photos_by_name.values(), key=lambda p: p.name)]
+        photos_list = photo_cutter.resolve_photo_order(
+            persisted_order=source_state.photo_order, photos_by_name=photos_by_name
+        )
+        max_photos_per_short = max(
+            1, math.ceil(config.generation.max_duration_sec / max(config.photos.seconds_per_photo_min, 0.1))
+        )
 
     # Chỉ transcribe đúng đoạn audio đợt này sẽ dùng tới (tổng thời lượng tối đa của target_count
     # short, tính từ vị trí pointer hiện tại) thay vì toàn bộ file narration - nhanh hơn nhiều
@@ -216,7 +240,9 @@ def run(args: argparse.Namespace) -> int:
             if photos_source == "ai_generated":
                 use_ai_this_short = True
             elif photos_source == "mix":
-                folder_has_photos_left = source_state.photo_pointer_index < len(photos_list)
+                folder_has_photos_left = (
+                    bool(photos_by_name) and config.photos.reuse_when_exhausted
+                ) or source_state.photo_pointer_index < len(photos_list)
                 if folder_has_photos_left:
                     # Bộ đếm dồn (kiểu Bresenham) thay vì random độc lập mỗi short: đảm bảo tỉ
                     # lệ folder/AI hội tụ đúng mix_folder_ratio ngay cả khi mỗi đợt chỉ chạy 1-2
@@ -252,6 +278,14 @@ def run(args: argparse.Namespace) -> int:
             visual_log = "photos[ai_generated]"
             source_state.audio_pointer_sec = audio_seg.end
         elif photos_mode:
+            if config.photos.reuse_when_exhausted:
+                photos_list = photo_cutter.ensure_order_capacity(
+                    order=photos_list,
+                    photos_by_name=photos_by_name,
+                    pointer_index=source_state.photo_pointer_index,
+                    lookahead=max_photos_per_short,
+                )
+                source_state.photo_order = [p.name for p in photos_list]
             photo_slots, new_photo_pointer = photo_cutter.plan_next_photos(
                 photos=photos_list,
                 pointer_index=source_state.photo_pointer_index,

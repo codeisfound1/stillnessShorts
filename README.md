@@ -14,11 +14,16 @@ Chọn nguồn hình ảnh qua `input.mode` (và `photos.source` nếu `mode: "p
   dựa trên tiêu đề/ý chính của chính đoạn thuyết minh dùng cho short đó, rồi áp hiệu ứng Ken
   Burns (zoom chậm). Không cần chuẩn bị ảnh hay video gì trước - chỉ cần narration.mp3.
 - **`mode: "photos"`, `photos.source: "folder"`** - dựng short dạng slideshow từ nhiều ảnh tĩnh có
-  sẵn trong `photos.photos_dir`, mỗi ảnh có hiệu ứng Ken Burns (xen kẽ zoom-in/zoom-out).
+  sẵn trong `photos.photos_dir`, mỗi ảnh có hiệu ứng Ken Burns (xen kẽ zoom-in/zoom-out). Ảnh
+  được dùng lần lượt không trùng lặp; khi dùng hết cả thư mục (`photos.reuse_when_exhausted`,
+  mặc định `true`) thì bắt đầu dùng lại từ đầu nhưng theo 1 **thứ tự xáo trộn ngẫu nhiên mới**
+  mỗi vòng - để video sau không lặp lại y hệt pattern xuất hiện ảnh của video trước.
 - **`mode: "photos"`, `photos.source: "mix"`** (mặc định) - trộn cả 2 nguồn: mỗi short dùng ảnh
   từ `photos.photos_dir` HOẶC tự sinh 1 ảnh AI, chọn theo đúng tỉ lệ `mix_folder_ratio` bằng một
-  **bộ đếm dồn** (không phải random độc lập từng short - xem mục 1 phần Quy trình chung), tự động
-  chuyển hẳn sang AI khi ảnh trong thư mục đã dùng hết.
+  **bộ đếm dồn** (không phải random độc lập từng short - xem mục 1 phần Quy trình chung). Khi ảnh
+  trong thư mục đã dùng hết: nếu `photos.reuse_when_exhausted: true` (mặc định) thì dùng lại ảnh
+  theo thứ tự xáo trộn mới (như `folder` ở trên) thay vì chuyển hẳn sang AI; đặt `false` để giữ
+  hành vi cũ (chuyển hẳn sang AI vĩnh viễn sau khi hết ảnh).
 - **`mode: "video"`** - cắt short từ 1 video gốc dài có sẵn.
 
 Quy trình chung:
@@ -43,7 +48,10 @@ Quy trình chung:
    `data/state/state.json`), rồi dựng phần hình ảnh khớp đúng độ dài đó:
    - `ai_generated`: sinh tiêu đề + prompt ảnh từ transcript đoạn này, gọi AI sinh 1 ảnh, áp
      Ken Burns cho toàn bộ thời lượng short.
-   - `folder`: lấy N ảnh kế tiếp chưa dùng đủ lấp đầy thời lượng (slideshow).
+   - `folder`: lấy N ảnh kế tiếp chưa dùng đủ lấp đầy thời lượng (slideshow); nếu chạm cuối
+     danh sách ảnh và `reuse_when_exhausted: true`, tự nối thêm 1 vòng ảnh mới (xáo trộn ngẫu
+     nhiên toàn bộ ảnh hiện có, ảnh đầu vòng mới luôn khác ảnh cuối vòng trước) rồi lấy tiếp,
+     không dừng giữa chừng chỉ vì hết 1 vòng.
    - `mix`: mỗi short cộng dồn `mix_folder_ratio` vào một bộ đếm (`mix_credit`, lưu trong
      `state.json`); khi bộ đếm đạt 1.0 thì short đó dùng `folder` (trừ bộ đếm đi 1.0), ngược lại
      dùng `ai_generated`. Cách này đảm bảo tỉ lệ folder/AI hội tụ đúng `mix_folder_ratio` theo
@@ -259,6 +267,11 @@ Các mục quan trọng:
   - `mix_folder_ratio`: chỉ dùng khi `source: "mix"` - tỉ lệ (0.0-1.0) short dùng ảnh có sẵn thay
     vì AI (mặc định `0.5`), đảm bảo hội tụ đúng tỉ lệ qua bộ đếm dồn `mix_credit` (xem mục 1),
     không phải random độc lập từng short.
+  - `reuse_when_exhausted`: dùng khi `source: "folder"` hoặc `"mix"` (mặc định `true`) - khi đã
+    dùng hết ảnh trong `photos_dir`, tự động dùng lại từ đầu theo 1 thứ tự xáo trộn ngẫu nhiên
+    mới (khác pattern lần trước, ảnh đầu vòng mới luôn khác ảnh cuối vòng cũ để không lặp liền)
+    thay vì dừng script (`folder`) hoặc chuyển hẳn sang AI vĩnh viễn (`mix`). Đặt `false` để giữ
+    hành vi cũ.
   - `zoom_max`: mức phóng to tối đa của hiệu ứng Ken Burns (1.0 = tắt zoom), áp dụng mọi source.
   - `alternate_direction`: xen kẽ zoom-in/zoom-out giữa các ảnh/short cho đỡ đơn điệu.
 - `image_generation.*` (dùng khi `photos.source` là `"ai_generated"` hoặc `"mix"`):
@@ -295,10 +308,16 @@ Các mục quan trọng:
 
 - `audio_pointer_sec`: mốc thời gian đã dùng tới trong narration.mp3 (mọi mode).
 - `video_pointer_sec`: mốc thời gian đã dùng tới trong video gốc (chỉ mode `video`).
-- `photo_pointer_index`: số ảnh đã dùng tính từ đầu thư mục `photos_dir` (`photos.source: "folder"`
+- `photo_pointer_index`: số ảnh đã dùng tính từ đầu `photo_order` (`photos.source: "folder"`
   hoặc `"mix"` - chỉ tăng khi short đó thực sự dùng ảnh có sẵn thay vì AI).
   Với `photos.source: "ai_generated"` không có khái niệm hết ảnh - AI luôn sinh ảnh mới, chỉ audio
   mới có thể cạn.
+- `photo_order`: danh sách tên file ảnh theo đúng thứ tự đang/đã dùng. Vòng đầu tiên = toàn bộ
+  ảnh trong `photos_dir` sắp theo tên (giống hành vi trước khi có tính năng dùng lại ảnh). Khi
+  `photo_pointer_index` chạm cuối danh sách này và `photos.reuse_when_exhausted: true`, tự động
+  nối thêm 1 vòng mới (xáo trộn ngẫu nhiên toàn bộ ảnh hiện có trong `photos_dir`, đảm bảo ảnh
+  đầu vòng mới khác ảnh cuối vòng liền trước) rồi tiếp tục - nhờ vậy ảnh được dùng lại nhưng
+  không lặp lại y hệt pattern xuất hiện của vòng trước.
 - `mix_credit`: bộ đếm dồn dùng để chọn `folder`/`ai_generated` đúng tỉ lệ `mix_folder_ratio`
   (chỉ dùng khi `photos.source: "mix"` - xem mục 1).
 - `shorts`: danh sách short đã tạo (khoảng thời gian/ảnh đã dùng, tiêu đề, video ID YouTube...).

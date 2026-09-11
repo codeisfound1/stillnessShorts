@@ -64,6 +64,7 @@ class PhotosConfig:
     zoom_max: float
     alternate_direction: bool
     mix_folder_ratio: float  # chỉ dùng khi source = "mix": xác suất chọn ảnh từ photos_dir cho 1 short
+    reuse_when_exhausted: bool  # dùng lại ảnh (xáo trộn thứ tự) thay vì dừng/chuyển hẳn sang AI khi hết ảnh
 
 
 @dataclass
@@ -254,6 +255,7 @@ def load_config(config_path: str | Path = "config/config.yaml", env_path: str | 
         zoom_max=float(photos_raw.get("zoom_max", 1.15)),
         alternate_direction=bool(photos_raw.get("alternate_direction", True)),
         mix_folder_ratio=float(photos_raw.get("mix_folder_ratio", 0.5)),
+        reuse_when_exhausted=bool(photos_raw.get("reuse_when_exhausted", True)),
     )
 
     imgen_raw = raw.get("image_generation", {})

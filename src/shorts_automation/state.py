@@ -3,7 +3,11 @@
 Mỗi cặp (video_path hoặc photos_dir, narration_path) có một "source key" riêng, lưu:
 - video_pointer_sec / audio_pointer_sec: mốc thời gian đã dùng tới (mode "video"), đoạn
   tiếp theo luôn bắt đầu từ đây trở đi (đảm bảo không lấy lại đoạn cũ, không lồng nhau).
-- photo_pointer_index: số ảnh đã dùng tính từ đầu thư mục (mode "photos").
+- photo_pointer_index: số ảnh đã dùng tính từ đầu photo_order (mode "photos").
+- photo_order: thứ tự ảnh (tên file) đang dùng - "lượt" đầu tiên là toàn bộ ảnh trong
+  photos_dir sắp theo tên (như cũ); khi dùng hết mà photos.reuse_when_exhausted=true, nối
+  thêm 1 "lượt" mới là 1 hoán vị ngẫu nhiên của toàn bộ ảnh hiện có (ảnh đầu lượt mới luôn
+  khác ảnh cuối lượt trước để tránh lặp liền) thay vì dừng lại/chuyển hẳn sang AI.
 - mix_credit: bộ đếm dồn để chọn folder/AI theo đúng tỉ lệ mix_folder_ratio (photos.source
   = "mix"), tránh việc random độc lập từng short có thể "trật" nhiều lần liên tiếp.
 - shorts: danh sách các short đã tạo (kèm metadata) để tra cứu / báo cáo.
@@ -33,6 +37,7 @@ class SourceState:
     video_pointer_sec: float = 0.0
     audio_pointer_sec: float = 0.0
     photo_pointer_index: int = 0
+    photo_order: list[str] = field(default_factory=list)
     mix_credit: float = 0.0
     shorts: list[dict[str, Any]] = field(default_factory=list)
 
@@ -41,6 +46,7 @@ class SourceState:
             "video_pointer_sec": self.video_pointer_sec,
             "audio_pointer_sec": self.audio_pointer_sec,
             "photo_pointer_index": self.photo_pointer_index,
+            "photo_order": self.photo_order,
             "mix_credit": self.mix_credit,
             "shorts": self.shorts,
         }
@@ -51,6 +57,7 @@ class SourceState:
             video_pointer_sec=float(d.get("video_pointer_sec", 0.0)),
             audio_pointer_sec=float(d.get("audio_pointer_sec", 0.0)),
             photo_pointer_index=int(d.get("photo_pointer_index", 0)),
+            photo_order=list(d.get("photo_order", [])),
             mix_credit=float(d.get("mix_credit", 0.0)),
             shorts=list(d.get("shorts", [])),
         )
