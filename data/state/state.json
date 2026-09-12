@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 2383.5620159193872,
-      "photo_pointer_index": 119,
+      "audio_pointer_sec": 2478.8236275241998,
+      "photo_pointer_index": 132,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -1103,6 +1103,31 @@
           "uploaded": true,
           "photo_start_index": 109,
           "photo_end_index": 119
+        },
+        {
+          "index": 53,
+          "audio_start": 2383.562,
+          "audio_end": 2426.515,
+          "duration": 42.953,
+          "title": "Nếu trên đường",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_053.mp4",
+          "youtube_video_id": "ySnMEvyj_IY",
+          "youtube_url": "https://youtu.be/ySnMEvyj_IY",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Nếu trên đường"
+        },
+        {
+          "index": 54,
+          "audio_start": 2426.515,
+          "audio_end": 2478.824,
+          "duration": 52.309,
+          "title": "Tu tập mà quý thầy, chỉ tu cần chừng cho qua ngày tháng thì dù cả tăm ngàn, đời cũng chẳn…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_054.mp4",
+          "youtube_video_id": "XDMqFSa5iaQ",
+          "youtube_url": "https://youtu.be/XDMqFSa5iaQ",
+          "uploaded": true,
+          "photo_start_index": 119,
+          "photo_end_index": 132
         }
       ]
     }
