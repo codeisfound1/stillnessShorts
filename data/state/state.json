@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 2195.2285730297745,
-      "photo_pointer_index": 100,
+      "audio_pointer_sec": 2288.9533516657593,
+      "photo_pointer_index": 109,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -1033,6 +1033,31 @@
           "uploaded": true,
           "photo_start_index": 89,
           "photo_end_index": 100
+        },
+        {
+          "index": 49,
+          "audio_start": 2195.229,
+          "audio_end": 2251.083,
+          "duration": 55.854,
+          "title": "Điều thứ mười một, khó mà có tâm tâm minh.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_049.mp4",
+          "youtube_video_id": "u-kyUpln2Ws",
+          "youtube_url": "https://youtu.be/u-kyUpln2Ws",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Điều thứ mười một, khó mà có tâm tâm minh."
+        },
+        {
+          "index": 50,
+          "audio_start": 2251.083,
+          "audio_end": 2288.953,
+          "duration": 37.871,
+          "title": "Tâm có Nhất Tâm thì Tâm Nhập Định.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_050.mp4",
+          "youtube_video_id": "48uRQRU-LzE",
+          "youtube_url": "https://youtu.be/48uRQRU-LzE",
+          "uploaded": true,
+          "photo_start_index": 100,
+          "photo_end_index": 109
         }
       ]
     }
