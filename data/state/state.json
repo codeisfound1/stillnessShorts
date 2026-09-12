@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 2288.9533516657593,
-      "photo_pointer_index": 109,
+      "audio_pointer_sec": 2383.5620159193872,
+      "photo_pointer_index": 119,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -444,7 +444,27 @@
         "5FE9A9DF-30E6-4C27-8A29-B60F3DDB3AC7.jpeg",
         "65B36ECB-34CD-4107-8017-C14E17BD7888.jpeg",
         "39D5A447-1BAC-4B0B-83A5-3C53083934B2.jpeg",
-        "72DD2D02-844E-4BED-9803-E8B9285A90CA.jpeg"
+        "72DD2D02-844E-4BED-9803-E8B9285A90CA.jpeg",
+        "34605157-A870-45BE-A266-E132BE55B985.jpeg",
+        "4999A553-2424-48E7-9891-6B29A45E5BE3.jpeg",
+        "79F9754C-824B-4271-9E88-8463B3248681.jpeg",
+        "8825A85E-1F93-422F-8D23-0F2C9ABE7B77.jpeg",
+        "40662D5A-CBEE-4D52-9855-F43F698A1D5E.jpeg",
+        "72DD2D02-844E-4BED-9803-E8B9285A90CA.jpeg",
+        "BACA37C8-194C-4FA7-9FB8-1A634B04C9D3.jpeg",
+        "B00AE7BB-50FB-4ACE-BEBD-AD10BF95E8DC.jpeg",
+        "5045C536-DF79-4334-A236-BAC528A13DAE.jpeg",
+        "66DE038C-E21C-4274-B5E8-E41F527833A2.jpeg",
+        "E647BBD1-D0FF-401B-8825-52D80FB51957.jpeg",
+        "50715B7A-0815-48AF-8444-7E887ACD185F.jpeg",
+        "65B36ECB-34CD-4107-8017-C14E17BD7888.jpeg",
+        "3EDEF1DB-4555-4F56-B7D1-EA9ADDE93949.jpeg",
+        "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
+        "FA31634B-2FF0-45C0-BC21-B196701B2E1D.jpeg",
+        "D227D929-2B3E-4CC2-9B57-542F06EC1C8E.jpeg",
+        "39D5A447-1BAC-4B0B-83A5-3C53083934B2.jpeg",
+        "5FE9A9DF-30E6-4C27-8A29-B60F3DDB3AC7.jpeg",
+        "80269758-30B6-4F09-A1D8-3EEDB64CB783.jpeg"
       ],
       "mix_credit": 0.0,
       "shorts": [
@@ -1058,6 +1078,31 @@
           "uploaded": true,
           "photo_start_index": 100,
           "photo_end_index": 109
+        },
+        {
+          "index": 51,
+          "audio_start": 2288.953,
+          "audio_end": 2341.592,
+          "duration": 52.639,
+          "title": "Hẻ cái này tu được thì cái kia mới tu được.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_051.mp4",
+          "youtube_video_id": "_Ao21rjJi6k",
+          "youtube_url": "https://youtu.be/_Ao21rjJi6k",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Hẻ cái này tu được thì cái kia mới tu được."
+        },
+        {
+          "index": 52,
+          "audio_start": 2341.592,
+          "audio_end": 2383.562,
+          "duration": 41.97,
+          "title": "Nếu cái này tu chưa được thì cái kia tu chưa được.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_052.mp4",
+          "youtube_video_id": "uFMOKvVUxNk",
+          "youtube_url": "https://youtu.be/uFMOKvVUxNk",
+          "uploaded": true,
+          "photo_start_index": 109,
+          "photo_end_index": 119
         }
       ]
     }
