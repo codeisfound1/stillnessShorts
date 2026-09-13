@@ -14,6 +14,7 @@ import logging
 import random
 from abc import ABC, abstractmethod
 from pathlib import Path
+from typing import Optional
 from urllib.parse import quote
 
 import requests
@@ -37,16 +38,28 @@ class ImageGenProvider(ABC):
 
 
 class PollinationsImageProvider(ImageGenProvider):
-    """Miễn phí, không cần API key. https://pollinations.ai"""
+    """Miễn phí, không cần API key. https://pollinations.ai
+
+    `nologo=true` chỉ thực sự ẩn watermark/logo pollinations.ai nếu request được xác thực
+    bằng 1 tài khoản đã đăng ký (theo APIDOCS chính thức của Pollinations: "Remove the
+    Pollinations watermark (needs account)") - request ẩn danh (không có token) vẫn bị chèn
+    watermark dù có nologo=true. Đăng ký miễn phí tại https://auth.pollinations.ai để lấy
+    token, rồi set biến môi trường POLLINATIONS_API_TOKEN (secret POLLINATIONS_API_TOKEN
+    trên GitHub Actions) để tự động gửi kèm token, xoá hẳn watermark.
+    """
 
     name = "pollinations"
     BASE_URL = "https://image.pollinations.ai/prompt"
 
+    def __init__(self, api_token: Optional[str] = None):
+        self.api_token = api_token
+
     def generate(self, prompt: str, output_path: Path, *, width: int, height: int, timeout: float) -> Path:
         seed = random.randint(0, 2_147_483_647)
         url = f"{self.BASE_URL}/{quote(prompt)}?width={width}&height={height}&nologo=true&seed={seed}"
+        headers = {"Authorization": f"Bearer {self.api_token}"} if self.api_token else {}
         try:
-            resp = requests.get(url, timeout=timeout)
+            resp = requests.get(url, headers=headers, timeout=timeout)
             resp.raise_for_status()
             content_type = resp.headers.get("content-type", "")
             if not content_type.startswith("image/"):
@@ -90,7 +103,13 @@ class OpenAIImageProvider(ImageGenProvider):
 def _build_provider(image_cfg: ImageGenConfig) -> ImageGenProvider:
     if image_cfg.provider == "openai":
         return OpenAIImageProvider(api_key=image_cfg.openai_api_key or "", model=image_cfg.openai_model)
-    return PollinationsImageProvider()
+    if not image_cfg.pollinations_api_token:
+        logger.warning(
+            "Chưa cấu hình POLLINATIONS_API_TOKEN -> ảnh AI sinh ra sẽ có watermark "
+            "pollinations.ai (nologo=true không đủ để ẩn nếu không xác thực tài khoản). "
+            "Đăng ký miễn phí tại https://auth.pollinations.ai để lấy token và bỏ watermark."
+        )
+    return PollinationsImageProvider(api_token=image_cfg.pollinations_api_token)
 
 
 def generate_placeholder_image(prompt: str, output_path: Path, *, width: int, height: int) -> Path:

@@ -214,6 +214,7 @@ Vào repo → **Settings → Secrets and variables → Actions → New repositor
 | `GROQ_API_KEY` | Nếu dùng `LLM_PROVIDER=groq` (mặc định) | Lấy tại [console.groq.com](https://console.groq.com/keys) |
 | `ANTHROPIC_API_KEY` | Nếu dùng `LLM_PROVIDER=claude` | Lấy tại [console.anthropic.com](https://console.anthropic.com/) |
 | `OPENAI_API_KEY` | Chỉ nếu `image_generation.provider: "openai"` | Provider mặc định `pollinations` MIỄN PHÍ, không cần key này |
+| `POLLINATIONS_API_TOKEN` | Tùy chọn (nếu `image_generation.provider: "pollinations"`) | Để ẢNH SINH RA KHÔNG CÓ WATERMARK pollinations.ai - đăng ký miễn phí tại [auth.pollinations.ai](https://auth.pollinations.ai) lấy token. Không set thì ảnh vẫn tạo được nhưng sẽ có watermark (`nologo=true` không đủ để ẩn nếu request không xác thực tài khoản, theo APIDOCS của Pollinations) |
 | `YOUTUBE_CLIENT_ID` | Có | Từ bước 4 |
 | `YOUTUBE_CLIENT_SECRET` | Có | Từ bước 4 |
 | `YOUTUBE_REFRESH_TOKEN` | Có | Từ bước 4 |
@@ -278,6 +279,13 @@ Các mục quan trọng:
   - `provider`: `"pollinations"` (mặc định, miễn phí, không cần key) hoặc `"openai"` (cần
     `OPENAI_API_KEY`, chất lượng cao hơn, tính phí).
   - `style_suffix`: câu mô tả style thêm vào cuối mọi prompt để ảnh đồng nhất phong cách.
+  - **Watermark khi dùng `"pollinations"`**: ảnh sinh ra sẽ có watermark/logo pollinations.ai
+    trừ khi request được xác thực bằng tài khoản đã đăng ký (`nologo=true` gửi kèm request
+    không đủ để tự ẩn watermark nếu request ẩn danh - đây là giới hạn từ phía Pollinations,
+    không phải bug của app). Để ẩn watermark: đăng ký miễn phí tại
+    [auth.pollinations.ai](https://auth.pollinations.ai), lấy token, rồi set biến môi trường
+    `POLLINATIONS_API_TOKEN` trong `.env` (chạy local) hoặc secret `POLLINATIONS_API_TOKEN`
+    trên GitHub Actions (xem mục 6) - app sẽ tự gửi kèm token này để ẩn watermark.
 - `subtitle.*`: font, cỡ chữ, màu, vị trí (mặc định căn giữa màn hình `alignment: 5`), nền mờ
   phía sau chữ (`back_color`), viền/bóng (`outline`, `shadow`).
 - `branding.*`: logo + tên kênh hiển thị cố định suốt video, căn giữa, phía trên phụ đề.

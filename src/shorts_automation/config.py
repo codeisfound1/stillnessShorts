@@ -74,6 +74,7 @@ class ImageGenConfig:
     style_suffix: str
     timeout_sec: float
     openai_api_key: Optional[str] = None
+    pollinations_api_token: Optional[str] = None
 
 
 @dataclass
@@ -265,6 +266,7 @@ def load_config(config_path: str | Path = "config/config.yaml", env_path: str | 
         style_suffix=str(imgen_raw.get("style_suffix", "")),
         timeout_sec=float(imgen_raw.get("timeout_sec", 60)),
         openai_api_key=os.environ.get("OPENAI_API_KEY"),
+        pollinations_api_token=os.environ.get("POLLINATIONS_API_TOKEN"),
     )
 
     mix_raw = raw.get("audio_mix", {})
