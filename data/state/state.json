@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 2635.601888230381,
-      "photo_pointer_index": 151,
+      "audio_pointer_sec": 2720.7513577565987,
+      "photo_pointer_index": 162,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -1218,6 +1218,31 @@
           "uploaded": true,
           "photo_start_index": 141,
           "photo_end_index": 151
+        },
+        {
+          "index": 59,
+          "audio_start": 2635.602,
+          "audio_end": 2674.708,
+          "duration": 39.106,
+          "title": "Trong đầu của Ngài, như trong kinh sách Đại thừa đã dài, Điều đã đổ tan nát, Ngài thất vọ…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_059.mp4",
+          "youtube_video_id": "dHrYFJ256b4",
+          "youtube_url": "https://youtu.be/dHrYFJ256b4",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Trong đầu của Ngài, như trong kinh sách Đại thừa đã dài, Điều đã đổ tan nát, Ngài thất vọ…"
+        },
+        {
+          "index": 60,
+          "audio_start": 2674.708,
+          "audio_end": 2720.751,
+          "duration": 46.043,
+          "title": "Tai, đừng khinh mắc khen tai, Do cao này vương bột, lâu lại và sau này trở thành đệ tử củ…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_060.mp4",
+          "youtube_video_id": "UnOnLTLslBY",
+          "youtube_url": "https://youtu.be/UnOnLTLslBY",
+          "uploaded": true,
+          "photo_start_index": 151,
+          "photo_end_index": 162
         }
       ]
     }
