@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 2809.6989118303572,
-      "photo_pointer_index": 169,
+      "audio_pointer_sec": 2918.216917132395,
+      "photo_pointer_index": 183,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -1304,6 +1304,31 @@
           "uploaded": true,
           "photo_start_index": 162,
           "photo_end_index": 169
+        },
+        {
+          "index": 63,
+          "audio_start": 2809.699,
+          "audio_end": 2859.373,
+          "duration": 49.675,
+          "title": "Thì có xuất, có nhập.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_063.mp4",
+          "youtube_video_id": "OdtzpTuHEYg",
+          "youtube_url": "https://youtu.be/OdtzpTuHEYg",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Thì có xuất, có nhập."
+        },
+        {
+          "index": 64,
+          "audio_start": 2859.373,
+          "audio_end": 2918.217,
+          "duration": 58.843,
+          "title": "Cách sống như Phật sống ngày",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_064.mp4",
+          "youtube_video_id": "7CfLGUMPhH4",
+          "youtube_url": "https://youtu.be/7CfLGUMPhH4",
+          "uploaded": true,
+          "photo_start_index": 169,
+          "photo_end_index": 183
         }
       ]
     }
