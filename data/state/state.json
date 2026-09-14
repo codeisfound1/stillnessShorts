@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 3011.515563253479,
-      "photo_pointer_index": 193,
+      "audio_pointer_sec": 3087.7454637725937,
+      "photo_pointer_index": 203,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -1354,6 +1354,31 @@
           "uploaded": true,
           "photo_start_index": 183,
           "photo_end_index": 193
+        },
+        {
+          "index": 67,
+          "audio_start": 3011.516,
+          "audio_end": 3044.153,
+          "duration": 32.637,
+          "title": "Không thể lỡ rõ bản chất",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_067.mp4",
+          "youtube_video_id": "wcH2deBQGVg",
+          "youtube_url": "https://youtu.be/wcH2deBQGVg",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Không thể lỡ rõ bản chất"
+        },
+        {
+          "index": 68,
+          "audio_start": 3044.153,
+          "audio_end": 3087.745,
+          "duration": 43.593,
+          "title": "Tôn giả Ana đã,",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_068.mp4",
+          "youtube_video_id": "RhubUcfamBg",
+          "youtube_url": "https://youtu.be/RhubUcfamBg",
+          "uploaded": true,
+          "photo_start_index": 193,
+          "photo_end_index": 203
         }
       ]
     }
