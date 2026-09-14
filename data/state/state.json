@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 2918.216917132395,
-      "photo_pointer_index": 183,
+      "audio_pointer_sec": 3011.515563253479,
+      "photo_pointer_index": 193,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -1329,6 +1329,31 @@
           "uploaded": true,
           "photo_start_index": 169,
           "photo_end_index": 183
+        },
+        {
+          "index": 65,
+          "audio_start": 2918.217,
+          "audio_end": 2967.68,
+          "duration": 49.463,
+          "title": "Các con phải chiến đấu để sống đúng cách ăn, cách ngủ, cách đậm cư.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_065.mp4",
+          "youtube_video_id": "cBxXlTkocUw",
+          "youtube_url": "https://youtu.be/cBxXlTkocUw",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Các con phải chiến đấu để sống đúng cách ăn, cách ngủ, cách đậm cư."
+        },
+        {
+          "index": 66,
+          "audio_start": 2967.68,
+          "audio_end": 3011.516,
+          "duration": 43.835,
+          "title": "Sổ tức là pháp môn giúp các con có đầy đủ ý tứ để hoàn toàn chiến thắng những ác pháp tro…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_066.mp4",
+          "youtube_video_id": "ZfsXdxR-764",
+          "youtube_url": "https://youtu.be/ZfsXdxR-764",
+          "uploaded": true,
+          "photo_start_index": 183,
+          "photo_end_index": 193
         }
       ]
     }
