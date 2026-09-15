@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 3187.3476860069136,
-      "photo_pointer_index": 216,
+      "audio_pointer_sec": 3275.365073346573,
+      "photo_pointer_index": 227,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -1461,6 +1461,31 @@
           "uploaded": true,
           "photo_start_index": 203,
           "photo_end_index": 216
+        },
+        {
+          "index": 71,
+          "audio_start": 3187.348,
+          "audio_end": 3233.9,
+          "duration": 46.553,
+          "title": "Như là một nền tạng quan trọng trong Phật Pháp những người cư xị tại gia có đủ phước riên…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_071.mp4",
+          "youtube_video_id": "_EDus9uXvC0",
+          "youtube_url": "https://youtu.be/_EDus9uXvC0",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Như là một nền tạng quan trọng trong Phật Pháp những người cư xị tại gia có đủ phước riên…"
+        },
+        {
+          "index": 72,
+          "audio_start": 3233.9,
+          "audio_end": 3275.365,
+          "duration": 41.465,
+          "title": "Nhiều chúng ta là những tu sĩ Phật giám phải thấy bổ phẩm của mình bộ tác hạn xây dựng lạ…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_072.mp4",
+          "youtube_video_id": "Rq0Sk1rWHSw",
+          "youtube_url": "https://youtu.be/Rq0Sk1rWHSw",
+          "uploaded": true,
+          "photo_start_index": 216,
+          "photo_end_index": 227
         }
       ]
     }
