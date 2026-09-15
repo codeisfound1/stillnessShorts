@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 3275.365073346573,
-      "photo_pointer_index": 227,
+      "audio_pointer_sec": 3355.077254696952,
+      "photo_pointer_index": 235,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -1486,6 +1486,31 @@
           "uploaded": true,
           "photo_start_index": 216,
           "photo_end_index": 227
+        },
+        {
+          "index": 73,
+          "audio_start": 3275.365,
+          "audio_end": 3319.768,
+          "duration": 44.403,
+          "title": "Thì đó là một vương ảnh tốt cho mọi người thân của chúng ta xung quanh để xem, tức là của…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_073.mp4",
+          "youtube_video_id": "EEWtkVpoWTo",
+          "youtube_url": "https://youtu.be/EEWtkVpoWTo",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Thì đó là một vương ảnh tốt cho mọi người thân của chúng ta xung quanh để xem, tức là của…"
+        },
+        {
+          "index": 74,
+          "audio_start": 3319.768,
+          "audio_end": 3355.077,
+          "duration": 35.309,
+          "title": "Hành vi nơi thân 1.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_074.mp4",
+          "youtube_video_id": "WFsIUD8uI-U",
+          "youtube_url": "https://youtu.be/WFsIUD8uI-U",
+          "uploaded": true,
+          "photo_start_index": 227,
+          "photo_end_index": 235
         }
       ]
     }
