@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 3424.150549940849,
-      "photo_pointer_index": 244,
+      "audio_pointer_sec": 3506.0277975630675,
+      "photo_pointer_index": 253,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -1536,6 +1536,31 @@
           "uploaded": true,
           "photo_start_index": 235,
           "photo_end_index": 244
+        },
+        {
+          "index": 77,
+          "audio_start": 3424.151,
+          "audio_end": 3466.376,
+          "duration": 42.225,
+          "title": "Nên con người đặt ra nhiều câu hỏi về con người.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_077.mp4",
+          "youtube_video_id": "JpHnevS902w",
+          "youtube_url": "https://youtu.be/JpHnevS902w",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Nên con người đặt ra nhiều câu hỏi về con người."
+        },
+        {
+          "index": 78,
+          "audio_start": 3466.376,
+          "audio_end": 3506.028,
+          "duration": 39.652,
+          "title": "Câu hỏi thứ ba, làm sao hết đau",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_078.mp4",
+          "youtube_video_id": "UsLjJ4McrGs",
+          "youtube_url": "https://youtu.be/UsLjJ4McrGs",
+          "uploaded": true,
+          "photo_start_index": 244,
+          "photo_end_index": 253
         }
       ]
     }
