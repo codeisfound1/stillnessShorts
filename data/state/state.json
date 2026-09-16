@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 3506.0277975630675,
-      "photo_pointer_index": 253,
+      "audio_pointer_sec": 3584.1595352676054,
+      "photo_pointer_index": 262,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -1561,6 +1561,31 @@
           "uploaded": true,
           "photo_start_index": 244,
           "photo_end_index": 253
+        },
+        {
+          "index": 79,
+          "audio_start": 3506.028,
+          "audio_end": 3540.464,
+          "duration": 34.436,
+          "title": "Câu hỏi thứ bại,",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_079.mp4",
+          "youtube_video_id": "u6iR30ZzXes",
+          "youtube_url": "https://youtu.be/u6iR30ZzXes",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Câu hỏi thứ bại,"
+        },
+        {
+          "index": 80,
+          "audio_start": 3540.464,
+          "audio_end": 3584.16,
+          "duration": 43.696,
+          "title": "Câu hỏi thứ 11,",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_080.mp4",
+          "youtube_video_id": "72-CpPV-80g",
+          "youtube_url": "https://youtu.be/72-CpPV-80g",
+          "uploaded": true,
+          "photo_start_index": 253,
+          "photo_end_index": 262
         }
       ]
     }
