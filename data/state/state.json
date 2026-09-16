@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 3683.7425610806304,
-      "photo_pointer_index": 273,
+      "audio_pointer_sec": 3783.4978470208152,
+      "photo_pointer_index": 286,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -1668,6 +1668,31 @@
           "uploaded": true,
           "photo_start_index": 262,
           "photo_end_index": 273
+        },
+        {
+          "index": 83,
+          "audio_start": 3683.743,
+          "audio_end": 3730.44,
+          "duration": 46.698,
+          "title": "Câu hỏi thứ 19 Niết Bàn là gì?",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_083.mp4",
+          "youtube_video_id": "3glktWv1xWA",
+          "youtube_url": "https://youtu.be/3glktWv1xWA",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Câu hỏi thứ 19 Niết Bàn là gì?"
+        },
+        {
+          "index": 84,
+          "audio_start": 3730.44,
+          "audio_end": 3783.498,
+          "duration": 53.058,
+          "title": "Thiết và lợi ích viết thực cho sự tu hành của các con Còn những câu hỏi nào để tìm hiểu,…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_084.mp4",
+          "youtube_video_id": "E77NY3sayzg",
+          "youtube_url": "https://youtu.be/E77NY3sayzg",
+          "uploaded": true,
+          "photo_start_index": 273,
+          "photo_end_index": 286
         }
       ]
     }
