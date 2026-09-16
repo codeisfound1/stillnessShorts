@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 3783.4978470208152,
-      "photo_pointer_index": 286,
+      "audio_pointer_sec": 3862.8709602168583,
+      "photo_pointer_index": 296,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -1693,6 +1693,31 @@
           "uploaded": true,
           "photo_start_index": 273,
           "photo_end_index": 286
+        },
+        {
+          "index": 85,
+          "audio_start": 3783.498,
+          "audio_end": 3816.335,
+          "duration": 32.837,
+          "title": "Này các quý vị, Đạo Phật rất thực tế, nên những câu hỏi nào đúng với pháp môn của Phật,",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_085.mp4",
+          "youtube_video_id": "V_ftDZlF0a4",
+          "youtube_url": "https://youtu.be/V_ftDZlF0a4",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Này các quý vị, Đạo Phật rất thực tế, nên những câu hỏi nào đúng với pháp môn của Phật,"
+        },
+        {
+          "index": 86,
+          "audio_start": 3816.335,
+          "audio_end": 3862.871,
+          "duration": 46.536,
+          "title": "Mà các con có thể tu tập được có kết quả ngay trong khi thực là hành, chứ không phải trả…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_086.mp4",
+          "youtube_video_id": "UXe_YJeyyq8",
+          "youtube_url": "https://youtu.be/UXe_YJeyyq8",
+          "uploaded": true,
+          "photo_start_index": 286,
+          "photo_end_index": 296
         }
       ]
     }
