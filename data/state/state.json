@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 4121.298267145707,
-      "photo_pointer_index": 320,
+      "audio_pointer_sec": 4233.907535595494,
+      "photo_pointer_index": 334,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -1850,6 +1850,31 @@
           "uploaded": true,
           "photo_start_index": 312,
           "photo_end_index": 320
+        },
+        {
+          "index": 93,
+          "audio_start": 4121.298,
+          "audio_end": 4174.615,
+          "duration": 53.316,
+          "title": "Cả người ông rung lên, và đầu ông chán ván.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_093.mp4",
+          "youtube_video_id": "wMYTNTR8URk",
+          "youtube_url": "https://youtu.be/wMYTNTR8URk",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Cả người ông rung lên, và đầu ông chán ván."
+        },
+        {
+          "index": 94,
+          "audio_start": 4174.615,
+          "audio_end": 4233.908,
+          "duration": 59.293,
+          "title": "Kính lại ngài, xin ngài cho con sống.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_094.mp4",
+          "youtube_video_id": "8vP8JQvk3jY",
+          "youtube_url": "https://youtu.be/8vP8JQvk3jY",
+          "uploaded": true,
+          "photo_start_index": 320,
+          "photo_end_index": 334
         }
       ]
     }
