@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 3862.8709602168583,
-      "photo_pointer_index": 296,
+      "audio_pointer_sec": 3943.4084239908966,
+      "photo_pointer_index": 303,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -1718,6 +1718,31 @@
           "uploaded": true,
           "photo_start_index": 286,
           "photo_end_index": 296
+        },
+        {
+          "index": 87,
+          "audio_start": 3862.871,
+          "audio_end": 3910.943,
+          "duration": 48.072,
+          "title": "Đó là những việc tu hành cụ thể mà ai ai cũng có thể làm được.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_087.mp4",
+          "youtube_video_id": "s9p569N_bDs",
+          "youtube_url": "https://youtu.be/s9p569N_bDs",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Đó là những việc tu hành cụ thể mà ai ai cũng có thể làm được."
+        },
+        {
+          "index": 88,
+          "audio_start": 3910.943,
+          "audio_end": 3943.408,
+          "duration": 32.465,
+          "title": "Trong đó có một nguồn huy, một nguồn an huy hạnh phúc chân thật, nâu tâm hồ.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_088.mp4",
+          "youtube_video_id": "WMcxVYeI9V4",
+          "youtube_url": "https://youtu.be/WMcxVYeI9V4",
+          "uploaded": true,
+          "photo_start_index": 296,
+          "photo_end_index": 303
         }
       ]
     }
