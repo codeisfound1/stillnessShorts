@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 3943.4084239908966,
-      "photo_pointer_index": 303,
+      "audio_pointer_sec": 4043.499022647519,
+      "photo_pointer_index": 312,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -1743,6 +1743,31 @@
           "uploaded": true,
           "photo_start_index": 296,
           "photo_end_index": 303
+        },
+        {
+          "index": 89,
+          "audio_start": 3943.408,
+          "audio_end": 4003.013,
+          "duration": 59.605,
+          "title": "Câu hỏi này,",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_089.mp4",
+          "youtube_video_id": "hfxIDyeHlm4",
+          "youtube_url": "https://youtu.be/hfxIDyeHlm4",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Câu hỏi này,"
+        },
+        {
+          "index": 90,
+          "audio_start": 4003.013,
+          "audio_end": 4043.499,
+          "duration": 40.486,
+          "title": "Chia làm hai phần chính, ác và thiện, nếu giãn rẫm ra thì rất nhiều, nghĩa tổ trung không…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_090.mp4",
+          "youtube_video_id": "YL-akiQK_-4",
+          "youtube_url": "https://youtu.be/YL-akiQK_-4",
+          "uploaded": true,
+          "photo_start_index": 303,
+          "photo_end_index": 312
         }
       ]
     }
