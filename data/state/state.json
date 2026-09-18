@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 4326.438549183825,
-      "photo_pointer_index": 345,
+      "audio_pointer_sec": 4394.26334179525,
+      "photo_pointer_index": 352,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -1900,6 +1900,31 @@
           "uploaded": true,
           "photo_start_index": 334,
           "photo_end_index": 345
+        },
+        {
+          "index": 97,
+          "audio_start": 4326.439,
+          "audio_end": 4362.552,
+          "duration": 36.114,
+          "title": "Sanh phạm đến tính mạng, group lấy mạng sống của chúng sanh, nên con người không thể nào…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_097.mp4",
+          "youtube_video_id": "O850pYFrRiI",
+          "youtube_url": "https://youtu.be/O850pYFrRiI",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Sanh phạm đến tính mạng, group lấy mạng sống của chúng sanh, nên con người không thể nào…"
+        },
+        {
+          "index": 98,
+          "audio_start": 4362.552,
+          "audio_end": 4394.263,
+          "duration": 31.711,
+          "title": "Group lấy mạng sống của chúng sanh, dù là loài khuôn trùng nhỏ nhất nhất, như kiếm trùng…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_098.mp4",
+          "youtube_video_id": "iQkgIX_yEPY",
+          "youtube_url": "https://youtu.be/iQkgIX_yEPY",
+          "uploaded": true,
+          "photo_start_index": 345,
+          "photo_end_index": 352
         }
       ]
     }
