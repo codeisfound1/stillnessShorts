@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 4485.868764476879,
-      "photo_pointer_index": 365,
+      "audio_pointer_sec": 4551.292571305158,
+      "photo_pointer_index": 374,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -1950,6 +1950,31 @@
           "uploaded": true,
           "photo_start_index": 352,
           "photo_end_index": 365
+        },
+        {
+          "index": 101,
+          "audio_start": 4485.869,
+          "audio_end": 4516.537,
+          "duration": 30.668,
+          "title": "Phải chăng giết hại, đó mà đời đời phải làm thân heo,",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_101.mp4",
+          "youtube_video_id": "AKwxVYtZJ_4",
+          "youtube_url": "https://youtu.be/AKwxVYtZJ_4",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Phải chăng giết hại, đó mà đời đời phải làm thân heo,"
+        },
+        {
+          "index": 102,
+          "audio_start": 4516.537,
+          "audio_end": 4551.293,
+          "duration": 34.756,
+          "title": "Làm thân heo chó gà vịt, cá tôm, v .v.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_102.mp4",
+          "youtube_video_id": "sOonUordMCg",
+          "youtube_url": "https://youtu.be/sOonUordMCg",
+          "uploaded": true,
+          "photo_start_index": 365,
+          "photo_end_index": 374
         }
       ]
     }
