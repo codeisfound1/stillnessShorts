@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 4233.907535595494,
-      "photo_pointer_index": 334,
+      "audio_pointer_sec": 4326.438549183825,
+      "photo_pointer_index": 345,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -1875,6 +1875,31 @@
           "uploaded": true,
           "photo_start_index": 320,
           "photo_end_index": 334
+        },
+        {
+          "index": 95,
+          "audio_start": 4233.908,
+          "audio_end": 4277.661,
+          "duration": 43.754,
+          "title": "Thế nên, sát hại chúng sanh là một điều ngăn tấn thứ nhất trong giấy lượt của Đạo.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_095.mp4",
+          "youtube_video_id": "X3UhpjSQkI4",
+          "youtube_url": "https://youtu.be/X3UhpjSQkI4",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Thế nên, sát hại chúng sanh là một điều ngăn tấn thứ nhất trong giấy lượt của Đạo."
+        },
+        {
+          "index": 96,
+          "audio_start": 4277.661,
+          "audio_end": 4326.439,
+          "duration": 48.777,
+          "title": "Nhân giết hại chúng sanh là nhân tạo ra thân mạng mạng.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_096.mp4",
+          "youtube_video_id": "slCahMDcJgU",
+          "youtube_url": "https://youtu.be/slCahMDcJgU",
+          "uploaded": true,
+          "photo_start_index": 334,
+          "photo_end_index": 345
         }
       ]
     }
