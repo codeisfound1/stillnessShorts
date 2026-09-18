@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 4394.26334179525,
-      "photo_pointer_index": 352,
+      "audio_pointer_sec": 4485.868764476879,
+      "photo_pointer_index": 365,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -1925,6 +1925,31 @@
           "uploaded": true,
           "photo_start_index": 345,
           "photo_end_index": 352
+        },
+        {
+          "index": 99,
+          "audio_start": 4394.263,
+          "audio_end": 4432.459,
+          "duration": 38.196,
+          "title": "Sau khi ngài đặt đạo, thấy gôn bay trước mặt qua lại, ngài biết cái quăng da tiện kiếp.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_099.mp4",
+          "youtube_video_id": "veQLFgYWu8g",
+          "youtube_url": "https://youtu.be/veQLFgYWu8g",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Sau khi ngài đặt đạo, thấy gôn bay trước mặt qua lại, ngài biết cái quăng da tiện kiếp."
+        },
+        {
+          "index": 100,
+          "audio_start": 4432.459,
+          "audio_end": 4485.869,
+          "duration": 53.41,
+          "title": "Người Trung Hoa có tương truyền một chuyện quen thoại, ngăn người hung sát người hay sát…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_100.mp4",
+          "youtube_video_id": "9p2MHovxUZw",
+          "youtube_url": "https://youtu.be/9p2MHovxUZw",
+          "uploaded": true,
+          "photo_start_index": 352,
+          "photo_end_index": 365
         }
       ]
     }
