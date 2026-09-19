@@ -7,6 +7,7 @@
 Trưởng lão Thích Thông Lạc
 Đức Phật Thích Ca
 Thầy Thông Lạc
+Ngài Cao Văn Thế Tôn
 
 # --- Thuật ngữ chung ---
 Phật pháp
@@ -60,6 +61,11 @@ tà dâm
 lời nói nơi miệng
 nói dối
 khoe khoang
+cướp lấy
+loài côn trùng
+mai sau
+đắc đạo
+người lái buôn
 
 # --- Thuật ngữ đặc thù giáo pháp Thích Thông Lạc ---
 ly dục ly ác pháp
