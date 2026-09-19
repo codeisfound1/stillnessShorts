@@ -66,6 +66,7 @@ loài côn trùng
 mai sau
 đắc đạo
 người lái buôn
+tên cướp
 
 # --- Thuật ngữ đặc thù giáo pháp Thích Thông Lạc ---
 ly dục ly ác pháp
