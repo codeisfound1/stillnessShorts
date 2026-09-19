@@ -111,6 +111,21 @@ class GlossaryConfig:
 
 
 @dataclass
+class BookAlignmentConfig:
+    """Căn chỉnh (forced alignment) transcript Whisper với văn bản gốc trong sách .pdf tham
+    chiếu (ví dụ bản ghi/sách của chính bài giảng đang thuyết minh) - định vị đoạn sách khớp
+    nhất với transcript đợt này, rồi thay từ nghe sai bằng đúng từ trong sách tại các đoạn
+    thẳng hàng cùng độ dài, giữ nguyên timestamp. CHỈ áp dụng khi điểm khớp >= min_match_ratio,
+    để tránh chèn nhầm văn bản không liên quan khi audio không khớp sách nào (paraphrase, đọc
+    ngoài sách...). Chạy trước glossary (glossary chạy tiếp theo để bắt phần còn sót).
+    Tùy chọn (optional), mặc định BẬT."""
+
+    enabled: bool
+    path: Optional[Path]
+    min_match_ratio: float
+
+
+@dataclass
 class SubtitleConfig:
     font_path: Path
     font_name: str
@@ -210,6 +225,7 @@ class AppConfig:
     audio_mix: AudioMixConfig
     whisper: WhisperConfig
     glossary: GlossaryConfig
+    book_alignment: BookAlignmentConfig
     subtitle: SubtitleConfig
     branding: BrandingConfig
     disclaimer: DisclaimerConfig
@@ -333,6 +349,13 @@ def load_config(config_path: str | Path = "config/config.yaml", env_path: str | 
         similarity_threshold=float(glossary_raw.get("similarity_threshold", 0.72)),
     )
 
+    book_align_raw = raw.get("book_alignment", {})
+    book_alignment_cfg = BookAlignmentConfig(
+        enabled=bool(book_align_raw.get("enabled", True)),
+        path=_resolve(book_align_raw.get("path", "data/input/pdf")),
+        min_match_ratio=float(book_align_raw.get("min_match_ratio", 0.4)),
+    )
+
     sub_raw = raw.get("subtitle", {})
     subtitle_cfg = SubtitleConfig(
         font_path=_resolve(sub_raw.get("font_path", "assets/fonts/BeVietnamPro-ExtraBold.ttf")),
@@ -428,6 +451,7 @@ def load_config(config_path: str | Path = "config/config.yaml", env_path: str | 
         audio_mix=audio_mix_cfg,
         whisper=whisper_cfg,
         glossary=glossary_cfg,
+        book_alignment=book_alignment_cfg,
         subtitle=subtitle_cfg,
         branding=branding_cfg,
         disclaimer=disclaimer_cfg,

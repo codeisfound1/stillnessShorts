@@ -28,27 +28,30 @@ import logging
 from pathlib import Path
 
 from .transcriber import Word
+from .utils.pdf_text import extract_pdf_text
 
 logger = logging.getLogger(__name__)
 
 _SOURCE_EXTENSIONS = {".txt", ".pdf"}
 
-
-def _extract_pdf_text(path: Path) -> str:
-    from pypdf import PdfReader
-
-    reader = PdfReader(str(path))
-    return "\n".join(page.extract_text() or "" for page in reader.pages)
+# Bộ nhớ đệm trong tiến trình theo đường dẫn file - tránh trích lại PDF/đọc lại file nhiều lần
+# nếu gọi lặp lại trong 1 lần chạy (ví dụ nhiều short trong 1 lần chạy script).
+_TERMS_CACHE: dict[str, list[str]] = {}
 
 
 def _load_terms_from_file(path: Path) -> list[str]:
-    raw_text = _extract_pdf_text(path) if path.suffix.lower() == ".pdf" else path.read_text(encoding="utf-8")
+    cache_key = str(path.resolve())
+    cached = _TERMS_CACHE.get(cache_key)
+    if cached is not None:
+        return cached
+    raw_text = extract_pdf_text(path) if path.suffix.lower() == ".pdf" else path.read_text(encoding="utf-8")
     terms: list[str] = []
     for line in raw_text.splitlines():
         line = line.strip()
         if not line or line.startswith("#"):
             continue
         terms.append(line)
+    _TERMS_CACHE[cache_key] = terms
     return terms
 
 

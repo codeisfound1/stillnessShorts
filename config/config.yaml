@@ -98,6 +98,24 @@ whisper:
     Giữ nguyên lời nói, không dịch, không diễn giải và không thêm nội dung.
     Chú ý chính tả các thuật ngữ: Phật pháp, tu tập, giới luật, nhân quả, nhân duyên, đoạt mạng, thọ lấy
 
+book_alignment:
+  # TÙY CHỌN - căn chỉnh (forced alignment) transcript với văn bản gốc trong sách .pdf tham
+  # chiếu (ví dụ chính cuốn sách/bài giảng đang thuyết minh). Tự định vị đoạn sách khớp nhất với
+  # audio đang xử lý rồi thay từ Whisper nghe sai bằng ĐÚNG từ trong sách - sửa được cả câu dài,
+  # không chỉ từng thuật ngữ riêng lẻ như glossary bên dưới. Chạy TRƯỚC glossary (glossary chạy
+  # tiếp theo để bắt phần còn sót). Mặc định BẬT - chỉ áp dụng sửa khi điểm khớp đủ cao
+  # (min_match_ratio), nếu đoạn audio không khớp sách nào (paraphrase, đọc ngoài sách...) thì
+  # giữ nguyên transcript Whisper, không chèn nhầm văn bản không liên quan.
+  enabled: true
+  # Đường dẫn 1 file .pdf hoặc 1 THƯ MỤC chứa nhiều file .pdf (mặc định dùng chung thư mục với
+  # glossary.path bên dưới - data/input/pdf/, nơi đã có sẵn các sách Pháp Âm).
+  path: "data/input/pdf"
+  # Điểm khớp tối thiểu (0.0-1.0, dùng difflib.SequenceMatcher.ratio() sau khi định vị đoạn sách
+  # gần đúng nhất) để CHẤP NHẬN áp dụng sửa theo sách - thấp hơn thì bỏ qua, giữ nguyên transcript
+  # Whisper (an toàn hơn là chèn nhầm văn bản không liên quan). Tăng nếu thấy sửa nhầm, giảm nếu
+  # thấy bỏ sót quá nhiều đoạn đáng lẽ khớp được.
+  min_match_ratio: 0.4
+
 glossary:
   # TÙY CHỌN - sửa lỗi hậu kỳ transcript theo 1 danh sách thuật ngữ tham chiếu, để bắt các từ
   # Whisper nghe GẦN ĐÚNG nhưng sai chính tả (ví dụ nghe "đoạt mạn" thay vì "đoạt mạng") mà

@@ -228,6 +228,7 @@ def run(args: argparse.Namespace) -> int:
         window_start=window_start,
         window_end=window_end,
         glossary_cfg=config.glossary,
+        book_alignment_cfg=config.book_alignment,
         force=args.force_retranscribe,
     )
 

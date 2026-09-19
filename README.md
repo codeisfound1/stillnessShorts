@@ -97,6 +97,7 @@ stillnessShorts/
 │   ├── image_prompt_generator.py  # Sinh prompt ảnh (tiếng Anh) từ tiêu đề/transcript
 │   ├── audio_cutter.py            # Cắt audio thuyết minh, trộn nhạc nền
 │   ├── transcriber.py             # faster-whisper transcript + cache
+│   ├── book_alignment.py          # (tùy chọn) căn chỉnh transcript với sách .pdf tham chiếu
 │   ├── glossary_corrector.py      # (tùy chọn) sửa lỗi hậu kỳ transcript theo glossary.path
 │   ├── subtitles.py               # Sinh file .ass
 │   ├── title_generator.py         # Điều phối LLM provider + fallback
@@ -320,8 +321,29 @@ Các mục quan trọng:
   để `""` nếu không cần). Whisper luôn transcribe với `language: "vi"` cố định (không tự đoán
   ngôn ngữ), bật `vad_filter` (lọc khoảng lặng) và `condition_on_previous_text: false` (đoạn
   audio trước không ảnh hưởng tới decode đoạn sau, tránh lỗi "kẹt"/lặp câu khi 1 đoạn bị nghe sai).
+- `book_alignment.*` (TÙY CHỌN, mặc định BẬT) - căn chỉnh (forced alignment) transcript với văn
+  bản gốc trong sách `.pdf` tham chiếu (ví dụ chính cuốn sách/bài giảng đang thuyết minh) - sửa
+  được cả câu dài theo đúng văn bản gốc, mạnh hơn nhiều so với `glossary` (chạy sau đó, xem bên
+  dưới) chỉ sửa được từng cụm từ ngắn riêng lẻ:
+  - `enabled`: bật/tắt (mặc định `true`).
+  - `path`: 1 file `.pdf` hoặc 1 THƯ MỤC chứa nhiều file `.pdf` (mặc định `data/input/pdf/` -
+    dùng chung thư mục với sách/tài liệu của `glossary.path` bên dưới).
+  - `min_match_ratio`: điểm khớp tối thiểu (0.0-1.0, mặc định `0.4`) để CHẤP NHẬN áp dụng sửa.
+  - **Cách hoạt động**: với mỗi cửa sổ transcript, tự động (1) định vị đoạn trong sách khớp
+    nhất bằng cách tra vị trí các từ hiếm trùng khớp (index đảo ngược, ưu tiên từ càng hiếm
+    càng đáng tin), (2) so khớp tinh bằng `difflib` trên đúng vùng đã định vị để tìm các đoạn
+    thẳng hàng, (3) CHỈ thay từ Whisper nghe sai bằng đúng từ trong sách tại các đoạn thẳng
+    hàng CÙNG ĐỘ DÀI (giữ nguyên timestamp), và CHỈ khi điểm khớp tổng thể của cả cửa sổ >=
+    `min_match_ratio`. Nếu đoạn audio không khớp sách nào đủ tốt (người đọc paraphrase, đọc
+    ngoài sách, hoặc không có sách nào chứa nội dung đó), transcript Whisper được GIỮ NGUYÊN
+    - cố tình không chèn văn bản không chắc chắn, vì chèn nhầm còn tệ hơn không sửa được gì.
+  - Chạy TRƯỚC `glossary` trong cùng 1 lượt transcribe; `glossary` chạy tiếp theo để bắt các
+    chỗ `book_alignment` không đủ tự tin để sửa (ví dụ đoạn không khớp sách nào).
+  - Đã test với sách + audio thật (`data/input/pdf/*.pdf` ghép với `data/input/narration/*.mp3`
+    tương ứng): định vị đúng vị trí đoạn dù không biết trước offset, sửa đúng các từ nghe sai
+    mô phỏng, giữ nguyên các câu không liên quan tới sách nào (không sửa nhầm).
 - `glossary.*` (TÙY CHỌN, mặc định tắt) - sửa lỗi hậu kỳ transcript theo 1 danh sách thuật ngữ
-  tham chiếu, dùng khi `whisper.initial_prompt` vẫn chưa sửa hết các từ khó nghe sai:
+  tham chiếu, dùng khi `book_alignment`/`whisper.initial_prompt` vẫn chưa sửa hết các từ khó nghe sai:
   - `enabled`: bật/tắt (mặc định `false`).
   - `path`: đường dẫn 1 file `.txt` (mỗi dòng 1 thuật ngữ, dòng trống hoặc bắt đầu bằng `#` bị
     bỏ qua) hoặc `.pdf` (tự trích text bằng `pypdf`, mỗi dòng cũng coi là 1 thuật ngữ) - HOẶC 1
