@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 4766.347661547549,
-      "photo_pointer_index": 394,
+      "audio_pointer_sec": 4796.491698353418,
+      "photo_pointer_index": 401,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -770,7 +770,7 @@
         "44B22212-9564-49F5-99CB-54C6AA83C206.jpeg",
         "34BCBB86-F941-4708-91F6-D79F85B5EF8D.jpeg"
       ],
-      "mix_credit": 0.5,
+      "mix_credit": 0.0,
       "shorts": [
         {
           "index": 1,
@@ -2094,6 +2094,19 @@
           "youtube_url": "https://youtu.be/Z2aCHJOW7T0",
           "uploaded": true,
           "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Năm ấy trời làm đại hạng suốt một năm trời"
+        },
+        {
+          "index": 108,
+          "audio_start": 4766.348,
+          "audio_end": 4796.492,
+          "duration": 30.144,
+          "title": "Cỏ lát trong hồ cũng vàng uống tàn tạ, có thể nước nóng như một chảo nước sôi.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_108.mp4",
+          "youtube_video_id": "cljdoX32qnQ",
+          "youtube_url": "https://youtu.be/cljdoX32qnQ",
+          "uploaded": true,
+          "photo_start_index": 394,
+          "photo_end_index": 401
         }
       ]
     }
