@@ -322,7 +322,7 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 4734.92416387378,
+      "audio_pointer_sec": 4766.347661547549,
       "photo_pointer_index": 394,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
@@ -770,7 +770,7 @@
         "44B22212-9564-49F5-99CB-54C6AA83C206.jpeg",
         "34BCBB86-F941-4708-91F6-D79F85B5EF8D.jpeg"
       ],
-      "mix_credit": 0.0,
+      "mix_credit": 0.5,
       "shorts": [
         {
           "index": 1,
@@ -2082,6 +2082,18 @@
           "uploaded": true,
           "photo_start_index": 384,
           "photo_end_index": 394
+        },
+        {
+          "index": 107,
+          "audio_start": 4734.924,
+          "audio_end": 4766.348,
+          "duration": 31.423,
+          "title": "Năm ấy trời làm đại hạng suốt một năm trời",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_107.mp4",
+          "youtube_video_id": "Z2aCHJOW7T0",
+          "youtube_url": "https://youtu.be/Z2aCHJOW7T0",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Năm ấy trời làm đại hạng suốt một năm trời"
         }
       ]
     }
