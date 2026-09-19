@@ -11,13 +11,16 @@ venv/
 # Input/output media (thường lớn, không nên commit trừ khi chủ động muốn)
 data/input/*
 !data/input/.gitkeep
-!data/input/glossary.txt
 !data/input/photos/
 data/input/photos/*
 !data/input/photos/.gitkeep
 !data/input/narration/
 data/input/narration/*
 !data/input/narration/.gitkeep
+!data/input/pdf/
+data/input/pdf/*
+!data/input/pdf/.gitkeep
+!data/input/pdf/glossary.txt
 data/output/*
 !data/output/.gitkeep
 data/work/*

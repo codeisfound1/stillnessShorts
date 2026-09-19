@@ -103,10 +103,12 @@ glossary:
   # Whisper nghe GẦN ĐÚNG nhưng sai chính tả (ví dụ nghe "đoạt mạn" thay vì "đoạt mạng") mà
   # initial_prompt ở trên không sửa hết. Mặc định tắt - chỉ cần bật nếu vẫn còn thấy sai nhiều.
   enabled: true
-  # Đường dẫn file .txt (mỗi dòng 1 thuật ngữ, dòng trống hoặc bắt đầu bằng "#" bị bỏ qua) hoặc
-  # .pdf (tự trích text, coi mỗi dòng là 1 thuật ngữ). Đã có sẵn 1 file ví dụ tại
-  # data/input/glossary.txt - sửa/thêm/bớt thuật ngữ tùy nội dung kênh, hoặc đổi path khác.
-  path: "data/input/glossary.txt"
+  # Đường dẫn 1 file .txt (mỗi dòng 1 thuật ngữ, dòng trống hoặc bắt đầu bằng "#" bị bỏ qua)
+  # hoặc .pdf (tự trích text, coi mỗi dòng là 1 thuật ngữ) - HOẶC 1 THƯ MỤC chứa nhiều file
+  # .txt/.pdf (đặt thêm sách/tài liệu tham chiếu dạng PDF vào đây), gộp thuật ngữ từ mọi file
+  # trong thư mục đó. Mặc định trỏ tới data/input/pdf/ - đã có sẵn file glossary.txt + các sách
+  # Pháp Âm (.pdf) trong đó, có thể thêm file .txt/.pdf khác vào cùng thư mục hoặc đổi path khác.
+  path: "data/input/pdf"
   # Ngưỡng độ giống (0.0-1.0, dùng difflib) để coi 1 cụm từ trong transcript là "gần giống" 1
   # thuật ngữ và tự sửa lại - càng thấp càng dễ sửa nhầm từ đã đúng, càng cao càng bỏ sót lỗi.
   similarity_threshold: 0.72

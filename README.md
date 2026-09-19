@@ -81,7 +81,8 @@ stillnessShorts/
 ├── .env.example                             # Mẫu file secrets (copy thành .env)
 ├── data/
 │   ├── input/     # narration.mp3 (luôn cần), (music.mp3) tùy chọn, image.png (logo kênh) tùy chọn,
-│   │               # photos/ (nếu photos.source=folder/mix) hoặc source_video.mp4 (nếu mode=video)
+│   │               # photos/ (nếu photos.source=folder/mix) hoặc source_video.mp4 (nếu mode=video),
+│   │               # pdf/ (tùy chọn - danh sách thuật ngữ/sách tham chiếu cho glossary.path)
 │   ├── output/    # Video short đã tạo
 │   ├── work/      # File trung gian (wav cache, transcript cache, ảnh AI, ass, clip tạm)
 │   └── state/     # state.json - theo dõi đoạn/ảnh đã dùng
@@ -96,6 +97,7 @@ stillnessShorts/
 │   ├── image_prompt_generator.py  # Sinh prompt ảnh (tiếng Anh) từ tiêu đề/transcript
 │   ├── audio_cutter.py            # Cắt audio thuyết minh, trộn nhạc nền
 │   ├── transcriber.py             # faster-whisper transcript + cache
+│   ├── glossary_corrector.py      # (tùy chọn) sửa lỗi hậu kỳ transcript theo glossary.path
 │   ├── subtitles.py               # Sinh file .ass
 │   ├── title_generator.py         # Điều phối LLM provider + fallback
 │   ├── llm/                        # groq_provider.py, claude_provider.py, rule_based.py, factory.py
@@ -322,18 +324,28 @@ Các mục quan trọng:
   tham chiếu, dùng khi `whisper.initial_prompt` vẫn chưa sửa hết các từ khó nghe sai:
   - `enabled`: bật/tắt (mặc định `false`).
   - `path`: đường dẫn 1 file `.txt` (mỗi dòng 1 thuật ngữ, dòng trống hoặc bắt đầu bằng `#` bị
-    bỏ qua) hoặc `.pdf` (tự trích text bằng `pypdf`, mỗi dòng cũng coi là 1 thuật ngữ). Đã có
-    sẵn 1 file ví dụ tại `data/input/glossary.txt` (thuật ngữ Phật giáo/giáo pháp Trưởng lão
-    Thích Thông Lạc) - sửa/thêm/bớt tùy nội dung kênh.
-  - `similarity_threshold`: ngưỡng độ giống (0.0-1.0, mặc định `0.72`) để coi 1 cụm từ Whisper
-    nghe được là "gần giống" 1 thuật ngữ trong danh sách và tự sửa lại đúng chính tả - so khớp
-    TỪNG ÂM TIẾT theo đúng vị trí (không so cả cụm ghép chuỗi, tránh 1 cửa sổ dịch lệch 1 từ vẫn
-    bị tính "giống" rồi sửa nhầm đúng thành sai) và chỉ so khớp cụm liên tiếp có ĐÚNG số âm tiết
-    với thuật ngữ (để không làm lệch timestamp phụ đề), bỏ qua nếu cụm đó đã khớp đúng sẵn.
-    Ngưỡng thấp dễ sửa nhầm từ đã đúng, ngưỡng cao dễ bỏ sót lỗi - nên thử vài giá trị rồi xem
-    log (`Sửa theo glossary: "..." -> "..."`) để tinh chỉnh.
-  - Vì việc sửa được áp dụng ngay khi transcribe (trước khi cache ra JSON), sửa `glossary.txt`
-    sau khi đã có cache thì cần chạy lại với `--force-retranscribe` để áp dụng.
+    bỏ qua) hoặc `.pdf` (tự trích text bằng `pypdf`, mỗi dòng cũng coi là 1 thuật ngữ) - HOẶC 1
+    THƯ MỤC chứa nhiều file `.txt`/`.pdf` (mặc định trỏ tới `data/input/pdf/`), gộp thuật ngữ từ
+    mọi file trong đó (xử lý theo thứ tự tên file). Đã có sẵn 1 file ví dụ
+    `data/input/pdf/glossary.txt` (thuật ngữ Phật giáo/giáo pháp Trưởng lão Thích Thông Lạc) -
+    sửa/thêm/bớt tùy nội dung kênh, hoặc thả thêm sách/tài liệu PDF khác vào cùng thư mục đó.
+    Lưu ý: cơ chế vẫn coi MỖI DÒNG trích ra là 1 "thuật ngữ" - với PDF cả cuốn sách (đoạn văn
+    dài, ngắt dòng theo khổ trang), nhiều dòng sẽ là câu dài không khớp cửa sổ nào trong
+    transcript (vô hại, chỉ đơn giản không có tác dụng) - hiệu quả nhất vẫn là file dạng danh
+    sách thuật ngữ ngắn gọn, mỗi dòng 1 cụm từ.
+  - `similarity_threshold`: ngưỡng độ giống TRUNG BÌNH (0.0-1.0, mặc định `0.72`) để coi 1 cụm
+    từ Whisper nghe được là "gần giống" 1 thuật ngữ trong danh sách và tự sửa lại đúng chính tả -
+    so khớp TỪNG ÂM TIẾT theo đúng vị trí (không so cả cụm ghép chuỗi, tránh 1 cửa sổ dịch lệch 1
+    từ vẫn bị tính "giống" rồi sửa nhầm đúng thành sai), CHỈ sửa khi cả (a) độ giống trung bình
+    ≥ ngưỡng này VÀ (b) độ giống của âm tiết THẤP NHẤT trong cụm ≥ 0.6 - điều kiện (b) để chặn
+    trường hợp 1 âm tiết sai hoàn toàn "trốn" được nhờ các âm tiết còn lại khớp tuyệt đối kéo
+    trung bình lên cao (gặp phải khi glossary lớn, ghép từ nguyên sách PDF). Bỏ qua thuật ngữ chỉ
+    1 âm tiết (từ đơn tiếng Việt quá phổ biến để so khớp mờ an toàn) và bỏ qua nếu cụm đã khớp
+    đúng sẵn. Chỉ so khớp cụm liên tiếp có ĐÚNG số âm tiết với thuật ngữ (để không làm lệch
+    timestamp phụ đề). Ngưỡng thấp dễ sửa nhầm từ đã đúng, ngưỡng cao dễ bỏ sót lỗi - nên thử vài
+    giá trị rồi xem log (`Sửa theo glossary: "..." -> "..."`) để tinh chỉnh.
+  - Vì việc sửa được áp dụng ngay khi transcribe (trước khi cache ra JSON), sửa nội dung file/
+    thư mục glossary sau khi đã có cache thì cần chạy lại với `--force-retranscribe` để áp dụng.
 - `youtube.publish_delay_minutes`: mặc định `60` — video được upload ở chế độ private kèm
   `publishAt`, YouTube tự động chuyển sang public đúng giờ đó (video không hiển thị công khai
   trước thời điểm này). Set `0` để đăng công khai ngay theo `youtube.privacy_status`.
