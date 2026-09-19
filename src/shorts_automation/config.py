@@ -84,6 +84,11 @@ class AudioMixConfig:
     music_fade_sec: float
 
 
+DEFAULT_WHISPER_INITIAL_PROMPT = """Bản ghi tiếng Việt về Phật giáo và giáo pháp của Trưởng lão Thích Thông Lạc.
+Giữ nguyên lời nói, không dịch, không diễn giải và không thêm nội dung.
+Chú ý chính tả các thuật ngữ: Phật pháp, tu tập, giới luật, nhân quả, nhân duyên, đoạt mạng, thọ lấy""".strip()
+
+
 @dataclass
 class WhisperConfig:
     model_size: str
@@ -91,6 +96,7 @@ class WhisperConfig:
     compute_type: str
     language: str
     word_timestamps: bool
+    initial_prompt: str = DEFAULT_WHISPER_INITIAL_PROMPT
 
 
 @dataclass
@@ -283,6 +289,7 @@ def load_config(config_path: str | Path = "config/config.yaml", env_path: str | 
         compute_type=str(whisper_raw.get("compute_type", "auto")),
         language=str(whisper_raw.get("language", "vi")),
         word_timestamps=bool(whisper_raw.get("word_timestamps", True)),
+        initial_prompt=str(whisper_raw.get("initial_prompt", DEFAULT_WHISPER_INITIAL_PROMPT)).strip(),
     )
 
     sub_raw = raw.get("subtitle", {})

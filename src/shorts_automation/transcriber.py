@@ -64,9 +64,15 @@ def _run_whisper(audio_path: Path, whisper_cfg: WhisperConfig) -> TranscriptResu
 
     segments, _info = model.transcribe(
         str(audio_path),
-        language=whisper_cfg.language,
+        # Cố định "vi" (không đọc whisper_cfg.language) - tránh Whisper tự đoán nhầm sang ngôn
+        # ngữ khác trên các đoạn audio khó nghe/nhiều tiếng ồn.
+        language="vi",
         word_timestamps=whisper_cfg.word_timestamps,
         vad_filter=True,
+        # Không cho đoạn trước ảnh hưởng tới decode đoạn sau - tránh lỗi bị "kẹt"/lặp lại khi
+        # 1 đoạn bị nghe sai, đặc biệt khi mỗi lần chỉ transcribe 1 cửa sổ audio riêng lẻ.
+        condition_on_previous_text=False,
+        initial_prompt=whisper_cfg.initial_prompt or None,
     )
 
     words: list[Word] = []

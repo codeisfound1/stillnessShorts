@@ -302,6 +302,12 @@ Các mục quan trọng:
 - `whisper.model_size`: `tiny`/`base`/`small`/`medium`/`large-v3` — model lớn hơn cho tiếng Việt
   chính xác hơn nhưng chạy chậm hơn (CPU trên GitHub Actions runner mặc định khá chậm với
   `large-v3`, cân nhắc dùng `medium` hoặc `small` nếu video dài).
+- `whisper.initial_prompt`: đoạn văn bản gợi ý ngữ cảnh + thuật ngữ chuyên ngành cho Whisper, giúp
+  giảm nghe/viết sai chính tả các từ khó (mặc định sẵn 1 đoạn cho nội dung Phật giáo/giáo pháp
+  Trưởng lão Thích Thông Lạc - sửa lại trong `config/config.yaml` cho phù hợp nội dung kênh, hoặc
+  để `""` nếu không cần). Whisper luôn transcribe với `language: "vi"` cố định (không tự đoán
+  ngôn ngữ), bật `vad_filter` (lọc khoảng lặng) và `condition_on_previous_text: false` (đoạn
+  audio trước không ảnh hưởng tới decode đoạn sau, tránh lỗi "kẹt"/lặp câu khi 1 đoạn bị nghe sai).
 - `youtube.publish_delay_minutes`: mặc định `60` — video được upload ở chế độ private kèm
   `publishAt`, YouTube tự động chuyển sang public đúng giờ đó (video không hiển thị công khai
   trước thời điểm này). Set `0` để đăng công khai ngay theo `youtube.privacy_status`.

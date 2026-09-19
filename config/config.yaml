@@ -91,6 +91,12 @@ whisper:
   compute_type: "auto"     # auto | int8 | float16 | float32
   language: "vi"
   word_timestamps: true
+  # Gợi ý ngữ cảnh + thuật ngữ chuyên ngành cho Whisper để giảm nghe sai chính tả (không dịch,
+  # không được thêm nội dung ngoài transcript thật). Để trống ("") nếu không muốn dùng.
+  initial_prompt: |
+    Bản ghi tiếng Việt về Phật giáo và giáo pháp của Trưởng lão Thích Thông Lạc.
+    Giữ nguyên lời nói, không dịch, không diễn giải và không thêm nội dung.
+    Chú ý chính tả các thuật ngữ: Phật pháp, tu tập, giới luật, nhân quả, nhân duyên, đoạt mạng, thọ lấy
 
 subtitle:
   font_path: "assets/fonts/BeVietnamPro-ExtraBold.ttf"
