@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 4873.140741751134,
-      "photo_pointer_index": 408,
+      "audio_pointer_sec": 4978.497512461879,
+      "photo_pointer_index": 419,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -2132,6 +2132,31 @@
           "uploaded": true,
           "photo_start_index": 401,
           "photo_end_index": 408
+        },
+        {
+          "index": 111,
+          "audio_start": 4873.141,
+          "audio_end": 4928.376,
+          "duration": 55.235,
+          "title": "Vậy bác hãy cho chúng tôi biết nguyên nhân nào, làm bác phiền muộn, họa may chúng tôi có…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_111.mp4",
+          "youtube_video_id": "kZeheer5xcA",
+          "youtube_url": "https://youtu.be/kZeheer5xcA",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Vậy bác hãy cho chúng tôi biết nguyên nhân nào, làm bác phiền muộn, họa may chúng tôi có…"
+        },
+        {
+          "index": 112,
+          "audio_start": 4928.376,
+          "audio_end": 4978.498,
+          "duration": 50.122,
+          "title": "Cách đây 5 năm tôi đã bị chúng bắt một lần.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_112.mp4",
+          "youtube_video_id": "xbiCWMeUTXo",
+          "youtube_url": "https://youtu.be/xbiCWMeUTXo",
+          "uploaded": true,
+          "photo_start_index": 408,
+          "photo_end_index": 419
         }
       ]
     }
