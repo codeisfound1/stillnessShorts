@@ -102,7 +102,7 @@ glossary:
   # TÙY CHỌN - sửa lỗi hậu kỳ transcript theo 1 danh sách thuật ngữ tham chiếu, để bắt các từ
   # Whisper nghe GẦN ĐÚNG nhưng sai chính tả (ví dụ nghe "đoạt mạn" thay vì "đoạt mạng") mà
   # initial_prompt ở trên không sửa hết. Mặc định tắt - chỉ cần bật nếu vẫn còn thấy sai nhiều.
-  enabled: false
+  enabled: true
   # Đường dẫn file .txt (mỗi dòng 1 thuật ngữ, dòng trống hoặc bắt đầu bằng "#" bị bỏ qua) hoặc
   # .pdf (tự trích text, coi mỗi dòng là 1 thuật ngữ). Đã có sẵn 1 file ví dụ tại
   # data/input/glossary.txt - sửa/thêm/bớt thuật ngữ tùy nội dung kênh, hoặc đổi path khác.
