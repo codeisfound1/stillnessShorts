@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 4978.497512461879,
-      "photo_pointer_index": 419,
+      "audio_pointer_sec": 5062.013090290528,
+      "photo_pointer_index": 429,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -2157,6 +2157,31 @@
           "uploaded": true,
           "photo_start_index": 408,
           "photo_end_index": 419
+        },
+        {
+          "index": 113,
+          "audio_start": 4978.498,
+          "audio_end": 5018.944,
+          "duration": 40.447,
+          "title": "Xôi nguy hiểm, mà sự đi lại của tôi quá chậm chạp, nên tôi nghĩ thà chết nơi chôn nhau cắ…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_113.mp4",
+          "youtube_video_id": "q1EYbdn-Gvc",
+          "youtube_url": "https://youtu.be/q1EYbdn-Gvc",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Xôi nguy hiểm, mà sự đi lại của tôi quá chậm chạp, nên tôi nghĩ thà chết nơi chôn nhau cắ…"
+        },
+        {
+          "index": 114,
+          "audio_start": 5018.944,
+          "audio_end": 5062.013,
+          "duration": 43.069,
+          "title": "- Trời ơi, mười dặm, Một dặm mà tôi đã đi, đến chưa, huống là mười",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_114.mp4",
+          "youtube_video_id": "OkY6ZHTgyUI",
+          "youtube_url": "https://youtu.be/OkY6ZHTgyUI",
+          "uploaded": true,
+          "photo_start_index": 419,
+          "photo_end_index": 429
         }
       ]
     }
