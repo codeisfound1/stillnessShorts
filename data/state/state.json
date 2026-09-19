@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 4639.254574019887,
-      "photo_pointer_index": 384,
+      "audio_pointer_sec": 4734.92416387378,
+      "photo_pointer_index": 394,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -2057,6 +2057,31 @@
           "uploaded": true,
           "photo_start_index": 374,
           "photo_end_index": 384
+        },
+        {
+          "index": 105,
+          "audio_start": 4639.255,
+          "audio_end": 4695.201,
+          "duration": 55.946,
+          "title": "Chính tội ác mỗi chiêu cảm sanh tự, mỗi chiêu cảm thỏ thân sao, Mỗi chiêu cảm hậm chống b…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_105.mp4",
+          "youtube_video_id": "jA27DAvmS4w",
+          "youtube_url": "https://youtu.be/jA27DAvmS4w",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Chính tội ác mỗi chiêu cảm sanh tự, mỗi chiêu cảm thỏ thân sao, Mỗi chiêu cảm hậm chống b…"
+        },
+        {
+          "index": 106,
+          "audio_start": 4695.201,
+          "audio_end": 4734.924,
+          "duration": 39.724,
+          "title": "Do hành động ác của thân, miệng và ý, nên các con phải thỏ khổ vì thế.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_106.mp4",
+          "youtube_video_id": "l4IpTe7mX6U",
+          "youtube_url": "https://youtu.be/l4IpTe7mX6U",
+          "uploaded": true,
+          "photo_start_index": 384,
+          "photo_end_index": 394
         }
       ]
     }
