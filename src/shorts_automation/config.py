@@ -135,6 +135,27 @@ class BrandingConfig:
     shadow: int
 
 
+DEFAULT_DISCLAIMER_TEXT = (
+    "Vì phụ đề được tạo tự động nên có thể xảy ra sai sót về câu từ. "
+    "Kính mong quý vị hoan hỉ lượng thứ và thông cảm."
+)
+
+
+@dataclass
+class DisclaimerConfig:
+    """Ghi chú nhỏ cố định ở đáy màn hình suốt video, xin lỗi trước về khả năng phụ đề tự
+    động nghe/viết sai chính tả. Dùng chung font với phụ đề chính (subtitle.font_name)."""
+
+    enabled: bool
+    text: str
+    font_size: int
+    margin_v: int
+    text_color: str
+    outline_color: str
+    outline: int
+    shadow: int
+
+
 @dataclass
 class LLMConfig:
     provider: str
@@ -179,6 +200,7 @@ class AppConfig:
     whisper: WhisperConfig
     subtitle: SubtitleConfig
     branding: BrandingConfig
+    disclaimer: DisclaimerConfig
     llm: LLMConfig
     youtube: YouTubeConfig
     telegram: TelegramConfig
@@ -328,6 +350,18 @@ def load_config(config_path: str | Path = "config/config.yaml", env_path: str | 
         shadow=int(brand_raw.get("shadow", 2)),
     )
 
+    disclaimer_raw = raw.get("disclaimer", {})
+    disclaimer_cfg = DisclaimerConfig(
+        enabled=bool(disclaimer_raw.get("enabled", True)),
+        text=str(disclaimer_raw.get("text", DEFAULT_DISCLAIMER_TEXT)).strip(),
+        font_size=int(disclaimer_raw.get("font_size", 28)),
+        margin_v=int(disclaimer_raw.get("margin_v", 40)),
+        text_color=str(disclaimer_raw.get("text_color", "&H00FFFFFF")),
+        outline_color=str(disclaimer_raw.get("outline_color", "&H00000000")),
+        outline=int(disclaimer_raw.get("outline", 1)),
+        shadow=int(disclaimer_raw.get("shadow", 1)),
+    )
+
     llm_raw = raw.get("llm", {})
     llm_cfg = LLMConfig(
         provider=os.environ.get("LLM_PROVIDER", llm_raw.get("provider", "groq")).lower(),
@@ -376,6 +410,7 @@ def load_config(config_path: str | Path = "config/config.yaml", env_path: str | 
         whisper=whisper_cfg,
         subtitle=subtitle_cfg,
         branding=branding_cfg,
+        disclaimer=disclaimer_cfg,
         llm=llm_cfg,
         youtube=youtube_cfg,
         telegram=telegram_cfg,

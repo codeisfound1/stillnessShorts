@@ -132,6 +132,19 @@ branding:
   outline: 3
   shadow: 2
 
+disclaimer:
+  # Ghi chú nhỏ cố định ở đáy màn hình suốt video (không theo timestamp, giống branding),
+  # xin lỗi trước về khả năng phụ đề tự động nghe/viết sai chính tả. Dùng chung font với
+  # phụ đề chính (subtitle.font_name).
+  enabled: true
+  text: "Vì phụ đề được tạo tự động nên có thể xảy ra sai sót về câu từ. Kính mong quý vị hoan hỉ lượng thứ và thông cảm."
+  font_size: 28
+  margin_v: 40                  # px - khoảng cách từ đáy khung hình lên tới ghi chú
+  text_color: "&H00FFFFFF"      # trắng
+  outline_color: "&H00000000"   # viền đen
+  outline: 1
+  shadow: 1
+
 llm:
   # groq | claude | rule_based
   provider: "groq"

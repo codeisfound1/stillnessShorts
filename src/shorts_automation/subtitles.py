@@ -10,7 +10,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
 
-from .config import BrandingConfig, SubtitleConfig
+from .config import BrandingConfig, DisclaimerConfig, SubtitleConfig
 from .transcriber import Word
 
 
@@ -128,6 +128,27 @@ def _build_branding_block(
     return styles, dialogues
 
 
+def _build_disclaimer_block(
+    disclaimer_cfg: DisclaimerConfig, *, subtitle_font_name: str, clip_duration: float
+) -> tuple[str, str]:
+    """Style + Dialogue cho 1 ghi chú nhỏ cố định ở đáy màn hình suốt video (xin lỗi trước về
+    khả năng phụ đề tự động nghe/viết sai chính tả). Dùng Alignment=2 (bottom-center) + MarginV
+    thường (không \\pos) nên tự căn theo PlayResX/Y bất kể độ phân giải. Dùng chung font với
+    phụ đề chính (subtitle.font_name) vì font branding có thể không bundle cùng."""
+    if not disclaimer_cfg.enabled or not disclaimer_cfg.text:
+        return "", ""
+
+    end_time = _format_ass_time(clip_duration)
+    style = (
+        f"Style: Disclaimer,{subtitle_font_name},{disclaimer_cfg.font_size},"
+        f"{disclaimer_cfg.text_color},&H000000FF,{disclaimer_cfg.outline_color},&H00000000,"
+        f"-1,0,0,0,100,100,0,0,1,{disclaimer_cfg.outline},{disclaimer_cfg.shadow},2,40,40,"
+        f"{disclaimer_cfg.margin_v},1\n"
+    )
+    text = _escape_ass_text(disclaimer_cfg.text)
+    dialogue = f"Dialogue: 0,0:00:00.00,{end_time},Disclaimer,,0,0,0,,{text}\n"
+    return style, dialogue
+
 
 def build_ass_filter_string(ass_subtitle_path: Path, fonts_dir: Path | None = None) -> str:
     """Trả về đoạn filter ffmpeg `ass='...'[:fontsdir='...']` dùng chung cho video_cutter/photo_cutter.
@@ -210,14 +231,21 @@ def write_ass_file(
     play_res_x: int,
     play_res_y: int,
     branding_cfg: Optional[BrandingConfig] = None,
+    disclaimer_cfg: Optional[DisclaimerConfig] = None,
     clip_duration: float = 0.0,
 ) -> Path:
-    """Ghi file .ass: style caption (theo timestamp) + style/dialogue branding (cố định, tùy chọn)."""
+    """Ghi file .ass: style caption (theo timestamp) + style/dialogue branding + disclaimer
+    (cố định suốt video, tùy chọn)."""
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
     branding_styles, branding_dialogues = (
         _build_branding_block(branding_cfg, clip_duration=clip_duration, play_res_x=play_res_x)
         if branding_cfg is not None
+        else ("", "")
+    )
+    disclaimer_styles, disclaimer_dialogues = (
+        _build_disclaimer_block(disclaimer_cfg, subtitle_font_name=subtitle_cfg.font_name, clip_duration=clip_duration)
+        if disclaimer_cfg is not None
         else ("", "")
     )
 
@@ -232,12 +260,12 @@ ScaledBorderAndShadow: yes
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: Default,{subtitle_cfg.font_name},{subtitle_cfg.font_size},{subtitle_cfg.primary_color},&H000000FF,{subtitle_cfg.outline_color},{subtitle_cfg.back_color},-1,0,0,0,100,100,0,0,3,{subtitle_cfg.outline},{subtitle_cfg.shadow},{subtitle_cfg.alignment},60,60,{subtitle_cfg.margin_v},1
-{branding_styles}
+{branding_styles}{disclaimer_styles}
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 """
 
-    lines = [header, branding_dialogues]
+    lines = [header, branding_dialogues, disclaimer_dialogues]
     for cap in captions:
         text = _wrap_text(cap.text, subtitle_cfg.max_chars_per_line)
         start = _format_ass_time(cap.start)

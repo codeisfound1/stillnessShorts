@@ -297,6 +297,16 @@ Các mục quan trọng:
   - `gap_after_logo`/`line_spacing`: khoảng cách logo→dòng đầu và giữa 2 dòng chữ.
   - `channel_handle`/`channel_name`: 2 dòng chữ hiển thị ngay dưới logo (ví dụ `@StillnessNow`
     và `Tĩnh Lặng`). Để trống (`""`) dòng nào thì dòng đó không hiển thị.
+- `disclaimer.*`: ghi chú nhỏ cố định ở đáy màn hình suốt video (giống cơ chế branding), xin lỗi
+  trước về khả năng phụ đề tự động nghe/viết sai chính tả. Dùng chung font với `subtitle.font_name`.
+  - `enabled`: bật/tắt (mặc định `true`).
+  - `text`: nội dung ghi chú, mặc định "Vì phụ đề được tạo tự động nên có thể xảy ra sai sót về
+    câu từ. Kính mong quý vị hoan hỉ lượng thứ và thông cảm." - sửa lại tùy ý, để `""` để ẩn.
+  - `font_size`: mặc định `28` (nhỏ hơn nhiều so với phụ đề chính `subtitle.font_size`).
+  - `margin_v`: khoảng cách (px) từ đáy khung hình lên tới ghi chú, mặc định `40`.
+  - **Lưu ý về emoji**: KHÔNG chèn emoji vào `text` - font bundle sẵn (Be Vietnam Pro) không có
+    glyph emoji/ký hiệu, và máy chạy GitHub Actions cũng không có sẵn font emoji màu để fallback,
+    nên emoji sẽ bị mất trắng (không hiện) trong video thay vì báo lỗi.
 - `llm.provider`: `groq` (mặc định) | `claude` | `rule_based`. Provider này cũng được dùng để sinh
   prompt ảnh khi `photos.source: "ai_generated"`.
 - `whisper.model_size`: `tiny`/`base`/`small`/`medium`/`large-v3` — model lớn hơn cho tiếng Việt

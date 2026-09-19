@@ -62,6 +62,7 @@ def compose_short(
         play_res_x=config.video.width,
         play_res_y=config.video.height,
         branding_cfg=config.branding,
+        disclaimer_cfg=config.disclaimer,
         clip_duration=duration,
     )
     logger.info("Short #%d: %d cụm phụ đề.", index, len(captions))
