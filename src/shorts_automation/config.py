@@ -114,11 +114,12 @@ class GlossaryConfig:
 class BookAlignmentConfig:
     """Căn chỉnh (forced alignment) transcript Whisper với văn bản gốc trong sách .pdf tham
     chiếu (ví dụ bản ghi/sách của chính bài giảng đang thuyết minh) - định vị đoạn sách khớp
-    nhất với transcript đợt này, rồi thay từ nghe sai bằng đúng từ trong sách tại các đoạn
-    thẳng hàng cùng độ dài, giữ nguyên timestamp. CHỈ áp dụng khi điểm khớp >= min_match_ratio,
-    để tránh chèn nhầm văn bản không liên quan khi audio không khớp sách nào (paraphrase, đọc
-    ngoài sách...). Chạy trước glossary (glossary chạy tiếp theo để bắt phần còn sót).
-    Tùy chọn (optional), mặc định BẬT."""
+    nhất với transcript đợt này. Nếu điểm khớp >= min_match_ratio, TIN TƯỞNG HOÀN TOÀN văn bản
+    sách làm nguồn chuẩn chính tả (bỏ chữ Whisper nghe được), chỉ dùng Whisper để căn thời gian
+    (timeframe) khớp với giọng đọc mp3 - khi đó BỎ QUA glossary_corrector luôn (đã có nguồn
+    chuẩn, không cần so khớp mờ thêm nữa). Nếu điểm khớp không đạt (audio không khớp sách nào),
+    giữ nguyên transcript Whisper, glossary vẫn chạy như bình thường. Tùy chọn (optional), mặc
+    định BẬT."""
 
     enabled: bool
     path: Optional[Path]
@@ -353,7 +354,7 @@ def load_config(config_path: str | Path = "config/config.yaml", env_path: str | 
     book_alignment_cfg = BookAlignmentConfig(
         enabled=bool(book_align_raw.get("enabled", True)),
         path=_resolve(book_align_raw.get("path", "data/input/pdf")),
-        min_match_ratio=float(book_align_raw.get("min_match_ratio", 0.4)),
+        min_match_ratio=float(book_align_raw.get("min_match_ratio", 0.75)),
     )
 
     sub_raw = raw.get("subtitle", {})

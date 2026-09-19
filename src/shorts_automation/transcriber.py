@@ -100,18 +100,21 @@ def _run_whisper(
             words.append(Word(word=seg.text.strip(), start=float(seg.start), end=float(seg.end)))
 
     correction_applied = False
+    book_matched = False
 
     if book_alignment_cfg is not None and book_alignment_cfg.enabled and book_alignment_cfg.path is not None:
         from . import book_alignment
 
         books = book_alignment.load_books(book_alignment_cfg.path)
-        words, align_count = book_alignment.apply_book_alignment(
+        words, book_matched = book_alignment.apply_book_alignment(
             words, books, min_match_ratio=book_alignment_cfg.min_match_ratio
         )
-        if align_count:
+        if book_matched:
             correction_applied = True
 
-    if glossary_cfg is not None and glossary_cfg.enabled and glossary_cfg.path is not None:
+    # Nếu đã tìm được sách khớp đủ tốt, văn bản sách được dùng làm nguồn chuẩn chính tả luôn -
+    # không cần glossary so khớp mờ thêm nữa (glossary chỉ cần thiết khi KHÔNG có nguồn chuẩn).
+    if not book_matched and glossary_cfg is not None and glossary_cfg.enabled and glossary_cfg.path is not None:
         from . import glossary_corrector
 
         terms = glossary_corrector.load_glossary_terms(glossary_cfg.path)

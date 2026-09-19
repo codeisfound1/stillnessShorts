@@ -8,14 +8,23 @@ Cách hoạt động, cho mỗi cửa sổ transcript:
    có giá trị định vị cao hơn từ phổ biến.
 2. So khớp TINH: dùng difflib.SequenceMatcher trên đúng vùng đã định vị (+ đệm 2 phía) để tính
    điểm khớp chính xác và tìm các đoạn thẳng hàng.
-3. CHỈ áp dụng sửa nếu điểm khớp (ratio) >= min_match_ratio - đoạn audio không khớp sách nào
-   (người đọc paraphrase, đọc ngoài sách, hoặc sách không phải nguồn của đoạn này) thì GIỮ
-   NGUYÊN transcript Whisper, không chèn nhầm văn bản không liên quan (rủi ro nặng hơn cả việc
-   không sửa được gì).
-4. Chỉ thay thế tại các đoạn "equal" (đã đúng, không đổi) hoặc "replace" CÙNG ĐỘ DÀI (số từ
-   Whisper nghe được = số từ trong sách tại đúng vị trí đó) - giữ nguyên timestamp từng từ. Các
-   đoạn "insert"/"delete" hoặc "replace" lệch độ dài bị bỏ qua (không đoán thêm/bớt từ, vì sẽ
-   phải tự tạo timestamp mới, không đáng tin cậy).
+3. CHỈ dùng văn bản sách nếu điểm khớp (coverage ratio) >= min_match_ratio - đoạn audio không
+   khớp sách nào (người đọc paraphrase, đọc ngoài sách, hoặc sách không phải nguồn của đoạn này)
+   thì GIỮ NGUYÊN transcript Whisper, không chèn nhầm văn bản không liên quan (rủi ro nặng hơn
+   cả việc không sửa được gì).
+4. Khi đã đạt ngưỡng: TIN TƯỞNG HOÀN TOÀN văn bản sách làm nguồn chuẩn chính tả, bỏ qua hẳn chữ
+   Whisper nghe được cho toàn bộ cửa sổ này (kể cả các đoạn không thẳng hàng 1-1) - Whisper chỉ
+   còn dùng để CĂN THỜI GIAN (timeframe) khớp với giọng đọc mp3:
+   - "equal": giữ nguyên từ + timestamp (đã đúng sẵn).
+   - "replace" cùng độ dài: thay chữ bằng từ trong sách, giữ nguyên timestamp.
+   - "replace" lệch độ dài, hoặc "insert" (sách có từ mà Whisper không nghe ra): dùng đúng số
+     từ trong sách tại vị trí đó, CHIA ĐỀU thời gian theo khoảng thời gian gốc bên Whisper tương
+     ứng (nội suy tuyến tính) - không có mốc thời gian riêng cho từng từ mới nên đây là cách ước
+     lượng hợp lý nhất để khớp video với giọng đọc.
+   - "delete" (Whisper nghe thêm từ mà sách không có, ví dụ nghe lặp/ảo giác): bỏ hẳn các từ này
+     - sách là nguồn chuẩn nên không giữ lại phần Whisper tự thêm.
+   Khi đó BỎ QUA glossary_corrector cho cửa sổ này luôn (đã có nguồn chuẩn, không cần so khớp mờ
+   thêm nữa) - glossary chỉ chạy khi không sách nào khớp đủ ngưỡng.
 
 Nếu có nhiều sách trong thư mục tham chiếu, thử từng sách và chọn sách cho điểm khớp cao nhất.
 """
@@ -119,76 +128,113 @@ def _locate_candidate_region(
     return start, end
 
 
+def _interpolate_timestamps(start_time: float, end_time: float, count: int) -> list[tuple[float, float]]:
+    """Chia đều khoảng [start_time, end_time] thành count đoạn liên tiếp bằng nhau - dùng khi số
+    từ trong sách khác số từ Whisper nghe được tại cùng vị trí, nên không có mốc thời gian gốc
+    cho từng từ mới; chia đều theo tỉ lệ thời gian của cả đoạn là cách ước lượng hợp lý nhất."""
+    if count <= 0:
+        return []
+    if count == 1:
+        return [(start_time, end_time)]
+    step = (end_time - start_time) / count
+    return [(start_time + i * step, start_time + (i + 1) * step) for i in range(count)]
+
+
+def _coverage_ratio(query_len: int, opcodes: list[tuple[str, int, int, int, int]]) -> float:
+    """Điểm khớp = tỉ lệ từ trong CỬA SỔ TRANSCRIPT có vị trí tương ứng rõ ràng trong sách (dù
+    đúng hay sai nội dung - "equal" hoặc "replace" cùng độ dài), KHÔNG dùng matcher.ratio() trực
+    tiếp - ratio() chuẩn hóa theo tổng độ dài CẢ 2 chuỗi nên bị pha loãng bởi phần đệm
+    (_ANCHOR_PAD) 2 bên vùng định vị, khiến 1 đoạn khớp gần như tuyệt đối vẫn ra điểm rất thấp
+    một cách giả tạo."""
+    matched = 0
+    for tag, i1, i2, _j1, _j2 in opcodes:
+        if tag == "equal" or (tag == "replace" and (i2 - i1) == (_j2 - _j1)):
+            matched += i2 - i1
+    return matched / query_len if query_len else 0.0
+
+
+def _build_book_text_words(words: list[Word], book_slice: list[str], opcodes: list[tuple[str, int, int, int, int]]) -> list[Word]:
+    """Dựng lại toàn bộ danh sách từ theo ĐÚNG văn bản sách (nguồn chuẩn chính tả), chỉ dùng
+    Whisper để suy ra thời gian xuất hiện. Bỏ phần đệm đầu/cuối vùng định vị KHÔNG thuộc về cửa
+    sổ transcript (opcode "insert" nằm trọn ở đầu hoặc cuối danh sách opcode, không có từ Whisper
+    tương ứng) - nếu không sẽ chèn nhầm cả đoạn đệm dài vào kết quả."""
+    n = len(opcodes)
+    output: list[Word] = []
+    for idx, (tag, i1, i2, j1, j2) in enumerate(opcodes):
+        if tag == "insert" and i1 == i2 and (idx == 0 or idx == n - 1):
+            # Phần đệm ở đầu/cuối vùng định vị, không tương ứng với bất kỳ từ Whisper nào trong
+            # cửa sổ này - bỏ qua, không phải nội dung thật của cửa sổ.
+            continue
+        if tag == "equal":
+            output.extend(Word(word=w.word, start=w.start, end=w.end) for w in words[i1:i2])
+            continue
+        if tag == "delete":
+            # Whisper nghe thêm từ mà sách không có ở vị trí này (nghe lặp/ảo giác...) - bỏ hẳn,
+            # tin tưởng sách là nguồn chuẩn.
+            continue
+        # "replace" hoặc "insert" giữa chừng: dùng từ trong sách, chia đều thời gian theo
+        # khoảng thời gian Whisper tương ứng (hoặc mốc biên nếu insert thuần không có từ Whisper).
+        book_words_here = book_slice[j1:j2]
+        if i2 > i1:
+            time_start, time_end = words[i1].start, words[i2 - 1].end
+        else:
+            boundary = words[i1].start if i1 < len(words) else words[-1].end
+            time_start = time_end = boundary
+        for word_text, (s, e) in zip(book_words_here, _interpolate_timestamps(time_start, time_end, len(book_words_here))):
+            output.append(Word(word=word_text, start=s, end=e))
+    return output
+
+
 def _align_against_book(
     words: list[Word], book_words: list[str], index: dict[str, list[int]]
-) -> tuple[list[Word], int, float]:
+) -> tuple[list[Word], float]:
     query_norm = [_normalize_word(w.word) for w in words]
     region = _locate_candidate_region(query_norm, index, len(book_words))
     if region is None:
-        return words, 0, 0.0
+        return words, 0.0
 
     start, end = region
     book_slice = book_words[start:end]
     book_slice_norm = [_normalize_word(w) for w in book_slice]
 
     matcher = difflib.SequenceMatcher(None, query_norm, book_slice_norm, autojunk=False)
-
-    corrected = [Word(word=w.word, start=w.start, end=w.end) for w in words]
-    correction_count = 0
-    matched_word_count = 0
-    for tag, i1, i2, j1, j2 in matcher.get_opcodes():
-        same_length = (i2 - i1) == (j2 - j1)
-        if tag == "equal":
-            matched_word_count += i2 - i1
-            continue
-        if tag != "replace" or not same_length:
-            # "insert"/"delete" hoặc "replace" lệch độ dài: bỏ qua - không đoán thêm/bớt từ vì
-            # sẽ phải tự tạo timestamp, không đáng tin cậy.
-            continue
-        matched_word_count += i2 - i1  # vẫn tính là "khớp vị trí", dù nội dung khác (sẽ sửa)
-        for offset in range(i2 - i1):
-            new_word = book_slice[j1 + offset]
-            if corrected[i1 + offset].word != new_word:
-                corrected[i1 + offset].word = new_word
-                correction_count += 1
-
-    # Điểm khớp = tỉ lệ từ trong CỬA SỔ TRANSCRIPT có vị trí tương ứng rõ ràng trong sách (dù
-    # đúng hay sai nội dung), KHÔNG dùng matcher.ratio() trực tiếp - ratio() chuẩn hóa theo tổng
-    # độ dài CẢ 2 chuỗi nên bị pha loãng bởi phần đệm (_ANCHOR_PAD) 2 bên vùng định vị, khiến 1
-    # đoạn khớp gần như tuyệt đối vẫn ra điểm rất thấp một cách giả tạo.
-    coverage_ratio = matched_word_count / len(query_norm) if query_norm else 0.0
-
-    return corrected, correction_count, coverage_ratio
+    opcodes = matcher.get_opcodes()
+    ratio = _coverage_ratio(len(query_norm), opcodes)
+    replaced = _build_book_text_words(words, book_slice, opcodes)
+    return replaced, ratio
 
 
 def apply_book_alignment(
     words: list[Word],
     books: list[tuple[str, list[str], dict[str, list[int]]]],
     *,
-    min_match_ratio: float = 0.4,
-) -> tuple[list[Word], int]:
-    """Thử căn chỉnh transcript với từng sách, chọn sách cho điểm khớp cao nhất. CHỈ áp dụng
-    sửa nếu điểm khớp tốt nhất >= min_match_ratio - nếu không sách nào khớp đủ tốt, giữ nguyên
-    transcript Whisper (an toàn hơn chèn nhầm văn bản không liên quan). Trả về (words đã sửa
-    hoặc giữ nguyên, số từ đã sửa)."""
+    min_match_ratio: float = 0.75,
+) -> tuple[list[Word], bool]:
+    """Thử căn chỉnh transcript với từng sách, chọn sách cho điểm khớp cao nhất. Nếu điểm khớp
+    tốt nhất >= min_match_ratio, DÙNG HẲN văn bản sách đó làm nguồn chuẩn (bỏ chữ Whisper, chỉ
+    giữ lại việc căn thời gian) - nếu không sách nào khớp đủ tốt, giữ nguyên transcript Whisper
+    (an toàn hơn chèn nhầm văn bản không liên quan). Trả về (words, đã dùng văn bản sách hay
+    chưa) - cờ thứ 2 để caller biết có cần chạy tiếp glossary_corrector hay không (không cần
+    nữa nếu đã có nguồn chuẩn từ sách)."""
     if not books or not words:
-        return words, 0
+        return words, False
 
-    best: Optional[tuple[list[Word], int, float, str]] = None
+    best: Optional[tuple[list[Word], float, str]] = None
     for book_name, book_words, index in books:
-        corrected, count, ratio = _align_against_book(words, book_words, index)
-        if best is None or ratio > best[2]:
-            best = (corrected, count, ratio, book_name)
+        replaced, ratio = _align_against_book(words, book_words, index)
+        if best is None or ratio > best[1]:
+            best = (replaced, ratio, book_name)
 
-    if best is None or best[2] < min_match_ratio:
-        return words, 0
+    if best is None or best[1] < min_match_ratio:
+        return words, False
 
-    corrected, count, ratio, book_name = best
-    if count:
-        logger.info(
-            'Book alignment: khớp với sách "%s" (điểm khớp %.2f), đã sửa %d từ theo văn bản gốc.',
-            book_name,
-            ratio,
-            count,
-        )
-    return corrected, count
+    replaced, ratio, book_name = best
+    logger.info(
+        'Book alignment: khớp với sách "%s" (điểm khớp %.2f) - dùng văn bản sách làm nguồn chuẩn, '
+        "chỉ căn thời gian theo Whisper (%d từ -> %d từ).",
+        book_name,
+        ratio,
+        len(words),
+        len(replaced),
+    )
+    return replaced, True
