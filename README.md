@@ -322,12 +322,16 @@ Các mục quan trọng:
   tham chiếu, dùng khi `whisper.initial_prompt` vẫn chưa sửa hết các từ khó nghe sai:
   - `enabled`: bật/tắt (mặc định `false`).
   - `path`: đường dẫn 1 file `.txt` (mỗi dòng 1 thuật ngữ, dòng trống hoặc bắt đầu bằng `#` bị
-    bỏ qua) hoặc `.pdf` (tự trích text bằng `pypdf`, mỗi dòng cũng coi là 1 thuật ngữ).
+    bỏ qua) hoặc `.pdf` (tự trích text bằng `pypdf`, mỗi dòng cũng coi là 1 thuật ngữ). Đã có
+    sẵn 1 file ví dụ tại `data/input/glossary.txt` (thuật ngữ Phật giáo/giáo pháp Trưởng lão
+    Thích Thông Lạc) - sửa/thêm/bớt tùy nội dung kênh.
   - `similarity_threshold`: ngưỡng độ giống (0.0-1.0, mặc định `0.72`) để coi 1 cụm từ Whisper
-    nghe được là "gần giống" 1 thuật ngữ trong danh sách và tự sửa lại đúng chính tả - chỉ so
-    khớp cụm từ liên tiếp có ĐÚNG số âm tiết với thuật ngữ (để không làm lệch timestamp phụ đề),
-    và bỏ qua nếu cụm đó đã khớp đúng sẵn. Ngưỡng thấp dễ sửa nhầm từ đã đúng, ngưỡng cao dễ bỏ
-    sót lỗi - nên thử vài giá trị rồi xem log (`Sửa theo glossary: "..." -> "..."`) để tinh chỉnh.
+    nghe được là "gần giống" 1 thuật ngữ trong danh sách và tự sửa lại đúng chính tả - so khớp
+    TỪNG ÂM TIẾT theo đúng vị trí (không so cả cụm ghép chuỗi, tránh 1 cửa sổ dịch lệch 1 từ vẫn
+    bị tính "giống" rồi sửa nhầm đúng thành sai) và chỉ so khớp cụm liên tiếp có ĐÚNG số âm tiết
+    với thuật ngữ (để không làm lệch timestamp phụ đề), bỏ qua nếu cụm đó đã khớp đúng sẵn.
+    Ngưỡng thấp dễ sửa nhầm từ đã đúng, ngưỡng cao dễ bỏ sót lỗi - nên thử vài giá trị rồi xem
+    log (`Sửa theo glossary: "..." -> "..."`) để tinh chỉnh.
   - Vì việc sửa được áp dụng ngay khi transcribe (trước khi cache ra JSON), sửa `glossary.txt`
     sau khi đã có cache thì cần chạy lại với `--force-retranscribe` để áp dụng.
 - `youtube.publish_delay_minutes`: mặc định `60` — video được upload ở chế độ private kèm

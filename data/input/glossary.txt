@@ -1,0 +1,46 @@
+# Ví dụ danh sách thuật ngữ cho glossary.path (xem config/config.yaml).
+# Mỗi dòng 1 thuật ngữ - dòng trống hoặc bắt đầu bằng "#" bị bỏ qua.
+# Sửa/thêm/bớt tùy nội dung kênh - đây chỉ là ví dụ cho nội dung Phật giáo/giáo pháp
+# Trưởng lão Thích Thông Lạc.
+
+# --- Danh xưng ---
+Trưởng lão Thích Thông Lạc
+Đức Phật Thích Ca
+Thầy Thông Lạc
+
+# --- Thuật ngữ chung ---
+Phật pháp
+Phật giáo
+giáo pháp
+tu tập
+tu hành
+giới luật
+giới định tuệ
+nhân quả
+nhân duyên
+luân hồi
+sinh tử
+vô thường
+khổ đau
+giải thoát
+đạo đức giải thoát
+đường về xứ Phật
+
+# --- Thuật ngữ đặc thù giáo pháp Thích Thông Lạc ---
+ly dục ly ác pháp
+tâm bất động
+thanh thản an lạc vô sự
+xả tâm
+nhẫn nhục tùy thuận bằng lòng
+độc cư
+ăn ngày một bữa
+được thân người là khó
+đoạt mạng
+thọ lấy
+
+# --- Khái niệm Phật học phổ thông ---
+Tứ Diệu Đế
+Bát Chánh Đạo
+chánh kiến
+tà kiến
+thiền định

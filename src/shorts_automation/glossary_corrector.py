@@ -48,6 +48,19 @@ def _normalize(text: str) -> str:
     return " ".join(text.strip().lower().split())
 
 
+def _syllable_similarity(window_words: list[str], term_syllables: list[str]) -> float:
+    """Độ giống trung bình theo TỪNG VỊ TRÍ âm tiết (word[i] so với syllable[i]), KHÔNG dùng
+    ratio trên cả cụm đã ghép chuỗi. Ghép chuỗi rồi so ratio dễ bị "lệch pha" - 1 cửa sổ dịch
+    lệch 1 từ so với thuật ngữ vẫn có thể ra điểm giống cao chỉ vì phần lớn ký tự trùng nhau ở
+    vị trí khác, dẫn tới sửa nhầm đúng thành sai (xem lịch sử sửa lỗi này). So khớp theo đúng
+    vị trí từng âm tiết tránh được vấn đề đó."""
+    ratios = [
+        difflib.SequenceMatcher(None, w.strip().lower(), t.strip().lower()).ratio()
+        for w, t in zip(window_words, term_syllables)
+    ]
+    return sum(ratios) / len(ratios) if ratios else 0.0
+
+
 def apply_glossary_corrections(
     words: list[Word], terms: list[str], *, similarity_threshold: float = 0.72
 ) -> tuple[list[Word], int]:
@@ -73,16 +86,17 @@ def apply_glossary_corrections(
             if i + length > n:
                 continue
             window = corrected[i : i + length]
-            window_text = _normalize(" ".join(w.word for w in window))
+            window_words = [w.word for w in window]
+            window_text = _normalize(" ".join(window_words))
             for term in terms_by_len[length]:
-                term_norm = _normalize(term)
-                if window_text == term_norm:
+                term_syllables = term.split()
+                if window_text == _normalize(term):
                     matched_length = length  # đã đúng sẵn, không cần sửa nhưng vẫn nhảy qua
                     break
-                ratio = difflib.SequenceMatcher(None, window_text, term_norm).ratio()
+                ratio = _syllable_similarity(window_words, term_syllables)
                 if ratio >= similarity_threshold:
-                    before = " ".join(w.word for w in window)
-                    for w, syllable in zip(window, term.split()):
+                    before = " ".join(window_words)
+                    for w, syllable in zip(window, term_syllables):
                         w.word = syllable
                     logger.info('Sửa theo glossary: "%s" -> "%s" (độ giống %.2f)', before, term, ratio)
                     correction_count += 1
