@@ -16,7 +16,7 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import Optional
 
-from .config import WhisperConfig
+from .config import GlossaryConfig, WhisperConfig
 
 logger = logging.getLogger(__name__)
 
@@ -55,8 +55,15 @@ def _resolve_device_and_compute(whisper_cfg: WhisperConfig) -> tuple[str, str]:
     return device, compute_type
 
 
-def _run_whisper(audio_path: Path, whisper_cfg: WhisperConfig) -> TranscriptResult:
-    """Chạy faster-whisper trên đúng 1 file, trả về timestamp TƯƠNG ĐỐI so với đầu file đó."""
+def _run_whisper(
+    audio_path: Path, whisper_cfg: WhisperConfig, glossary_cfg: Optional[GlossaryConfig] = None
+) -> TranscriptResult:
+    """Chạy faster-whisper trên đúng 1 file, trả về timestamp TƯƠNG ĐỐI so với đầu file đó.
+
+    Nếu glossary_cfg bật, sửa thêm các từ nghe gần đúng nhưng sai chính tả theo danh sách thuật
+    ngữ tham chiếu (xem glossary_corrector.py) trước khi trả về - áp dụng ngay tại đây để kết
+    quả cache ra JSON đã là bản đã sửa, không phải chạy lại mỗi lần.
+    """
     from faster_whisper import WhisperModel
 
     device, compute_type = _resolve_device_and_compute(whisper_cfg)
@@ -86,6 +93,19 @@ def _run_whisper(audio_path: Path, whisper_cfg: WhisperConfig) -> TranscriptResu
             # Không có word timestamps -> coi cả segment là 1 "word" để vẫn cắt được theo thời gian.
             words.append(Word(word=seg.text.strip(), start=float(seg.start), end=float(seg.end)))
 
+    if glossary_cfg is not None and glossary_cfg.enabled and glossary_cfg.path is not None:
+        from . import glossary_corrector
+
+        terms = glossary_corrector.load_glossary_terms(glossary_cfg.path)
+        words, correction_count = glossary_corrector.apply_glossary_corrections(
+            words, terms, similarity_threshold=glossary_cfg.similarity_threshold
+        )
+        if correction_count:
+            logger.info("Glossary: đã sửa %d cụm từ trong %s.", correction_count, audio_path.name)
+        # full_text phải ghép lại từ words đã sửa để khớp với transcript thật sự dùng cho phụ
+        # đề/description - không dùng seg.text gốc của Whisper (chưa qua sửa) nữa.
+        return TranscriptResult(words=words, full_text=" ".join(w.word.strip() for w in words).strip())
+
     return TranscriptResult(words=words, full_text=" ".join(full_text_parts).strip())
 
 
@@ -109,6 +129,7 @@ def transcribe_narration(
     wav_path: Path,
     work_dir: Path,
     whisper_cfg: WhisperConfig,
+    glossary_cfg: Optional[GlossaryConfig] = None,
     force: bool = False,
 ) -> TranscriptResult:
     """Chạy (hoặc load cache) transcript word-level cho TOÀN BỘ file narration.
@@ -123,7 +144,7 @@ def transcribe_narration(
         return _load_cache(cache_file)
 
     logger.info("Transcribe toàn bộ %s bằng faster-whisper (model=%s)...", wav_path.name, whisper_cfg.model_size)
-    result = _run_whisper(wav_path, whisper_cfg)
+    result = _run_whisper(wav_path, whisper_cfg, glossary_cfg)
     _save_cache(cache_file, result)
     return result
 
@@ -135,6 +156,7 @@ def transcribe_narration_window(
     whisper_cfg: WhisperConfig,
     window_start: float,
     window_end: float,
+    glossary_cfg: Optional[GlossaryConfig] = None,
     force: bool = False,
 ) -> TranscriptResult:
     """Chỉ transcribe đoạn [window_start, window_end) của narration (nhanh hơn nhiều so với
@@ -171,7 +193,7 @@ def transcribe_narration_window(
         wav_path.name,
         whisper_cfg.model_size,
     )
-    local_result = _run_whisper(window_clip_path, whisper_cfg)
+    local_result = _run_whisper(window_clip_path, whisper_cfg, glossary_cfg)
 
     words = [Word(word=w.word, start=w.start + window_start, end=w.end + window_start) for w in local_result.words]
     result = TranscriptResult(words=words, full_text=local_result.full_text)

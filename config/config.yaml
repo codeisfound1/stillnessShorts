@@ -98,6 +98,18 @@ whisper:
     Giữ nguyên lời nói, không dịch, không diễn giải và không thêm nội dung.
     Chú ý chính tả các thuật ngữ: Phật pháp, tu tập, giới luật, nhân quả, nhân duyên, đoạt mạng, thọ lấy
 
+glossary:
+  # TÙY CHỌN - sửa lỗi hậu kỳ transcript theo 1 danh sách thuật ngữ tham chiếu, để bắt các từ
+  # Whisper nghe GẦN ĐÚNG nhưng sai chính tả (ví dụ nghe "đoạt mạn" thay vì "đoạt mạng") mà
+  # initial_prompt ở trên không sửa hết. Mặc định tắt - chỉ cần bật nếu vẫn còn thấy sai nhiều.
+  enabled: false
+  # Đường dẫn file .txt (mỗi dòng 1 thuật ngữ, dòng trống hoặc bắt đầu bằng "#" bị bỏ qua) hoặc
+  # .pdf (tự trích text, coi mỗi dòng là 1 thuật ngữ). Ví dụ: "data/input/glossary.txt".
+  path: ""
+  # Ngưỡng độ giống (0.0-1.0, dùng difflib) để coi 1 cụm từ trong transcript là "gần giống" 1
+  # thuật ngữ và tự sửa lại - càng thấp càng dễ sửa nhầm từ đã đúng, càng cao càng bỏ sót lỗi.
+  similarity_threshold: 0.72
+
 subtitle:
   font_path: "assets/fonts/BeVietnamPro-ExtraBold.ttf"
   font_name: "Be Vietnam Pro ExtraBold"

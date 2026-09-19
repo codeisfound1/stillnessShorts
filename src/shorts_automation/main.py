@@ -83,6 +83,13 @@ def validate_inputs(config: AppConfig) -> None:
         )
         config.branding.logo_path = None
 
+    if config.glossary.enabled and (not config.glossary.path or not config.glossary.path.exists()):
+        logger.warning(
+            "glossary.enabled=true nhưng không tìm thấy file tại %s -> bỏ qua sửa lỗi theo glossary.",
+            config.glossary.path,
+        )
+        config.glossary.enabled = False
+
 
 YOUTUBE_DESCRIPTION_MAX_LENGTH = 5000
 
@@ -220,6 +227,7 @@ def run(args: argparse.Namespace) -> int:
         whisper_cfg=config.whisper,
         window_start=window_start,
         window_end=window_end,
+        glossary_cfg=config.glossary,
         force=args.force_retranscribe,
     )
 

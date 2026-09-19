@@ -6,6 +6,9 @@ requests==2.32.3
 # --- Speech-to-text (transcript + timestamp, hỗ trợ tiếng Việt) ---
 faster-whisper==1.0.3
 
+# --- Glossary sửa lỗi hậu kỳ transcript (tùy chọn, chỉ cần nếu glossary.path là file .pdf) ---
+pypdf==5.1.0
+
 # --- LLM (sinh tiêu đề) ---
 # Groq dùng chung endpoint OpenAI-compatible qua `requests`, không cần SDK riêng.
 anthropic==0.40.0

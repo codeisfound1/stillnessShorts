@@ -100,6 +100,17 @@ class WhisperConfig:
 
 
 @dataclass
+class GlossaryConfig:
+    """Sửa lỗi hậu kỳ transcript theo 1 danh sách thuật ngữ tham chiếu (.txt hoặc .pdf, mỗi
+    dòng 1 thuật ngữ) - fuzzy-match từng cụm từ Whisper nghe gần đúng nhưng sai chính tả, thay
+    bằng đúng chính tả thuật ngữ, giữ nguyên timestamp. Tùy chọn (optional), mặc định tắt."""
+
+    enabled: bool
+    path: Optional[Path]
+    similarity_threshold: float
+
+
+@dataclass
 class SubtitleConfig:
     font_path: Path
     font_name: str
@@ -198,6 +209,7 @@ class AppConfig:
     image_generation: ImageGenConfig
     audio_mix: AudioMixConfig
     whisper: WhisperConfig
+    glossary: GlossaryConfig
     subtitle: SubtitleConfig
     branding: BrandingConfig
     disclaimer: DisclaimerConfig
@@ -314,6 +326,13 @@ def load_config(config_path: str | Path = "config/config.yaml", env_path: str | 
         initial_prompt=str(whisper_raw.get("initial_prompt", DEFAULT_WHISPER_INITIAL_PROMPT)).strip(),
     )
 
+    glossary_raw = raw.get("glossary", {})
+    glossary_cfg = GlossaryConfig(
+        enabled=bool(glossary_raw.get("enabled", False)),
+        path=_resolve(glossary_raw.get("path")),
+        similarity_threshold=float(glossary_raw.get("similarity_threshold", 0.72)),
+    )
+
     sub_raw = raw.get("subtitle", {})
     subtitle_cfg = SubtitleConfig(
         font_path=_resolve(sub_raw.get("font_path", "assets/fonts/BeVietnamPro-ExtraBold.ttf")),
@@ -408,6 +427,7 @@ def load_config(config_path: str | Path = "config/config.yaml", env_path: str | 
         image_generation=image_gen_cfg,
         audio_mix=audio_mix_cfg,
         whisper=whisper_cfg,
+        glossary=glossary_cfg,
         subtitle=subtitle_cfg,
         branding=branding_cfg,
         disclaimer=disclaimer_cfg,
