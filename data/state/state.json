@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 5147.8542137374425,
-      "photo_pointer_index": 439,
+      "audio_pointer_sec": 5211.776082771959,
+      "photo_pointer_index": 447,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -2264,6 +2264,31 @@
           "uploaded": true,
           "photo_start_index": 429,
           "photo_end_index": 439
+        },
+        {
+          "index": 117,
+          "audio_start": 5147.854,
+          "audio_end": 5181.445,
+          "duration": 33.59,
+          "title": "Hỏi hát gì cả.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_117.mp4",
+          "youtube_video_id": "R84BYSg2sZo",
+          "youtube_url": "https://youtu.be/R84BYSg2sZo",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Hỏi hát gì cả."
+        },
+        {
+          "index": 118,
+          "audio_start": 5181.445,
+          "audio_end": 5211.776,
+          "duration": 30.331,
+          "title": "Bây giờ, Thầy và các cư sĩ đồng niệm hồi hướng: Nguyện đem công đức này",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_118.mp4",
+          "youtube_video_id": "7XTz8k4YtMk",
+          "youtube_url": "https://youtu.be/7XTz8k4YtMk",
+          "uploaded": true,
+          "photo_start_index": 439,
+          "photo_end_index": 447
         }
       ]
     }
