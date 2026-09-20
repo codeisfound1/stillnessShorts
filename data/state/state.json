@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 5211.776082771959,
-      "photo_pointer_index": 447,
+      "audio_pointer_sec": 5304.530443946417,
+      "photo_pointer_index": 459,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -2289,6 +2289,31 @@
           "uploaded": true,
           "photo_start_index": 439,
           "photo_end_index": 447
+        },
+        {
+          "index": 119,
+          "audio_start": 5211.776,
+          "audio_end": 5252.841,
+          "duration": 41.065,
+          "title": "Pháp âm: https://youtu.be/VKeKgSAmh6o 1- CON NGƯỜI KHỔ DO THÂN,",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_119.mp4",
+          "youtube_video_id": "zTt0kdxqZYg",
+          "youtube_url": "https://youtu.be/zTt0kdxqZYg",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Pháp âm: https://youtu.be/VKeKgSAmh6o 1- CON NGƯỜI KHỔ DO THÂN,"
+        },
+        {
+          "index": 120,
+          "audio_start": 5252.841,
+          "audio_end": 5304.53,
+          "duration": 51.69,
+          "title": "KHẨU, Ý TẠO NHÂN ÁC Tiếp tục bài học hôm qua Thầy kể tiếp câu chuyện con Cò và con rùa -…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_120.mp4",
+          "youtube_video_id": "6w1xmJZiTp4",
+          "youtube_url": "https://youtu.be/6w1xmJZiTp4",
+          "uploaded": true,
+          "photo_start_index": 447,
+          "photo_end_index": 459
         }
       ]
     }
