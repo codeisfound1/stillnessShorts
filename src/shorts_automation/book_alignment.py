@@ -36,6 +36,7 @@ from __future__ import annotations
 import difflib
 import logging
 import re
+import unicodedata
 from pathlib import Path
 from typing import Optional
 
@@ -206,6 +207,30 @@ def _align_against_book(
     return replaced, ratio
 
 
+_BOOK_PUBLISHER_SUFFIX = "Thư viện Chơn Như"
+
+
+def _normalize_book_display_name(name: str) -> str:
+    """Chuẩn hóa tên hiển thị sách: tên file gốc đôi khi bị cắt cụt khi lưu, làm phần sau dấu
+    "|" (tên nhà xuất bản/thư viện) hiển thị thiếu (ví dụ "... | Thư " thay vì đầy đủ "... | Thư
+    viện Chơn Như"). Nếu phần sau "|" chỉ là một tiền tố bị cắt cụt của tên đầy đủ (kể cả rỗng),
+    thay bằng tên đầy đủ để hiển thị đúng trên video/mô tả YouTube - không sửa file gốc trên đĩa.
+
+    So sánh qua unicodedata.normalize("NFC", ...) trước - tên file trích từ PDF/OS có thể ở dạng
+    Unicode tổ hợp (NFD, dấu là ký tự riêng) trong khi chuỗi hằng trong code là NFC (dựng sẵn),
+    2 dạng nhìn giống hệt nhau nhưng so sánh chuỗi trực tiếp (kể cả .lower()/.startswith()) sẽ
+    luôn ra False nếu không chuẩn hóa cùng 1 dạng trước."""
+    if "|" not in name:
+        return name
+    before, _, after = name.partition("|")
+    after = after.strip()
+    after_nfc = unicodedata.normalize("NFC", after).lower()
+    suffix_nfc = unicodedata.normalize("NFC", _BOOK_PUBLISHER_SUFFIX).lower()
+    if after_nfc != suffix_nfc and suffix_nfc.startswith(after_nfc):
+        after = _BOOK_PUBLISHER_SUFFIX
+    return f"{before.strip()} | {after}" if after else before.strip()
+
+
 def apply_book_alignment(
     words: list[Word],
     books: list[tuple[str, list[str], dict[str, list[int]]]],
@@ -231,7 +256,7 @@ def apply_book_alignment(
         return words, None
 
     replaced, ratio, book_filename = best
-    book_name = Path(book_filename).stem
+    book_name = _normalize_book_display_name(Path(book_filename).stem)
     logger.info(
         'Book alignment: khớp với sách "%s" (điểm khớp %.2f) - dùng văn bản sách làm nguồn chuẩn, '
         "chỉ căn thời gian theo Whisper (%d từ -> %d từ).",

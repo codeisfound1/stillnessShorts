@@ -362,6 +362,11 @@ Các mục quan trọng:
   - `margin_v`: khoảng cách (px) từ đáy khung hình, mặc định `78` - ngay phía trên disclaimer.
   - `text_color`/`outline_color`/`outline`/`shadow`: style chữ, mặc định xám nhạt `&H00CCCCCC`
     trên nền viền đen, cùng font với `subtitle.font_name`.
+  - **Tự sửa tên nhà xuất bản bị cắt cụt**: 1 số file `.pdf` trong `data/input/pdf/` có tên gốc
+    bị cắt ngắn khi lưu, làm phần sau dấu `|` hiển thị thiếu (ví dụ `... | Thư ` hoặc
+    `... | Thư viện Ch` thay vì đầy đủ `... | Thư viện Chơn Như`). `book_alignment.py` tự động
+    phát hiện phần sau `|` chỉ là tiền tố bị cắt cụt của "Thư viện Chơn Như" (kể cả rỗng) và thay
+    bằng tên đầy đủ trước khi hiển thị - không sửa file `.pdf` gốc trên đĩa.
 - `glossary.*` (TÙY CHỌN, mặc định tắt) - sửa lỗi hậu kỳ transcript theo 1 danh sách thuật ngữ
   tham chiếu, dùng khi `book_alignment`/`whisper.initial_prompt` vẫn chưa sửa hết các từ khó nghe sai:
   - `enabled`: bật/tắt (mặc định `false`).
