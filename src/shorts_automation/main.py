@@ -94,9 +94,12 @@ def validate_inputs(config: AppConfig) -> None:
 YOUTUBE_DESCRIPTION_MAX_LENGTH = 5000
 
 
-def build_description(title: str, transcript_text: str, hashtags: list[str]) -> str:
+def build_description(
+    title: str, transcript_text: str, hashtags: list[str], book_name: str | None = None
+) -> str:
     """Mô tả video = tiêu đề + toàn bộ nội dung transcript của đoạn mp3 dùng cho short này
-    + hashtag (tăng độ nhận diện & SEO).
+    + nguồn tham khảo sách (nếu book_alignment khớp được cho short này) + hashtag (tăng độ
+    nhận diện & SEO).
 
     Chỉ cắt bớt nếu vượt quá giới hạn 5000 ký tự của YouTube (rất hiếm với 1 đoạn 30-60s).
     """
@@ -104,6 +107,8 @@ def build_description(title: str, transcript_text: str, hashtags: list[str]) -> 
     parts = [title]
     if full_text:
         parts.append(full_text)
+    if book_name:
+        parts.append(f"Nguồn tham khảo: {book_name}")
     if hashtags:
         parts.append(" ".join(hashtags))
     description = "\n\n".join(parts)
@@ -408,7 +413,9 @@ def run(args: argparse.Namespace) -> int:
             if not args.skip_upload:
                 from . import youtube_uploader
 
-                description = build_description(title, transcript_text, config.youtube.description_hashtags)
+                description = build_description(
+                    title, transcript_text, config.youtube.description_hashtags, transcript_slice.book_name
+                )
                 youtube_video_id = youtube_uploader.upload_and_add_to_playlist(
                     video_path=output_path,
                     title=youtube_title,

@@ -350,6 +350,18 @@ Các mục quan trọng:
     (kể cả từ bị thiếu/thừa, không chỉ từ nghe sai chính tả), giữ nguyên các câu không liên quan
     tới sách nào (không dùng nhầm), và xác nhận `glossary` được bỏ qua đúng như thiết kế khi
     sách đã khớp.
+- `book_reference.*` (TÙY CHỌN, mặc định BẬT) - khi `book_alignment` khớp được sách cho 1 short,
+  tự động thêm nguồn tham khảo "Nguồn tham khảo: `<tên sách>`" (tên file `.pdf` bỏ đuôi mở rộng,
+  ví dụ "Pháp Âm 1994-ĐẠO ĐỨC GIẢI THOÁT | Thư viện Chơn Như") vào CẢ mô tả video YouTube LẪN
+  hiển thị đè lên chính video, ngay phía trên dòng disclaimer. CHỈ hiển thị với những short thực
+  sự khớp được sách (không phải phần tử cố định luôn hiện như branding/disclaimer) - short nào
+  không khớp sách nào thì không có dòng này ở cả 2 nơi.
+  - `enabled`: bật/tắt overlay trên video (mặc định `true`) - dòng "Nguồn tham khảo" trong mô tả
+    YouTube luôn thêm khi có `book_name` khớp, không phụ thuộc cờ này.
+  - `font_size`: mặc định `24` (nhỏ hơn cả disclaimer `28`).
+  - `margin_v`: khoảng cách (px) từ đáy khung hình, mặc định `78` - ngay phía trên disclaimer.
+  - `text_color`/`outline_color`/`outline`/`shadow`: style chữ, mặc định xám nhạt `&H00CCCCCC`
+    trên nền viền đen, cùng font với `subtitle.font_name`.
 - `glossary.*` (TÙY CHỌN, mặc định tắt) - sửa lỗi hậu kỳ transcript theo 1 danh sách thuật ngữ
   tham chiếu, dùng khi `book_alignment`/`whisper.initial_prompt` vẫn chưa sửa hết các từ khó nghe sai:
   - `enabled`: bật/tắt (mặc định `false`).

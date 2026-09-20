@@ -27,6 +27,8 @@ Cách hoạt động, cho mỗi cửa sổ transcript:
    thêm nữa) - glossary chỉ chạy khi không sách nào khớp đủ ngưỡng.
 
 Nếu có nhiều sách trong thư mục tham chiếu, thử từng sách và chọn sách cho điểm khớp cao nhất.
+Tên sách khớp được trả về cho caller (transcriber.py) để dùng làm nguồn tham khảo hiển thị trong
+mô tả video YouTube và overlay trên chính video (xem book_reference trong config.py/subtitles.py).
 """
 
 from __future__ import annotations
@@ -209,15 +211,15 @@ def apply_book_alignment(
     books: list[tuple[str, list[str], dict[str, list[int]]]],
     *,
     min_match_ratio: float = 0.75,
-) -> tuple[list[Word], bool]:
+) -> tuple[list[Word], Optional[str]]:
     """Thử căn chỉnh transcript với từng sách, chọn sách cho điểm khớp cao nhất. Nếu điểm khớp
     tốt nhất >= min_match_ratio, DÙNG HẲN văn bản sách đó làm nguồn chuẩn (bỏ chữ Whisper, chỉ
     giữ lại việc căn thời gian) - nếu không sách nào khớp đủ tốt, giữ nguyên transcript Whisper
-    (an toàn hơn chèn nhầm văn bản không liên quan). Trả về (words, đã dùng văn bản sách hay
-    chưa) - cờ thứ 2 để caller biết có cần chạy tiếp glossary_corrector hay không (không cần
-    nữa nếu đã có nguồn chuẩn từ sách)."""
+    (an toàn hơn chèn nhầm văn bản không liên quan). Trả về (words, tên sách đã khớp hoặc None) -
+    tên sách để caller vừa biết có cần chạy tiếp glossary_corrector hay không (không cần nữa nếu
+    đã có nguồn chuẩn từ sách), vừa dùng làm nguồn tham khảo hiển thị trên video/mô tả YouTube."""
     if not books or not words:
-        return words, False
+        return words, None
 
     best: Optional[tuple[list[Word], float, str]] = None
     for book_name, book_words, index in books:
@@ -226,9 +228,10 @@ def apply_book_alignment(
             best = (replaced, ratio, book_name)
 
     if best is None or best[1] < min_match_ratio:
-        return words, False
+        return words, None
 
-    replaced, ratio, book_name = best
+    replaced, ratio, book_filename = best
+    book_name = Path(book_filename).stem
     logger.info(
         'Book alignment: khớp với sách "%s" (điểm khớp %.2f) - dùng văn bản sách làm nguồn chuẩn, '
         "chỉ căn thời gian theo Whisper (%d từ -> %d từ).",
@@ -237,4 +240,4 @@ def apply_book_alignment(
         len(words),
         len(replaced),
     )
-    return replaced, True
+    return replaced, book_name

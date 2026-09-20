@@ -183,6 +183,26 @@ class DisclaimerConfig:
     shadow: int
 
 
+DEFAULT_BOOK_REFERENCE_LABEL = "Nguồn tham khảo"
+
+
+@dataclass
+class BookReferenceConfig:
+    """Hiển thị tên sách tham chiếu ngay trên video (đè lên hình, phía trên disclaimer) và
+    trong mô tả video YouTube, CHỈ khi book_alignment tìm được sách khớp đủ tốt cho short đó
+    (không phải phần tử cố định luôn hiện như branding/disclaimer). Dùng chung font với phụ đề
+    chính (subtitle.font_name) vì font branding có thể không bundle cùng. Tùy chọn (optional),
+    mặc định BẬT."""
+
+    enabled: bool
+    font_size: int
+    margin_v: int
+    text_color: str
+    outline_color: str
+    outline: int
+    shadow: int
+
+
 @dataclass
 class LLMConfig:
     provider: str
@@ -230,6 +250,7 @@ class AppConfig:
     subtitle: SubtitleConfig
     branding: BrandingConfig
     disclaimer: DisclaimerConfig
+    book_reference: BookReferenceConfig
     llm: LLMConfig
     youtube: YouTubeConfig
     telegram: TelegramConfig
@@ -405,6 +426,17 @@ def load_config(config_path: str | Path = "config/config.yaml", env_path: str | 
         shadow=int(disclaimer_raw.get("shadow", 1)),
     )
 
+    book_ref_raw = raw.get("book_reference", {})
+    book_reference_cfg = BookReferenceConfig(
+        enabled=bool(book_ref_raw.get("enabled", True)),
+        font_size=int(book_ref_raw.get("font_size", 24)),
+        margin_v=int(book_ref_raw.get("margin_v", 78)),
+        text_color=str(book_ref_raw.get("text_color", "&H00CCCCCC")),
+        outline_color=str(book_ref_raw.get("outline_color", "&H00000000")),
+        outline=int(book_ref_raw.get("outline", 1)),
+        shadow=int(book_ref_raw.get("shadow", 1)),
+    )
+
     llm_raw = raw.get("llm", {})
     llm_cfg = LLMConfig(
         provider=os.environ.get("LLM_PROVIDER", llm_raw.get("provider", "groq")).lower(),
@@ -456,6 +488,7 @@ def load_config(config_path: str | Path = "config/config.yaml", env_path: str | 
         subtitle=subtitle_cfg,
         branding=branding_cfg,
         disclaimer=disclaimer_cfg,
+        book_reference=book_reference_cfg,
         llm=llm_cfg,
         youtube=youtube_cfg,
         telegram=telegram_cfg,

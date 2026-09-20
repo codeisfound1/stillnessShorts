@@ -32,12 +32,13 @@ class Word:
 class TranscriptResult:
     words: list[Word]
     full_text: str
+    book_name: Optional[str] = None
 
     def slice(self, start: float, end: float) -> "TranscriptResult":
         """Lấy các từ nằm trong [start, end), timestamp giữ nguyên theo mốc gốc của toàn bộ audio."""
         picked = [w for w in self.words if w.start >= start and w.start < end]
         text = " ".join(w.word.strip() for w in picked).strip()
-        return TranscriptResult(words=picked, full_text=text)
+        return TranscriptResult(words=picked, full_text=text, book_name=self.book_name)
 
 
 def _resolve_device_and_compute(whisper_cfg: WhisperConfig) -> tuple[str, str]:
@@ -100,21 +101,21 @@ def _run_whisper(
             words.append(Word(word=seg.text.strip(), start=float(seg.start), end=float(seg.end)))
 
     correction_applied = False
-    book_matched = False
+    book_name: Optional[str] = None
 
     if book_alignment_cfg is not None and book_alignment_cfg.enabled and book_alignment_cfg.path is not None:
         from . import book_alignment
 
         books = book_alignment.load_books(book_alignment_cfg.path)
-        words, book_matched = book_alignment.apply_book_alignment(
+        words, book_name = book_alignment.apply_book_alignment(
             words, books, min_match_ratio=book_alignment_cfg.min_match_ratio
         )
-        if book_matched:
+        if book_name is not None:
             correction_applied = True
 
     # Nếu đã tìm được sách khớp đủ tốt, văn bản sách được dùng làm nguồn chuẩn chính tả luôn -
     # không cần glossary so khớp mờ thêm nữa (glossary chỉ cần thiết khi KHÔNG có nguồn chuẩn).
-    if not book_matched and glossary_cfg is not None and glossary_cfg.enabled and glossary_cfg.path is not None:
+    if book_name is None and glossary_cfg is not None and glossary_cfg.enabled and glossary_cfg.path is not None:
         from . import glossary_corrector
 
         terms = glossary_corrector.load_glossary_terms(glossary_cfg.path)
@@ -128,15 +129,25 @@ def _run_whisper(
     if correction_applied:
         # full_text phải ghép lại từ words đã sửa để khớp với transcript thật sự dùng cho phụ
         # đề/description - không dùng seg.text gốc của Whisper (chưa qua sửa) nữa.
-        return TranscriptResult(words=words, full_text=" ".join(w.word.strip() for w in words).strip())
+        full_text = " ".join(w.word.strip() for w in words).strip()
+        return TranscriptResult(words=words, full_text=full_text, book_name=book_name)
 
-    return TranscriptResult(words=words, full_text=" ".join(full_text_parts).strip())
+    return TranscriptResult(words=words, full_text=" ".join(full_text_parts).strip(), book_name=book_name)
 
 
 def _save_cache(cache_file: Path, result: TranscriptResult) -> None:
     cache_file.parent.mkdir(parents=True, exist_ok=True)
     with open(cache_file, "w", encoding="utf-8") as f:
-        json.dump({"words": [asdict(w) for w in result.words], "full_text": result.full_text}, f, ensure_ascii=False, indent=2)
+        json.dump(
+            {
+                "words": [asdict(w) for w in result.words],
+                "full_text": result.full_text,
+                "book_name": result.book_name,
+            },
+            f,
+            ensure_ascii=False,
+            indent=2,
+        )
     logger.info("Đã lưu transcript cache: %s", cache_file)
 
 
@@ -145,7 +156,7 @@ def _load_cache(cache_file: Path) -> TranscriptResult:
     with open(cache_file, "r", encoding="utf-8") as f:
         data = json.load(f)
     words = [Word(**w) for w in data["words"]]
-    return TranscriptResult(words=words, full_text=data["full_text"])
+    return TranscriptResult(words=words, full_text=data["full_text"], book_name=data.get("book_name"))
 
 
 def transcribe_narration(
@@ -222,7 +233,7 @@ def transcribe_narration_window(
     local_result = _run_whisper(window_clip_path, whisper_cfg, glossary_cfg, book_alignment_cfg)
 
     words = [Word(word=w.word, start=w.start + window_start, end=w.end + window_start) for w in local_result.words]
-    result = TranscriptResult(words=words, full_text=local_result.full_text)
+    result = TranscriptResult(words=words, full_text=local_result.full_text, book_name=local_result.book_name)
 
     _save_cache(cache_file, result)
     return result

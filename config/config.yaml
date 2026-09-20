@@ -180,6 +180,19 @@ disclaimer:
   outline: 1
   shadow: 1
 
+book_reference:
+  # Hiển thị tên sách tham chiếu ngay trên video (đè lên hình, phía trên disclaimer) và trong
+  # mô tả video YouTube - CHỈ khi book_alignment tìm được sách khớp đủ tốt cho short đó (không
+  # phải phần tử cố định luôn hiện như branding/disclaimer). Dùng chung font với phụ đề chính
+  # (subtitle.font_name).
+  enabled: true
+  font_size: 24
+  margin_v: 78                  # px - ngay phía trên disclaimer (margin_v=40, font_size=28)
+  text_color: "&H00CCCCCC"      # xám nhạt
+  outline_color: "&H00000000"   # viền đen
+  outline: 1
+  shadow: 1
+
 llm:
   # groq | claude | rule_based
   provider: "groq"

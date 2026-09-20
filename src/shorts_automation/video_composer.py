@@ -63,6 +63,8 @@ def compose_short(
         play_res_y=config.video.height,
         branding_cfg=config.branding,
         disclaimer_cfg=config.disclaimer,
+        book_reference_cfg=config.book_reference,
+        book_name=transcript_slice.book_name,
         clip_duration=duration,
     )
     logger.info("Short #%d: %d cụm phụ đề.", index, len(captions))
