@@ -10,7 +10,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
 
-from .config import BookReferenceConfig, BrandingConfig, DisclaimerConfig, SubtitleConfig
+from .config import BookReferenceConfig, BrandingConfig, DisclaimerConfig, ShortNumberConfig, SubtitleConfig
 from .transcriber import Word
 
 
@@ -176,6 +176,32 @@ def _build_book_reference_block(
     return style, dialogue
 
 
+def _build_short_number_block(
+    short_number_cfg: ShortNumberConfig,
+    short_index: Optional[int],
+    *,
+    subtitle_font_name: str,
+    clip_duration: float,
+) -> tuple[str, str]:
+    """Style + Dialogue cho số thứ tự short (ví dụ "#12") ở góc trên bên phải màn hình, cố định
+    suốt video (giống branding/disclaimer) - LUÔN hiện cho mọi short (không có điều kiện như
+    book_reference). Dùng BorderStyle=3 (nền hộp mờ, giống style phụ đề chính Default) thay vì
+    chỉ viền chữ, để luôn đọc rõ trên mọi loại ảnh nền/màu logo. Dùng chung font với phụ đề
+    chính (subtitle.font_name) vì font branding có thể không bundle cùng."""
+    if not short_number_cfg.enabled or not short_index:
+        return "", ""
+
+    end_time = _format_ass_time(clip_duration)
+    style = (
+        f"Style: ShortNumber,{subtitle_font_name},{short_number_cfg.font_size},"
+        f"{short_number_cfg.text_color},&H000000FF,{short_number_cfg.outline_color},{short_number_cfg.back_color},"
+        f"-1,0,0,0,100,100,0,0,3,{short_number_cfg.outline},{short_number_cfg.shadow},9,"
+        f"{short_number_cfg.margin_right},{short_number_cfg.margin_right},{short_number_cfg.margin_top},1\n"
+    )
+    dialogue = f"Dialogue: 0,0:00:00.00,{end_time},ShortNumber,,0,0,0,,#{short_index}\n"
+    return style, dialogue
+
+
 def build_ass_filter_string(ass_subtitle_path: Path, fonts_dir: Path | None = None) -> str:
     """Trả về đoạn filter ffmpeg `ass='...'[:fontsdir='...']` dùng chung cho video_cutter/photo_cutter.
 
@@ -260,11 +286,13 @@ def write_ass_file(
     disclaimer_cfg: Optional[DisclaimerConfig] = None,
     book_reference_cfg: Optional[BookReferenceConfig] = None,
     book_name: Optional[str] = None,
+    short_number_cfg: Optional[ShortNumberConfig] = None,
+    short_index: Optional[int] = None,
     clip_duration: float = 0.0,
 ) -> Path:
     """Ghi file .ass: style caption (theo timestamp) + style/dialogue branding + disclaimer +
     nguồn tham khảo sách (cố định suốt video, tùy chọn, book_name chỉ có khi book_alignment
-    khớp được cho short này)."""
+    khớp được cho short này) + số thứ tự short (cố định suốt video, tùy chọn, luôn hiện)."""
     output_path.parent.mkdir(parents=True, exist_ok=True)
 
     branding_styles, branding_dialogues = (
@@ -284,6 +312,13 @@ def write_ass_file(
         if book_reference_cfg is not None
         else ("", "")
     )
+    short_number_styles, short_number_dialogues = (
+        _build_short_number_block(
+            short_number_cfg, short_index, subtitle_font_name=subtitle_cfg.font_name, clip_duration=clip_duration
+        )
+        if short_number_cfg is not None
+        else ("", "")
+    )
 
     header = f"""[Script Info]
 Title: stillnessShorts auto subtitle
@@ -296,12 +331,12 @@ ScaledBorderAndShadow: yes
 [V4+ Styles]
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: Default,{subtitle_cfg.font_name},{subtitle_cfg.font_size},{subtitle_cfg.primary_color},&H000000FF,{subtitle_cfg.outline_color},{subtitle_cfg.back_color},-1,0,0,0,100,100,0,0,3,{subtitle_cfg.outline},{subtitle_cfg.shadow},{subtitle_cfg.alignment},60,60,{subtitle_cfg.margin_v},1
-{branding_styles}{disclaimer_styles}{book_ref_styles}
+{branding_styles}{disclaimer_styles}{book_ref_styles}{short_number_styles}
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 """
 
-    lines = [header, branding_dialogues, disclaimer_dialogues, book_ref_dialogues]
+    lines = [header, branding_dialogues, disclaimer_dialogues, book_ref_dialogues, short_number_dialogues]
     for cap in captions:
         text = _wrap_text(cap.text, subtitle_cfg.max_chars_per_line)
         start = _format_ass_time(cap.start)

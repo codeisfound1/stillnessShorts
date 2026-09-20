@@ -310,6 +310,17 @@ Các mục quan trọng:
   - **Lưu ý về emoji**: KHÔNG chèn emoji vào `text` - font bundle sẵn (Be Vietnam Pro) không có
     glyph emoji/ký hiệu, và máy chạy GitHub Actions cũng không có sẵn font emoji màu để fallback,
     nên emoji sẽ bị mất trắng (không hiện) trong video thay vì báo lỗi.
+- `short_number.*` (TÙY CHỌN, mặc định BẬT) - hiển thị số thứ tự short (ví dụ "#12", cùng số
+  đã gắn vào cuối tiêu đề YouTube - xem `build_video_title()`) ở góc trên bên phải màn hình, đè
+  lên hình, cố định suốt video (giống cơ chế branding/disclaimer) - LUÔN hiện cho MỌI short
+  (không có điều kiện như `book_reference`).
+  - `enabled`: bật/tắt (mặc định `true`).
+  - `font_size`: mặc định `48`.
+  - `margin_right`/`margin_top`: khoảng cách (px) từ mép phải/mép trên khung hình, mặc định
+    `50`/`60`.
+  - `text_color`/`back_color`/`outline_color`/`outline`/`shadow`: style chữ, mặc định chữ trắng
+    trên nền hộp đen mờ `&H99000000` (giống style phụ đề chính `subtitle.*`, không chỉ viền chữ)
+    để luôn đọc rõ trên mọi loại ảnh nền/màu logo. Cùng font với `subtitle.font_name`.
 - `llm.provider`: `groq` (mặc định) | `claude` | `rule_based`. Provider này cũng được dùng để sinh
   prompt ảnh khi `photos.source: "ai_generated"`.
 - `whisper.model_size`: `tiny`/`base`/`small`/`medium`/`large-v3` — model lớn hơn cho tiếng Việt

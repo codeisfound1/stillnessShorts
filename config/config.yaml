@@ -193,6 +193,19 @@ book_reference:
   outline: 1
   shadow: 1
 
+short_number:
+  # Hiển thị số thứ tự short (ví dụ "#12") ở góc trên bên phải màn hình, đè lên hình, suốt
+  # video (cố định, giống branding/disclaimer) - LUÔN hiện cho mọi short.
+  enabled: true
+  font_size: 48
+  margin_right: 50              # px - khoảng cách từ mép phải khung hình
+  margin_top: 60                # px - khoảng cách từ mép trên khung hình
+  text_color: "&H00FFFFFF"      # trắng
+  back_color: "&H99000000"      # nền hộp đen mờ (giống style phụ đề chính)
+  outline_color: "&H00000000"   # viền đen
+  outline: 0
+  shadow: 0
+
 llm:
   # groq | claude | rule_based
   provider: "groq"

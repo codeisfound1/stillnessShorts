@@ -204,6 +204,24 @@ class BookReferenceConfig:
 
 
 @dataclass
+class ShortNumberConfig:
+    """Hiển thị số thứ tự short (ví dụ "#12") ở góc trên bên phải màn hình, đè lên hình, suốt
+    video (cố định, không theo timestamp, giống branding/disclaimer) - LUÔN hiện cho mọi short
+    (không có điều kiện như book_reference). Dùng nền hộp mờ (giống style phụ đề chính) để dễ
+    đọc trên mọi loại ảnh nền. Tùy chọn (optional), mặc định BẬT."""
+
+    enabled: bool
+    font_size: int
+    margin_right: int
+    margin_top: int
+    text_color: str
+    back_color: str
+    outline_color: str
+    outline: int
+    shadow: int
+
+
+@dataclass
 class LLMConfig:
     provider: str
     groq_model: str
@@ -251,6 +269,7 @@ class AppConfig:
     branding: BrandingConfig
     disclaimer: DisclaimerConfig
     book_reference: BookReferenceConfig
+    short_number: ShortNumberConfig
     llm: LLMConfig
     youtube: YouTubeConfig
     telegram: TelegramConfig
@@ -437,6 +456,19 @@ def load_config(config_path: str | Path = "config/config.yaml", env_path: str | 
         shadow=int(book_ref_raw.get("shadow", 1)),
     )
 
+    short_number_raw = raw.get("short_number", {})
+    short_number_cfg = ShortNumberConfig(
+        enabled=bool(short_number_raw.get("enabled", True)),
+        font_size=int(short_number_raw.get("font_size", 48)),
+        margin_right=int(short_number_raw.get("margin_right", 50)),
+        margin_top=int(short_number_raw.get("margin_top", 60)),
+        text_color=str(short_number_raw.get("text_color", "&H00FFFFFF")),
+        back_color=str(short_number_raw.get("back_color", "&H99000000")),
+        outline_color=str(short_number_raw.get("outline_color", "&H00000000")),
+        outline=int(short_number_raw.get("outline", 0)),
+        shadow=int(short_number_raw.get("shadow", 0)),
+    )
+
     llm_raw = raw.get("llm", {})
     llm_cfg = LLMConfig(
         provider=os.environ.get("LLM_PROVIDER", llm_raw.get("provider", "groq")).lower(),
@@ -489,6 +521,7 @@ def load_config(config_path: str | Path = "config/config.yaml", env_path: str | 
         branding=branding_cfg,
         disclaimer=disclaimer_cfg,
         book_reference=book_reference_cfg,
+        short_number=short_number_cfg,
         llm=llm_cfg,
         youtube=youtube_cfg,
         telegram=telegram_cfg,

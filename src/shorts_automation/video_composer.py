@@ -65,6 +65,8 @@ def compose_short(
         disclaimer_cfg=config.disclaimer,
         book_reference_cfg=config.book_reference,
         book_name=transcript_slice.book_name,
+        short_number_cfg=config.short_number,
+        short_index=index,
         clip_duration=duration,
     )
     logger.info("Short #%d: %d cụm phụ đề.", index, len(captions))
