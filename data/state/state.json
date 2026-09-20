@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 5304.530443946417,
-      "photo_pointer_index": 459,
+      "audio_pointer_sec": 5386.28831098315,
+      "photo_pointer_index": 471,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -2314,6 +2314,31 @@
           "uploaded": true,
           "photo_start_index": 447,
           "photo_end_index": 459
+        },
+        {
+          "index": 121,
+          "audio_start": 5304.53,
+          "audio_end": 5337.76,
+          "duration": 33.23,
+          "title": "Chàng rùa ra dáng điệu hiểu biết, - thôi tôi nhớ mà, hai bác xem tôi chẳng bằng con nít,…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_121.mp4",
+          "youtube_video_id": "wXWVrxwyKgU",
+          "youtube_url": "https://youtu.be/wXWVrxwyKgU",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Chàng rùa ra dáng điệu hiểu biết, - thôi tôi nhớ mà, hai bác xem tôi chẳng bằng con nít,…"
+        },
+        {
+          "index": 122,
+          "audio_start": 5337.76,
+          "audio_end": 5386.288,
+          "duration": 48.528,
+          "title": "Xong đâu đấy cả ba làm theo ý định, bốn cánh vỗ mặt hai cặp chân cò duỗi thẳng, Chàng rùa…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_122.mp4",
+          "youtube_video_id": "9--DN2RcsUI",
+          "youtube_url": "https://youtu.be/9--DN2RcsUI",
+          "uploaded": true,
+          "photo_start_index": 459,
+          "photo_end_index": 471
         }
       ]
     }
