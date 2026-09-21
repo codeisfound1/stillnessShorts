@@ -116,7 +116,7 @@ book_alignment:
   # giữ nguyên transcript Whisper + vẫn chạy glossary (an toàn hơn là chèn nhầm văn bản không
   # liên quan). Tăng nếu thấy dùng nhầm sách/đoạn sai, giảm nếu thấy bỏ sót nhiều đoạn đáng lẽ
   # khớp được.
-  min_match_ratio: 0.75
+  min_match_ratio: 0.60
 
 glossary:
   # TÙY CHỌN - sửa lỗi hậu kỳ transcript theo 1 danh sách thuật ngữ tham chiếu, để bắt các từ
