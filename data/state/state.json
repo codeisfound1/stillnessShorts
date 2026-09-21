@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 5475.263751483551,
-      "photo_pointer_index": 479,
+      "audio_pointer_sec": 5569.32321791001,
+      "photo_pointer_index": 488,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -2364,6 +2364,31 @@
           "uploaded": true,
           "photo_start_index": 471,
           "photo_end_index": 479
+        },
+        {
+          "index": 125,
+          "audio_start": 5475.264,
+          "audio_end": 5527.533,
+          "duration": 52.269,
+          "title": "Nhân ác có rất nhiều nhưng không ngoài 10 điều ác.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_125.mp4",
+          "youtube_video_id": "jGVXhfJV-qA",
+          "youtube_url": "https://youtu.be/jGVXhfJV-qA",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Nhân ác có rất nhiều nhưng không ngoài 10 điều ác."
+        },
+        {
+          "index": 126,
+          "audio_start": 5527.533,
+          "audio_end": 5569.323,
+          "duration": 41.79,
+          "title": "Ở đây, thầy sẽ nói về điều ác thứ nhất, đó là sự giết hại chúng sanh.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_126.mp4",
+          "youtube_video_id": "q5JIG19XiCI",
+          "youtube_url": "https://youtu.be/q5JIG19XiCI",
+          "uploaded": true,
+          "photo_start_index": 479,
+          "photo_end_index": 488
         }
       ]
     }
