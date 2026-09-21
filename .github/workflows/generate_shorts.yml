@@ -96,6 +96,7 @@ jobs:
           if [ -n "$MUSIC_URL" ]; then curl -sSL -o data/input/music.mp3 "$MUSIC_URL"; fi
 
       - name: Chạy tạo & upload Shorts
+        id: generate
         run: |
           ARGS=""
           if [ -n "${{ github.event.inputs.count }}" ]; then
@@ -119,8 +120,12 @@ jobs:
             echo "Không có thay đổi state.json để commit."
           fi
 
-      - name: Upload video output làm artifact (debug)
-        if: always()
+      # Chỉ upload video làm artifact khi CHƯA chắc đã lên YouTube thành công - tức là chạy với
+      # --skip-upload (cố ý không upload) hoặc bước tạo/upload phía trên bị lỗi. Nếu bước trên
+      # chạy thành công và có upload YouTube, video đã có trên YouTube rồi nên không cần lưu
+      # thêm bản artifact trùng lặp (tốn dung lượng lưu trữ Actions).
+      - name: Upload video output làm artifact (debug, chỉ khi chưa upload YouTube thành công)
+        if: always() && (steps.generate.outcome != 'success' || github.event.inputs.skip_upload == 'true')
         uses: actions/upload-artifact@v4
         with:
           name: generated-shorts-${{ github.run_id }}
