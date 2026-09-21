@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 5386.28831098315,
-      "photo_pointer_index": 471,
+      "audio_pointer_sec": 5475.263751483551,
+      "photo_pointer_index": 479,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -2339,6 +2339,31 @@
           "uploaded": true,
           "photo_start_index": 459,
           "photo_end_index": 471
+        },
+        {
+          "index": 123,
+          "audio_start": 5386.288,
+          "audio_end": 5440.539,
+          "duration": 54.251,
+          "title": "Nếu sự đời yên ổn nói lần khi rủi ai trên đường hành trình của chàng rùa, không qua khỏi…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_123.mp4",
+          "youtube_video_id": "CSUhSONJiVs",
+          "youtube_url": "https://youtu.be/CSUhSONJiVs",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Nếu sự đời yên ổn nói lần khi rủi ai trên đường hành trình của chàng rùa, không qua khỏi…"
+        },
+        {
+          "index": 124,
+          "audio_start": 5440.539,
+          "audio_end": 5475.264,
+          "duration": 34.725,
+          "title": "Một thằng lớn nhất trong bọn, ghét lớn, aha, thật giống hai thằng mỏng, giác một thằng mù…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_124.mp4",
+          "youtube_video_id": "ian0JWDpez8",
+          "youtube_url": "https://youtu.be/ian0JWDpez8",
+          "uploaded": true,
+          "photo_start_index": 471,
+          "photo_end_index": 479
         }
       ]
     }
