@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 5670.963444757436,
-      "photo_pointer_index": 501,
+      "audio_pointer_sec": 5767.642777482253,
+      "photo_pointer_index": 512,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -2471,6 +2471,31 @@
           "uploaded": true,
           "photo_start_index": 488,
           "photo_end_index": 501
+        },
+        {
+          "index": 129,
+          "audio_start": 5670.963,
+          "audio_end": 5726.551,
+          "duration": 55.588,
+          "title": "Các con không tránh khỏi nghiệp đau khổ.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_129.mp4",
+          "youtube_video_id": "VEVQF4w9UyQ",
+          "youtube_url": "https://youtu.be/VEVQF4w9UyQ",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Các con không tránh khỏi nghiệp đau khổ."
+        },
+        {
+          "index": 130,
+          "audio_start": 5726.551,
+          "audio_end": 5767.643,
+          "duration": 41.092,
+          "title": "Biết chú Này con 7 này nữa.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_130.mp4",
+          "youtube_video_id": "Q1zWvbCbgas",
+          "youtube_url": "https://youtu.be/Q1zWvbCbgas",
+          "uploaded": true,
+          "photo_start_index": 501,
+          "photo_end_index": 512
         }
       ]
     }
