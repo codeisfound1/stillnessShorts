@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 5767.642777482253,
-      "photo_pointer_index": 512,
+      "audio_pointer_sec": 5856.258124079963,
+      "photo_pointer_index": 525,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -2496,6 +2496,31 @@
           "uploaded": true,
           "photo_start_index": 501,
           "photo_end_index": 512
+        },
+        {
+          "index": 131,
+          "audio_start": 5767.643,
+          "audio_end": 5798.91,
+          "duration": 31.267,
+          "title": "Đoạn video số 131",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_131.mp4",
+          "youtube_video_id": "cs-ujE4e0ZU",
+          "youtube_url": "https://youtu.be/cs-ujE4e0ZU",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Đoạn video số 131"
+        },
+        {
+          "index": 132,
+          "audio_start": 5798.91,
+          "audio_end": 5856.258,
+          "duration": 57.349,
+          "title": "Bước chân đi phải chịu khó để ý, tránh đạp phải bầy kiến, trùng dế trên sân, trên lộ, côn…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_132.mp4",
+          "youtube_video_id": "3f89vgv_ca8",
+          "youtube_url": "https://youtu.be/3f89vgv_ca8",
+          "uploaded": true,
+          "photo_start_index": 512,
+          "photo_end_index": 525
         }
       ]
     }
