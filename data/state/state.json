@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 5963.793927021589,
-      "photo_pointer_index": 537,
+      "audio_pointer_sec": 6048.817026109448,
+      "photo_pointer_index": 544,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -2546,6 +2546,31 @@
           "uploaded": true,
           "photo_start_index": 525,
           "photo_end_index": 537
+        },
+        {
+          "index": 135,
+          "audio_start": 5963.794,
+          "audio_end": 6016.865,
+          "duration": 53.071,
+          "title": "Không bao giờ anh giết hại một sinh vật nào dù vật ấy nhỏ như con trùng, con kiến, chẳng…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_135.mp4",
+          "youtube_video_id": "4AMpMsV5WQU",
+          "youtube_url": "https://youtu.be/4AMpMsV5WQU",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Không bao giờ anh giết hại một sinh vật nào dù vật ấy nhỏ như con trùng, con kiến, chẳng…"
+        },
+        {
+          "index": 136,
+          "audio_start": 6016.865,
+          "audio_end": 6048.817,
+          "duration": 31.952,
+          "title": "Ác từ trong tâm, đến hành vi và đến lời nói.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_136.mp4",
+          "youtube_video_id": "LkxE3oVfMrk",
+          "youtube_url": "https://youtu.be/LkxE3oVfMrk",
+          "uploaded": true,
+          "photo_start_index": 537,
+          "photo_end_index": 544
         }
       ]
     }
