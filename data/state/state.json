@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 6149.665734028425,
-      "photo_pointer_index": 557,
+      "audio_pointer_sec": 6227.564162690519,
+      "photo_pointer_index": 567,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -2653,6 +2653,31 @@
           "uploaded": true,
           "photo_start_index": 544,
           "photo_end_index": 557
+        },
+        {
+          "index": 139,
+          "audio_start": 6149.666,
+          "audio_end": 6184.519,
+          "duration": 34.853,
+          "title": "Trọn đời không có nẻo thoát ly, như câu chuyện giết kẻ",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_139.mp4",
+          "youtube_video_id": "1nHs4GD4sQc",
+          "youtube_url": "https://youtu.be/1nHs4GD4sQc",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Trọn đời không có nẻo thoát ly, như câu chuyện giết kẻ"
+        },
+        {
+          "index": 140,
+          "audio_start": 6184.519,
+          "audio_end": 6227.564,
+          "duration": 43.045,
+          "title": "Dẫn đường.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_140.mp4",
+          "youtube_video_id": "cL1VlturUjE",
+          "youtube_url": "https://youtu.be/cL1VlturUjE",
+          "uploaded": true,
+          "photo_start_index": 557,
+          "photo_end_index": 567
         }
       ]
     }
