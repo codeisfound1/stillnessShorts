@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 6320.037191656884,
-      "photo_pointer_index": 581,
+      "audio_pointer_sec": 6408.07351847934,
+      "photo_pointer_index": 594,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -2703,6 +2703,31 @@
           "uploaded": true,
           "photo_start_index": 567,
           "photo_end_index": 581
+        },
+        {
+          "index": 143,
+          "audio_start": 6320.037,
+          "audio_end": 6353.413,
+          "duration": 33.376,
+          "title": "Đoạn video số 143",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_143.mp4",
+          "youtube_video_id": "P_P_tj0JSSM",
+          "youtube_url": "https://youtu.be/P_P_tj0JSSM",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Đoạn video số 143"
+        },
+        {
+          "index": 144,
+          "audio_start": 6353.413,
+          "audio_end": 6408.074,
+          "duration": 54.66,
+          "title": "Đừng tin theo lời người thuật lại, đừng tin theo truyền thuyết lâu đời, đừng tin theo lời…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_144.mp4",
+          "youtube_video_id": "3o9jV0fS_To",
+          "youtube_url": "https://youtu.be/3o9jV0fS_To",
+          "uploaded": true,
+          "photo_start_index": 581,
+          "photo_end_index": 594
         }
       ]
     }
