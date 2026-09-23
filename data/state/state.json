@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 6227.564162690519,
-      "photo_pointer_index": 567,
+      "audio_pointer_sec": 6320.037191656884,
+      "photo_pointer_index": 581,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -2678,6 +2678,31 @@
           "uploaded": true,
           "photo_start_index": 557,
           "photo_end_index": 567
+        },
+        {
+          "index": 141,
+          "audio_start": 6227.564,
+          "audio_end": 6261.121,
+          "duration": 33.557,
+          "title": "Theo tập quán nơi đó, đoàn phải giết một người tế miếu, rồi mới đi qua khỏi được, Đoàn th…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_141.mp4",
+          "youtube_video_id": "ltHF3gP-fek",
+          "youtube_url": "https://youtu.be/ltHF3gP-fek",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Theo tập quán nơi đó, đoàn phải giết một người tế miếu, rồi mới đi qua khỏi được, Đoàn th…"
+        },
+        {
+          "index": 142,
+          "audio_start": 6261.121,
+          "audio_end": 6320.037,
+          "duration": 58.916,
+          "title": "Người tu theo đạo Phật cũng vậy, nếu không thiện tri thức, chắc chắn sẽ rơi vào mê tín dị…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_142.mp4",
+          "youtube_video_id": "6LabVJi6p2E",
+          "youtube_url": "https://youtu.be/6LabVJi6p2E",
+          "uploaded": true,
+          "photo_start_index": 567,
+          "photo_end_index": 581
         }
       ]
     }
