@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 6568.242801120461,
-      "photo_pointer_index": 615,
+      "audio_pointer_sec": 6651.081617162614,
+      "photo_pointer_index": 626,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -2835,6 +2835,31 @@
           "uploaded": true,
           "photo_start_index": 602,
           "photo_end_index": 615
+        },
+        {
+          "index": 149,
+          "audio_start": 6568.243,
+          "audio_end": 6603.336,
+          "duration": 35.093,
+          "title": "Sống gần gũi bên thiện tri thức, chúng ta thường bắt chước tập theo hạnh của người, thì s…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_149.mp4",
+          "youtube_video_id": "aGMEUSOyT50",
+          "youtube_url": "https://youtu.be/aGMEUSOyT50",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Sống gần gũi bên thiện tri thức, chúng ta thường bắt chước tập theo hạnh của người, thì s…"
+        },
+        {
+          "index": 150,
+          "audio_start": 6603.336,
+          "audio_end": 6651.082,
+          "duration": 47.746,
+          "title": "Đức Phật dự định quẹo phải, thì Thầy thị Giả lên tiếng - Bạch Đức Thế Tôn đệ tử hữu sự rẽ…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_150.mp4",
+          "youtube_video_id": "gag9pt8RlM0",
+          "youtube_url": "https://youtu.be/gag9pt8RlM0",
+          "uploaded": true,
+          "photo_start_index": 615,
+          "photo_end_index": 626
         }
       ]
     }
