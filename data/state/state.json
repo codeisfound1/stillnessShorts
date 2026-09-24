@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 6651.081617162614,
-      "photo_pointer_index": 626,
+      "audio_pointer_sec": 6720.17540076441,
+      "photo_pointer_index": 636,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -2860,6 +2860,31 @@
           "uploaded": true,
           "photo_start_index": 615,
           "photo_end_index": 626
+        },
+        {
+          "index": 151,
+          "audio_start": 6651.082,
+          "audio_end": 6683.14,
+          "duration": 32.059,
+          "title": "Đoạn video số 151",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_151.mp4",
+          "youtube_video_id": "67Tnr_S3fxc",
+          "youtube_url": "https://youtu.be/67Tnr_S3fxc",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Đoạn video số 151"
+        },
+        {
+          "index": 152,
+          "audio_start": 6683.14,
+          "audio_end": 6720.175,
+          "duration": 37.035,
+          "title": "Buổi sáng, Thầy đi khất thực với Đức Phật.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_152.mp4",
+          "youtube_video_id": "MQn91OlH_uQ",
+          "youtube_url": "https://youtu.be/MQn91OlH_uQ",
+          "uploaded": true,
+          "photo_start_index": 626,
+          "photo_end_index": 636
         }
       ]
     }
