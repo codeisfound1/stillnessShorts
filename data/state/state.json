@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 6408.07351847934,
-      "photo_pointer_index": 594,
+      "audio_pointer_sec": 6478.546917754916,
+      "photo_pointer_index": 602,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -2728,6 +2728,31 @@
           "uploaded": true,
           "photo_start_index": 581,
           "photo_end_index": 594
+        },
+        {
+          "index": 145,
+          "audio_start": 6408.074,
+          "audio_end": 6447.421,
+          "duration": 39.347,
+          "title": "Bị thế lực chi phối, đừng tin để làm vừa lòng người, đồng đạo, đừng tin lời kẻ khác cho l…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_145.mp4",
+          "youtube_video_id": "616rq6WCFho",
+          "youtube_url": "https://youtu.be/616rq6WCFho",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Bị thế lực chi phối, đừng tin để làm vừa lòng người, đồng đạo, đừng tin lời kẻ khác cho l…"
+        },
+        {
+          "index": 146,
+          "audio_start": 6447.421,
+          "audio_end": 6478.547,
+          "duration": 31.126,
+          "title": "Không gây tội lỗi đau khổ cho ai hết, không bị người thức giả chê trách.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_146.mp4",
+          "youtube_video_id": "nQ6uXHkhaag",
+          "youtube_url": "https://youtu.be/nQ6uXHkhaag",
+          "uploaded": true,
+          "photo_start_index": 594,
+          "photo_end_index": 602
         }
       ]
     }
