@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 6720.17540076441,
-      "photo_pointer_index": 636,
+      "audio_pointer_sec": 6815.827175472886,
+      "photo_pointer_index": 647,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -2885,6 +2885,31 @@
           "uploaded": true,
           "photo_start_index": 626,
           "photo_end_index": 636
+        },
+        {
+          "index": 153,
+          "audio_start": 6720.175,
+          "audio_end": 6767.04,
+          "duration": 46.865,
+          "title": "Đức Phật chẳng những không để tâm về những hành động.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_153.mp4",
+          "youtube_video_id": "gwyImp9NyFE",
+          "youtube_url": "https://youtu.be/gwyImp9NyFE",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Đức Phật chẳng những không để tâm về những hành động."
+        },
+        {
+          "index": 154,
+          "audio_start": 6767.04,
+          "audio_end": 6815.827,
+          "duration": 48.787,
+          "title": "Lúc bấy giờ mới phát khởi tình thương yêu chân thật.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_154.mp4",
+          "youtube_video_id": "Zrfo5CAeybc",
+          "youtube_url": "https://youtu.be/Zrfo5CAeybc",
+          "uploaded": true,
+          "photo_start_index": 636,
+          "photo_end_index": 647
         }
       ]
     }
