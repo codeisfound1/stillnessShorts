@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 6815.827175472886,
-      "photo_pointer_index": 647,
+      "audio_pointer_sec": 6891.988848676426,
+      "photo_pointer_index": 654,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -2910,6 +2910,31 @@
           "uploaded": true,
           "photo_start_index": 636,
           "photo_end_index": 647
+        },
+        {
+          "index": 155,
+          "audio_start": 6815.827,
+          "audio_end": 6861.239,
+          "duration": 45.412,
+          "title": "Tình thương yêu của các em không phải vì thương mà vì bánh.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_155.mp4",
+          "youtube_video_id": "qBpaJ3WgscE",
+          "youtube_url": "https://youtu.be/qBpaJ3WgscE",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Tình thương yêu của các em không phải vì thương mà vì bánh."
+        },
+        {
+          "index": 156,
+          "audio_start": 6861.239,
+          "audio_end": 6891.989,
+          "duration": 30.75,
+          "title": "Khi chúng ta không có dịp đến thăm thường, hoặc chúng ta bị bệnh chết, chúng được tin ngư…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_156.mp4",
+          "youtube_video_id": "o4kG0GlQiWA",
+          "youtube_url": "https://youtu.be/o4kG0GlQiWA",
+          "uploaded": true,
+          "photo_start_index": 647,
+          "photo_end_index": 654
         }
       ]
     }
