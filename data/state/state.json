@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 6985.3685734422625,
-      "photo_pointer_index": 668,
+      "audio_pointer_sec": 7098.045211518904,
+      "photo_pointer_index": 681,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -3038,6 +3038,31 @@
           "uploaded": true,
           "photo_start_index": 654,
           "photo_end_index": 668
+        },
+        {
+          "index": 159,
+          "audio_start": 6985.369,
+          "audio_end": 7041.733,
+          "duration": 56.365,
+          "title": "Và lời dạy nào đúng,",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_159.mp4",
+          "youtube_video_id": "rT1Z4KP-k_4",
+          "youtube_url": "https://youtu.be/rT1Z4KP-k_4",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Và lời dạy nào đúng,"
+        },
+        {
+          "index": 160,
+          "audio_start": 7041.733,
+          "audio_end": 7098.045,
+          "duration": 56.312,
+          "title": "Đầy đủ sự thực hành và ý nghĩa giải thoát.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_160.mp4",
+          "youtube_video_id": "ODErn24O1hw",
+          "youtube_url": "https://youtu.be/ODErn24O1hw",
+          "uploaded": true,
+          "photo_start_index": 668,
+          "photo_end_index": 681
         }
       ]
     }
