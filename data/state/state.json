@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 7098.045211518904,
-      "photo_pointer_index": 681,
+      "audio_pointer_sec": 7192.158465711811,
+      "photo_pointer_index": 693,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -3063,6 +3063,31 @@
           "uploaded": true,
           "photo_start_index": 668,
           "photo_end_index": 681
+        },
+        {
+          "index": 161,
+          "audio_start": 7098.045,
+          "audio_end": 7139.766,
+          "duration": 41.72,
+          "title": "Nếu bỏ, nếu bạo vì anh cha chúng ta không giết quần cút thì cha mẹ chúng ta sẽ bị chết ho…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_161.mp4",
+          "youtube_video_id": "a0PZfMC1qss",
+          "youtube_url": "https://youtu.be/a0PZfMC1qss",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Nếu bỏ, nếu bạo vì anh cha chúng ta không giết quần cút thì cha mẹ chúng ta sẽ bị chết ho…"
+        },
+        {
+          "index": 162,
+          "audio_start": 7139.766,
+          "audio_end": 7192.158,
+          "duration": 52.393,
+          "title": "Cho nên lợn nói làm lặng lánh giữ là một lợn xuống khó mà.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_162.mp4",
+          "youtube_video_id": "RNrHWwo4XnU",
+          "youtube_url": "https://youtu.be/RNrHWwo4XnU",
+          "uploaded": true,
+          "photo_start_index": 681,
+          "photo_end_index": 693
         }
       ]
     }
