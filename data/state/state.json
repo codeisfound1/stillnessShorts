@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 7192.158465711811,
-      "photo_pointer_index": 693,
+      "audio_pointer_sec": 7256.689856548152,
+      "photo_pointer_index": 702,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -3088,6 +3088,31 @@
           "uploaded": true,
           "photo_start_index": 681,
           "photo_end_index": 693
+        },
+        {
+          "index": 163,
+          "audio_start": 7192.158,
+          "audio_end": 7223.39,
+          "duration": 31.232,
+          "title": "Nếu muốn có sự giải thoát ở tâm mình đứng trước một xã hội loài người, tâm tánh mọi người.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_163.mp4",
+          "youtube_video_id": "bpbvxA-6qhA",
+          "youtube_url": "https://youtu.be/bpbvxA-6qhA",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Nếu muốn có sự giải thoát ở tâm mình đứng trước một xã hội loài người, tâm tánh mọi người."
+        },
+        {
+          "index": 164,
+          "audio_start": 7223.39,
+          "audio_end": 7256.69,
+          "duration": 33.3,
+          "title": "Tránh sự đau khổ, tránh sự chết chóc của muôn loài, muôn vật.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_164.mp4",
+          "youtube_video_id": "Qcqf0M1UW0o",
+          "youtube_url": "https://youtu.be/Qcqf0M1UW0o",
+          "uploaded": true,
+          "photo_start_index": 693,
+          "photo_end_index": 702
         }
       ]
     }
