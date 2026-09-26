@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 7337.751529228714,
-      "photo_pointer_index": 711,
+      "audio_pointer_sec": 7416.676420514552,
+      "photo_pointer_index": 721,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -3138,6 +3138,31 @@
           "uploaded": true,
           "photo_start_index": 702,
           "photo_end_index": 711
+        },
+        {
+          "index": 167,
+          "audio_start": 7337.752,
+          "audio_end": 7373.162,
+          "duration": 35.41,
+          "title": "Đoạn video số 167",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_167.mp4",
+          "youtube_video_id": "V78nOejDuSY",
+          "youtube_url": "https://youtu.be/V78nOejDuSY",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Đoạn video số 167"
+        },
+        {
+          "index": 168,
+          "audio_start": 7373.162,
+          "audio_end": 7416.676,
+          "duration": 43.515,
+          "title": "Đánh cho nó chết, hoặc đứng xa quăng liệng cho nó chết, hoặc cho nó uống thuốc độc; hoặc…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_168.mp4",
+          "youtube_video_id": "gRr9_S_0QbA",
+          "youtube_url": "https://youtu.be/gRr9_S_0QbA",
+          "uploaded": true,
+          "photo_start_index": 711,
+          "photo_end_index": 721
         }
       ]
     }
