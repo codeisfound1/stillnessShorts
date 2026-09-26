@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 7256.689856548152,
-      "photo_pointer_index": 702,
+      "audio_pointer_sec": 7337.751529228714,
+      "photo_pointer_index": 711,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -3113,6 +3113,31 @@
           "uploaded": true,
           "photo_start_index": 693,
           "photo_end_index": 702
+        },
+        {
+          "index": 165,
+          "audio_start": 7256.69,
+          "audio_end": 7298.763,
+          "duration": 42.073,
+          "title": "Không bao giờ chúng ta có được lòng thương yêu này nếu chúng ta không chịu khó tập",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_165.mp4",
+          "youtube_video_id": "AWWXgsvixi8",
+          "youtube_url": "https://youtu.be/AWWXgsvixi8",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Không bao giờ chúng ta có được lòng thương yêu này nếu chúng ta không chịu khó tập"
+        },
+        {
+          "index": 166,
+          "audio_start": 7298.763,
+          "audio_end": 7337.752,
+          "duration": 38.988,
+          "title": "Bốn tâm này đã thành hình nơi một tâm hồn của chúng ta thì chắc chắn sự giải thoát nơi tâ…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_166.mp4",
+          "youtube_video_id": "-6tjo0QIa44",
+          "youtube_url": "https://youtu.be/-6tjo0QIa44",
+          "uploaded": true,
+          "photo_start_index": 702,
+          "photo_end_index": 711
         }
       ]
     }
