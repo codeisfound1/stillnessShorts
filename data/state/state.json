@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 7577.799389172827,
-      "photo_pointer_index": 743,
+      "audio_pointer_sec": 7675.197289891628,
+      "photo_pointer_index": 752,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -3291,6 +3291,31 @@
           "uploaded": true,
           "photo_start_index": 732,
           "photo_end_index": 743
+        },
+        {
+          "index": 173,
+          "audio_start": 7577.799,
+          "audio_end": 7636.626,
+          "duration": 58.826,
+          "title": "Nay ta nguyện cho nhà ngươi đời đời tội, hết phước sanh, lìa thân khổ thú.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_173.mp4",
+          "youtube_video_id": "snGA-OKl9OM",
+          "youtube_url": "https://youtu.be/snGA-OKl9OM",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Nay ta nguyện cho nhà ngươi đời đời tội, hết phước sanh, lìa thân khổ thú."
+        },
+        {
+          "index": 174,
+          "audio_start": 7636.626,
+          "audio_end": 7675.197,
+          "duration": 38.572,
+          "title": "Vì thế khắp trên thế giới lúc nào cũng có chiến tranh, không đất nước này thì đất nước kh…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_174.mp4",
+          "youtube_video_id": "6gCA9c9dc7Y",
+          "youtube_url": "https://youtu.be/6gCA9c9dc7Y",
+          "uploaded": true,
+          "photo_start_index": 743,
+          "photo_end_index": 752
         }
       ]
     }
