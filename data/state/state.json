@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 7416.676420514552,
-      "photo_pointer_index": 721,
+      "audio_pointer_sec": 7495.05739610069,
+      "photo_pointer_index": 732,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -3163,6 +3163,31 @@
           "uploaded": true,
           "photo_start_index": 711,
           "photo_end_index": 721
+        },
+        {
+          "index": 169,
+          "audio_start": 7416.676,
+          "audio_end": 7448.665,
+          "duration": 31.989,
+          "title": "Tức giận mà giết người, hoặc khen tặng làm cho người",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_169.mp4",
+          "youtube_video_id": "N4aTXdg-7Tc",
+          "youtube_url": "https://youtu.be/N4aTXdg-7Tc",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Tức giận mà giết người, hoặc khen tặng làm cho người"
+        },
+        {
+          "index": 170,
+          "audio_start": 7448.665,
+          "audio_end": 7495.057,
+          "duration": 46.392,
+          "title": "Nghĩa là thấy người khác làm việc sát hại, mình tùy thuận mà sanh lòng hoan hỷ; hoặc suy…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_170.mp4",
+          "youtube_video_id": "xLrNbKY28Fk",
+          "youtube_url": "https://youtu.be/xLrNbKY28Fk",
+          "uploaded": true,
+          "photo_start_index": 721,
+          "photo_end_index": 732
         }
       ]
     }
