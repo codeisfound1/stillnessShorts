@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 7675.197289891628,
-      "photo_pointer_index": 752,
+      "audio_pointer_sec": 7780.239611348333,
+      "photo_pointer_index": 764,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -3316,6 +3316,31 @@
           "uploaded": true,
           "photo_start_index": 743,
           "photo_end_index": 752
+        },
+        {
+          "index": 175,
+          "audio_start": 7675.197,
+          "audio_end": 7724.744,
+          "duration": 49.547,
+          "title": "Nếu mọi chúng sanh chẳng sát sanh, mười phương đâu có động binh đao.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_175.mp4",
+          "youtube_video_id": "sItL_OMFQvs",
+          "youtube_url": "https://youtu.be/sItL_OMFQvs",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Nếu mọi chúng sanh chẳng sát sanh, mười phương đâu có động binh đao."
+        },
+        {
+          "index": 176,
+          "audio_start": 7724.744,
+          "audio_end": 7780.24,
+          "duration": 55.495,
+          "title": "Khắp trên thế giới, mọi người đang khẩn thiết kêu gọi hòa bình, Vì họ rất sợ đại chiến, t…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_176.mp4",
+          "youtube_video_id": "iPlBLWYKicA",
+          "youtube_url": "https://youtu.be/iPlBLWYKicA",
+          "uploaded": true,
+          "photo_start_index": 752,
+          "photo_end_index": 764
         }
       ]
     }
