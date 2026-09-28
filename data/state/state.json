@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 7780.239611348333,
-      "photo_pointer_index": 764,
+      "audio_pointer_sec": 7867.774829195422,
+      "photo_pointer_index": 774,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -3341,6 +3341,31 @@
           "uploaded": true,
           "photo_start_index": 752,
           "photo_end_index": 764
+        },
+        {
+          "index": 177,
+          "audio_start": 7780.24,
+          "audio_end": 7826.299,
+          "duration": 46.059,
+          "title": "Nếu con người chưa biết thương yêu nhau chân thật.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_177.mp4",
+          "youtube_video_id": "yBT1dOH4cqI",
+          "youtube_url": "https://youtu.be/yBT1dOH4cqI",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Nếu con người chưa biết thương yêu nhau chân thật."
+        },
+        {
+          "index": 178,
+          "audio_start": 7826.299,
+          "audio_end": 7867.775,
+          "duration": 41.476,
+          "title": "Thì không bao giờ con người có hạnh phúc và thế giới chẳng bao giờ có hòa bình Hiện giờ,…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_178.mp4",
+          "youtube_video_id": "8IEUDWJZxjo",
+          "youtube_url": "https://youtu.be/8IEUDWJZxjo",
+          "uploaded": true,
+          "photo_start_index": 764,
+          "photo_end_index": 774
         }
       ]
     }
