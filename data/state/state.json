@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 7933.759324203028,
-      "photo_pointer_index": 781,
+      "audio_pointer_sec": 8016.83219744711,
+      "photo_pointer_index": 793,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -3391,6 +3391,31 @@
           "uploaded": true,
           "photo_start_index": 774,
           "photo_end_index": 781
+        },
+        {
+          "index": 181,
+          "audio_start": 7933.759,
+          "audio_end": 7972.126,
+          "duration": 38.366,
+          "title": "Người ấy bảo vợ làm thịt gà để đãi các con.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_181.mp4",
+          "youtube_video_id": "VVljT0G7muA",
+          "youtube_url": "https://youtu.be/VVljT0G7muA",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Người ấy bảo vợ làm thịt gà để đãi các con."
+        },
+        {
+          "index": 182,
+          "audio_start": 7972.126,
+          "audio_end": 8016.832,
+          "duration": 44.707,
+          "title": "Dự vào sự giết hại như chính các con cầm dao giết hại con vật.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_182.mp4",
+          "youtube_video_id": "Bjc2F3FArHM",
+          "youtube_url": "https://youtu.be/Bjc2F3FArHM",
+          "uploaded": true,
+          "photo_start_index": 781,
+          "photo_end_index": 793
         }
       ]
     }
