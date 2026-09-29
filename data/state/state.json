@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 8016.83219744711,
-      "photo_pointer_index": 793,
+      "audio_pointer_sec": 8111.925789306007,
+      "photo_pointer_index": 805,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -3416,6 +3416,31 @@
           "uploaded": true,
           "photo_start_index": 781,
           "photo_end_index": 793
+        },
+        {
+          "index": 183,
+          "audio_start": 8016.832,
+          "audio_end": 8062.729,
+          "duration": 45.897,
+          "title": "Do hành vi cứu mạng sống của loài vật.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_183.mp4",
+          "youtube_video_id": "wajPDY6sTCw",
+          "youtube_url": "https://youtu.be/wajPDY6sTCw",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Do hành vi cứu mạng sống của loài vật."
+        },
+        {
+          "index": 184,
+          "audio_start": 8062.729,
+          "audio_end": 8111.926,
+          "duration": 49.197,
+          "title": "Ông cư sĩ này có một người bạn chuyên làm nghề bẫy",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_184.mp4",
+          "youtube_video_id": "QSaY4EnRr_U",
+          "youtube_url": "https://youtu.be/QSaY4EnRr_U",
+          "uploaded": true,
+          "photo_start_index": 793,
+          "photo_end_index": 805
         }
       ]
     }
