@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 8483.381126944016,
-      "photo_pointer_index": 849,
+      "audio_pointer_sec": 8562.012544681289,
+      "photo_pointer_index": 859,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -3619,6 +3619,31 @@
           "uploaded": true,
           "photo_start_index": 840,
           "photo_end_index": 849
+        },
+        {
+          "index": 193,
+          "audio_start": 8483.381,
+          "audio_end": 8515.961,
+          "duration": 32.579,
+          "title": "Đoạn video số 193",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_193.mp4",
+          "youtube_video_id": "N4wZ9ddbUhE",
+          "youtube_url": "https://youtu.be/N4wZ9ddbUhE",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Đoạn video số 193"
+        },
+        {
+          "index": 194,
+          "audio_start": 8515.961,
+          "audio_end": 8562.013,
+          "duration": 46.052,
+          "title": "Ông được cho nằm trên chiếc giường nệm, nhưng ông đã nhường cho người bạn nào phải bệnh.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_194.mp4",
+          "youtube_video_id": "w_SMSJQXO_w",
+          "youtube_url": "https://youtu.be/w_SMSJQXO_w",
+          "uploaded": true,
+          "photo_start_index": 849,
+          "photo_end_index": 859
         }
       ]
     }
