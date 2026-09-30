@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 8290.400784272193,
-      "photo_pointer_index": 826,
+      "audio_pointer_sec": 8395.796029583433,
+      "photo_pointer_index": 840,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -3569,6 +3569,31 @@
           "uploaded": true,
           "photo_start_index": 815,
           "photo_end_index": 826
+        },
+        {
+          "index": 189,
+          "audio_start": 8290.401,
+          "audio_end": 8337.88,
+          "duration": 47.48,
+          "title": "Con trùng bò trong bếp lửa.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_189.mp4",
+          "youtube_video_id": "4s763PSO9rI",
+          "youtube_url": "https://youtu.be/4s763PSO9rI",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Con trùng bò trong bếp lửa."
+        },
+        {
+          "index": 190,
+          "audio_start": 8337.88,
+          "audio_end": 8395.796,
+          "duration": 57.916,
+          "title": "Con mèo đang bắt một con chuột.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_190.mp4",
+          "youtube_video_id": "DTlkXjv-7_4",
+          "youtube_url": "https://youtu.be/DTlkXjv-7_4",
+          "uploaded": true,
+          "photo_start_index": 826,
+          "photo_end_index": 840
         }
       ]
     }
