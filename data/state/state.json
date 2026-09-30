@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 8395.796029583433,
-      "photo_pointer_index": 840,
+      "audio_pointer_sec": 8483.381126944016,
+      "photo_pointer_index": 849,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -3594,6 +3594,31 @@
           "uploaded": true,
           "photo_start_index": 826,
           "photo_end_index": 840
+        },
+        {
+          "index": 191,
+          "audio_start": 8395.796,
+          "audio_end": 8446.679,
+          "duration": 50.883,
+          "title": "Tù xem mặt.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_191.mp4",
+          "youtube_video_id": "IS9kgEoMXGQ",
+          "youtube_url": "https://youtu.be/IS9kgEoMXGQ",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Tù xem mặt."
+        },
+        {
+          "index": 192,
+          "audio_start": 8446.679,
+          "audio_end": 8483.381,
+          "duration": 36.702,
+          "title": "Đó là Linh mục Kolbe.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_192.mp4",
+          "youtube_video_id": "Bi79SN9nuws",
+          "youtube_url": "https://youtu.be/Bi79SN9nuws",
+          "uploaded": true,
+          "photo_start_index": 840,
+          "photo_end_index": 849
         }
       ]
     }
