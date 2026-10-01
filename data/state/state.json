@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 8562.012544681289,
-      "photo_pointer_index": 859,
+      "audio_pointer_sec": 8649.696056747693,
+      "photo_pointer_index": 866,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -3644,6 +3644,31 @@
           "uploaded": true,
           "photo_start_index": 849,
           "photo_end_index": 859
+        },
+        {
+          "index": 195,
+          "audio_start": 8562.013,
+          "audio_end": 8618.685,
+          "duration": 56.673,
+          "title": "Ông hỏi ý nghĩa mỗi chiếc đức mẹ đáp: chiếc mũ trắng là trọn đời hiến mình cho đạo, chiếc…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_195.mp4",
+          "youtube_video_id": "E9GzGXITm2c",
+          "youtube_url": "https://youtu.be/E9GzGXITm2c",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Ông hỏi ý nghĩa mỗi chiếc đức mẹ đáp: chiếc mũ trắng là trọn đời hiến mình cho đạo, chiếc…"
+        },
+        {
+          "index": 196,
+          "audio_start": 8618.685,
+          "audio_end": 8649.696,
+          "duration": 31.011,
+          "title": "Tôi xin được chết thay cho người này vì anh ta có vợ, con đang chờ, còn tôi thì không có…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_196.mp4",
+          "youtube_video_id": "qgkd4weEbWg",
+          "youtube_url": "https://youtu.be/qgkd4weEbWg",
+          "uploaded": true,
+          "photo_start_index": 859,
+          "photo_end_index": 866
         }
       ]
     }
