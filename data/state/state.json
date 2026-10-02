@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 8887.02330557941,
-      "photo_pointer_index": 898,
+      "audio_pointer_sec": 8975.640774974245,
+      "photo_pointer_index": 909,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -3822,6 +3822,31 @@
           "uploaded": true,
           "photo_start_index": 890,
           "photo_end_index": 898
+        },
+        {
+          "index": 203,
+          "audio_start": 8887.023,
+          "audio_end": 8930.124,
+          "duration": 43.101,
+          "title": "Xa xa, đàn ngỗng trắng đang đùa giỡn trên đám cỏ xanh mềm, bỗng chúng cất tiếng kêu vang…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_203.mp4",
+          "youtube_video_id": "2Gn10-JfmgY",
+          "youtube_url": "https://youtu.be/2Gn10-JfmgY",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Xa xa, đàn ngỗng trắng đang đùa giỡn trên đám cỏ xanh mềm, bỗng chúng cất tiếng kêu vang…"
+        },
+        {
+          "index": 204,
+          "audio_start": 8930.124,
+          "audio_end": 8975.641,
+          "duration": 45.517,
+          "title": "Sung sướng, người thương gia để luôn cả nắm hạt trai xuống đất.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_204.mp4",
+          "youtube_video_id": "2rVFBlteqgM",
+          "youtube_url": "https://youtu.be/2rVFBlteqgM",
+          "uploaded": true,
+          "photo_start_index": 898,
+          "photo_end_index": 909
         }
       ]
     }
