@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 9229.09882057309,
-      "photo_pointer_index": 939,
+      "audio_pointer_sec": 9318.75489229585,
+      "photo_pointer_index": 951,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -3922,6 +3922,31 @@
           "uploaded": true,
           "photo_start_index": 930,
           "photo_end_index": 939
+        },
+        {
+          "index": 211,
+          "audio_start": 9229.099,
+          "audio_end": 9264.766,
+          "duration": 35.667,
+          "title": "Con ngỗng đáng thương của Đạo sĩ chỉ còn là cái xác không hồn.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_211.mp4",
+          "youtube_video_id": "A2ZZX7PRwVE",
+          "youtube_url": "https://youtu.be/A2ZZX7PRwVE",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Con ngỗng đáng thương của Đạo sĩ chỉ còn là cái xác không hồn."
+        },
+        {
+          "index": 212,
+          "audio_start": 9264.766,
+          "audio_end": 9318.755,
+          "duration": 53.989,
+          "title": "Ngỗng.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_212.mp4",
+          "youtube_video_id": "q89bg5--y3s",
+          "youtube_url": "https://youtu.be/q89bg5--y3s",
+          "uploaded": true,
+          "photo_start_index": 939,
+          "photo_end_index": 951
         }
       ]
     }
