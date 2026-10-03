@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 9146.615091861726,
-      "photo_pointer_index": 930,
+      "audio_pointer_sec": 9229.09882057309,
+      "photo_pointer_index": 939,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -3897,6 +3897,31 @@
           "uploaded": true,
           "photo_start_index": 917,
           "photo_end_index": 930
+        },
+        {
+          "index": 209,
+          "audio_start": 9146.615,
+          "audio_end": 9190.877,
+          "duration": 44.262,
+          "title": "Chàng lớn tiếng mắng đạo sĩ và gọi gia Đinh, bắt trói đạo sĩ lại, đồng thời cho mời hương…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_209.mp4",
+          "youtube_video_id": "REldPg5pzO8",
+          "youtube_url": "https://youtu.be/REldPg5pzO8",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Chàng lớn tiếng mắng đạo sĩ và gọi gia Đinh, bắt trói đạo sĩ lại, đồng thời cho mời hương…"
+        },
+        {
+          "index": 210,
+          "audio_start": 9190.877,
+          "audio_end": 9229.099,
+          "duration": 38.222,
+          "title": "Thương chủ không một thương tâm tha thứ.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_210.mp4",
+          "youtube_video_id": "UtvyjUrTfpk",
+          "youtube_url": "https://youtu.be/UtvyjUrTfpk",
+          "uploaded": true,
+          "photo_start_index": 930,
+          "photo_end_index": 939
         }
       ]
     }
