@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 9043.168753232823,
-      "photo_pointer_index": 917,
+      "audio_pointer_sec": 9146.615091861726,
+      "photo_pointer_index": 930,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -3872,6 +3872,31 @@
           "uploaded": true,
           "photo_start_index": 909,
           "photo_end_index": 917
+        },
+        {
+          "index": 207,
+          "audio_start": 9043.169,
+          "audio_end": 9091.983,
+          "duration": 48.814,
+          "title": "Chàng đứng ngay dậy, tay chàng run lên,",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_207.mp4",
+          "youtube_video_id": "8CasN6I9gFo",
+          "youtube_url": "https://youtu.be/8CasN6I9gFo",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Chàng đứng ngay dậy, tay chàng run lên,"
+        },
+        {
+          "index": 208,
+          "audio_start": 9091.983,
+          "audio_end": 9146.615,
+          "duration": 54.632,
+          "title": "Thái độ im lặng và thản nhiên của đạo sĩ càng làm cho thương chủ tức giận sôi gan Chàng l…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_208.mp4",
+          "youtube_video_id": "2auzBtyP-iE",
+          "youtube_url": "https://youtu.be/2auzBtyP-iE",
+          "uploaded": true,
+          "photo_start_index": 917,
+          "photo_end_index": 930
         }
       ]
     }
