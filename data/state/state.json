@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 9318.75489229585,
-      "photo_pointer_index": 951,
+      "audio_pointer_sec": 9407.583655144907,
+      "photo_pointer_index": 959,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -3947,6 +3947,31 @@
           "uploaded": true,
           "photo_start_index": 939,
           "photo_end_index": 951
+        },
+        {
+          "index": 213,
+          "audio_start": 9318.755,
+          "audio_end": 9375.478,
+          "duration": 56.723,
+          "title": "Sao đạo sĩ không",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_213.mp4",
+          "youtube_video_id": "ARidGJW0gJ8",
+          "youtube_url": "https://youtu.be/ARidGJW0gJ8",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Sao đạo sĩ không"
+        },
+        {
+          "index": 214,
+          "audio_start": 9375.478,
+          "audio_end": 9407.584,
+          "duration": 32.106,
+          "title": "Cho tôi biết trước, để tôi lầm lỗi như thế này?",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_214.mp4",
+          "youtube_video_id": "wIQPRA0MHYs",
+          "youtube_url": "https://youtu.be/wIQPRA0MHYs",
+          "uploaded": true,
+          "photo_start_index": 951,
+          "photo_end_index": 959
         }
       ]
     }
