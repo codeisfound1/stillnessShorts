@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 9683.42636392543,
-      "photo_pointer_index": 991,
+      "audio_pointer_sec": 9764.436672784874,
+      "photo_pointer_index": 1002,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -4125,6 +4125,31 @@
           "uploaded": true,
           "photo_start_index": 980,
           "photo_end_index": 991
+        },
+        {
+          "index": 221,
+          "audio_start": 9683.426,
+          "audio_end": 9714.752,
+          "duration": 31.326,
+          "title": "Bởi vậy, chiến tranh làm gì có khi người ta biết giữ giới không sát sanh.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_221.mp4",
+          "youtube_video_id": "oNo7dC2i3tE",
+          "youtube_url": "https://youtu.be/oNo7dC2i3tE",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Bởi vậy, chiến tranh làm gì có khi người ta biết giữ giới không sát sanh."
+        },
+        {
+          "index": 222,
+          "audio_start": 9714.752,
+          "audio_end": 9764.437,
+          "duration": 49.684,
+          "title": "Muốn gia đình hạnh phúc an vui, xã hội đoàn kết, thế giới hòa bình, mà không tập luyện tì…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_222.mp4",
+          "youtube_video_id": "dMR4ldbdiIQ",
+          "youtube_url": "https://youtu.be/dMR4ldbdiIQ",
+          "uploaded": true,
+          "photo_start_index": 991,
+          "photo_end_index": 1002
         }
       ]
     }
