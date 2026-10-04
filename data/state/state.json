@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 9583.913848371141,
-      "photo_pointer_index": 980,
+      "audio_pointer_sec": 9683.42636392543,
+      "photo_pointer_index": 991,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -4100,6 +4100,31 @@
           "uploaded": true,
           "photo_start_index": 971,
           "photo_end_index": 980
+        },
+        {
+          "index": 219,
+          "audio_start": 9583.914,
+          "audio_end": 9637.618,
+          "duration": 53.705,
+          "title": "Chàng phải từ rải tất cả để làm những gì mà lòng chàng.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_219.mp4",
+          "youtube_video_id": "y9iVOMHOIQI",
+          "youtube_url": "https://youtu.be/y9iVOMHOIQI",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Chàng phải từ rải tất cả để làm những gì mà lòng chàng."
+        },
+        {
+          "index": 220,
+          "audio_start": 9637.618,
+          "audio_end": 9683.426,
+          "duration": 45.808,
+          "title": "Phát nguyện chàng sẽ là một viên đá nhỏ, trong vô số viên đá khác, Để chung góp xây đạo t…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_220.mp4",
+          "youtube_video_id": "rBWT-oLWp88",
+          "youtube_url": "https://youtu.be/rBWT-oLWp88",
+          "uploaded": true,
+          "photo_start_index": 980,
+          "photo_end_index": 991
         }
       ]
     }
