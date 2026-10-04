@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 9407.583655144907,
-      "photo_pointer_index": 959,
+      "audio_pointer_sec": 9497.906378094445,
+      "photo_pointer_index": 971,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -3972,6 +3972,31 @@
           "uploaded": true,
           "photo_start_index": 951,
           "photo_end_index": 959
+        },
+        {
+          "index": 215,
+          "audio_start": 9407.584,
+          "audio_end": 9447.892,
+          "duration": 40.308,
+          "title": "Việc ấy ta không bao giờ làm, vả lại, ta không thể trái lời Phật dạy:",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_215.mp4",
+          "youtube_video_id": "8s5s_VHW7t0",
+          "youtube_url": "https://youtu.be/8s5s_VHW7t0",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Việc ấy ta không bao giờ làm, vả lại, ta không thể trái lời Phật dạy:"
+        },
+        {
+          "index": 216,
+          "audio_start": 9447.892,
+          "audio_end": 9497.906,
+          "duration": 50.015,
+          "title": "Manh tâm lưu hải cho chúng sanh, chỉ vì sự an lạc nhỏ hẹp của chúng sanh.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_216.mp4",
+          "youtube_video_id": "lZ9em-878sA",
+          "youtube_url": "https://youtu.be/lZ9em-878sA",
+          "uploaded": true,
+          "photo_start_index": 959,
+          "photo_end_index": 971
         }
       ]
     }
