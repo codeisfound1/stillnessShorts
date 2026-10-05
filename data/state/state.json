@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 9764.436672784874,
-      "photo_pointer_index": 1002,
+      "audio_pointer_sec": 9856.002860212882,
+      "photo_pointer_index": 1012,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -4150,6 +4150,31 @@
           "uploaded": true,
           "photo_start_index": 991,
           "photo_end_index": 1002
+        },
+        {
+          "index": 223,
+          "audio_start": 9764.437,
+          "audio_end": 9809.181,
+          "duration": 44.744,
+          "title": "Trong lúc đó có hai người lính bị thương, một người là người Nga, một người là người Đức.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_223.mp4",
+          "youtube_video_id": "b5myQ-C7_60",
+          "youtube_url": "https://youtu.be/b5myQ-C7_60",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Trong lúc đó có hai người lính bị thương, một người là người Nga, một người là người Đức."
+        },
+        {
+          "index": 224,
+          "audio_start": 9809.181,
+          "audio_end": 9856.003,
+          "duration": 46.822,
+          "title": "Là hai người còn sống.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_224.mp4",
+          "youtube_video_id": "RK_WhE5N-yw",
+          "youtube_url": "https://youtu.be/RK_WhE5N-yw",
+          "uploaded": true,
+          "photo_start_index": 1002,
+          "photo_end_index": 1012
         }
       ]
     }
