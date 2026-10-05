@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 9928.303648795232,
-      "photo_pointer_index": 1020,
+      "audio_pointer_sec": 10005.317745653774,
+      "photo_pointer_index": 1027,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -4200,6 +4200,31 @@
           "uploaded": true,
           "photo_start_index": 1012,
           "photo_end_index": 1020
+        },
+        {
+          "index": 227,
+          "audio_start": 9928.304,
+          "audio_end": 9974.428,
+          "duration": 46.125,
+          "title": "Trả để tôi ăn.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_227.mp4",
+          "youtube_video_id": "iyPXUEUaa1A",
+          "youtube_url": "https://youtu.be/iyPXUEUaa1A",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Trả để tôi ăn."
+        },
+        {
+          "index": 228,
+          "audio_start": 9974.428,
+          "audio_end": 10005.318,
+          "duration": 30.889,
+          "title": "Đáp: - Ngươi đói thì có thể dùng thứ thịt khác được hay không?",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_228.mp4",
+          "youtube_video_id": "2Q7zCpl1PVw",
+          "youtube_url": "https://youtu.be/2Q7zCpl1PVw",
+          "uploaded": true,
+          "photo_start_index": 1020,
+          "photo_end_index": 1027
         }
       ]
     }
