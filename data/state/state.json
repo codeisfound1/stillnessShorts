@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 9856.002860212882,
-      "photo_pointer_index": 1012,
+      "audio_pointer_sec": 9928.303648795232,
+      "photo_pointer_index": 1020,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -4175,6 +4175,31 @@
           "uploaded": true,
           "photo_start_index": 1002,
           "photo_end_index": 1012
+        },
+        {
+          "index": 225,
+          "audio_start": 9856.003,
+          "audio_end": 9891.98,
+          "duration": 35.977,
+          "title": "Người lĩnh Nga cố gắng cội chiếc áo của mình, rồi đem choàn cho người lĩnh đức.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_225.mp4",
+          "youtube_video_id": "CyKIr5uxngE",
+          "youtube_url": "https://youtu.be/CyKIr5uxngE",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Người lĩnh Nga cố gắng cội chiếc áo của mình, rồi đem choàn cho người lĩnh đức."
+        },
+        {
+          "index": 226,
+          "audio_start": 9891.98,
+          "audio_end": 9928.304,
+          "duration": 36.324,
+          "title": "Kêu nhà vua cú mạng.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_226.mp4",
+          "youtube_video_id": "OzWX-rU3X4s",
+          "youtube_url": "https://youtu.be/OzWX-rU3X4s",
+          "uploaded": true,
+          "photo_start_index": 1012,
+          "photo_end_index": 1020
         }
       ]
     }
