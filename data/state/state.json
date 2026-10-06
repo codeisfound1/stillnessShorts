@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 10005.317745653774,
-      "photo_pointer_index": 1027,
+      "audio_pointer_sec": 10102.286792488761,
+      "photo_pointer_index": 1038,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -4225,6 +4225,31 @@
           "uploaded": true,
           "photo_start_index": 1020,
           "photo_end_index": 1027
+        },
+        {
+          "index": 229,
+          "audio_start": 10005.318,
+          "audio_end": 10052.668,
+          "duration": 47.35,
+          "title": "Nghĩ xong, lấy rau cắt một miếng thịt đùi, rau cho chim cắt và nói rằng, đây ngươi dùng m…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_229.mp4",
+          "youtube_video_id": "sJSYnJbgRDY",
+          "youtube_url": "https://youtu.be/sJSYnJbgRDY",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Nghĩ xong, lấy rau cắt một miếng thịt đùi, rau cho chim cắt và nói rằng, đây ngươi dùng m…"
+        },
+        {
+          "index": 230,
+          "audio_start": 10052.668,
+          "audio_end": 10102.287,
+          "duration": 49.619,
+          "title": "Để thịt nhà vua một bên.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_230.mp4",
+          "youtube_video_id": "b2fENneLbkY",
+          "youtube_url": "https://youtu.be/b2fENneLbkY",
+          "uploaded": true,
+          "photo_start_index": 1027,
+          "photo_end_index": 1038
         }
       ]
     }
