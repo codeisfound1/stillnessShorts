@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 10102.286792488761,
-      "photo_pointer_index": 1038,
+      "audio_pointer_sec": 10199.842333899402,
+      "photo_pointer_index": 1049,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -4250,6 +4250,31 @@
           "uploaded": true,
           "photo_start_index": 1027,
           "photo_end_index": 1038
+        },
+        {
+          "index": 231,
+          "audio_start": 10102.287,
+          "audio_end": 10147.463,
+          "duration": 45.176,
+          "title": "Nhưng vẫn nhẹ như thường.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_231.mp4",
+          "youtube_video_id": "4qQFUszc3cs",
+          "youtube_url": "https://youtu.be/4qQFUszc3cs",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Nhưng vẫn nhẹ như thường."
+        },
+        {
+          "index": 232,
+          "audio_start": 10147.463,
+          "audio_end": 10199.842,
+          "duration": 52.38,
+          "title": "Vì nó mà làm, hãi biết bao sinh vạn khác, vì nó mà biết bao sự đau khổ.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_232.mp4",
+          "youtube_video_id": "ir8IdSP2kZU",
+          "youtube_url": "https://youtu.be/ir8IdSP2kZU",
+          "uploaded": true,
+          "photo_start_index": 1038,
+          "photo_end_index": 1049
         }
       ]
     }
