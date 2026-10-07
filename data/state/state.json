@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 10472.828654356112,
-      "photo_pointer_index": 1086,
+      "audio_pointer_sec": 10563.225498096286,
+      "photo_pointer_index": 1095,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -4428,6 +4428,31 @@
           "uploaded": true,
           "photo_start_index": 1074,
           "photo_end_index": 1086
+        },
+        {
+          "index": 239,
+          "audio_start": 10472.829,
+          "audio_end": 10529.043,
+          "duration": 56.214,
+          "title": "Cái lại còn công kích những người ăn chay cho người ăn chay giữ giới và hoài đạo.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_239.mp4",
+          "youtube_video_id": "Wpl5S9xxyIA",
+          "youtube_url": "https://youtu.be/Wpl5S9xxyIA",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Cái lại còn công kích những người ăn chay cho người ăn chay giữ giới và hoài đạo."
+        },
+        {
+          "index": 240,
+          "audio_start": 10529.043,
+          "audio_end": 10563.225,
+          "duration": 34.183,
+          "title": "Nhất, thế nên không sát hại mạng.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_240.mp4",
+          "youtube_video_id": "X8tHckly-Ww",
+          "youtube_url": "https://youtu.be/X8tHckly-Ww",
+          "uploaded": true,
+          "photo_start_index": 1086,
+          "photo_end_index": 1095
         }
       ]
     }
