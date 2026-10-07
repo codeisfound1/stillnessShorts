@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 10282.181723949641,
-      "photo_pointer_index": 1059,
+      "audio_pointer_sec": 10388.772897628116,
+      "photo_pointer_index": 1074,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -4378,6 +4378,31 @@
           "uploaded": true,
           "photo_start_index": 1049,
           "photo_end_index": 1059
+        },
+        {
+          "index": 235,
+          "audio_start": 10282.182,
+          "audio_end": 10329.46,
+          "duration": 47.279,
+          "title": "Làm hành vi chăm sóc chữa bệnh cho mọi người, hoặc mình trực tiếp chữa bệnh, hoặc mình bố…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_235.mp4",
+          "youtube_video_id": "Ziz6NpwEpQ4",
+          "youtube_url": "https://youtu.be/Ziz6NpwEpQ4",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Làm hành vi chăm sóc chữa bệnh cho mọi người, hoặc mình trực tiếp chữa bệnh, hoặc mình bố…"
+        },
+        {
+          "index": 236,
+          "audio_start": 10329.46,
+          "audio_end": 10388.773,
+          "duration": 59.313,
+          "title": "Dù chúng ta không tự tay giết, nhưng bắt buộc phải có người giết mới có thịt cá cho chúng…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_236.mp4",
+          "youtube_video_id": "5GrC3JDUwtE",
+          "youtube_url": "https://youtu.be/5GrC3JDUwtE",
+          "uploaded": true,
+          "photo_start_index": 1059,
+          "photo_end_index": 1074
         }
       ]
     }
