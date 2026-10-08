@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 10662.450381090652,
-      "photo_pointer_index": 1107,
+      "audio_pointer_sec": 10764.730205244134,
+      "photo_pointer_index": 1119,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -4478,6 +4478,31 @@
           "uploaded": true,
           "photo_start_index": 1095,
           "photo_end_index": 1107
+        },
+        {
+          "index": 243,
+          "audio_start": 10662.45,
+          "audio_end": 10713.005,
+          "duration": 50.555,
+          "title": "Này quý thầy, quý thầy là người có đủ",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_243.mp4",
+          "youtube_video_id": "-Y-lS9RNSiI",
+          "youtube_url": "https://youtu.be/-Y-lS9RNSiI",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Này quý thầy, quý thầy là người có đủ"
+        },
+        {
+          "index": 244,
+          "audio_start": 10713.005,
+          "audio_end": 10764.73,
+          "duration": 51.725,
+          "title": "Cớ sao quý thầy bảo mình là hạng người, hạ căn, trung căn.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_244.mp4",
+          "youtube_video_id": "kqe2hc88H7U",
+          "youtube_url": "https://youtu.be/kqe2hc88H7U",
+          "uploaded": true,
+          "photo_start_index": 1107,
+          "photo_end_index": 1119
         }
       ]
     }
