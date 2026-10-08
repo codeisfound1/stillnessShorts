@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 10764.730205244134,
-      "photo_pointer_index": 1119,
+      "audio_pointer_sec": 10869.914269464776,
+      "photo_pointer_index": 1131,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -4503,6 +4503,31 @@
           "uploaded": true,
           "photo_start_index": 1107,
           "photo_end_index": 1119
+        },
+        {
+          "index": 245,
+          "audio_start": 10764.73,
+          "audio_end": 10815.789,
+          "duration": 51.058,
+          "title": "Nhiều pháp môn, nhưng chưa chắc đã là pháp môn chân chánh của Đức Phật.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_245.mp4",
+          "youtube_video_id": "wbUMDnBSl9c",
+          "youtube_url": "https://youtu.be/wbUMDnBSl9c",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Nhiều pháp môn, nhưng chưa chắc đã là pháp môn chân chánh của Đức Phật."
+        },
+        {
+          "index": 246,
+          "audio_start": 10815.789,
+          "audio_end": 10869.914,
+          "duration": 54.126,
+          "title": "Giới luật.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_246.mp4",
+          "youtube_video_id": "SQhHAxF1y0o",
+          "youtube_url": "https://youtu.be/SQhHAxF1y0o",
+          "uploaded": true,
+          "photo_start_index": 1119,
+          "photo_end_index": 1131
         }
       ]
     }
