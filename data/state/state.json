@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 10563.225498096286,
-      "photo_pointer_index": 1095,
+      "audio_pointer_sec": 10662.450381090652,
+      "photo_pointer_index": 1107,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -4453,6 +4453,31 @@
           "uploaded": true,
           "photo_start_index": 1086,
           "photo_end_index": 1095
+        },
+        {
+          "index": 241,
+          "audio_start": 10563.225,
+          "audio_end": 10609.509,
+          "duration": 46.284,
+          "title": "Nên thiện nghiệp luôn luôn hộ vệ họ, như hình, với bóng, còn hữu hiệu hơn những người lín…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_241.mp4",
+          "youtube_video_id": "6U8U3y5pbMk",
+          "youtube_url": "https://youtu.be/6U8U3y5pbMk",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Nên thiện nghiệp luôn luôn hộ vệ họ, như hình, với bóng, còn hữu hiệu hơn những người lín…"
+        },
+        {
+          "index": 242,
+          "audio_start": 10609.509,
+          "audio_end": 10662.45,
+          "duration": 52.941,
+          "title": "Bây giờ, thầy và các con niệm hồi hướng: Nguyện đem công đức này Hồi hướng cho tất cả Phá…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_242.mp4",
+          "youtube_video_id": "jjZo3L7izZs",
+          "youtube_url": "https://youtu.be/jjZo3L7izZs",
+          "uploaded": true,
+          "photo_start_index": 1095,
+          "photo_end_index": 1107
         }
       ]
     }
