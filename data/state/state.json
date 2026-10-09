@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 10941.800444277205,
-      "photo_pointer_index": 1138,
+      "audio_pointer_sec": 11037.58823906781,
+      "photo_pointer_index": 1147,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -4665,6 +4665,31 @@
           "uploaded": true,
           "photo_start_index": 1131,
           "photo_end_index": 1138
+        },
+        {
+          "index": 249,
+          "audio_start": 10941.8,
+          "audio_end": 10998.394,
+          "duration": 56.594,
+          "title": "Sinh ra được làm người, được gặp kinh tạng Nguyên Thủy là kinh từ kim khẩu Phật đã thuyết.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_249.mp4",
+          "youtube_video_id": "bgNX2M3ZUkw",
+          "youtube_url": "https://youtu.be/bgNX2M3ZUkw",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Sinh ra được làm người, được gặp kinh tạng Nguyên Thủy là kinh từ kim khẩu Phật đã thuyết."
+        },
+        {
+          "index": 250,
+          "audio_start": 10998.394,
+          "audio_end": 11037.588,
+          "duration": 39.194,
+          "title": "Nhờ thế, chúng ta dễ hiểu vô cùng.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_250.mp4",
+          "youtube_video_id": "0dls4PRHsGc",
+          "youtube_url": "https://youtu.be/0dls4PRHsGc",
+          "uploaded": true,
+          "photo_start_index": 1138,
+          "photo_end_index": 1147
         }
       ]
     }
