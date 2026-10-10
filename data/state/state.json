@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 11334.48536757093,
-      "photo_pointer_index": 1183,
+      "audio_pointer_sec": 11436.429915099721,
+      "photo_pointer_index": 1194,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -4765,6 +4765,31 @@
           "uploaded": true,
           "photo_start_index": 1171,
           "photo_end_index": 1183
+        },
+        {
+          "index": 257,
+          "audio_start": 11334.485,
+          "audio_end": 11385.48,
+          "duration": 50.994,
+          "title": "Ngờ này.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_257.mp4",
+          "youtube_video_id": "twDRyyKSmG0",
+          "youtube_url": "https://youtu.be/twDRyyKSmG0",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Ngờ này."
+        },
+        {
+          "index": 258,
+          "audio_start": 11385.48,
+          "audio_end": 11436.43,
+          "duration": 50.95,
+          "title": "Vậy mà ông ta còn dự định ngụ tại đây hết mùa này sang mùa khác để bán hàng.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_258.mp4",
+          "youtube_video_id": "y_TDjcAaEek",
+          "youtube_url": "https://youtu.be/y_TDjcAaEek",
+          "uploaded": true,
+          "photo_start_index": 1183,
+          "photo_end_index": 1194
         }
       ]
     }
