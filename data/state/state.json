@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 11659.09843392221,
-      "photo_pointer_index": 1219,
+      "audio_pointer_sec": 11761.437028418944,
+      "photo_pointer_index": 1232,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -4840,6 +4840,31 @@
           "uploaded": true,
           "photo_start_index": 1206,
           "photo_end_index": 1219
+        },
+        {
+          "index": 263,
+          "audio_start": 11659.098,
+          "audio_end": 11702.466,
+          "duration": 43.368,
+          "title": "Đây là bức thơ gửi cho Minh Tâm và Tâm Như.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_263.mp4",
+          "youtube_video_id": "Eff6i3MIRYo",
+          "youtube_url": "https://youtu.be/Eff6i3MIRYo",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Đây là bức thơ gửi cho Minh Tâm và Tâm Như."
+        },
+        {
+          "index": 264,
+          "audio_start": 11702.466,
+          "audio_end": 11761.437,
+          "duration": 58.971,
+          "title": "Thầy sẽ đọc lại cho quý thầy nghe.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_264.mp4",
+          "youtube_video_id": "zqkhn8vGFO0",
+          "youtube_url": "https://youtu.be/zqkhn8vGFO0",
+          "uploaded": true,
+          "photo_start_index": 1219,
+          "photo_end_index": 1232
         }
       ]
     }
