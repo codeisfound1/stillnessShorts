@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 11761.437028418944,
-      "photo_pointer_index": 1232,
+      "audio_pointer_sec": 11849.255238188141,
+      "photo_pointer_index": 1240,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -4865,6 +4865,31 @@
           "uploaded": true,
           "photo_start_index": 1219,
           "photo_end_index": 1232
+        },
+        {
+          "index": 265,
+          "audio_start": 11761.437,
+          "audio_end": 11809.05,
+          "duration": 47.613,
+          "title": "Thầy nghĩ, đường đi không khó, nhưng khó vì lòng người chưa dứt dục lạc thế gian.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_265.mp4",
+          "youtube_video_id": "44VQ4nk09n8",
+          "youtube_url": "https://youtu.be/44VQ4nk09n8",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Thầy nghĩ, đường đi không khó, nhưng khó vì lòng người chưa dứt dục lạc thế gian."
+        },
+        {
+          "index": 266,
+          "audio_start": 11809.05,
+          "audio_end": 11849.255,
+          "duration": 40.205,
+          "title": "Nhớ kỹ đừng để hơi thở lặng quá và cũng đừng thở mạnh quá.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_266.mp4",
+          "youtube_video_id": "wJnvamL4RO0",
+          "youtube_url": "https://youtu.be/wJnvamL4RO0",
+          "uploaded": true,
+          "photo_start_index": 1232,
+          "photo_end_index": 1240
         }
       ]
     }
