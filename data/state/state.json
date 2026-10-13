@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 12148.34315407148,
-      "photo_pointer_index": 1273,
+      "audio_pointer_sec": 12242.952663065029,
+      "photo_pointer_index": 1282,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -5077,6 +5077,31 @@
           "uploaded": true,
           "photo_start_index": 1261,
           "photo_end_index": 1273
+        },
+        {
+          "index": 273,
+          "audio_start": 12148.343,
+          "audio_end": 12197.8,
+          "duration": 49.456,
+          "title": "Một vài dị giáo tự xưng giáo chủ, giáo chủ này và giáo chủ kia.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_273.mp4",
+          "youtube_video_id": "3iw93Uu2Fok",
+          "youtube_url": "https://youtu.be/3iw93Uu2Fok",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Một vài dị giáo tự xưng giáo chủ, giáo chủ này và giáo chủ kia."
+        },
+        {
+          "index": 274,
+          "audio_start": 12197.8,
+          "audio_end": 12242.953,
+          "duration": 45.153,
+          "title": "Điều này chúng ta cũng thường gặp trong các chùa.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_274.mp4",
+          "youtube_video_id": "IEloDUMon8I",
+          "youtube_url": "https://youtu.be/IEloDUMon8I",
+          "uploaded": true,
+          "photo_start_index": 1273,
+          "photo_end_index": 1282
         }
       ]
     }
