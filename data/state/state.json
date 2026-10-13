@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 12047.54654176261,
-      "photo_pointer_index": 1261,
+      "audio_pointer_sec": 12148.34315407148,
+      "photo_pointer_index": 1273,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -5052,6 +5052,31 @@
           "uploaded": true,
           "photo_start_index": 1250,
           "photo_end_index": 1261
+        },
+        {
+          "index": 271,
+          "audio_start": 12047.547,
+          "audio_end": 12097.508,
+          "duration": 49.962,
+          "title": "Thứ hai, lạc vào hang quỷ và chết luôn trong đó.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_271.mp4",
+          "youtube_video_id": "OULYSvnYmOg",
+          "youtube_url": "https://youtu.be/OULYSvnYmOg",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Thứ hai, lạc vào hang quỷ và chết luôn trong đó."
+        },
+        {
+          "index": 272,
+          "audio_start": 12097.508,
+          "audio_end": 12148.343,
+          "duration": 50.835,
+          "title": "Thứ tư, nói chuyện như lên đồng nhập xác, tự xưng ông này bà kia mà các con thường gặp mộ…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_272.mp4",
+          "youtube_video_id": "gxse6lgcAgM",
+          "youtube_url": "https://youtu.be/gxse6lgcAgM",
+          "uploaded": true,
+          "photo_start_index": 1261,
+          "photo_end_index": 1273
         }
       ]
     }
