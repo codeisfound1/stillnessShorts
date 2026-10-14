@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 12242.952663065029,
-      "photo_pointer_index": 1282,
+      "audio_pointer_sec": 12317.194168827724,
+      "photo_pointer_index": 1290,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -5102,6 +5102,31 @@
           "uploaded": true,
           "photo_start_index": 1273,
           "photo_end_index": 1282
+        },
+        {
+          "index": 275,
+          "audio_start": 12242.953,
+          "audio_end": 12277.729,
+          "duration": 34.776,
+          "title": "Thứ mười hai, ngồi thiền liêm nhiêm, nửa tỉnh nửa mê, từ ngày này sang ngày khác.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_275.mp4",
+          "youtube_video_id": "eAieYOLSl5I",
+          "youtube_url": "https://youtu.be/eAieYOLSl5I",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Thứ mười hai, ngồi thiền liêm nhiêm, nửa tỉnh nửa mê, từ ngày này sang ngày khác."
+        },
+        {
+          "index": 276,
+          "audio_start": 12277.729,
+          "audio_end": 12317.194,
+          "duration": 39.465,
+          "title": "Thứ 15.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_276.mp4",
+          "youtube_video_id": "SvBRUo79CpQ",
+          "youtube_url": "https://youtu.be/SvBRUo79CpQ",
+          "uploaded": true,
+          "photo_start_index": 1282,
+          "photo_end_index": 1290
         }
       ]
     }
