@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 12419.876586582997,
-      "photo_pointer_index": 1303,
+      "audio_pointer_sec": 12512.367211907409,
+      "photo_pointer_index": 1312,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -5152,6 +5152,31 @@
           "uploaded": true,
           "photo_start_index": 1290,
           "photo_end_index": 1303
+        },
+        {
+          "index": 279,
+          "audio_start": 12419.877,
+          "audio_end": 12475.591,
+          "duration": 55.714,
+          "title": "Cũng chính nơi đây, người thời nay Tu",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_279.mp4",
+          "youtube_video_id": "k-ZZXrfNVAM",
+          "youtube_url": "https://youtu.be/k-ZZXrfNVAM",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Cũng chính nơi đây, người thời nay Tu"
+        },
+        {
+          "index": 280,
+          "audio_start": 12475.591,
+          "audio_end": 12512.367,
+          "duration": 36.776,
+          "title": "Tu hành nếu không gặp người có kinh nghiệm",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_280.mp4",
+          "youtube_video_id": "BKIsOUg_IZA",
+          "youtube_url": "https://youtu.be/BKIsOUg_IZA",
+          "uploaded": true,
+          "photo_start_index": 1303,
+          "photo_end_index": 1312
         }
       ]
     }
