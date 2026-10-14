@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 12512.367211907409,
-      "photo_pointer_index": 1312,
+      "audio_pointer_sec": 12613.319908667216,
+      "photo_pointer_index": 1325,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -5177,6 +5177,31 @@
           "uploaded": true,
           "photo_start_index": 1303,
           "photo_end_index": 1312
+        },
+        {
+          "index": 281,
+          "audio_start": 12512.367,
+          "audio_end": 12555.816,
+          "duration": 43.449,
+          "title": "Phật.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_281.mp4",
+          "youtube_video_id": "Nr7Jc4DnnDM",
+          "youtube_url": "https://youtu.be/Nr7Jc4DnnDM",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Phật."
+        },
+        {
+          "index": 282,
+          "audio_start": 12555.816,
+          "audio_end": 12613.32,
+          "duration": 57.504,
+          "title": "Nên thời nay có biết bao nhiêu người tu hành theo Đạo Phật.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_282.mp4",
+          "youtube_video_id": "YFFqwFZ0CMg",
+          "youtube_url": "https://youtu.be/YFFqwFZ0CMg",
+          "uploaded": true,
+          "photo_start_index": 1312,
+          "photo_end_index": 1325
         }
       ]
     }
