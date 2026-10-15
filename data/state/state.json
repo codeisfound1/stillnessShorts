@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 12678.824298591564,
-      "photo_pointer_index": 1332,
+      "audio_pointer_sec": 12779.331739210924,
+      "photo_pointer_index": 1343,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -5227,6 +5227,31 @@
           "uploaded": true,
           "photo_start_index": 1325,
           "photo_end_index": 1332
+        },
+        {
+          "index": 285,
+          "audio_start": 12678.824,
+          "audio_end": 12729.259,
+          "duration": 50.435,
+          "title": "Rồi, sẽ làm được.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_285.mp4",
+          "youtube_video_id": "aqo_IrGHcW0",
+          "youtube_url": "https://youtu.be/aqo_IrGHcW0",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Rồi, sẽ làm được."
+        },
+        {
+          "index": 286,
+          "audio_start": 12729.259,
+          "audio_end": 12779.332,
+          "duration": 50.072,
+          "title": "Cách tu, khi tu giới luật, diệt sạch, ma ngoại cảnh, thì khi tu thiền định mới diệt, sạch…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_286.mp4",
+          "youtube_video_id": "gDUnMYrEPKw",
+          "youtube_url": "https://youtu.be/gDUnMYrEPKw",
+          "uploaded": true,
+          "photo_start_index": 1332,
+          "photo_end_index": 1343
         }
       ]
     }
