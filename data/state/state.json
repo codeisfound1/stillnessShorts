@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 12613.319908667216,
-      "photo_pointer_index": 1325,
+      "audio_pointer_sec": 12678.824298591564,
+      "photo_pointer_index": 1332,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -5202,6 +5202,31 @@
           "uploaded": true,
           "photo_start_index": 1312,
           "photo_end_index": 1325
+        },
+        {
+          "index": 283,
+          "audio_start": 12613.32,
+          "audio_end": 12646.543,
+          "duration": 33.223,
+          "title": "4- PHÁP TU ĐỂ NHẬP ĐỊNH AN TOÀN Nếu các con tu tập hơi thở, kỹ càng xả bỏ tâm dục lạc thế…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_283.mp4",
+          "youtube_video_id": "CS1tq2fTdbY",
+          "youtube_url": "https://youtu.be/CS1tq2fTdbY",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: 4- PHÁP TU ĐỂ NHẬP ĐỊNH AN TOÀN Nếu các con tu tập hơi thở, kỹ càng xả bỏ tâm dục lạc thế…"
+        },
+        {
+          "index": 284,
+          "audio_start": 12646.543,
+          "audio_end": 12678.824,
+          "duration": 32.281,
+          "title": "Ly thế gian sống độc cư, nhiếp tâm liên tục trong hơi thở mà các con đã từng tập luyện th…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_284.mp4",
+          "youtube_video_id": "b_rGYV4Ym8A",
+          "youtube_url": "https://youtu.be/b_rGYV4Ym8A",
+          "uploaded": true,
+          "photo_start_index": 1325,
+          "photo_end_index": 1332
         }
       ]
     }
