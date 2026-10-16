@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 13030.961278937197,
-      "photo_pointer_index": 1368,
+      "audio_pointer_sec": 13126.413023238336,
+      "photo_pointer_index": 1379,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -5439,6 +5439,31 @@
           "uploaded": true,
           "photo_start_index": 1360,
           "photo_end_index": 1368
+        },
+        {
+          "index": 293,
+          "audio_start": 13030.961,
+          "audio_end": 13081.581,
+          "duration": 50.619,
+          "title": "Tại sao tu hành khó quá vậy?",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_293.mp4",
+          "youtube_video_id": "QF7edczAq-4",
+          "youtube_url": "https://youtu.be/QF7edczAq-4",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Tại sao tu hành khó quá vậy?"
+        },
+        {
+          "index": 294,
+          "audio_start": 13081.581,
+          "audio_end": 13126.413,
+          "duration": 44.832,
+          "title": "Nếu trên đường tu tập mà quý thầy chỉ tu cần chừng cho qua ngày tháng thì dù cả tăm ngàn,…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_294.mp4",
+          "youtube_video_id": "KgXc1ImPtXg",
+          "youtube_url": "https://youtu.be/KgXc1ImPtXg",
+          "uploaded": true,
+          "photo_start_index": 1368,
+          "photo_end_index": 1379
         }
       ]
     }
