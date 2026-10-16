@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 13126.413023238336,
-      "photo_pointer_index": 1379,
+      "audio_pointer_sec": 13225.166708051249,
+      "photo_pointer_index": 1392,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -5464,6 +5464,31 @@
           "uploaded": true,
           "photo_start_index": 1368,
           "photo_end_index": 1379
+        },
+        {
+          "index": 295,
+          "audio_start": 13126.413,
+          "audio_end": 13168.307,
+          "duration": 41.894,
+          "title": "Thì quý thầy lại bị hôn trầm thùy miên tấn công, bây giờ mọi người ngồi nghẻo cổ mà ngủ h…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_295.mp4",
+          "youtube_video_id": "NGK8oZce3dA",
+          "youtube_url": "https://youtu.be/NGK8oZce3dA",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Thì quý thầy lại bị hôn trầm thùy miên tấn công, bây giờ mọi người ngồi nghẻo cổ mà ngủ h…"
+        },
+        {
+          "index": 296,
+          "audio_start": 13168.307,
+          "audio_end": 13225.167,
+          "duration": 56.86,
+          "title": "Quý thầy phải biết tướng tốt đó là tướng tốt của người thế gian, tướng tốt của ăn và ngủ…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_296.mp4",
+          "youtube_video_id": "TrYPH07yNWw",
+          "youtube_url": "https://youtu.be/TrYPH07yNWw",
+          "uploaded": true,
+          "photo_start_index": 1379,
+          "photo_end_index": 1392
         }
       ]
     }
