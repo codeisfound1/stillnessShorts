@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 13225.166708051249,
-      "photo_pointer_index": 1392,
+      "audio_pointer_sec": 13313.33882453561,
+      "photo_pointer_index": 1403,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -5489,6 +5489,31 @@
           "uploaded": true,
           "photo_start_index": 1379,
           "photo_end_index": 1392
+        },
+        {
+          "index": 297,
+          "audio_start": 13225.167,
+          "audio_end": 13272.66,
+          "duration": 47.493,
+          "title": "Ngài có một vị thiền sư tu chứng đạo.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_297.mp4",
+          "youtube_video_id": "_mL-tFnsx_w",
+          "youtube_url": "https://youtu.be/_mL-tFnsx_w",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Ngài có một vị thiền sư tu chứng đạo."
+        },
+        {
+          "index": 298,
+          "audio_start": 13272.66,
+          "audio_end": 13313.339,
+          "duration": 40.679,
+          "title": "Đến khi gặp Thiền Sư, chỉ thấy còn là một bộ xương gầy ốm giống như một con khỉ già, Chẳn…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_298.mp4",
+          "youtube_video_id": "umQM_l6kkKE",
+          "youtube_url": "https://youtu.be/umQM_l6kkKE",
+          "uploaded": true,
+          "photo_start_index": 1392,
+          "photo_end_index": 1403
         }
       ]
     }
