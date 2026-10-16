@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 12954.996247271747,
-      "photo_pointer_index": 1360,
+      "audio_pointer_sec": 13030.961278937197,
+      "photo_pointer_index": 1368,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -5414,6 +5414,31 @@
           "uploaded": true,
           "photo_start_index": 1351,
           "photo_end_index": 1360
+        },
+        {
+          "index": 291,
+          "audio_start": 12954.996,
+          "audio_end": 12996.783,
+          "duration": 41.786,
+          "title": "Hễ cái này tu được cái kia mới tu được, thì cái này tu chưa xong thì cái kia không bao gi…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_291.mp4",
+          "youtube_video_id": "_eZctM-awqE",
+          "youtube_url": "https://youtu.be/_eZctM-awqE",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Hễ cái này tu được cái kia mới tu được, thì cái này tu chưa xong thì cái kia không bao gi…"
+        },
+        {
+          "index": 292,
+          "audio_start": 12996.783,
+          "audio_end": 13030.961,
+          "duration": 34.179,
+          "title": "Bởi tu được cái này thì mới tu được cái kia, nếu cái này tu chưa được thì cái kia tu chưa…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_292.mp4",
+          "youtube_video_id": "nTiOKVpVhyk",
+          "youtube_url": "https://youtu.be/nTiOKVpVhyk",
+          "uploaded": true,
+          "photo_start_index": 1360,
+          "photo_end_index": 1368
         }
       ]
     }
