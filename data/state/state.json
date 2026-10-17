@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 13543.46349919043,
-      "photo_pointer_index": 1431,
+      "audio_pointer_sec": 13633.910385507408,
+      "photo_pointer_index": 1444,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -5589,6 +5589,31 @@
           "uploaded": true,
           "photo_start_index": 1423,
           "photo_end_index": 1431
+        },
+        {
+          "index": 305,
+          "audio_start": 13543.463,
+          "audio_end": 13577.658,
+          "duration": 34.194,
+          "title": "Cách sống như",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_305.mp4",
+          "youtube_video_id": "ryuvnIZcZkU",
+          "youtube_url": "https://youtu.be/ryuvnIZcZkU",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Cách sống như"
+        },
+        {
+          "index": 306,
+          "audio_start": 13577.658,
+          "audio_end": 13633.91,
+          "duration": 56.252,
+          "title": "Sổ tức là pháp",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_306.mp4",
+          "youtube_video_id": "zHIRbioT_hs",
+          "youtube_url": "https://youtu.be/zHIRbioT_hs",
+          "uploaded": true,
+          "photo_start_index": 1431,
+          "photo_end_index": 1444
         }
       ]
     }
