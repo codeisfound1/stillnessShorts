@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 13480.932677630055,
-      "photo_pointer_index": 1423,
+      "audio_pointer_sec": 13543.46349919043,
+      "photo_pointer_index": 1431,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -5564,6 +5564,31 @@
           "uploaded": true,
           "photo_start_index": 1414,
           "photo_end_index": 1423
+        },
+        {
+          "index": 303,
+          "audio_start": 13480.933,
+          "audio_end": 13511.138,
+          "duration": 30.205,
+          "title": "Nha ạng ngòi.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_303.mp4",
+          "youtube_video_id": "vfU2yTkCUow",
+          "youtube_url": "https://youtu.be/vfU2yTkCUow",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Nha ạng ngòi."
+        },
+        {
+          "index": 304,
+          "audio_start": 13511.138,
+          "audio_end": 13543.463,
+          "duration": 32.326,
+          "title": "Bắt đầu thầy giải các con nhập sổ tức Sau khi tu tập phát sổ tức thuần thuộc, thầy giải c…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_304.mp4",
+          "youtube_video_id": "nAWNn0cfffQ",
+          "youtube_url": "https://youtu.be/nAWNn0cfffQ",
+          "uploaded": true,
+          "photo_start_index": 1423,
+          "photo_end_index": 1431
         }
       ]
     }
