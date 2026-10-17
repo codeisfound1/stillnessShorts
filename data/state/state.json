@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 13401.33198564859,
-      "photo_pointer_index": 1414,
+      "audio_pointer_sec": 13480.932677630055,
+      "photo_pointer_index": 1423,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -5539,6 +5539,31 @@
           "uploaded": true,
           "photo_start_index": 1403,
           "photo_end_index": 1414
+        },
+        {
+          "index": 301,
+          "audio_start": 13401.332,
+          "audio_end": 13445.677,
+          "duration": 44.345,
+          "title": "Việc làm này cũng khó, không dễ.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_301.mp4",
+          "youtube_video_id": "L19IYQzT0eU",
+          "youtube_url": "https://youtu.be/L19IYQzT0eU",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Việc làm này cũng khó, không dễ."
+        },
+        {
+          "index": 302,
+          "audio_start": 13445.677,
+          "audio_end": 13480.933,
+          "duration": 35.256,
+          "title": "Nếu thiền không xuất không nhập là thiền không phải của Đạo Phật.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_302.mp4",
+          "youtube_video_id": "UVj-NY8SFuc",
+          "youtube_url": "https://youtu.be/UVj-NY8SFuc",
+          "uploaded": true,
+          "photo_start_index": 1414,
+          "photo_end_index": 1423
         }
       ]
     }
