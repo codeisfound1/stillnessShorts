@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 13712.769195256767,
-      "photo_pointer_index": 1454,
+      "audio_pointer_sec": 13806.766681747436,
+      "photo_pointer_index": 1465,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -5639,6 +5639,31 @@
           "uploaded": true,
           "photo_start_index": 1444,
           "photo_end_index": 1454
+        },
+        {
+          "index": 309,
+          "audio_start": 13712.769,
+          "audio_end": 13752.867,
+          "duration": 40.097,
+          "title": "“Bạch thầy, Pháp sổ tức của thầy có giống Pháp sổ tức của Ngài Thiên Thai Trí Khải Đại Sư…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_309.mp4",
+          "youtube_video_id": "B4mAmuUAVu4",
+          "youtube_url": "https://youtu.be/B4mAmuUAVu4",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: “Bạch thầy, Pháp sổ tức của thầy có giống Pháp sổ tức của Ngài Thiên Thai Trí Khải Đại Sư…"
+        },
+        {
+          "index": 310,
+          "audio_start": 13752.867,
+          "audio_end": 13806.767,
+          "duration": 53.9,
+          "title": "Thế gian, để thắng lại lòng ham muốn của các con và để cho các con nhập được sơ thiền.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_310.mp4",
+          "youtube_video_id": "8niLIuDoAzs",
+          "youtube_url": "https://youtu.be/8niLIuDoAzs",
+          "uploaded": true,
+          "photo_start_index": 1454,
+          "photo_end_index": 1465
         }
       ]
     }
