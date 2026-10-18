@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 13633.910385507408,
-      "photo_pointer_index": 1444,
+      "audio_pointer_sec": 13712.769195256767,
+      "photo_pointer_index": 1454,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -5614,6 +5614,31 @@
           "uploaded": true,
           "photo_start_index": 1431,
           "photo_end_index": 1444
+        },
+        {
+          "index": 307,
+          "audio_start": 13633.91,
+          "audio_end": 13669.502,
+          "duration": 35.592,
+          "title": "Sổ tức là Pháp môn giúp các con đầy đủ ý tứ sáng suốt để xả bỏ tâm vực lạc ham muốn của c…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_307.mp4",
+          "youtube_video_id": "oIMON2nC8XE",
+          "youtube_url": "https://youtu.be/oIMON2nC8XE",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Sổ tức là Pháp môn giúp các con đầy đủ ý tứ sáng suốt để xả bỏ tâm vực lạc ham muốn của c…"
+        },
+        {
+          "index": 308,
+          "audio_start": 13669.502,
+          "audio_end": 13712.769,
+          "duration": 43.267,
+          "title": "Và các con cũng nên biết chẳng bao giờ nhập được sở thiện Đó là một pháp môn sơ khởi cho…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_308.mp4",
+          "youtube_video_id": "fkcIhG3wmNQ",
+          "youtube_url": "https://youtu.be/fkcIhG3wmNQ",
+          "uploaded": true,
+          "photo_start_index": 1444,
+          "photo_end_index": 1454
         }
       ]
     }
