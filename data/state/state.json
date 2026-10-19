@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 14095.854821666186,
-      "photo_pointer_index": 1501,
+      "audio_pointer_sec": 14175.172701784211,
+      "photo_pointer_index": 1510,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -5851,6 +5851,31 @@
           "uploaded": true,
           "photo_start_index": 1490,
           "photo_end_index": 1501
+        },
+        {
+          "index": 317,
+          "audio_start": 14095.855,
+          "audio_end": 14136.87,
+          "duration": 41.015,
+          "title": "Các Thầy để ý trong bức thơ này, con đường tu tập thiền định của Thầy là con đường thiền…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_317.mp4",
+          "youtube_video_id": "HWRhHHXZRYg",
+          "youtube_url": "https://youtu.be/HWRhHHXZRYg",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Các Thầy để ý trong bức thơ này, con đường tu tập thiền định của Thầy là con đường thiền…"
+        },
+        {
+          "index": 318,
+          "audio_start": 14136.87,
+          "audio_end": 14175.173,
+          "duration": 38.303,
+          "title": "Phật Giáo Việt Nam phải thực tu thực chứng, để chứng minh cho Phật Giáo thế giới thấy rằn…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_318.mp4",
+          "youtube_video_id": "Z1E3GIe__Rc",
+          "youtube_url": "https://youtu.be/Z1E3GIe__Rc",
+          "uploaded": true,
+          "photo_start_index": 1501,
+          "photo_end_index": 1510
         }
       ]
     }
