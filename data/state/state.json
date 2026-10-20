@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 14458.722788363977,
-      "photo_pointer_index": 1542,
+      "audio_pointer_sec": 14540.846227621201,
+      "photo_pointer_index": 1552,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -5951,6 +5951,31 @@
           "uploaded": true,
           "photo_start_index": 1532,
           "photo_end_index": 1542
+        },
+        {
+          "index": 325,
+          "audio_start": 14458.723,
+          "audio_end": 14498.575,
+          "duration": 39.852,
+          "title": "Vậy, những gì Thầy sắp sửa dạy cho con cũng như Thầy đã dạy cho mặt ảnh và quý Thầy trong…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_325.mp4",
+          "youtube_video_id": "vBKiGDLxn9o",
+          "youtube_url": "https://youtu.be/vBKiGDLxn9o",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Vậy, những gì Thầy sắp sửa dạy cho con cũng như Thầy đã dạy cho mặt ảnh và quý Thầy trong…"
+        },
+        {
+          "index": 326,
+          "audio_start": 14498.575,
+          "audio_end": 14540.846,
+          "duration": 42.272,
+          "title": "Và thực hiện rất đúng lời dạy, không bao giờ làm sai!",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_326.mp4",
+          "youtube_video_id": "FBTT2r0e8Bw",
+          "youtube_url": "https://youtu.be/FBTT2r0e8Bw",
+          "uploaded": true,
+          "photo_start_index": 1542,
+          "photo_end_index": 1552
         }
       ]
     }
