@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 14540.846227621201,
-      "photo_pointer_index": 1552,
+      "audio_pointer_sec": 14638.685837884375,
+      "photo_pointer_index": 1562,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -5976,6 +5976,31 @@
           "uploaded": true,
           "photo_start_index": 1542,
           "photo_end_index": 1552
+        },
+        {
+          "index": 327,
+          "audio_start": 14540.846,
+          "audio_end": 14590.854,
+          "duration": 50.007,
+          "title": "Không bao giờ làm sai!",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_327.mp4",
+          "youtube_video_id": "Du5pR-BbUH8",
+          "youtube_url": "https://youtu.be/Du5pR-BbUH8",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Không bao giờ làm sai!"
+        },
+        {
+          "index": 328,
+          "audio_start": 14590.854,
+          "audio_end": 14638.686,
+          "duration": 47.832,
+          "title": "Cho nên về đức hạnh mật Hạnh cũng hơn ai hết.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_328.mp4",
+          "youtube_video_id": "oN97u-1r74M",
+          "youtube_url": "https://youtu.be/oN97u-1r74M",
+          "uploaded": true,
+          "photo_start_index": 1552,
+          "photo_end_index": 1562
         }
       ]
     }
