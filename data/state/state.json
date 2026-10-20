@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 14363.477457572586,
-      "photo_pointer_index": 1532,
+      "audio_pointer_sec": 14458.722788363977,
+      "photo_pointer_index": 1542,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -5926,6 +5926,31 @@
           "uploaded": true,
           "photo_start_index": 1523,
           "photo_end_index": 1532
+        },
+        {
+          "index": 323,
+          "audio_start": 14363.477,
+          "audio_end": 14418.576,
+          "duration": 55.099,
+          "title": "Vì thế chính đây mới là con đường tu thiền định của Đạo Phật.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_323.mp4",
+          "youtube_video_id": "mG8k73aiV5g",
+          "youtube_url": "https://youtu.be/mG8k73aiV5g",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Vì thế chính đây mới là con đường tu thiền định của Đạo Phật."
+        },
+        {
+          "index": 324,
+          "audio_start": 14418.576,
+          "audio_end": 14458.723,
+          "duration": 40.147,
+          "title": "Mẹ con đã nhiều lần xin thầy bài pháp về Đức Hạnh giải thoát để tự t u học và hướng dẫn c…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_324.mp4",
+          "youtube_video_id": "_epYSfsqa7o",
+          "youtube_url": "https://youtu.be/_epYSfsqa7o",
+          "uploaded": true,
+          "photo_start_index": 1532,
+          "photo_end_index": 1542
         }
       ]
     }
