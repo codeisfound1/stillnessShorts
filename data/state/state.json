@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 14283.108658609008,
-      "photo_pointer_index": 1523,
+      "audio_pointer_sec": 14363.477457572586,
+      "photo_pointer_index": 1532,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -5901,6 +5901,31 @@
           "uploaded": true,
           "photo_start_index": 1510,
           "photo_end_index": 1523
+        },
+        {
+          "index": 321,
+          "audio_start": 14283.109,
+          "audio_end": 14325.512,
+          "duration": 42.403,
+          "title": "Thầy Tử Minh đã nhập được an chỉ định đầu tiên.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_321.mp4",
+          "youtube_video_id": "Du_YBaNXK-I",
+          "youtube_url": "https://youtu.be/Du_YBaNXK-I",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Thầy Tử Minh đã nhập được an chỉ định đầu tiên."
+        },
+        {
+          "index": 322,
+          "audio_start": 14325.512,
+          "audio_end": 14363.477,
+          "duration": 37.966,
+          "title": "Tại sao quý thầy lại biết được như vậy?",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_322.mp4",
+          "youtube_video_id": "aSDA9UT4b20",
+          "youtube_url": "https://youtu.be/aSDA9UT4b20",
+          "uploaded": true,
+          "photo_start_index": 1523,
+          "photo_end_index": 1532
         }
       ]
     }
