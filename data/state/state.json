@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 14893.91239350147,
-      "photo_pointer_index": 1594,
+      "audio_pointer_sec": 14981.00368104754,
+      "photo_pointer_index": 1607,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -6188,6 +6188,31 @@
           "uploaded": true,
           "photo_start_index": 1585,
           "photo_end_index": 1594
+        },
+        {
+          "index": 335,
+          "audio_start": 14893.912,
+          "audio_end": 14925.244,
+          "duration": 31.332,
+          "title": "Một y bác sĩ thiền sư là một người phải đầy đủ đức hạnh, phải có đầy đủ lương tâm nghề ng…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_335.mp4",
+          "youtube_video_id": "cHTHGX7_mM8",
+          "youtube_url": "https://youtu.be/cHTHGX7_mM8",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Một y bác sĩ thiền sư là một người phải đầy đủ đức hạnh, phải có đầy đủ lương tâm nghề ng…"
+        },
+        {
+          "index": 336,
+          "audio_start": 14925.244,
+          "audio_end": 14981.004,
+          "duration": 55.759,
+          "title": "Nhưng con phải hiểu.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_336.mp4",
+          "youtube_video_id": "UMVQ_uCdDLA",
+          "youtube_url": "https://youtu.be/UMVQ_uCdDLA",
+          "uploaded": true,
+          "photo_start_index": 1594,
+          "photo_end_index": 1607
         }
       ]
     }
