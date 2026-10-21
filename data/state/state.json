@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 14809.453505566731,
-      "photo_pointer_index": 1585,
+      "audio_pointer_sec": 14893.91239350147,
+      "photo_pointer_index": 1594,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -6163,6 +6163,31 @@
           "uploaded": true,
           "photo_start_index": 1575,
           "photo_end_index": 1585
+        },
+        {
+          "index": 333,
+          "audio_start": 14809.454,
+          "audio_end": 14851.436,
+          "duration": 41.983,
+          "title": "Bệnh nhân vì sợ nước lâu ngày không tắm, mồ hôi của bệnh nhân rất khó chịu.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_333.mp4",
+          "youtube_video_id": "qXDc8yiByoQ",
+          "youtube_url": "https://youtu.be/qXDc8yiByoQ",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Bệnh nhân vì sợ nước lâu ngày không tắm, mồ hôi của bệnh nhân rất khó chịu."
+        },
+        {
+          "index": 334,
+          "audio_start": 14851.436,
+          "audio_end": 14893.912,
+          "duration": 42.476,
+          "title": "Một y bác sĩ thiếu lương tâm không thể làm được.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_334.mp4",
+          "youtube_video_id": "9CuRA63CVUw",
+          "youtube_url": "https://youtu.be/9CuRA63CVUw",
+          "uploaded": true,
+          "photo_start_index": 1585,
+          "photo_end_index": 1594
         }
       ]
     }
