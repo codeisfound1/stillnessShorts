@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 15254.185516413656,
-      "photo_pointer_index": 1637,
+      "audio_pointer_sec": 15356.154731004523,
+      "photo_pointer_index": 1648,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -6288,6 +6288,31 @@
           "uploaded": true,
           "photo_start_index": 1630,
           "photo_end_index": 1637
+        },
+        {
+          "index": 343,
+          "audio_start": 15254.186,
+          "audio_end": 15312.749,
+          "duration": 58.564,
+          "title": "Thì giờ nào làm việc nấy, không được bỏ trôi qua hoặc làm lộn xộn: giờ học ra giờ làm, gi…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_343.mp4",
+          "youtube_video_id": "iwya0vdwqyA",
+          "youtube_url": "https://youtu.be/iwya0vdwqyA",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Thì giờ nào làm việc nấy, không được bỏ trôi qua hoặc làm lộn xộn: giờ học ra giờ làm, gi…"
+        },
+        {
+          "index": 344,
+          "audio_start": 15312.749,
+          "audio_end": 15356.155,
+          "duration": 43.406,
+          "title": "Con thà con dạy họ học hơn là để họ dạy con.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_344.mp4",
+          "youtube_video_id": "U-Nof5-aejU",
+          "youtube_url": "https://youtu.be/U-Nof5-aejU",
+          "uploaded": true,
+          "photo_start_index": 1637,
+          "photo_end_index": 1648
         }
       ]
     }
