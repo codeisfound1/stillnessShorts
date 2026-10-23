@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 15510.057192155155,
-      "photo_pointer_index": 1666,
+      "audio_pointer_sec": 15595.157000833047,
+      "photo_pointer_index": 1677,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -6363,6 +6363,31 @@
           "uploaded": true,
           "photo_start_index": 1656,
           "photo_end_index": 1666
+        },
+        {
+          "index": 349,
+          "audio_start": 15510.057,
+          "audio_end": 15552.655,
+          "duration": 42.597,
+          "title": "Vậy đạo đức giải thoát là gì?",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_349.mp4",
+          "youtube_video_id": "MFTJpivg758",
+          "youtube_url": "https://youtu.be/MFTJpivg758",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Vậy đạo đức giải thoát là gì?"
+        },
+        {
+          "index": 350,
+          "audio_start": 15552.655,
+          "audio_end": 15595.157,
+          "duration": 42.502,
+          "title": "Khiến cho mình và mọi người được an vui hạnh phúc.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_350.mp4",
+          "youtube_video_id": "mN9eE_HmpqM",
+          "youtube_url": "https://youtu.be/mN9eE_HmpqM",
+          "uploaded": true,
+          "photo_start_index": 1666,
+          "photo_end_index": 1677
         }
       ]
     }
