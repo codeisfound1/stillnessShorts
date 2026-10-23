@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 15595.157000833047,
-      "photo_pointer_index": 1677,
+      "audio_pointer_sec": 15682.789387179757,
+      "photo_pointer_index": 1687,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -6388,6 +6388,31 @@
           "uploaded": true,
           "photo_start_index": 1666,
           "photo_end_index": 1677
+        },
+        {
+          "index": 351,
+          "audio_start": 15595.157,
+          "audio_end": 15648.153,
+          "duration": 52.996,
+          "title": "Trước khi học về đạo đức giải thoát thì con phải tập luyện sức tỉnh giác.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_351.mp4",
+          "youtube_video_id": "_vr6v2IaogA",
+          "youtube_url": "https://youtu.be/_vr6v2IaogA",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Trước khi học về đạo đức giải thoát thì con phải tập luyện sức tỉnh giác."
+        },
+        {
+          "index": 352,
+          "audio_start": 15648.153,
+          "audio_end": 15682.789,
+          "duration": 34.636,
+          "title": "Này con, con phải chú ý chỗ này.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_352.mp4",
+          "youtube_video_id": "3vHml99afH8",
+          "youtube_url": "https://youtu.be/3vHml99afH8",
+          "uploaded": true,
+          "photo_start_index": 1677,
+          "photo_end_index": 1687
         }
       ]
     }
