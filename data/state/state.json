@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 15978.335431238991,
-      "photo_pointer_index": 1723,
+      "audio_pointer_sec": 16082.14946652939,
+      "photo_pointer_index": 1737,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -6600,6 +6600,31 @@
           "uploaded": true,
           "photo_start_index": 1714,
           "photo_end_index": 1723
+        },
+        {
+          "index": 359,
+          "audio_start": 15978.335,
+          "audio_end": 16026.415,
+          "duration": 48.08,
+          "title": "Con nên nhớ kỹ.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_359.mp4",
+          "youtube_video_id": "r6dikdznIxo",
+          "youtube_url": "https://youtu.be/r6dikdznIxo",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Con nên nhớ kỹ."
+        },
+        {
+          "index": 360,
+          "audio_start": 16026.415,
+          "audio_end": 16082.149,
+          "duration": 55.734,
+          "title": "Không có điều chi làm con buồn khổ, Không có việc gì làm con chướng ngại trong tâm.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_360.mp4",
+          "youtube_video_id": "SbHUQDlhqbM",
+          "youtube_url": "https://youtu.be/SbHUQDlhqbM",
+          "uploaded": true,
+          "photo_start_index": 1723,
+          "photo_end_index": 1737
         }
       ]
     }
