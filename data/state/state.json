@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 15884.155503552498,
-      "photo_pointer_index": 1714,
+      "audio_pointer_sec": 15978.335431238991,
+      "photo_pointer_index": 1723,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -6575,6 +6575,31 @@
           "uploaded": true,
           "photo_start_index": 1700,
           "photo_end_index": 1714
+        },
+        {
+          "index": 357,
+          "audio_start": 15884.156,
+          "audio_end": 15936.721,
+          "duration": 52.565,
+          "title": "Khi đếm xong số",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_357.mp4",
+          "youtube_video_id": "5IXRsnTE83M",
+          "youtube_url": "https://youtu.be/5IXRsnTE83M",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Khi đếm xong số"
+        },
+        {
+          "index": 358,
+          "audio_start": 15936.721,
+          "audio_end": 15978.335,
+          "duration": 41.614,
+          "title": "4, con lại nhớ số 5.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_358.mp4",
+          "youtube_video_id": "ePcBFPUD6vc",
+          "youtube_url": "https://youtu.be/ePcBFPUD6vc",
+          "uploaded": true,
+          "photo_start_index": 1714,
+          "photo_end_index": 1723
         }
       ]
     }
