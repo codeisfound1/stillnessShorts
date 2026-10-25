@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 16172.390499037227,
-      "photo_pointer_index": 1746,
+      "audio_pointer_sec": 16242.967528298173,
+      "photo_pointer_index": 1754,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -6650,6 +6650,31 @@
           "uploaded": true,
           "photo_start_index": 1737,
           "photo_end_index": 1746
+        },
+        {
+          "index": 363,
+          "audio_start": 16172.39,
+          "audio_end": 16207.911,
+          "duration": 35.521,
+          "title": "Đoạn video số 363",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_363.mp4",
+          "youtube_video_id": "DuxtUSJtTso",
+          "youtube_url": "https://youtu.be/DuxtUSJtTso",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Đoạn video số 363"
+        },
+        {
+          "index": 364,
+          "audio_start": 16207.911,
+          "audio_end": 16242.968,
+          "duration": 35.057,
+          "title": "Hãy cố gắng và cố gắng hơn nhiều.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_364.mp4",
+          "youtube_video_id": "TIwvXab3zXA",
+          "youtube_url": "https://youtu.be/TIwvXab3zXA",
+          "uploaded": true,
+          "photo_start_index": 1746,
+          "photo_end_index": 1754
         }
       ]
     }
