@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 16242.967528298173,
-      "photo_pointer_index": 1754,
+      "audio_pointer_sec": 16344.012820519934,
+      "photo_pointer_index": 1764,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -6675,6 +6675,31 @@
           "uploaded": true,
           "photo_start_index": 1746,
           "photo_end_index": 1754
+        },
+        {
+          "index": 365,
+          "audio_start": 16242.968,
+          "audio_end": 16302.316,
+          "duration": 59.349,
+          "title": "Này con cán phải để ý về đạo đức giải thoát Đạo",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_365.mp4",
+          "youtube_video_id": "0CMtT3kAUzs",
+          "youtube_url": "https://youtu.be/0CMtT3kAUzs",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Này con cán phải để ý về đạo đức giải thoát Đạo"
+        },
+        {
+          "index": 366,
+          "audio_start": 16302.316,
+          "audio_end": 16344.013,
+          "duration": 41.697,
+          "title": "Đức giải thoát tức là hành di thân, khẩu, ý của con, con phải hết sức cẩn thận dè dặt, nế…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_366.mp4",
+          "youtube_video_id": "o4-QaH0focI",
+          "youtube_url": "https://youtu.be/o4-QaH0focI",
+          "uploaded": true,
+          "photo_start_index": 1754,
+          "photo_end_index": 1764
         }
       ]
     }
