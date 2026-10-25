@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 16344.012820519934,
-      "photo_pointer_index": 1764,
+      "audio_pointer_sec": 16415.98616852331,
+      "photo_pointer_index": 1773,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -6700,6 +6700,31 @@
           "uploaded": true,
           "photo_start_index": 1754,
           "photo_end_index": 1764
+        },
+        {
+          "index": 367,
+          "audio_start": 16344.013,
+          "audio_end": 16380.244,
+          "duration": 36.232,
+          "title": "Hạng người làm khổ người.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_367.mp4",
+          "youtube_video_id": "GsrNAWMze4o",
+          "youtube_url": "https://youtu.be/GsrNAWMze4o",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Hạng người làm khổ người."
+        },
+        {
+          "index": 368,
+          "audio_start": 16380.244,
+          "audio_end": 16415.986,
+          "duration": 35.742,
+          "title": "Người không làm khổ mình và không làm khổ người.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_368.mp4",
+          "youtube_video_id": "FFPxCRpvToA",
+          "youtube_url": "https://youtu.be/FFPxCRpvToA",
+          "uploaded": true,
+          "photo_start_index": 1764,
+          "photo_end_index": 1773
         }
       ]
     }
