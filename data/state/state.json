@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 16082.14946652939,
-      "photo_pointer_index": 1737,
+      "audio_pointer_sec": 16172.390499037227,
+      "photo_pointer_index": 1746,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -6625,6 +6625,31 @@
           "uploaded": true,
           "photo_start_index": 1723,
           "photo_end_index": 1737
+        },
+        {
+          "index": 361,
+          "audio_start": 16082.149,
+          "audio_end": 16132.473,
+          "duration": 50.324,
+          "title": "Ra trong tâm hồn tùy thuận và bằng lòng an vui của con.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_361.mp4",
+          "youtube_video_id": "t5Rx0JYGWhg",
+          "youtube_url": "https://youtu.be/t5Rx0JYGWhg",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Ra trong tâm hồn tùy thuận và bằng lòng an vui của con."
+        },
+        {
+          "index": 362,
+          "audio_start": 16132.473,
+          "audio_end": 16172.39,
+          "duration": 39.917,
+          "title": "Trong sự học của con, hay việc làm của tâm con, con không còn ganh tỵ hơn thua với ai hết.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_362.mp4",
+          "youtube_video_id": "06dsF3eRKJE",
+          "youtube_url": "https://youtu.be/06dsF3eRKJE",
+          "uploaded": true,
+          "photo_start_index": 1737,
+          "photo_end_index": 1746
         }
       ]
     }
