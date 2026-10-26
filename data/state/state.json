@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 16505.935817226684,
-      "photo_pointer_index": 1784,
+      "audio_pointer_sec": 16584.49003532516,
+      "photo_pointer_index": 1793,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -6750,6 +6750,31 @@
           "uploaded": true,
           "photo_start_index": 1773,
           "photo_end_index": 1784
+        },
+        {
+          "index": 371,
+          "audio_start": 16505.936,
+          "audio_end": 16544.006,
+          "duration": 38.07,
+          "title": "Tâm giải thoát là tâm có đạo đức giải thoát.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_371.mp4",
+          "youtube_video_id": "NJbNjYz0L3Y",
+          "youtube_url": "https://youtu.be/NJbNjYz0L3Y",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Tâm giải thoát là tâm có đạo đức giải thoát."
+        },
+        {
+          "index": 372,
+          "audio_start": 16544.006,
+          "audio_end": 16584.49,
+          "duration": 40.484,
+          "title": "Vi thân khẩu và ý của con đã làm khổ con.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_372.mp4",
+          "youtube_video_id": "wVzB8TIPiPA",
+          "youtube_url": "https://youtu.be/wVzB8TIPiPA",
+          "uploaded": true,
+          "photo_start_index": 1784,
+          "photo_end_index": 1793
         }
       ]
     }
