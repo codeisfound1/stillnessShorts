@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 16415.98616852331,
-      "photo_pointer_index": 1773,
+      "audio_pointer_sec": 16505.935817226684,
+      "photo_pointer_index": 1784,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -6725,6 +6725,31 @@
           "uploaded": true,
           "photo_start_index": 1764,
           "photo_end_index": 1773
+        },
+        {
+          "index": 369,
+          "audio_start": 16415.986,
+          "audio_end": 16459.539,
+          "duration": 43.553,
+          "title": "Mà lại làm khổ mình, khổ g i a đình mình?",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_369.mp4",
+          "youtube_video_id": "bgzq5tQd03s",
+          "youtube_url": "https://youtu.be/bgzq5tQd03s",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Mà lại làm khổ mình, khổ g i a đình mình?"
+        },
+        {
+          "index": 370,
+          "audio_start": 16459.539,
+          "audio_end": 16505.936,
+          "duration": 46.397,
+          "title": "Tâm không bị chướng ngại là tâm buông xả; Tâm buông xả là tâm thanh tịnh; Tâm thanh tịnh…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_370.mp4",
+          "youtube_video_id": "K7deLsCKVMU",
+          "youtube_url": "https://youtu.be/K7deLsCKVMU",
+          "uploaded": true,
+          "photo_start_index": 1773,
+          "photo_end_index": 1784
         }
       ]
     }
