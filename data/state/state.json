@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 16665.833844873676,
-      "photo_pointer_index": 1801,
+      "audio_pointer_sec": 16752.348341388148,
+      "photo_pointer_index": 1812,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -6899,6 +6899,31 @@
           "youtube_url": "https://youtu.be/R7XzDbJ6ogw",
           "uploaded": true,
           "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Con dễ nhận ra những lỗi lầm của chính mình, của chính con."
+        },
+        {
+          "index": 374,
+          "audio_start": 16665.834,
+          "audio_end": 16705.21,
+          "duration": 39.376,
+          "title": "Sống trong gia đình, như sống trong địa ngục.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_374.mp4",
+          "youtube_video_id": "G-4RA7rnK_o",
+          "youtube_url": "https://youtu.be/G-4RA7rnK_o",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Sống trong gia đình, như sống trong địa ngục."
+        },
+        {
+          "index": 375,
+          "audio_start": 16705.21,
+          "audio_end": 16752.348,
+          "duration": 47.138,
+          "title": "Khổ người.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_375.mp4",
+          "youtube_video_id": "HIP8zwUSsE4",
+          "youtube_url": "https://youtu.be/HIP8zwUSsE4",
+          "uploaded": true,
+          "photo_start_index": 1801,
+          "photo_end_index": 1812
         }
       ]
     }
