@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 16822.16397810563,
-      "photo_pointer_index": 1819,
+      "audio_pointer_sec": 16912.188268478552,
+      "photo_pointer_index": 1831,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -6949,6 +6949,31 @@
           "uploaded": true,
           "photo_start_index": 1812,
           "photo_end_index": 1819
+        },
+        {
+          "index": 378,
+          "audio_start": 16822.164,
+          "audio_end": 16860.843,
+          "duration": 38.679,
+          "title": "Này con, mọi người ai cũng thích làm đẹp, nhưng cái đẹp giản dị vẫn hơn, sắc đẹp không th…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_378.mp4",
+          "youtube_video_id": "AX4lbc2zDIA",
+          "youtube_url": "https://youtu.be/AX4lbc2zDIA",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Này con, mọi người ai cũng thích làm đẹp, nhưng cái đẹp giản dị vẫn hơn, sắc đẹp không th…"
+        },
+        {
+          "index": 379,
+          "audio_start": 16860.843,
+          "audio_end": 16912.188,
+          "duration": 51.345,
+          "title": "Đời Là những người nông nổi làm khổ mình, khổ người Hy sinh mình để làm người khác thoát…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_379.mp4",
+          "youtube_video_id": "zeZ8OfveAHM",
+          "youtube_url": "https://youtu.be/zeZ8OfveAHM",
+          "uploaded": true,
+          "photo_start_index": 1819,
+          "photo_end_index": 1831
         }
       ]
     }
