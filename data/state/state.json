@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 16752.348341388148,
-      "photo_pointer_index": 1812,
+      "audio_pointer_sec": 16822.16397810563,
+      "photo_pointer_index": 1819,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -6924,6 +6924,31 @@
           "uploaded": true,
           "photo_start_index": 1801,
           "photo_end_index": 1812
+        },
+        {
+          "index": 376,
+          "audio_start": 16752.348,
+          "audio_end": 16790.029,
+          "duration": 37.681,
+          "title": "Do lời nói của mình tự làm khổ mình khổ người, con nên cẩn thận và cẩn thận hơn cầm lời n…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_376.mp4",
+          "youtube_video_id": "RjJVS3U-i34",
+          "youtube_url": "https://youtu.be/RjJVS3U-i34",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Do lời nói của mình tự làm khổ mình khổ người, con nên cẩn thận và cẩn thận hơn cầm lời n…"
+        },
+        {
+          "index": 377,
+          "audio_start": 16790.029,
+          "audio_end": 16822.164,
+          "duration": 32.135,
+          "title": "Thấy ai học hơn mình hoặc làm hơn mình hoặc đẹp hơn mình, hoặc giàu sáng hơn mình, rồi sa…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_377.mp4",
+          "youtube_video_id": "STDb0gEg2t0",
+          "youtube_url": "https://youtu.be/STDb0gEg2t0",
+          "uploaded": true,
+          "photo_start_index": 1812,
+          "photo_end_index": 1819
         }
       ]
     }
