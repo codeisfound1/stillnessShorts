@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 17049.37141445832,
-      "photo_pointer_index": 1847,
+      "audio_pointer_sec": 17126.044200662753,
+      "photo_pointer_index": 1858,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -7024,6 +7024,31 @@
           "uploaded": true,
           "photo_start_index": 1838,
           "photo_end_index": 1847
+        },
+        {
+          "index": 384,
+          "audio_start": 17049.371,
+          "audio_end": 17081.96,
+          "duration": 32.588,
+          "title": "Vậy con nên tập sức tỉnh giác để luôn luôn lúc nào con cũng thấy đúng, suy nghĩ đúng.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_384.mp4",
+          "youtube_video_id": "gxL1Wt5AG0A",
+          "youtube_url": "https://youtu.be/gxL1Wt5AG0A",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Vậy con nên tập sức tỉnh giác để luôn luôn lúc nào con cũng thấy đúng, suy nghĩ đúng."
+        },
+        {
+          "index": 385,
+          "audio_start": 17081.96,
+          "audio_end": 17126.044,
+          "duration": 44.085,
+          "title": "Tự hỏi con Cứ sao ta lại làm cho ta khổ đau như thế này?",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_385.mp4",
+          "youtube_video_id": "MgFgSpaqF0s",
+          "youtube_url": "https://youtu.be/MgFgSpaqF0s",
+          "uploaded": true,
+          "photo_start_index": 1847,
+          "photo_end_index": 1858
         }
       ]
     }
