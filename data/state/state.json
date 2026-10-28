@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 17126.044200662753,
-      "photo_pointer_index": 1858,
+      "audio_pointer_sec": 17231.305111306334,
+      "photo_pointer_index": 1869,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -7049,6 +7049,31 @@
           "uploaded": true,
           "photo_start_index": 1847,
           "photo_end_index": 1858
+        },
+        {
+          "index": 386,
+          "audio_start": 17126.044,
+          "audio_end": 17181.715,
+          "duration": 55.671,
+          "title": "Một giờ, một phút, một giây, của ta bây giờ rất là quý báu.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_386.mp4",
+          "youtube_video_id": "593ee3fhDrs",
+          "youtube_url": "https://youtu.be/593ee3fhDrs",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Một giờ, một phút, một giây, của ta bây giờ rất là quý báu."
+        },
+        {
+          "index": 387,
+          "audio_start": 17181.715,
+          "audio_end": 17231.305,
+          "duration": 49.59,
+          "title": "Các pháp là vô thường, là sanh diệt,",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_387.mp4",
+          "youtube_video_id": "eDKFpvrl7QM",
+          "youtube_url": "https://youtu.be/eDKFpvrl7QM",
+          "uploaded": true,
+          "photo_start_index": 1858,
+          "photo_end_index": 1869
         }
       ]
     }
