@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 17301.7023847362,
-      "photo_pointer_index": 1876,
+      "audio_pointer_sec": 17373.12863212869,
+      "photo_pointer_index": 1884,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -7099,6 +7099,31 @@
           "uploaded": true,
           "photo_start_index": 1869,
           "photo_end_index": 1876
+        },
+        {
+          "index": 390,
+          "audio_start": 17301.702,
+          "audio_end": 17340.535,
+          "duration": 38.833,
+          "title": "Nhưng không bị ý muốn của người khác lôi cuốn.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_390.mp4",
+          "youtube_video_id": "4LElwTm6QFM",
+          "youtube_url": "https://youtu.be/4LElwTm6QFM",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Nhưng không bị ý muốn của người khác lôi cuốn."
+        },
+        {
+          "index": 391,
+          "audio_start": 17340.535,
+          "audio_end": 17373.129,
+          "duration": 32.593,
+          "title": "Không có việc gì quan trọng đối với con.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_391.mp4",
+          "youtube_video_id": "kCvBFng12M4",
+          "youtube_url": "https://youtu.be/kCvBFng12M4",
+          "uploaded": true,
+          "photo_start_index": 1876,
+          "photo_end_index": 1884
         }
       ]
     }
