@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 17231.305111306334,
-      "photo_pointer_index": 1869,
+      "audio_pointer_sec": 17301.7023847362,
+      "photo_pointer_index": 1876,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -7074,6 +7074,31 @@
           "uploaded": true,
           "photo_start_index": 1858,
           "photo_end_index": 1869
+        },
+        {
+          "index": 388,
+          "audio_start": 17231.305,
+          "audio_end": 17270.34,
+          "duration": 39.034,
+          "title": "Này con con hãy tự xét mỗi sự việc xảy ra tưởng tâm hồn con, khiến con phiền nào đau khổ.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_388.mp4",
+          "youtube_video_id": "As3S7_0m6I4",
+          "youtube_url": "https://youtu.be/As3S7_0m6I4",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Này con con hãy tự xét mỗi sự việc xảy ra tưởng tâm hồn con, khiến con phiền nào đau khổ."
+        },
+        {
+          "index": 389,
+          "audio_start": 17270.34,
+          "audio_end": 17301.702,
+          "duration": 31.363,
+          "title": "Đó là con tự làm khổ con.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_389.mp4",
+          "youtube_video_id": "B-kKnNl3w4o",
+          "youtube_url": "https://youtu.be/B-kKnNl3w4o",
+          "uploaded": true,
+          "photo_start_index": 1869,
+          "photo_end_index": 1876
         }
       ]
     }
