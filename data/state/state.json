@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 17653.89903525139,
-      "photo_pointer_index": 1919,
+      "audio_pointer_sec": 17749.103122769448,
+      "photo_pointer_index": 1933,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -7311,6 +7311,31 @@
           "uploaded": true,
           "photo_start_index": 1907,
           "photo_end_index": 1919
+        },
+        {
+          "index": 398,
+          "audio_start": 17653.899,
+          "audio_end": 17690.331,
+          "duration": 36.432,
+          "title": "Tập ổn định hơi thở thì phải tập đếm hơi thở, tập đếm hơi thở thì phải tập ý tứ số đếm hơ…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_398.mp4",
+          "youtube_video_id": "ztNqcqYXtlU",
+          "youtube_url": "https://youtu.be/ztNqcqYXtlU",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Tập ổn định hơi thở thì phải tập đếm hơi thở, tập đếm hơi thở thì phải tập ý tứ số đếm hơ…"
+        },
+        {
+          "index": 399,
+          "audio_start": 17690.331,
+          "audio_end": 17749.103,
+          "duration": 58.772,
+          "title": "Ức chế vọng tưởng là diệt tầm.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_399.mp4",
+          "youtube_video_id": "rHWa6uP_0sY",
+          "youtube_url": "https://youtu.be/rHWa6uP_0sY",
+          "uploaded": true,
+          "photo_start_index": 1919,
+          "photo_end_index": 1933
         }
       ]
     }
