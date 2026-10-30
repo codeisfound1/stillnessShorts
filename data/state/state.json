@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 17467.83091148236,
-      "photo_pointer_index": 1896,
+      "audio_pointer_sec": 17558.82829639544,
+      "photo_pointer_index": 1907,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -7149,6 +7149,31 @@
           "uploaded": true,
           "photo_start_index": 1884,
           "photo_end_index": 1896
+        },
+        {
+          "index": 394,
+          "audio_start": 17467.831,
+          "audio_end": 17514.684,
+          "duration": 46.854,
+          "title": "Tại vì tâm là chủ của các Pháp.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_394.mp4",
+          "youtube_video_id": "Jwvj8jlLFTA",
+          "youtube_url": "https://youtu.be/Jwvj8jlLFTA",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Tại vì tâm là chủ của các Pháp."
+        },
+        {
+          "index": 395,
+          "audio_start": 17514.684,
+          "audio_end": 17558.828,
+          "duration": 44.144,
+          "title": "Nếu giải quyết tâm là giải quyết nhân, mà giải quyết được nhân thì quả không có.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_395.mp4",
+          "youtube_video_id": "q1E0wBaEJfM",
+          "youtube_url": "https://youtu.be/q1E0wBaEJfM",
+          "uploaded": true,
+          "photo_start_index": 1896,
+          "photo_end_index": 1907
         }
       ]
     }
