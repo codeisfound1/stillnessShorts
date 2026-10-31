@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 17749.103122769448,
-      "photo_pointer_index": 1933,
+      "audio_pointer_sec": 17837.8794203182,
+      "photo_pointer_index": 1941,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -7336,6 +7336,31 @@
           "uploaded": true,
           "photo_start_index": 1919,
           "photo_end_index": 1933
+        },
+        {
+          "index": 400,
+          "audio_start": 17749.103,
+          "audio_end": 17806.33,
+          "duration": 57.227,
+          "title": "Vì thế, con thuộc bài và làm bài tốt, như vậy gọi là trí thông minh.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_400.mp4",
+          "youtube_video_id": "OBjrmdQ3omc",
+          "youtube_url": "https://youtu.be/OBjrmdQ3omc",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Vì thế, con thuộc bài và làm bài tốt, như vậy gọi là trí thông minh."
+        },
+        {
+          "index": 401,
+          "audio_start": 17806.33,
+          "audio_end": 17837.879,
+          "duration": 31.55,
+          "title": "Bởi tu tỉnh giác có lợi ích cho con rất lớn trong việc học hành và giải thoát tâm hồn con…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_401.mp4",
+          "youtube_video_id": "-2lYRrLlh88",
+          "youtube_url": "https://youtu.be/-2lYRrLlh88",
+          "uploaded": true,
+          "photo_start_index": 1933,
+          "photo_end_index": 1941
         }
       ]
     }
