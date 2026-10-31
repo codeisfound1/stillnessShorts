@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 17926.849198584594,
-      "photo_pointer_index": 1955,
+      "audio_pointer_sec": 18021.548790571276,
+      "photo_pointer_index": 1969,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -7386,6 +7386,31 @@
           "uploaded": true,
           "photo_start_index": 1941,
           "photo_end_index": 1955
+        },
+        {
+          "index": 404,
+          "audio_start": 17926.849,
+          "audio_end": 17962.522,
+          "duration": 35.673,
+          "title": "KHỔ MÌNH VÀ khổ người Bấy",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_404.mp4",
+          "youtube_video_id": "wvrlmpuc5YM",
+          "youtube_url": "https://youtu.be/wvrlmpuc5YM",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: KHỔ MÌNH VÀ khổ người Bấy"
+        },
+        {
+          "index": 405,
+          "audio_start": 17962.522,
+          "audio_end": 18021.549,
+          "duration": 59.027,
+          "title": "Con đâu biết rằng em con với trí còn non nớt chưa hiểu được bài học và bài làm, như con n…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_405.mp4",
+          "youtube_video_id": "Rtgc-R08bT0",
+          "youtube_url": "https://youtu.be/Rtgc-R08bT0",
+          "uploaded": true,
+          "photo_start_index": 1955,
+          "photo_end_index": 1969
         }
       ]
     }
