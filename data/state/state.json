@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 18278.685201746117,
-      "photo_pointer_index": 1997,
+      "audio_pointer_sec": 18385.724663456505,
+      "photo_pointer_index": 2010,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -7473,6 +7473,31 @@
           "uploaded": true,
           "photo_start_index": 1989,
           "photo_end_index": 1997
+        },
+        {
+          "index": 411,
+          "audio_start": 18278.685,
+          "audio_end": 18328.819,
+          "duration": 50.134,
+          "title": "Thầy chỉ mong sao con Tu con tin Thầy,",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_411.mp4",
+          "youtube_video_id": "PSuefbwmWq4",
+          "youtube_url": "https://youtu.be/PSuefbwmWq4",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Thầy chỉ mong sao con Tu con tin Thầy,"
+        },
+        {
+          "index": 412,
+          "audio_start": 18328.819,
+          "audio_end": 18385.725,
+          "duration": 56.905,
+          "title": "Cũng như Mật Hạnh đã tin Thầy, thế cũng đủ lắm cho Thầy.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_412.mp4",
+          "youtube_video_id": "BORIze1NaqY",
+          "youtube_url": "https://youtu.be/BORIze1NaqY",
+          "uploaded": true,
+          "photo_start_index": 1997,
+          "photo_end_index": 2010
         }
       ]
     }
