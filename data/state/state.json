@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 18208.822077664347,
-      "photo_pointer_index": 1989,
+      "audio_pointer_sec": 18278.685201746117,
+      "photo_pointer_index": 1997,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -7448,6 +7448,31 @@
           "youtube_url": "https://youtu.be/HVH9MZHYL9E",
           "uploaded": true,
           "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Tự làm khổ mình, khổ người."
+        },
+        {
+          "index": 409,
+          "audio_start": 18208.822,
+          "audio_end": 18241.302,
+          "duration": 32.48,
+          "title": "Đoạn video số 409",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_409.mp4",
+          "youtube_video_id": "HUp_21eaEZo",
+          "youtube_url": "https://youtu.be/HUp_21eaEZo",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Đoạn video số 409"
+        },
+        {
+          "index": 410,
+          "audio_start": 18241.302,
+          "audio_end": 18278.685,
+          "duration": 37.383,
+          "title": "Chúng ta phải tu tập như thế nào Trước chúng ta phải sống đời sống ly dục Sau chúng ta dù…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_410.mp4",
+          "youtube_video_id": "IUFTId26sk0",
+          "youtube_url": "https://youtu.be/IUFTId26sk0",
+          "uploaded": true,
+          "photo_start_index": 1989,
+          "photo_end_index": 1997
         }
       ]
     }
