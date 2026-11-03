@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 18749.183038881358,
-      "photo_pointer_index": 2049,
+      "audio_pointer_sec": 18836.598221876415,
+      "photo_pointer_index": 2061,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -7710,6 +7710,31 @@
           "uploaded": true,
           "photo_start_index": 2041,
           "photo_end_index": 2049
+        },
+        {
+          "index": 421,
+          "audio_start": 18749.183,
+          "audio_end": 18784.339,
+          "duration": 35.156,
+          "title": "Này quý thầy, ở đây thầy bảo được thân người là khó, mất đi không thể tìm được, nghĩa là…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_421.mp4",
+          "youtube_video_id": "ZtXWWb418XQ",
+          "youtube_url": "https://youtu.be/ZtXWWb418XQ",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Này quý thầy, ở đây thầy bảo được thân người là khó, mất đi không thể tìm được, nghĩa là…"
+        },
+        {
+          "index": 422,
+          "audio_start": 18784.339,
+          "audio_end": 18836.598,
+          "duration": 52.259,
+          "title": "Và nhiều khi vô tình đã xả mình giúp người khác vật khác, có khi hy sinh mình để cho ngườ…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_422.mp4",
+          "youtube_video_id": "OZ4DmqnEQmo",
+          "youtube_url": "https://youtu.be/OZ4DmqnEQmo",
+          "uploaded": true,
+          "photo_start_index": 2049,
+          "photo_end_index": 2061
         }
       ]
     }
