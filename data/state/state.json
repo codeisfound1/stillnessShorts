@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 18663.18070363576,
-      "photo_pointer_index": 2041,
+      "audio_pointer_sec": 18749.183038881358,
+      "photo_pointer_index": 2049,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -7685,6 +7685,31 @@
           "uploaded": true,
           "photo_start_index": 2028,
           "photo_end_index": 2041
+        },
+        {
+          "index": 419,
+          "audio_start": 18663.181,
+          "audio_end": 18718.481,
+          "duration": 55.3,
+          "title": "Con người khéo che đầy, con vật để lộ liệu.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_419.mp4",
+          "youtube_video_id": "5UCodeUudMc",
+          "youtube_url": "https://youtu.be/5UCodeUudMc",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Con người khéo che đầy, con vật để lộ liệu."
+        },
+        {
+          "index": 420,
+          "audio_start": 18718.481,
+          "audio_end": 18749.183,
+          "duration": 30.702,
+          "title": "Có người hỏi,",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_420.mp4",
+          "youtube_video_id": "EV9ewgUjb9k",
+          "youtube_url": "https://youtu.be/EV9ewgUjb9k",
+          "uploaded": true,
+          "photo_start_index": 2041,
+          "photo_end_index": 2049
         }
       ]
     }
