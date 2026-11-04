@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 18936.77062431651,
-      "photo_pointer_index": 2071,
+      "audio_pointer_sec": 19026.8090870518,
+      "photo_pointer_index": 2081,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -7760,6 +7760,31 @@
           "uploaded": true,
           "photo_start_index": 2061,
           "photo_end_index": 2071
+        },
+        {
+          "index": 425,
+          "audio_start": 18936.771,
+          "audio_end": 18983.252,
+          "duration": 46.481,
+          "title": "Họ chỉ biết si mê sử dụng thân họ để thỏa mãn dục lạc, giả dối vô thường!",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_425.mp4",
+          "youtube_video_id": "QhEbgrzfy7o",
+          "youtube_url": "https://youtu.be/QhEbgrzfy7o",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Họ chỉ biết si mê sử dụng thân họ để thỏa mãn dục lạc, giả dối vô thường!"
+        },
+        {
+          "index": 426,
+          "audio_start": 18983.252,
+          "audio_end": 19026.809,
+          "duration": 43.558,
+          "title": "Họ từng ở trong tu viện này.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_426.mp4",
+          "youtube_video_id": "dOXzEe2A6PE",
+          "youtube_url": "https://youtu.be/dOXzEe2A6PE",
+          "uploaded": true,
+          "photo_start_index": 2071,
+          "photo_end_index": 2081
         }
       ]
     }
