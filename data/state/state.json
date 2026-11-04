@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 19026.8090870518,
-      "photo_pointer_index": 2081,
+      "audio_pointer_sec": 19122.47834307612,
+      "photo_pointer_index": 2093,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -7785,6 +7785,31 @@
           "uploaded": true,
           "photo_start_index": 2071,
           "photo_end_index": 2081
+        },
+        {
+          "index": 427,
+          "audio_start": 19026.809,
+          "audio_end": 19078.522,
+          "duration": 51.713,
+          "title": "Họ đâu biết rằng luật nhân quả sẽ trừng trị họ mãi mãi đời đời trong biển khổ sinh tử.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_427.mp4",
+          "youtube_video_id": "g-TdsaDyKvk",
+          "youtube_url": "https://youtu.be/g-TdsaDyKvk",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Họ đâu biết rằng luật nhân quả sẽ trừng trị họ mãi mãi đời đời trong biển khổ sinh tử."
+        },
+        {
+          "index": 428,
+          "audio_start": 19078.522,
+          "audio_end": 19122.478,
+          "duration": 43.956,
+          "title": "2- ĐƯỢC NGHE PHÁP CÒN KHÓ HƠN được nghe Pháp còn khó hơn.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_428.mp4",
+          "youtube_video_id": "TdAiQgkkWWI",
+          "youtube_url": "https://youtu.be/TdAiQgkkWWI",
+          "uploaded": true,
+          "photo_start_index": 2081,
+          "photo_end_index": 2093
         }
       ]
     }
