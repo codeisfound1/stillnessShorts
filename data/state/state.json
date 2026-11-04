@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 18836.598221876415,
-      "photo_pointer_index": 2061,
+      "audio_pointer_sec": 18936.77062431651,
+      "photo_pointer_index": 2071,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -7735,6 +7735,31 @@
           "uploaded": true,
           "photo_start_index": 2049,
           "photo_end_index": 2061
+        },
+        {
+          "index": 423,
+          "audio_start": 18836.598,
+          "audio_end": 18895.479,
+          "duration": 58.881,
+          "title": "Được thân người.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_423.mp4",
+          "youtube_video_id": "_TLbXaUWdQY",
+          "youtube_url": "https://youtu.be/_TLbXaUWdQY",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Được thân người."
+        },
+        {
+          "index": 424,
+          "audio_start": 18895.479,
+          "audio_end": 18936.771,
+          "duration": 41.292,
+          "title": "Này quý thầy, hiện giờ có ai biết được cái thân quý báu này?",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_424.mp4",
+          "youtube_video_id": "pa1IhVocO98",
+          "youtube_url": "https://youtu.be/pa1IhVocO98",
+          "uploaded": true,
+          "photo_start_index": 2061,
+          "photo_end_index": 2071
         }
       ]
     }
