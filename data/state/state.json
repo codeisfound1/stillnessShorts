@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 19322.28222598974,
-      "photo_pointer_index": 2118,
+      "audio_pointer_sec": 19410.56925275488,
+      "photo_pointer_index": 2128,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -7860,6 +7860,31 @@
           "uploaded": true,
           "photo_start_index": 2105,
           "photo_end_index": 2118
+        },
+        {
+          "index": 433,
+          "audio_start": 19322.282,
+          "audio_end": 19368.166,
+          "duration": 45.884,
+          "title": "Gia được thực hành, nhưng lại thiếu người có kinh nghiệm hương dẫn, nên đã ủng phí một đờ…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_433.mp4",
+          "youtube_video_id": "H3kYoH4S6VQ",
+          "youtube_url": "https://youtu.be/H3kYoH4S6VQ",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Gia được thực hành, nhưng lại thiếu người có kinh nghiệm hương dẫn, nên đã ủng phí một đờ…"
+        },
+        {
+          "index": 434,
+          "audio_start": 19368.166,
+          "audio_end": 19410.569,
+          "duration": 42.403,
+          "title": "Bùa, thầy pháp, thầy coi ngày tốt xấu, thầy trừ tà ếm quỷ, trừ ma, thầy cũng sao cũng hạn…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_434.mp4",
+          "youtube_video_id": "gSpGWHHasvE",
+          "youtube_url": "https://youtu.be/gSpGWHHasvE",
+          "uploaded": true,
+          "photo_start_index": 2118,
+          "photo_end_index": 2128
         }
       ]
     }
