@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 19122.47834307612,
-      "photo_pointer_index": 2093,
+      "audio_pointer_sec": 19213.298619040255,
+      "photo_pointer_index": 2105,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -7810,6 +7810,31 @@
           "uploaded": true,
           "photo_start_index": 2081,
           "photo_end_index": 2093
+        },
+        {
+          "index": 429,
+          "audio_start": 19122.478,
+          "audio_end": 19164.878,
+          "duration": 42.4,
+          "title": "Hiểu được lời dạy này rất khó, nghĩa là phải hiểu cho đúng, hiểu không được lệch lạc.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_429.mp4",
+          "youtube_video_id": "HZ666hsebxs",
+          "youtube_url": "https://youtu.be/HZ666hsebxs",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Hiểu được lời dạy này rất khó, nghĩa là phải hiểu cho đúng, hiểu không được lệch lạc."
+        },
+        {
+          "index": 430,
+          "audio_start": 19164.878,
+          "audio_end": 19213.299,
+          "duration": 48.42,
+          "title": "Do thế chẳng có ai tu chứng quả A la Hán và được hoàn toàn giải thoát chấm dứt tái sanh l…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_430.mp4",
+          "youtube_video_id": "5AcYVHjAvVA",
+          "youtube_url": "https://youtu.be/5AcYVHjAvVA",
+          "uploaded": true,
+          "photo_start_index": 2093,
+          "photo_end_index": 2105
         }
       ]
     }
