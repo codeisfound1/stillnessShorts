@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 19213.298619040255,
-      "photo_pointer_index": 2105,
+      "audio_pointer_sec": 19322.28222598974,
+      "photo_pointer_index": 2118,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -7835,6 +7835,31 @@
           "uploaded": true,
           "photo_start_index": 2093,
           "photo_end_index": 2105
+        },
+        {
+          "index": 431,
+          "audio_start": 19213.299,
+          "audio_end": 19266.87,
+          "duration": 53.571,
+          "title": "Có nhiều người",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_431.mp4",
+          "youtube_video_id": "c8uOIT9sGJk",
+          "youtube_url": "https://youtu.be/c8uOIT9sGJk",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Có nhiều người"
+        },
+        {
+          "index": 432,
+          "audio_start": 19266.87,
+          "audio_end": 19322.282,
+          "duration": 55.412,
+          "title": "Có nhiều người được đọc kinh sách, và được nghe thuyết giảng giáo lý của Đạo Phật",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_432.mp4",
+          "youtube_video_id": "waoVaTl5DDQ",
+          "youtube_url": "https://youtu.be/waoVaTl5DDQ",
+          "uploaded": true,
+          "photo_start_index": 2105,
+          "photo_end_index": 2118
         }
       ]
     }
