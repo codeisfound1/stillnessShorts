@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 19561.088248344124,
-      "photo_pointer_index": 2146,
+      "audio_pointer_sec": 19647.48063321055,
+      "photo_pointer_index": 2157,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -8047,6 +8047,31 @@
           "uploaded": true,
           "photo_start_index": 2135,
           "photo_end_index": 2146
+        },
+        {
+          "index": 439,
+          "audio_start": 19561.088,
+          "audio_end": 19600.073,
+          "duration": 38.984,
+          "title": "Có năm người đến xin Phật giảng Pháp.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_439.mp4",
+          "youtube_video_id": "IBX5KpO9J9g",
+          "youtube_url": "https://youtu.be/IBX5KpO9J9g",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Có năm người đến xin Phật giảng Pháp."
+        },
+        {
+          "index": 440,
+          "audio_start": 19600.073,
+          "audio_end": 19647.481,
+          "duration": 47.408,
+          "title": "Chỉ còn lại có một ông ngồi nghe Pháp chăm chú mà thôi.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_440.mp4",
+          "youtube_video_id": "g-vLPbbFMPc",
+          "youtube_url": "https://youtu.be/g-vLPbbFMPc",
+          "uploaded": true,
+          "photo_start_index": 2146,
+          "photo_end_index": 2157
         }
       ]
     }
