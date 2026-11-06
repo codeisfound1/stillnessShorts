@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 19410.56925275488,
-      "photo_pointer_index": 2128,
+      "audio_pointer_sec": 19480.35722795681,
+      "photo_pointer_index": 2135,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -7885,6 +7885,31 @@
           "uploaded": true,
           "photo_start_index": 2118,
           "photo_end_index": 2128
+        },
+        {
+          "index": 435,
+          "audio_start": 19410.569,
+          "audio_end": 19444.39,
+          "duration": 33.82,
+          "title": "Có nhiều người được đọc kinh sắc và",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_435.mp4",
+          "youtube_video_id": "it28t14ZYTU",
+          "youtube_url": "https://youtu.be/it28t14ZYTU",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Có nhiều người được đọc kinh sắc và"
+        },
+        {
+          "index": 436,
+          "audio_start": 19444.39,
+          "audio_end": 19480.357,
+          "duration": 35.968,
+          "title": "Được nghe thuyết giảm, giáo lý chân chính của đạo Phật.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_436.mp4",
+          "youtube_video_id": "tH3EG0slxu0",
+          "youtube_url": "https://youtu.be/tH3EG0slxu0",
+          "uploaded": true,
+          "photo_start_index": 2128,
+          "photo_end_index": 2135
         }
       ]
     }
