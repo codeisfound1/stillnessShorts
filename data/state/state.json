@@ -322,7 +322,7 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 19735.087665804494,
+      "audio_pointer_sec": 19754.111519,
       "photo_pointer_index": 2171,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
@@ -2586,7 +2586,7 @@
         "62380C72-88F1-44C0-820E-058F54632442.jpeg",
         "AD6E017E-9223-4859-A7F2-7DB7C855D840.jpeg"
       ],
-      "mix_credit": 0.0,
+      "mix_credit": 0.5,
       "shorts": [
         {
           "index": 1,
@@ -8097,6 +8097,18 @@
           "uploaded": true,
           "photo_start_index": 2157,
           "photo_end_index": 2171
+        },
+        {
+          "index": 443,
+          "audio_start": 19735.088,
+          "audio_end": 19754.112,
+          "duration": 19.024,
+          "title": "Đố, ganh tỵ ngã mạn, cống cao, của lòng tham danh hiếu lợi, hơn nữa, họ còn tiêu phí gần…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_443.mp4",
+          "youtube_video_id": "KBkc8NU98ZU",
+          "youtube_url": "https://youtu.be/KBkc8NU98ZU",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Đố, ganh tỵ ngã mạn, cống cao, của lòng tham danh hiếu lợi, hơn nữa, họ còn tiêu phí gần…"
         }
       ]
     }
