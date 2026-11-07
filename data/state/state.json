@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 19647.48063321055,
-      "photo_pointer_index": 2157,
+      "audio_pointer_sec": 19735.087665804494,
+      "photo_pointer_index": 2171,
       "photo_order": [
         "14772612-0709-4EFE-A758-56DAE12F2001.jpeg",
         "34605157-A870-45BE-A266-E132BE55B985.jpeg",
@@ -8072,6 +8072,31 @@
           "uploaded": true,
           "photo_start_index": 2146,
           "photo_end_index": 2157
+        },
+        {
+          "index": 441,
+          "audio_start": 19647.481,
+          "audio_end": 19681.099,
+          "duration": 33.619,
+          "title": "Tại sao – Này A Nan,",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_441.mp4",
+          "youtube_video_id": "AzlT3GsEo6g",
+          "youtube_url": "https://youtu.be/AzlT3GsEo6g",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Tại sao – Này A Nan,"
+        },
+        {
+          "index": 442,
+          "audio_start": 19681.099,
+          "audio_end": 19735.088,
+          "duration": 53.988,
+          "title": "Họ từng nghe tiếng nói của súc sanh, của lòng tham sân, si, của lòng tật",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_442.mp4",
+          "youtube_video_id": "CM_reDCJm1Y",
+          "youtube_url": "https://youtu.be/CM_reDCJm1Y",
+          "uploaded": true,
+          "photo_start_index": 2157,
+          "photo_end_index": 2171
         }
       ]
     }
