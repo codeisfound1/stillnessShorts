@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 113.30889473650048,
-      "photo_pointer_index": 12,
+      "audio_pointer_sec": 228.05533956045628,
+      "photo_pointer_index": 26,
       "photo_order": [
         "image-1.jpg",
         "image-10.jpg",
@@ -5974,6 +5974,31 @@
           "uploaded": true,
           "photo_start_index": 0,
           "photo_end_index": 12
+        },
+        {
+          "index": 446,
+          "audio_start": 113.309,
+          "audio_end": 170.268,
+          "duration": 56.96,
+          "title": "Sự tu hành của chúng tôi có kết quả hay không?",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_446.mp4",
+          "youtube_video_id": "pp5tQa5A1ow",
+          "youtube_url": "https://youtu.be/pp5tQa5A1ow",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Sự tu hành của chúng tôi có kết quả hay không?"
+        },
+        {
+          "index": 447,
+          "audio_start": 170.268,
+          "audio_end": 228.055,
+          "duration": 57.787,
+          "title": "Kính thưa quý vị Phật tử!",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_447.mp4",
+          "youtube_video_id": "upnah0RaM0I",
+          "youtube_url": "https://youtu.be/upnah0RaM0I",
+          "uploaded": true,
+          "photo_start_index": 12,
+          "photo_end_index": 26
         }
       ]
     }
