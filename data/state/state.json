@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 330.34124818663935,
-      "photo_pointer_index": 38,
+      "audio_pointer_sec": 420.80664322269945,
+      "photo_pointer_index": 47,
       "photo_order": [
         "image-1.jpg",
         "image-10.jpg",
@@ -6024,6 +6024,31 @@
           "uploaded": true,
           "photo_start_index": 26,
           "photo_end_index": 38
+        },
+        {
+          "index": 450,
+          "audio_start": 330.341,
+          "audio_end": 383.4,
+          "duration": 53.058,
+          "title": "Chúng tôi tu hành",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_450.mp4",
+          "youtube_video_id": "ecSRocKiCBM",
+          "youtube_url": "https://youtu.be/ecSRocKiCBM",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Chúng tôi tu hành"
+        },
+        {
+          "index": 451,
+          "audio_start": 383.4,
+          "audio_end": 420.807,
+          "duration": 37.407,
+          "title": "Chúng tôi đã từng học qua những lời di chúc của Đức Phật.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_451.mp4",
+          "youtube_video_id": "3MUKHpkBXQs",
+          "youtube_url": "https://youtu.be/3MUKHpkBXQs",
+          "uploaded": true,
+          "photo_start_index": 38,
+          "photo_end_index": 47
         }
       ]
     }
