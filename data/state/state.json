@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 228.05533956045628,
-      "photo_pointer_index": 26,
+      "audio_pointer_sec": 330.34124818663935,
+      "photo_pointer_index": 38,
       "photo_order": [
         "image-1.jpg",
         "image-10.jpg",
@@ -5999,6 +5999,31 @@
           "uploaded": true,
           "photo_start_index": 12,
           "photo_end_index": 26
+        },
+        {
+          "index": 448,
+          "audio_start": 228.055,
+          "audio_end": 279.82,
+          "duration": 51.764,
+          "title": "Chỉ dạy cho quý vị.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_448.mp4",
+          "youtube_video_id": "CutUJSBf5A4",
+          "youtube_url": "https://youtu.be/CutUJSBf5A4",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Chỉ dạy cho quý vị."
+        },
+        {
+          "index": 449,
+          "audio_start": 279.82,
+          "audio_end": 330.341,
+          "duration": 50.522,
+          "title": "Đi, các vị ấy lại không giải thoát.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_449.mp4",
+          "youtube_video_id": "v8A-PMi0SZQ",
+          "youtube_url": "https://youtu.be/v8A-PMi0SZQ",
+          "uploaded": true,
+          "photo_start_index": 26,
+          "photo_end_index": 38
         }
       ]
     }
