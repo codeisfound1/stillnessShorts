@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 420.80664322269945,
-      "photo_pointer_index": 47,
+      "audio_pointer_sec": 502.5966435861729,
+      "photo_pointer_index": 57,
       "photo_order": [
         "image-1.jpg",
         "image-10.jpg",
@@ -6049,6 +6049,31 @@
           "uploaded": true,
           "photo_start_index": 38,
           "photo_end_index": 47
+        },
+        {
+          "index": 452,
+          "audio_start": 420.807,
+          "audio_end": 459.33,
+          "duration": 38.523,
+          "title": "Lời di chúc thứ hai, Phật dạy: giới Luật còn là Phật còn tại thế, giới Luật mất là Phật m…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_452.mp4",
+          "youtube_video_id": "wBb-JrglmG4",
+          "youtube_url": "https://youtu.be/wBb-JrglmG4",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Lời di chúc thứ hai, Phật dạy: giới Luật còn là Phật còn tại thế, giới Luật mất là Phật m…"
+        },
+        {
+          "index": 453,
+          "audio_start": 459.33,
+          "audio_end": 502.597,
+          "duration": 43.267,
+          "title": "Trước khi nhập vào niết bàn, Đức Phật nhập từ sơ thiền đến tứ thiền.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_453.mp4",
+          "youtube_video_id": "zM5Jy7VpYOc",
+          "youtube_url": "https://youtu.be/zM5Jy7VpYOc",
+          "uploaded": true,
+          "photo_start_index": 47,
+          "photo_end_index": 57
         }
       ]
     }
