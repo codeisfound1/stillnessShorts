@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 599.7229501282845,
-      "photo_pointer_index": 70,
+      "audio_pointer_sec": 703.8658336988613,
+      "photo_pointer_index": 81,
       "photo_order": [
         "image-1.jpg",
         "image-10.jpg",
@@ -6099,6 +6099,31 @@
           "uploaded": true,
           "photo_start_index": 57,
           "photo_end_index": 70
+        },
+        {
+          "index": 456,
+          "audio_start": 599.723,
+          "audio_end": 655.874,
+          "duration": 56.151,
+          "title": "2 bữa ăn,",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_456.mp4",
+          "youtube_video_id": "ef5XZ5dZCiY",
+          "youtube_url": "https://youtu.be/ef5XZ5dZCiY",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: 2 bữa ăn,"
+        },
+        {
+          "index": 457,
+          "audio_start": 655.874,
+          "audio_end": 703.866,
+          "duration": 47.992,
+          "title": "Chúng tôi đã tìm được giải thoát nhiều điều trong đời sống hàng ngày, nhưng thì giờ có hạ…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_457.mp4",
+          "youtube_video_id": "jbfduDk57sU",
+          "youtube_url": "https://youtu.be/jbfduDk57sU",
+          "uploaded": true,
+          "photo_start_index": 70,
+          "photo_end_index": 81
         }
       ]
     }
