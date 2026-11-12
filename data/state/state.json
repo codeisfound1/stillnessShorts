@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 878.849043887864,
-      "photo_pointer_index": 103,
+      "audio_pointer_sec": 971.6894936136385,
+      "photo_pointer_index": 116,
       "photo_order": [
         "image-1.jpg",
         "image-10.jpg",
@@ -6274,6 +6274,31 @@
           "uploaded": true,
           "photo_start_index": 94,
           "photo_end_index": 103
+        },
+        {
+          "index": 462,
+          "audio_start": 878.849,
+          "audio_end": 913.99,
+          "duration": 35.141,
+          "title": "Chúng tôi đã biết rõ ràng.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_462.mp4",
+          "youtube_video_id": "AgmuqUd9er0",
+          "youtube_url": "https://youtu.be/AgmuqUd9er0",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Chúng tôi đã biết rõ ràng."
+        },
+        {
+          "index": 463,
+          "audio_start": 913.99,
+          "audio_end": 971.689,
+          "duration": 57.699,
+          "title": "Đời sống của Đức Phật: 1.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_463.mp4",
+          "youtube_video_id": "kuo22XmHOys",
+          "youtube_url": "https://youtu.be/kuo22XmHOys",
+          "uploaded": true,
+          "photo_start_index": 103,
+          "photo_end_index": 116
         }
       ]
     }
