@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 807.3046918187797,
-      "photo_pointer_index": 94,
+      "audio_pointer_sec": 878.849043887864,
+      "photo_pointer_index": 103,
       "photo_order": [
         "image-1.jpg",
         "image-10.jpg",
@@ -6249,6 +6249,31 @@
           "uploaded": true,
           "photo_start_index": 81,
           "photo_end_index": 94
+        },
+        {
+          "index": 460,
+          "audio_start": 807.305,
+          "audio_end": 839.452,
+          "duration": 32.148,
+          "title": "Đoạn video số 460",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_460.mp4",
+          "youtube_video_id": "DpKxR76GzCs",
+          "youtube_url": "https://youtu.be/DpKxR76GzCs",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Đoạn video số 460"
+        },
+        {
+          "index": 461,
+          "audio_start": 839.452,
+          "audio_end": 878.849,
+          "duration": 39.397,
+          "title": "Vì giới luật Đức Hạnh là Pháp môn đầu tiên của Đạo Phật, là bước đường đầu tiên đi vào co…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_461.mp4",
+          "youtube_video_id": "b6gPPUEU0H8",
+          "youtube_url": "https://youtu.be/b6gPPUEU0H8",
+          "uploaded": true,
+          "photo_start_index": 94,
+          "photo_end_index": 103
         }
       ]
     }
