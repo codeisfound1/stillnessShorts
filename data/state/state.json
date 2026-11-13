@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 1058.5540145760156,
-      "photo_pointer_index": 128,
+      "audio_pointer_sec": 1154.8071346303543,
+      "photo_pointer_index": 136,
       "photo_order": [
         "image-1.jpg",
         "image-10.jpg",
@@ -6324,6 +6324,31 @@
           "uploaded": true,
           "photo_start_index": 116,
           "photo_end_index": 128
+        },
+        {
+          "index": 466,
+          "audio_start": 1058.554,
+          "audio_end": 1118.252,
+          "duration": 59.698,
+          "title": "Chúng tôi tu hành như vậy, không còn sợ sai trái với Đạo Phật.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_466.mp4",
+          "youtube_video_id": "d2TM1YePTeI",
+          "youtube_url": "https://youtu.be/d2TM1YePTeI",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Chúng tôi tu hành như vậy, không còn sợ sai trái với Đạo Phật."
+        },
+        {
+          "index": 467,
+          "audio_start": 1118.252,
+          "audio_end": 1154.807,
+          "duration": 36.555,
+          "title": "Sau khi được trả lời những câu hỏi mà bấy ra ngay Quý vị đã từng ôm ấp trong lòng Hằng mo…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_467.mp4",
+          "youtube_video_id": "15QLpLM7NIo",
+          "youtube_url": "https://youtu.be/15QLpLM7NIo",
+          "uploaded": true,
+          "photo_start_index": 128,
+          "photo_end_index": 136
         }
       ]
     }
