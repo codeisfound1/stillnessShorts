@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 1226.2150080261113,
-      "photo_pointer_index": 145,
+      "audio_pointer_sec": 1336.0523437583247,
+      "photo_pointer_index": 157,
       "photo_order": [
         "image-1.jpg",
         "image-10.jpg",
@@ -6374,6 +6374,31 @@
           "uploaded": true,
           "photo_start_index": 136,
           "photo_end_index": 145
+        },
+        {
+          "index": 470,
+          "audio_start": 1226.215,
+          "audio_end": 1282.106,
+          "duration": 55.891,
+          "title": "Xin thưa quý vị!",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_470.mp4",
+          "youtube_video_id": "MphOlRy5ShU",
+          "youtube_url": "https://youtu.be/MphOlRy5ShU",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Xin thưa quý vị!"
+        },
+        {
+          "index": 471,
+          "audio_start": 1282.106,
+          "audio_end": 1336.052,
+          "duration": 53.947,
+          "title": "Khi quý vị bị một người",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_471.mp4",
+          "youtube_video_id": "J_HFSfStp3Q",
+          "youtube_url": "https://youtu.be/J_HFSfStp3Q",
+          "uploaded": true,
+          "photo_start_index": 145,
+          "photo_end_index": 157
         }
       ]
     }
