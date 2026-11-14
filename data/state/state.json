@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 1154.8071346303543,
-      "photo_pointer_index": 136,
+      "audio_pointer_sec": 1226.2150080261113,
+      "photo_pointer_index": 145,
       "photo_order": [
         "image-1.jpg",
         "image-10.jpg",
@@ -6349,6 +6349,31 @@
           "uploaded": true,
           "photo_start_index": 128,
           "photo_end_index": 136
+        },
+        {
+          "index": 468,
+          "audio_start": 1154.807,
+          "audio_end": 1191.328,
+          "duration": 36.521,
+          "title": "Nay quý vị, đã được giải bày thông suốt, nhưng chúng tôi biết chắc quý vị còn một điều mu…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_468.mp4",
+          "youtube_video_id": "jJGlBesc0Ds",
+          "youtube_url": "https://youtu.be/jJGlBesc0Ds",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Nay quý vị, đã được giải bày thông suốt, nhưng chúng tôi biết chắc quý vị còn một điều mu…"
+        },
+        {
+          "index": 469,
+          "audio_start": 1191.328,
+          "audio_end": 1226.215,
+          "duration": 34.887,
+          "title": "Quý vị phải có một mối nghi trong tâm Nhưng còn e ngại chưa dám hỏi chúng tôi, chúng tôi…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_469.mp4",
+          "youtube_video_id": "1fdc4wkZT5Y",
+          "youtube_url": "https://youtu.be/1fdc4wkZT5Y",
+          "uploaded": true,
+          "photo_start_index": 136,
+          "photo_end_index": 145
         }
       ]
     }
