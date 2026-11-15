@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 1336.0523437583247,
-      "photo_pointer_index": 157,
+      "audio_pointer_sec": 1429.5454495477,
+      "photo_pointer_index": 167,
       "photo_order": [
         "image-1.jpg",
         "image-10.jpg",
@@ -6399,6 +6399,31 @@
           "uploaded": true,
           "photo_start_index": 145,
           "photo_end_index": 157
+        },
+        {
+          "index": 472,
+          "audio_start": 1336.052,
+          "audio_end": 1386.891,
+          "duration": 50.839,
+          "title": "Nói xấu chúng tôi, cho chúng tôi tu hành không đúng đạo Phật.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_472.mp4",
+          "youtube_video_id": "NK0O6jg5si8",
+          "youtube_url": "https://youtu.be/NK0O6jg5si8",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Nói xấu chúng tôi, cho chúng tôi tu hành không đúng đạo Phật."
+        },
+        {
+          "index": 473,
+          "audio_start": 1386.891,
+          "audio_end": 1429.545,
+          "duration": 42.654,
+          "title": "(danh, lợi, sắc, thực, thùy).",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_473.mp4",
+          "youtube_video_id": "RiHPKNoY_nw",
+          "youtube_url": "https://youtu.be/RiHPKNoY_nw",
+          "uploaded": true,
+          "photo_start_index": 157,
+          "photo_end_index": 167
         }
       ]
     }
