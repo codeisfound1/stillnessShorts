@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 1429.5454495477,
-      "photo_pointer_index": 167,
+      "audio_pointer_sec": 1533.5161958942726,
+      "photo_pointer_index": 181,
       "photo_order": [
         "image-1.jpg",
         "image-10.jpg",
@@ -6424,6 +6424,31 @@
           "uploaded": true,
           "photo_start_index": 157,
           "photo_end_index": 167
+        },
+        {
+          "index": 474,
+          "audio_start": 1429.545,
+          "audio_end": 1475.053,
+          "duration": 45.507,
+          "title": "Bên kia đều bị chèn ép cô lập",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_474.mp4",
+          "youtube_video_id": "JYru66j6QmA",
+          "youtube_url": "https://youtu.be/JYru66j6QmA",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Bên kia đều bị chèn ép cô lập"
+        },
+        {
+          "index": 475,
+          "audio_start": 1475.053,
+          "audio_end": 1533.516,
+          "duration": 58.464,
+          "title": "Kính thưa quý vị Phật tử, người thầy của quý vị không phải là chúng tôi mà chính Giới Luậ…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_475.mp4",
+          "youtube_video_id": "gpaA0-N5yyE",
+          "youtube_url": "https://youtu.be/gpaA0-N5yyE",
+          "uploaded": true,
+          "photo_start_index": 167,
+          "photo_end_index": 181
         }
       ]
     }
