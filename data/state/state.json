@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 1631.1151150238989,
-      "photo_pointer_index": 191,
+      "audio_pointer_sec": 1699.4772371162103,
+      "photo_pointer_index": 198,
       "photo_order": [
         "image-1.jpg",
         "image-10.jpg",
@@ -6574,6 +6574,31 @@
           "uploaded": true,
           "photo_start_index": 181,
           "photo_end_index": 191
+        },
+        {
+          "index": 478,
+          "audio_start": 1631.115,
+          "audio_end": 1665.138,
+          "duration": 34.023,
+          "title": "Luật, biến Phật giáo thành thần giáo, ông Phật thành ông thần.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_478.mp4",
+          "youtube_video_id": "kQk6Apewhp0",
+          "youtube_url": "https://youtu.be/kQk6Apewhp0",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Luật, biến Phật giáo thành thần giáo, ông Phật thành ông thần."
+        },
+        {
+          "index": 479,
+          "audio_start": 1665.138,
+          "audio_end": 1699.477,
+          "duration": 34.34,
+          "title": "Cầu tài, cầu lợi, xin xăm bói quẻ, cúng sao giải hạn, coi ngày tốt xấu dựng vợ gả chồng V…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_479.mp4",
+          "youtube_video_id": "7Z7N8KubVH8",
+          "youtube_url": "https://youtu.be/7Z7N8KubVH8",
+          "uploaded": true,
+          "photo_start_index": 191,
+          "photo_end_index": 198
         }
       ]
     }
