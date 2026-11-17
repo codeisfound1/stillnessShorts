@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 1798.6266018535243,
-      "photo_pointer_index": 209,
+      "audio_pointer_sec": 1896.397384972722,
+      "photo_pointer_index": 218,
       "photo_order": [
         "image-1.jpg",
         "image-10.jpg",
@@ -6624,6 +6624,31 @@
           "uploaded": true,
           "photo_start_index": 198,
           "photo_end_index": 209
+        },
+        {
+          "index": 482,
+          "audio_start": 1798.627,
+          "audio_end": 1857.15,
+          "duration": 58.524,
+          "title": "Họ dám bẻ cổng Giới Luật chuyên",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_482.mp4",
+          "youtube_video_id": "yxte6PFOSqw",
+          "youtube_url": "https://youtu.be/yxte6PFOSqw",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Họ dám bẻ cổng Giới Luật chuyên"
+        },
+        {
+          "index": 483,
+          "audio_start": 1857.15,
+          "audio_end": 1896.397,
+          "duration": 39.247,
+          "title": "Họ dám bẻ cổng Giới Luật đi quyên góp tiền Phật tử xây chùa to tháp lớn như đền đài lầu c…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_483.mp4",
+          "youtube_video_id": "fRIqRwiLvRo",
+          "youtube_url": "https://youtu.be/fRIqRwiLvRo",
+          "uploaded": true,
+          "photo_start_index": 209,
+          "photo_end_index": 218
         }
       ]
     }
