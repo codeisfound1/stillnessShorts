@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 1972.8298790252802,
-      "photo_pointer_index": 228,
+      "audio_pointer_sec": 2085.8625746307503,
+      "photo_pointer_index": 242,
       "photo_order": [
         "image-1.jpg",
         "image-10.jpg",
@@ -6674,6 +6674,31 @@
           "uploaded": true,
           "photo_start_index": 218,
           "photo_end_index": 228
+        },
+        {
+          "index": 486,
+          "audio_start": 1972.83,
+          "audio_end": 2029.708,
+          "duration": 56.878,
+          "title": "Cá nhân còn đau khổ.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_486.mp4",
+          "youtube_video_id": "QsKBVMndHPg",
+          "youtube_url": "https://youtu.be/QsKBVMndHPg",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Cá nhân còn đau khổ."
+        },
+        {
+          "index": 487,
+          "audio_start": 2029.708,
+          "audio_end": 2085.863,
+          "duration": 56.154,
+          "title": "Vì thế, Đạo Phật nhắm vào giải quyết cá nhân, giải quyết cá nhân là giải quyết xã hội.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_487.mp4",
+          "youtube_video_id": "779tAS-YaAQ",
+          "youtube_url": "https://youtu.be/779tAS-YaAQ",
+          "uploaded": true,
+          "photo_start_index": 228,
+          "photo_end_index": 242
         }
       ]
     }
