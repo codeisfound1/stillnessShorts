@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 1896.397384972722,
-      "photo_pointer_index": 218,
+      "audio_pointer_sec": 1972.8298790252802,
+      "photo_pointer_index": 228,
       "photo_order": [
         "image-1.jpg",
         "image-10.jpg",
@@ -6649,6 +6649,31 @@
           "uploaded": true,
           "photo_start_index": 209,
           "photo_end_index": 218
+        },
+        {
+          "index": 484,
+          "audio_start": 1896.397,
+          "audio_end": 1928.313,
+          "duration": 31.915,
+          "title": "Khách tham quan, những việc làm này ngược lại đạo giải thoát của Phật, không đúng cách.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_484.mp4",
+          "youtube_video_id": "HKHKHoUHMrY",
+          "youtube_url": "https://youtu.be/HKHKHoUHMrY",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Khách tham quan, những việc làm này ngược lại đạo giải thoát của Phật, không đúng cách."
+        },
+        {
+          "index": 485,
+          "audio_start": 1928.313,
+          "audio_end": 1972.83,
+          "duration": 44.517,
+          "title": "Việc làm này không phải là tu sĩ Phật giáo.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_485.mp4",
+          "youtube_video_id": "g8zazQdqfc0",
+          "youtube_url": "https://youtu.be/g8zazQdqfc0",
+          "uploaded": true,
+          "photo_start_index": 218,
+          "photo_end_index": 228
         }
       ]
     }
