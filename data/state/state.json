@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 2183.028139855989,
-      "photo_pointer_index": 255,
+      "audio_pointer_sec": 2275.9806886004826,
+      "photo_pointer_index": 268,
       "photo_order": [
         "image-1.jpg",
         "image-10.jpg",
@@ -6724,6 +6724,31 @@
           "uploaded": true,
           "photo_start_index": 242,
           "photo_end_index": 255
+        },
+        {
+          "index": 490,
+          "audio_start": 2183.028,
+          "audio_end": 2223.473,
+          "duration": 40.445,
+          "title": "Quý vị làm công tác từ",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_490.mp4",
+          "youtube_video_id": "Cp1vPNC8yOk",
+          "youtube_url": "https://youtu.be/Cp1vPNC8yOk",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Quý vị làm công tác từ"
+        },
+        {
+          "index": 491,
+          "audio_start": 2223.473,
+          "audio_end": 2275.981,
+          "duration": 52.507,
+          "title": "Nếu không có linh hồn, sao lại có",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_491.mp4",
+          "youtube_video_id": "74MetsQs-9I",
+          "youtube_url": "https://youtu.be/74MetsQs-9I",
+          "uploaded": true,
+          "photo_start_index": 255,
+          "photo_end_index": 268
         }
       ]
     }
