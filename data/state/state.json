@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 2085.8625746307503,
-      "photo_pointer_index": 242,
+      "audio_pointer_sec": 2183.028139855989,
+      "photo_pointer_index": 255,
       "photo_order": [
         "image-1.jpg",
         "image-10.jpg",
@@ -6699,6 +6699,31 @@
           "uploaded": true,
           "photo_start_index": 228,
           "photo_end_index": 242
+        },
+        {
+          "index": 488,
+          "audio_start": 2085.863,
+          "audio_end": 2128.97,
+          "duration": 43.107,
+          "title": "Không thiện chút nào.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_488.mp4",
+          "youtube_video_id": "b5GpKSsKHu4",
+          "youtube_url": "https://youtu.be/b5GpKSsKHu4",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Không thiện chút nào."
+        },
+        {
+          "index": 489,
+          "audio_start": 2128.97,
+          "audio_end": 2183.028,
+          "duration": 54.058,
+          "title": "Giới Luật của Phật còn đó là bậc thầy của quý vị, thường ngăn cấm quý vị l à m những điều…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_489.mp4",
+          "youtube_video_id": "KJJ5Wz_fnNM",
+          "youtube_url": "https://youtu.be/KJJ5Wz_fnNM",
+          "uploaded": true,
+          "photo_start_index": 242,
+          "photo_end_index": 255
         }
       ]
     }
