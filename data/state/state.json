@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 2275.9806886004826,
-      "photo_pointer_index": 268,
+      "audio_pointer_sec": 2343.459187679172,
+      "photo_pointer_index": 276,
       "photo_order": [
         "image-1.jpg",
         "image-10.jpg",
@@ -6749,6 +6749,31 @@
           "uploaded": true,
           "photo_start_index": 255,
           "photo_end_index": 268
+        },
+        {
+          "index": 492,
+          "audio_start": 2275.981,
+          "audio_end": 2308.642,
+          "duration": 32.661,
+          "title": "Vậy, Đức Phật sẽ đủ niềm tin với quý vị",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_492.mp4",
+          "youtube_video_id": "BJb4zSg2SaE",
+          "youtube_url": "https://youtu.be/BJb4zSg2SaE",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Vậy, Đức Phật sẽ đủ niềm tin với quý vị"
+        },
+        {
+          "index": 493,
+          "audio_start": 2308.642,
+          "audio_end": 2343.459,
+          "duration": 34.817,
+          "title": "Trong kinh Phật có dạy: Ví dụ như một ngọn đèn với ánh sáng, khi mà ngọn đèn tắt ánh sáng…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_493.mp4",
+          "youtube_video_id": "oSiIa1qaOVo",
+          "youtube_url": "https://youtu.be/oSiIa1qaOVo",
+          "uploaded": true,
+          "photo_start_index": 268,
+          "photo_end_index": 276
         }
       ]
     }
