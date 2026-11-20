@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 2343.459187679172,
-      "photo_pointer_index": 276,
+      "audio_pointer_sec": 2439.7451616858666,
+      "photo_pointer_index": 286,
       "photo_order": [
         "image-1.jpg",
         "image-10.jpg",
@@ -6774,6 +6774,31 @@
           "uploaded": true,
           "photo_start_index": 268,
           "photo_end_index": 276
+        },
+        {
+          "index": 494,
+          "audio_start": 2343.459,
+          "audio_end": 2398.45,
+          "duration": 54.991,
+          "title": "Đức Phật là một dữ dụ khác, dữ dụéo phát, dữ dụéo Phật giáo dữ dữ giả, dữ dbits, dữ dード g…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_494.mp4",
+          "youtube_video_id": "n04VZeskvq4",
+          "youtube_url": "https://youtu.be/n04VZeskvq4",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Đức Phật là một dữ dụ khác, dữ dụéo phát, dữ dụéo Phật giáo dữ dữ giả, dữ dbits, dữ dード g…"
+        },
+        {
+          "index": 495,
+          "audio_start": 2398.45,
+          "audio_end": 2439.745,
+          "duration": 41.295,
+          "title": "Chứ không phải lươn hồn đi lươn hồi.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_495.mp4",
+          "youtube_video_id": "4Z5g5xYTseQ",
+          "youtube_url": "https://youtu.be/4Z5g5xYTseQ",
+          "uploaded": true,
+          "photo_start_index": 276,
+          "photo_end_index": 286
         }
       ]
     }
