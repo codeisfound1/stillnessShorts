@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 2533.847319356732,
-      "photo_pointer_index": 297,
+      "audio_pointer_sec": 2627.347509213339,
+      "photo_pointer_index": 308,
       "photo_order": [
         "image-1.jpg",
         "image-10.jpg",
@@ -6924,6 +6924,31 @@
           "uploaded": true,
           "photo_start_index": 286,
           "photo_end_index": 297
+        },
+        {
+          "index": 498,
+          "audio_start": 2533.847,
+          "audio_end": 2580.432,
+          "duration": 46.585,
+          "title": "Kính thưa quý vị Phật tử, quý vị là đệ tử của Phật, không nên hiểu Phật giáo qua ống kính…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_498.mp4",
+          "youtube_video_id": "X_rljeaGjyc",
+          "youtube_url": "https://youtu.be/X_rljeaGjyc",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Kính thưa quý vị Phật tử, quý vị là đệ tử của Phật, không nên hiểu Phật giáo qua ống kính…"
+        },
+        {
+          "index": 499,
+          "audio_start": 2580.432,
+          "audio_end": 2627.348,
+          "duration": 46.916,
+          "title": "Đạo Phật là đạo tự cứu lấy mình, không nhờ ai hết, không cầu khẩn van xin ai hết, Tự thoá…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_499.mp4",
+          "youtube_video_id": "OODODFuGnn8",
+          "youtube_url": "https://youtu.be/OODODFuGnn8",
+          "uploaded": true,
+          "photo_start_index": 297,
+          "photo_end_index": 308
         }
       ]
     }
