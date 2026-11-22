@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 2722.764013190255,
-      "photo_pointer_index": 321,
+      "audio_pointer_sec": 2800.0874164438537,
+      "photo_pointer_index": 332,
       "photo_order": [
         "image-1.jpg",
         "image-10.jpg",
@@ -6974,6 +6974,31 @@
           "uploaded": true,
           "photo_start_index": 308,
           "photo_end_index": 321
+        },
+        {
+          "index": 502,
+          "audio_start": 2722.764,
+          "audio_end": 2753.332,
+          "duration": 30.568,
+          "title": "Như cô Út Diệu Quang ở đây, vợ chồng Chơn tâm, tâm như tâm giác.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_502.mp4",
+          "youtube_video_id": "LnZX3FTZO-g",
+          "youtube_url": "https://youtu.be/LnZX3FTZO-g",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Như cô Út Diệu Quang ở đây, vợ chồng Chơn tâm, tâm như tâm giác."
+        },
+        {
+          "index": 503,
+          "audio_start": 2753.332,
+          "audio_end": 2800.087,
+          "duration": 46.756,
+          "title": "V.v…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_503.mp4",
+          "youtube_video_id": "M48xi4fgB98",
+          "youtube_url": "https://youtu.be/M48xi4fgB98",
+          "uploaded": true,
+          "photo_start_index": 321,
+          "photo_end_index": 332
         }
       ]
     }
