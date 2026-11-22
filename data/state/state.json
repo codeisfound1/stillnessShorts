@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 2627.347509213339,
-      "photo_pointer_index": 308,
+      "audio_pointer_sec": 2722.764013190255,
+      "photo_pointer_index": 321,
       "photo_order": [
         "image-1.jpg",
         "image-10.jpg",
@@ -6949,6 +6949,31 @@
           "uploaded": true,
           "photo_start_index": 297,
           "photo_end_index": 308
+        },
+        {
+          "index": 500,
+          "audio_start": 2627.348,
+          "audio_end": 2671.923,
+          "duration": 44.576,
+          "title": "Kính thưa quý vị!",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_500.mp4",
+          "youtube_video_id": "J0-QVVz7V64",
+          "youtube_url": "https://youtu.be/J0-QVVz7V64",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Kính thưa quý vị!"
+        },
+        {
+          "index": 501,
+          "audio_start": 2671.923,
+          "audio_end": 2722.764,
+          "duration": 50.841,
+          "title": "Nhưng thưa quý vị, chúng tôi là những tư sĩ Phật giáo Chúng tôi đâu có chùa, đâu có chỗ ă…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_501.mp4",
+          "youtube_video_id": "vYZt4C6PDpE",
+          "youtube_url": "https://youtu.be/vYZt4C6PDpE",
+          "uploaded": true,
+          "photo_start_index": 308,
+          "photo_end_index": 321
         }
       ]
     }
