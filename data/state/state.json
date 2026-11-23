@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 2867.817593145462,
-      "photo_pointer_index": 339,
+      "audio_pointer_sec": 2964.614822497947,
+      "photo_pointer_index": 351,
       "photo_order": [
         "image-1.jpg",
         "image-10.jpg",
@@ -7024,6 +7024,31 @@
           "uploaded": true,
           "photo_start_index": 332,
           "photo_end_index": 339
+        },
+        {
+          "index": 506,
+          "audio_start": 2867.818,
+          "audio_end": 2908.263,
+          "duration": 40.445,
+          "title": "Không đúng cách thì chúng tôi cũng chẳng dùng.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_506.mp4",
+          "youtube_video_id": "6zg8-2vbkXI",
+          "youtube_url": "https://youtu.be/6zg8-2vbkXI",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Không đúng cách thì chúng tôi cũng chẳng dùng."
+        },
+        {
+          "index": 507,
+          "audio_start": 2908.263,
+          "audio_end": 2964.615,
+          "duration": 56.352,
+          "title": "Nếu quý vị muốn tu theo chúng",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_507.mp4",
+          "youtube_video_id": "VkN8aT_-JWw",
+          "youtube_url": "https://youtu.be/VkN8aT_-JWw",
+          "uploaded": true,
+          "photo_start_index": 339,
+          "photo_end_index": 351
         }
       ]
     }
