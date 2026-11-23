@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 2800.0874164438537,
-      "photo_pointer_index": 332,
+      "audio_pointer_sec": 2867.817593145462,
+      "photo_pointer_index": 339,
       "photo_order": [
         "image-1.jpg",
         "image-10.jpg",
@@ -6999,6 +6999,31 @@
           "uploaded": true,
           "photo_start_index": 321,
           "photo_end_index": 332
+        },
+        {
+          "index": 504,
+          "audio_start": 2800.087,
+          "audio_end": 2836.629,
+          "duration": 36.542,
+          "title": "Chùa hoặc xin tiền để làm những việc gì khác, cho cá nhân mình.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_504.mp4",
+          "youtube_video_id": "FwwHNpNRE1c",
+          "youtube_url": "https://youtu.be/FwwHNpNRE1c",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Chùa hoặc xin tiền để làm những việc gì khác, cho cá nhân mình."
+        },
+        {
+          "index": 505,
+          "audio_start": 2836.629,
+          "audio_end": 2867.818,
+          "duration": 31.188,
+          "title": "Luật không có dạy chúng tôi làm điều đó.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_505.mp4",
+          "youtube_video_id": "U8UxqJv2sNc",
+          "youtube_url": "https://youtu.be/U8UxqJv2sNc",
+          "uploaded": true,
+          "photo_start_index": 332,
+          "photo_end_index": 339
         }
       ]
     }
