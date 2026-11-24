@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 2964.614822497947,
-      "photo_pointer_index": 351,
+      "audio_pointer_sec": 3075.5724313357255,
+      "photo_pointer_index": 364,
       "photo_order": [
         "image-1.jpg",
         "image-10.jpg",
@@ -7049,6 +7049,31 @@
           "uploaded": true,
           "photo_start_index": 339,
           "photo_end_index": 351
+        },
+        {
+          "index": 508,
+          "audio_start": 2964.615,
+          "audio_end": 3023.44,
+          "duration": 58.825,
+          "title": "Cũng thưa quý vị Phật tự, quý vị muốn tôi theo chúng tôi?",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_508.mp4",
+          "youtube_video_id": "KENJ1BGa6JA",
+          "youtube_url": "https://youtu.be/KENJ1BGa6JA",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Cũng thưa quý vị Phật tự, quý vị muốn tôi theo chúng tôi?"
+        },
+        {
+          "index": 509,
+          "audio_start": 3023.44,
+          "audio_end": 3075.572,
+          "duration": 52.133,
+          "title": "Khi công",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_509.mp4",
+          "youtube_video_id": "nm_yMqod0XA",
+          "youtube_url": "https://youtu.be/nm_yMqod0XA",
+          "uploaded": true,
+          "photo_start_index": 351,
+          "photo_end_index": 364
         }
       ]
     }
