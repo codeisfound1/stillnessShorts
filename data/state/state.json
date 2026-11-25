@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 3174.3731275818413,
-      "photo_pointer_index": 373,
+      "audio_pointer_sec": 3274.126630269873,
+      "photo_pointer_index": 382,
       "photo_order": [
         "image-1.jpg",
         "image-10.jpg",
@@ -7099,6 +7099,31 @@
           "uploaded": true,
           "photo_start_index": 364,
           "photo_end_index": 373
+        },
+        {
+          "index": 512,
+          "audio_start": 3174.373,
+          "audio_end": 3233.365,
+          "duration": 58.992,
+          "title": "Chúng tôi tu theo Đạo Phật, không bị mọi xu hướng thời đại và không chạy theo mọi phong t…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_512.mp4",
+          "youtube_video_id": "sJUKRaL4xcU",
+          "youtube_url": "https://youtu.be/sJUKRaL4xcU",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Chúng tôi tu theo Đạo Phật, không bị mọi xu hướng thời đại và không chạy theo mọi phong t…"
+        },
+        {
+          "index": 513,
+          "audio_start": 3233.365,
+          "audio_end": 3274.127,
+          "duration": 40.762,
+          "title": "9- CHÚNG TÔI KHÔNG PHẢI PHẬT, BỒ TÁT, A LA HÁN Kính Thưa quý vị Phật Tử, hôm nay quý vị đ…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_513.mp4",
+          "youtube_video_id": "mvd_zrYOqs8",
+          "youtube_url": "https://youtu.be/mvd_zrYOqs8",
+          "uploaded": true,
+          "photo_start_index": 373,
+          "photo_end_index": 382
         }
       ]
     }
