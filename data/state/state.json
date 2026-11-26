@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 3368.740933446101,
-      "photo_pointer_index": 393,
+      "audio_pointer_sec": 3450.189907690223,
+      "photo_pointer_index": 405,
       "photo_order": [
         "image-1.jpg",
         "image-10.jpg",
@@ -7249,6 +7249,31 @@
           "uploaded": true,
           "photo_start_index": 382,
           "photo_end_index": 393
+        },
+        {
+          "index": 516,
+          "audio_start": 3368.741,
+          "audio_end": 3401.06,
+          "duration": 32.319,
+          "title": "Chúng tôi là bạn lành của quý vị.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_516.mp4",
+          "youtube_video_id": "fSPP5EJdOWI",
+          "youtube_url": "https://youtu.be/fSPP5EJdOWI",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Chúng tôi là bạn lành của quý vị."
+        },
+        {
+          "index": 517,
+          "audio_start": 3401.06,
+          "audio_end": 3450.19,
+          "duration": 49.13,
+          "title": "Chúng",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_517.mp4",
+          "youtube_video_id": "IMxqeBKn80E",
+          "youtube_url": "https://youtu.be/IMxqeBKn80E",
+          "uploaded": true,
+          "photo_start_index": 393,
+          "photo_end_index": 405
         }
       ]
     }
