@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 3531.150381436745,
-      "photo_pointer_index": 414,
+      "audio_pointer_sec": 3619.627161964879,
+      "photo_pointer_index": 424,
       "photo_order": [
         "image-1.jpg",
         "image-10.jpg",
@@ -7299,6 +7299,31 @@
           "uploaded": true,
           "photo_start_index": 405,
           "photo_end_index": 414
+        },
+        {
+          "index": 520,
+          "audio_start": 3531.15,
+          "audio_end": 3580.017,
+          "duration": 48.867,
+          "title": "Những gì chúng ta làm là chúng ta phải có ý thức đầy đủ đừng để phong tục tập quán của co…",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_520.mp4",
+          "youtube_video_id": "qbG6c8dUtL4",
+          "youtube_url": "https://youtu.be/qbG6c8dUtL4",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Những gì chúng ta làm là chúng ta phải có ý thức đầy đủ đừng để phong tục tập quán của co…"
+        },
+        {
+          "index": 521,
+          "audio_start": 3580.017,
+          "audio_end": 3619.627,
+          "duration": 39.61,
+          "title": "Quý vị Phật tử!",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_521.mp4",
+          "youtube_video_id": "oJCeDd-IncY",
+          "youtube_url": "https://youtu.be/oJCeDd-IncY",
+          "uploaded": true,
+          "photo_start_index": 414,
+          "photo_end_index": 424
         }
       ]
     }
