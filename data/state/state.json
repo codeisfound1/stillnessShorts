@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 3619.627161964879,
-      "photo_pointer_index": 424,
+      "audio_pointer_sec": 3715.8092752520624,
+      "photo_pointer_index": 435,
       "photo_order": [
         "image-1.jpg",
         "image-10.jpg",
@@ -7324,6 +7324,31 @@
           "uploaded": true,
           "photo_start_index": 414,
           "photo_end_index": 424
+        },
+        {
+          "index": 522,
+          "audio_start": 3619.627,
+          "audio_end": 3672.174,
+          "duration": 52.547,
+          "title": "Dấu lực chẳng ra dấu lực",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_522.mp4",
+          "youtube_video_id": "EbA1LBxW0AU",
+          "youtube_url": "https://youtu.be/EbA1LBxW0AU",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Dấu lực chẳng ra dấu lực"
+        },
+        {
+          "index": 523,
+          "audio_start": 3672.174,
+          "audio_end": 3715.809,
+          "duration": 43.635,
+          "title": "Con định tâm cũng dễ,",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_523.mp4",
+          "youtube_video_id": "haauAitGOXI",
+          "youtube_url": "https://youtu.be/haauAitGOXI",
+          "uploaded": true,
+          "photo_start_index": 424,
+          "photo_end_index": 435
         }
       ]
     }
