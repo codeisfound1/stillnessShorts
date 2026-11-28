@@ -322,8 +322,8 @@
     },
     "3087543c827ab6a1": {
       "video_pointer_sec": 0.0,
-      "audio_pointer_sec": 3715.8092752520624,
-      "photo_pointer_index": 435,
+      "audio_pointer_sec": 3795.3032114911534,
+      "photo_pointer_index": 442,
       "photo_order": [
         "image-1.jpg",
         "image-10.jpg",
@@ -7349,6 +7349,31 @@
           "uploaded": true,
           "photo_start_index": 424,
           "photo_end_index": 435
+        },
+        {
+          "index": 524,
+          "audio_start": 3715.809,
+          "audio_end": 3765.218,
+          "duration": 49.408,
+          "title": "Con chìm đắm trong một trạng thái tĩnh lặng rất dễ chịu, nhưng con vẫn tỉnh.",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_524.mp4",
+          "youtube_video_id": "D-0pH4vsbNA",
+          "youtube_url": "https://youtu.be/D-0pH4vsbNA",
+          "uploaded": true,
+          "image_prompt": "A serene, no logo, no people, no text, no watermark, symbolic photograph representing the idea: Con chìm đắm trong một trạng thái tĩnh lặng rất dễ chịu, nhưng con vẫn tỉnh."
+        },
+        {
+          "index": 525,
+          "audio_start": 3765.218,
+          "audio_end": 3795.303,
+          "duration": 30.085,
+          "title": "Xin thưa cùng quý Phật tử!",
+          "output_file": "/home/runner/work/stillnessShorts/stillnessShorts/data/output/short_525.mp4",
+          "youtube_video_id": "c2QpqsxpWdI",
+          "youtube_url": "https://youtu.be/c2QpqsxpWdI",
+          "uploaded": true,
+          "photo_start_index": 435,
+          "photo_end_index": 442
         }
       ]
     }
